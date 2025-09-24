@@ -11,7 +11,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(ModMain.MODID)
 public class ModMain {
 
-  public static final String MODID = "examplemod";
+  public static final String MODID = "stardew";
   public static final Logger LOGGER = LogManager.getLogger();
 
   public ModMain() {
