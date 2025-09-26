@@ -1,6 +1,8 @@
 package dev.flomik.stardew.core.crop;
 
-public enum FertilizerType {
+import net.minecraft.util.StringRepresentable;
+
+public enum FertilizerType implements StringRepresentable {
 
     // Quality
     BASIC_FERTILIZER(true, false, FertilizerEffect.QUALITY),
@@ -36,6 +38,11 @@ public enum FertilizerType {
         this.canApplyAfterPlanting = after;
         this.effect = effect;
         this.strength = strength;
+    }
+
+    @Override
+    public String getSerializedName() {
+        return this.name().toLowerCase();
     }
 
     public boolean isRetention() {
