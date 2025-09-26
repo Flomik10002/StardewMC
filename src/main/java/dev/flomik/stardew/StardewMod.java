@@ -1,8 +1,10 @@
 package dev.flomik.stardew;
 
+import dev.flomik.stardew.core.registry.block.ModBlocks;
 import dev.flomik.stardew.core.command.SeasonArgument;
 import dev.flomik.stardew.core.config.StardewConfig;
-import dev.flomik.stardew.core.registry.ModRegistry;
+import dev.flomik.stardew.core.registry.item.ModCreativeModeTabs;
+import dev.flomik.stardew.core.registry.item.ModItems;
 import net.minecraft.commands.synchronization.ArgumentTypeInfos;
 import net.minecraft.commands.synchronization.SingletonArgumentInfo;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,12 +22,16 @@ public class StardewMod {
     public StardewMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register();
+        ModBlocks.register();
+        ModCreativeModeTabs.register(modEventBus);
+
+
         ArgumentTypeInfos.registerByClass(
                 SeasonArgument.class,
                 SingletonArgumentInfo.contextFree(SeasonArgument::season)
         );
 
-        ModRegistry.register(modEventBus);
         StardewConfig.register();
     }
 }
