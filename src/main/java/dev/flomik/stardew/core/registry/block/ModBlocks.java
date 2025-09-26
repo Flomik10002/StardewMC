@@ -20,7 +20,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DIRT = registerBlock("dirt",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.TERRACOTTA_ORANGE)
+                    .mapColor(MapColor.TERRACOTTA_YELLOW)
                     .strength(3.0f)
                     .requiresCorrectToolForDrops()
                     .pushReaction(PushReaction.NORMAL)));
