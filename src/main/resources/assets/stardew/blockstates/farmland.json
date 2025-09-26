@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "hydrated=false": { "model": "stardew:block/farmland_dry" },
+    "hydrated=true":  { "model": "stardew:block/farmland_wet" }
+  }
+}

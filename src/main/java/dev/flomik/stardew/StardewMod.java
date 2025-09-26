@@ -2,6 +2,7 @@ package dev.flomik.stardew;
 
 import dev.flomik.stardew.core.registry.block.ModBlocks;
 import dev.flomik.stardew.core.config.StardewConfig;
+import dev.flomik.stardew.core.registry.blockentity.ModBlockEntities;
 import dev.flomik.stardew.core.registry.item.ModCreativeModeTabs;
 import dev.flomik.stardew.core.registry.item.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,6 +22,7 @@ public class StardewMod {
 
         ModItems.register();
         ModBlocks.register();
+        ModBlockEntities.register();
         ModCreativeModeTabs.register(modEventBus);
 
         StardewConfig.register();

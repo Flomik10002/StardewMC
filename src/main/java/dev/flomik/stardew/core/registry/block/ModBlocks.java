@@ -18,6 +18,8 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, StardewMod.MODID);
 
+    public static final RegistryObject<Block> FARMLAND = registerBlock("farmland", BlockFarmland::new);
+
     public static final RegistryObject<Block> DIRT = registerBlock("dirt",
             () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.TERRACOTTA_YELLOW)

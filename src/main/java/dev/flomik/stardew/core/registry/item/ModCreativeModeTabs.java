@@ -23,6 +23,7 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.DIRT.get()))
                     .displayItems((params, output) -> {
                         output.accept(ModBlocks.DIRT.get());
+                        output.accept(ModBlocks.FARMLAND.get());
                     }).build());
 
     public static void register(IEventBus bus) {
