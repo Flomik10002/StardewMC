@@ -1,6 +1,11 @@
 {
   "variants": {
-    "hydrated=false": { "model": "stardew:block/farmland_dry" },
-    "hydrated=true":  { "model": "stardew:block/farmland_wet" }
+    "hydrated=false,fertilizer=none":  { "model": "stardew:block/farmland_dry" },
+    "hydrated=true,fertilizer=none":   { "model": "stardew:block/farmland_wet" },
+
+    "hydrated=false,fertilizer=basic_fertilizer": { "model": "stardew:block/farmland_dry_fert1" },
+    "hydrated=true,fertilizer=basic_fertilizer":  { "model": "stardew:block/farmland_wet_fert1" },
+
+    "hydrated=true,fertilizer=deluxe_speed_gro":  { "model": "stardew:block/farmland_wet_fert_speed3" }
   }
 }
