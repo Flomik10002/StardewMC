@@ -13,6 +13,7 @@ import static dev.flomik.stardew.core.time.ScheduleManager.*;
 
 @Mod.EventBusSubscriber
 public class StardewClock {
+    private static int lastHour = -1;
 
     @SubscribeEvent
     public static void onLevelTick(TickEvent.LevelTickEvent event) {
@@ -23,8 +24,13 @@ public class StardewClock {
         if (!(level instanceof ServerLevel serverLevel)) return;
 
         long ticks = serverLevel.getDayTime();
+        int hour = StardewTimeUtils.getHour(ticks);
+        int minute = StardewTimeUtils.getMinute(ticks);
+
 
         tick(ticks);
+        
+        lastHour = hour;
 
         if (StardewTimeUtils.shouldPassOut(ticks)) {
             for (ServerPlayer player : serverLevel.players()) {

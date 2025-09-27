@@ -1,6 +1,7 @@
 package dev.flomik.stardew.core.registry.blockentity;
 
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
 import dev.flomik.stardew.core.registry.block.ModBlocks;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -16,6 +17,11 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<FarmlandBlockEntity>> FARMLAND =
             BLOCK_ENTITIES.register("farmland", () ->
                     BlockEntityType.Builder.of(FarmlandBlockEntity::new, ModBlocks.FARMLAND.get()).build(null)
+            );
+
+    public static final RegistryObject<BlockEntityType<CropBlockEntity>> CROP =
+            BLOCK_ENTITIES.register("crop", () ->
+                    BlockEntityType.Builder.of(CropBlockEntity::new, ModBlocks.CROP.get()).build(null)
             );
 
     public static void register() {

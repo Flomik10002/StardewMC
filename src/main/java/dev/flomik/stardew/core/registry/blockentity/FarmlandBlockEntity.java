@@ -4,6 +4,7 @@ import dev.flomik.stardew.core.crop.FertilizerType;
 import dev.flomik.stardew.core.registry.block.BlockFarmland;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -17,11 +18,18 @@ public class FarmlandBlockEntity extends BlockEntity {
     }
 
     public void onPlace() {
-        // инициализация при установке
     }
 
-    public void tickServer() {
-        // пока ничего — позже сюда можно вставить логику засыхания
+    @Override public void onLoad() {
+        super.onLoad();
+        if (!level.isClientSide) dev.flomik.stardew.core.crop.runtime.FarmlandTracker.onLoad(this);
+    }
+    @Override public void setRemoved() {
+        super.setRemoved();
+        if (!level.isClientSide) dev.flomik.stardew.core.crop.runtime.FarmlandTracker.onRemove(this);
+    }
+    public static void serverTick(Level level, BlockPos pos, BlockState state, FarmlandBlockEntity be) {
+        dev.flomik.stardew.core.crop.runtime.FarmlandTracker.onLoad(be);
     }
 
     public boolean applyFertilizer(FertilizerType type) {
@@ -58,6 +66,17 @@ public class FarmlandBlockEntity extends BlockEntity {
 
     public boolean isHydrated(int currentDay) {
         return currentDay <= hydratedUntilDay;
+    }
+    
+    public void dehydrate(int currentDay) {
+        this.hydratedUntilDay = 0;
+        if (level != null && !level.isClientSide) {
+            BlockState state = getBlockState();
+            if (state.getValue(BlockFarmland.HYDRATED)) {
+                level.setBlockAndUpdate(worldPosition, state.setValue(BlockFarmland.HYDRATED, false));
+            }
+        }
+        setChanged();
     }
 
     @Override

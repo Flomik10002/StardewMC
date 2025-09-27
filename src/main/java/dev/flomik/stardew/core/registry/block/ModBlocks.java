@@ -1,6 +1,7 @@
 package dev.flomik.stardew.core.registry.block;
 
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.core.crop.block.BlockCrop;
 import dev.flomik.stardew.core.registry.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -17,6 +18,8 @@ public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, StardewMod.MODID);
+
+    public static final RegistryObject<Block> CROP = registerBlock("crop", BlockCrop::new);
 
     public static final RegistryObject<Block> FARMLAND = registerBlock("farmland", BlockFarmland::new);
 

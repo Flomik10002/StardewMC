@@ -40,10 +40,16 @@ public class ScheduleManager {
     }
 
     public static void forceNextDay(ServerLevel level) {
-        level.setDayTime(0);
-
         StardewDateData date = StardewDateData.get(level);
         date.advance();
         date.setDirty();
+        
+        level.setDayTime(StardewTimeUtils.toTicks(6, 0));
+        
+        for (ScheduleEntry entry : entries) {
+            if (entry.getStartTick() == StardewTimeUtils.toTicks(6, 0)) {
+                entry.trigger();
+            }
+        }
     }
 }
