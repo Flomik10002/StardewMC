@@ -23,6 +23,20 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.DIRT.get()))
                     .displayItems((params, output) -> {
                         output.accept(ModBlocks.DIRT.get());
+                        output.accept(ModBlocks.FARMLAND.get());
+                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> STARDEW_ITEM_TAB =
+            TABS.register("stardew_item_tab", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.stardew_block_tab"))
+                    .icon(() -> new ItemStack(ModItems.TOMATO_ITEM.get()))
+                    .displayItems((params, output) -> {
+                        output.accept(ModItems.TOMATO_ITEM.get());
+                        output.accept(ModItems.CAULIFLOWER_ITEM.get());
+                        output.accept(ModItems.RICE_ITEM.get());
+                        output.accept(ModItems.TOMATO_SEEDS.get());
+                        output.accept(ModItems.CAULIFLOWER_SEEDS.get());
+                        output.accept(ModItems.RICE_SHOOTS.get());
                     }).build());
 
     public static void register(IEventBus bus) {
