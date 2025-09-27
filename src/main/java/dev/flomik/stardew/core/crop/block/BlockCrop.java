@@ -1,12 +1,15 @@
 package dev.flomik.stardew.core.crop.block;
 
 import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
+import dev.flomik.stardew.core.registry.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -15,9 +18,11 @@ import net.minecraft.world.level.block.state.*;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class BlockCrop extends BushBlock implements EntityBlock {
+public class BlockCrop extends Block implements EntityBlock {
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7); // визуальный диапазон, маппим на фазы
 
     public BlockCrop() {
@@ -48,6 +53,27 @@ public class BlockCrop extends BushBlock implements EntityBlock {
     }
 
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> b) { b.add(AGE); }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos below = pos.below();
+        BlockState belowState = level.getBlockState(below);
+        return belowState.is(ModBlocks.FARMLAND.get());
+    }
+
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean isMoving) {
+        super.neighborChanged(state, level, pos, neighborBlock, neighborPos, isMoving);
+
+        if (!canSurvive(state, level, pos)) {
+            level.destroyBlock(pos, true);
+        }
+    }
 
     @Nullable @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new CropBlockEntity(pos, state); }
