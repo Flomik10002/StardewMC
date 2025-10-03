@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "stardew:block/craftables/keg" },
+    "facing=south": { "model": "stardew:block/craftables/keg", "y": 180 },
+    "facing=west":  { "model": "stardew:block/craftables/keg", "y": 270 },
+    "facing=east":  { "model": "stardew:block/craftables/keg", "y": 90 }
+  }
+}

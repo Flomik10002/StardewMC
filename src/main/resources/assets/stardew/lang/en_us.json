@@ -1,7 +1,10 @@
 {
   "itemGroup.stardew_block_tab": "StardewMC Blocks",
+  "itemGroup.stardew_craftables_tab": "StardewMC Craftables",
   "itemGroup.stardew_item_tab": "StardewMC Items",
 
+  "block.stardew.keg": "Keg",
+  "block.stardew.cheese_press": "Cheese Press",
   "block.stardew.dirt": "Dirt",
   "block.stardew.farmland": "Farmland"
 }

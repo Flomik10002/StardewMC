@@ -26,9 +26,18 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.FARMLAND.get());
                     }).build());
 
+    public static final RegistryObject<CreativeModeTab> STARDEW_CRAFTABLES_TAB =
+            TABS.register("stardew_craftables_tab", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.stardew_craftables_tab"))
+                    .icon(() -> new ItemStack(ModBlocks.KEG.get()))
+                    .displayItems((params, output) -> {
+                        output.accept(ModBlocks.KEG.get());
+                        output.accept(ModBlocks.CHEESE_PRESS.get());
+                    }).build());
+
     public static final RegistryObject<CreativeModeTab> STARDEW_ITEM_TAB =
             TABS.register("stardew_item_tab", () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.stardew_block_tab"))
+                    .title(Component.translatable("itemGroup.stardew_item_tab"))
                     .icon(() -> new ItemStack(ModItems.TOMATO_ITEM.get()))
                     .displayItems((params, output) -> {
                         output.accept(ModItems.TOMATO_ITEM.get());
