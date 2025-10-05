@@ -32,6 +32,7 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.KEG.get()))
                     .displayItems((params, output) -> {
                         output.accept(ModBlocks.KEG.get());
+                        output.accept(ModBlocks.BEEHIVE.get());
                         output.accept(ModBlocks.CHEESE_PRESS.get());
                     }).build());
 

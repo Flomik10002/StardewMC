@@ -4,7 +4,7 @@
 	"texture_size": [128, 128],
 	"textures": {
 		"2": "stardew:block/craftables/keg",
-        "particle": "stardew:block/craftables/cheese_press"
+        "particle": "stardew:block/craftables/keg"
     },
 	"elements": [
 		{

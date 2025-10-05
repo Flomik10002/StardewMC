@@ -1,6 +1,7 @@
 package dev.flomik.stardew.core.registry.block;
 
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.core.block.craftables.BlockBeehive;
 import dev.flomik.stardew.core.block.craftables.BlockCheesePress;
 import dev.flomik.stardew.core.block.craftables.BlockKeg;
 import dev.flomik.stardew.core.crop.block.BlockCrop;
@@ -37,10 +38,19 @@ public class ModBlocks {
                     .mapColor(MapColor.WOOD)
                     .strength(3.0f)
                     .sound(SoundType.WOOD)
+                    .dynamicShape().noOcclusion()
                     .pushReaction(PushReaction.NORMAL)));
 
     public static final RegistryObject<Block> KEG = registerBlock("keg",
             () -> new BlockKeg(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .strength(3.0f)
+                    .sound(SoundType.WOOD)
+                    .dynamicShape().noOcclusion()
+                    .pushReaction(PushReaction.NORMAL)));
+
+    public static final RegistryObject<Block> BEEHIVE = registerBlock("beehive",
+            () -> new BlockBeehive(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
                     .strength(3.0f)
                     .sound(SoundType.WOOD)
