@@ -36,17 +36,28 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CHEESE_PRESS.get());
                     }).build());
 
-    public static final RegistryObject<CreativeModeTab> STARDEW_ITEM_TAB =
-            TABS.register("stardew_item_tab", () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.stardew_item_tab"))
-                    .icon(() -> new ItemStack(ModItems.TOMATO_ITEM.get()))
+//    public static final RegistryObject<CreativeModeTab> STARDEW_ITEM_TAB =
+//            TABS.register("stardew_item_tab", () -> CreativeModeTab.builder()
+//                    .title(Component.translatable("itemGroup.stardew_item_tab"))
+//                    .icon(() -> new ItemStack(ModItems.TOMATO_ITEM.get()))
+//                    .displayItems((params, output) -> {
+//                        output.accept(ModItems.TOMATO_ITEM.get());
+//                        output.accept(ModItems.CAULIFLOWER_ITEM.get());
+//                        output.accept(ModItems.RICE_ITEM.get());
+//                        output.accept(ModItems.TOMATO_SEEDS.get());
+//                        output.accept(ModItems.CAULIFLOWER_SEEDS.get());
+//                        output.accept(ModItems.RICE_SHOOTS.get());
+//                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> STARDEW_TOOLs_TAB =
+            TABS.register("stardew_tools_tab", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.stardew_tools_tab"))
+                    .icon(() -> new ItemStack(ModItems.BASIC_HOE.get()))
                     .displayItems((params, output) -> {
-                        output.accept(ModItems.TOMATO_ITEM.get());
-                        output.accept(ModItems.CAULIFLOWER_ITEM.get());
-                        output.accept(ModItems.RICE_ITEM.get());
-                        output.accept(ModItems.TOMATO_SEEDS.get());
-                        output.accept(ModItems.CAULIFLOWER_SEEDS.get());
-                        output.accept(ModItems.RICE_SHOOTS.get());
+                        output.accept(ModItems.BASIC_HOE.get());
+                        output.accept(ModItems.COPPER_HOE.get());
+                        output.accept(ModItems.BASIC_WATERING_CAN.get());
+                        output.accept(ModItems.COPPER_WATERING_CAN.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> STARDEW_ARTISAN_GOODS_TAB =

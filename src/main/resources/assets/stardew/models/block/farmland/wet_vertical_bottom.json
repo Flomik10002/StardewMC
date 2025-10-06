@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "stardew:block/farmland/wet_vertical_bottom"
-  }
-}

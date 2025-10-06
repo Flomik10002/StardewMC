@@ -1,7 +1,6 @@
 import os
 import json
 from PIL import Image
-from itertools import product
 
 TILE_SIZE = 16
 
@@ -49,51 +48,45 @@ for prefix, atlas_path in ATLAS_FILES.items():
         tile.save(os.path.join(SPLIT_FOLDER, f"{prefix}_{name}.png"))
 print("✅ Атласы нарезаны.")
 
-# === Список доступных текстур ===
+# === Генерация моделей (cube_all) ===
 available = set(f.replace(".png", "") for f in os.listdir(SPLIT_FOLDER))
 
-# === Генерация cube_all моделей для dry/overlay ===
 for tex in available:
-    path = f"stardew:block/farmland/{tex}"
-    model = {
+    tex_path = f"stardew:block/farmland/{tex}"
+    model_json = {
         "parent": "block/cube_all",
-        "textures": {"all": path}
+        "textures": {"all": tex_path}
     }
     with open(os.path.join(MODELS_FOLDER, f"{tex}.json"), "w") as f:
-        json.dump(model, f, indent=2)
-
+        json.dump(model_json, f, indent=2)
 print("✅ cube_all модели сгенерированы.")
 
-# === Генерация layered моделей и blockstates ===
-variants = {}
+# === Генерация multipart blockstate ===
 
-for dry_shape in SHAPES:
-    dry_name = f"dry_{dry_shape}"
+multipart = []
 
-    # Вариант: hydrated=false → dry only
-    variants[f"hydrated=false,shape={dry_shape},wet_shape=single"] = {
-        "model": f"stardew:block/farmland/{dry_name}"
+# Слой dry — обязателен всегда
+for shape in SHAPES:
+    part = {
+        "when": { "shape": shape },
+        "apply": { "model": f"stardew:block/farmland/dry_{shape}" }
     }
+    multipart.append(part)
 
-    for wet_shape in SHAPES:
-        wet_overlay_name = f"wet_overlay_{wet_shape}"
-        if dry_name in available and wet_overlay_name in available:
-            model_name = f"layered_{dry_shape}_{wet_shape}"
-            model = {
-                "parent": "block/block",
-                "textures": {
-                    "layer0": f"stardew:block/farmland/{dry_name}",
-                    "layer1": f"stardew:block/farmland/{wet_overlay_name}"
-                }
-            }
-            with open(os.path.join(MODELS_FOLDER, f"{model_name}.json"), "w") as f:
-                json.dump(model, f, indent=2)
+# Слой overlay — только если hydrated=true
+for shape in SHAPES:
+    overlay_name = f"wet_overlay_{shape}"
+    if overlay_name in available:
+        part = {
+            "when": { "hydrated": True, "wet_shape": shape },
+            "apply": { "model": f"stardew:block/farmland/{overlay_name}" }
+        }
+        multipart.append(part)
 
-            key = f"hydrated=true,shape={dry_shape},wet_shape={wet_shape}"
-            variants[key] = {"model": f"stardew:block/farmland/{model_name}"}
+# Сохраняем farmland.json
+blockstate_json = { "multipart": multipart }
 
-# === Сохраняем blockstate ===
 with open(os.path.join(BLOCKSTATES_FOLDER, "farmland.json"), "w") as f:
-    json.dump({"variants": variants}, f, indent=2)
+    json.dump(blockstate_json, f, indent=2)
 
-print("✅ farmland.json сгенерирован.")
+print("✅ multipart farmland.json сгенерирован.")

@@ -3,6 +3,7 @@
   "itemGroup.stardew_craftables_tab": "StardewMC Craftables",
   "itemGroup.stardew_item_tab": "StardewMC Items",
   "itemGroup.stardew_artisan_goods_tab": "StardewMC Artisan Goods",
+  "itemGroup.stardew_tools_tab": "StardewMC Tools",
 
   "block.stardew.keg": "Keg",
   "block.stardew.cheese_press": "Cheese Press",
@@ -14,5 +15,11 @@
   "item.stardew.honey": "Honey",
   "item.stardew.cheese": "Cheese",
   "item.stardew.goat_cheese": "Goat Cheese",
-  "item.stardew.wine": "Wine"
+  "item.stardew.wine": "Wine",
+
+  "item.stardew.basic_hoe": "Hoe",
+  "item.stardew.copper_hoe": "Copper Hoe",
+
+  "item.stardew.basic_watering_can": "Watering Can",
+  "item.stardew.copper_watering_can": "Copper Watering Can"
 }

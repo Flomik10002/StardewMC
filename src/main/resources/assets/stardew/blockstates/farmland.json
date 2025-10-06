@@ -1,100 +1,276 @@
 {
-  "variants": {
-    "hydrated=false,shape=single": {
-      "model": "stardew:block/farmland/dry_single"
+  "multipart": [
+    {
+      "when": {
+        "shape": "single"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_single"
+      }
     },
-    "hydrated=false,shape=horizontal_left": {
-      "model": "stardew:block/farmland/dry_horizontal_left"
+    {
+      "when": {
+        "shape": "horizontal_left"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_horizontal_left"
+      }
     },
-    "hydrated=false,shape=horizontal_mid": {
-      "model": "stardew:block/farmland/dry_horizontal_mid"
+    {
+      "when": {
+        "shape": "horizontal_mid"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_horizontal_mid"
+      }
     },
-    "hydrated=false,shape=horizontal_right": {
-      "model": "stardew:block/farmland/dry_horizontal_right"
+    {
+      "when": {
+        "shape": "horizontal_right"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_horizontal_right"
+      }
     },
-    "hydrated=false,shape=vertical_top": {
-      "model": "stardew:block/farmland/dry_vertical_top"
+    {
+      "when": {
+        "shape": "vertical_top"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_vertical_top"
+      }
     },
-    "hydrated=false,shape=vertical_mid": {
-      "model": "stardew:block/farmland/dry_vertical_mid"
+    {
+      "when": {
+        "shape": "vertical_mid"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_vertical_mid"
+      }
     },
-    "hydrated=false,shape=vertical_bottom": {
-      "model": "stardew:block/farmland/dry_vertical_bottom"
+    {
+      "when": {
+        "shape": "vertical_bottom"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_vertical_bottom"
+      }
     },
-    "hydrated=false,shape=top_left": {
-      "model": "stardew:block/farmland/dry_top_left"
+    {
+      "when": {
+        "shape": "top_left"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_top_left"
+      }
     },
-    "hydrated=false,shape=top": {
-      "model": "stardew:block/farmland/dry_top"
+    {
+      "when": {
+        "shape": "top"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_top"
+      }
     },
-    "hydrated=false,shape=top_right": {
-      "model": "stardew:block/farmland/dry_top_right"
+    {
+      "when": {
+        "shape": "top_right"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_top_right"
+      }
     },
-    "hydrated=false,shape=left": {
-      "model": "stardew:block/farmland/dry_left"
+    {
+      "when": {
+        "shape": "left"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_left"
+      }
     },
-    "hydrated=false,shape=center": {
-      "model": "stardew:block/farmland/dry_center"
+    {
+      "when": {
+        "shape": "center"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_center"
+      }
     },
-    "hydrated=false,shape=right": {
-      "model": "stardew:block/farmland/dry_right"
+    {
+      "when": {
+        "shape": "right"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_right"
+      }
     },
-    "hydrated=false,shape=bottom_left": {
-      "model": "stardew:block/farmland/dry_bottom_left"
+    {
+      "when": {
+        "shape": "bottom_left"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_bottom_left"
+      }
     },
-    "hydrated=false,shape=bottom": {
-      "model": "stardew:block/farmland/dry_bottom"
+    {
+      "when": {
+        "shape": "bottom"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_bottom"
+      }
     },
-    "hydrated=false,shape=bottom_right": {
-      "model": "stardew:block/farmland/dry_bottom_right"
+    {
+      "when": {
+        "shape": "bottom_right"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/dry_bottom_right"
+      }
     },
-    "hydrated=true,shape=single": {
-      "model": "stardew:block/farmland/wet_single"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "single"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_single"
+      }
     },
-    "hydrated=true,shape=horizontal_left": {
-      "model": "stardew:block/farmland/wet_horizontal_left"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "horizontal_left"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_horizontal_left"
+      }
     },
-    "hydrated=true,shape=horizontal_mid": {
-      "model": "stardew:block/farmland/wet_horizontal_mid"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "horizontal_mid"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_horizontal_mid"
+      }
     },
-    "hydrated=true,shape=horizontal_right": {
-      "model": "stardew:block/farmland/wet_horizontal_right"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "horizontal_right"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_horizontal_right"
+      }
     },
-    "hydrated=true,shape=vertical_top": {
-      "model": "stardew:block/farmland/wet_vertical_top"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "vertical_top"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_vertical_top"
+      }
     },
-    "hydrated=true,shape=vertical_mid": {
-      "model": "stardew:block/farmland/wet_vertical_mid"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "vertical_mid"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_vertical_mid"
+      }
     },
-    "hydrated=true,shape=vertical_bottom": {
-      "model": "stardew:block/farmland/wet_vertical_bottom"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "vertical_bottom"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_vertical_bottom"
+      }
     },
-    "hydrated=true,shape=top_left": {
-      "model": "stardew:block/farmland/wet_top_left"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "top_left"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_top_left"
+      }
     },
-    "hydrated=true,shape=top": {
-      "model": "stardew:block/farmland/wet_top"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "top"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_top"
+      }
     },
-    "hydrated=true,shape=top_right": {
-      "model": "stardew:block/farmland/wet_top_right"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "top_right"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_top_right"
+      }
     },
-    "hydrated=true,shape=left": {
-      "model": "stardew:block/farmland/wet_left"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "left"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_left"
+      }
     },
-    "hydrated=true,shape=center": {
-      "model": "stardew:block/farmland/wet_center"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "center"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_center"
+      }
     },
-    "hydrated=true,shape=right": {
-      "model": "stardew:block/farmland/wet_right"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "right"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_right"
+      }
     },
-    "hydrated=true,shape=bottom_left": {
-      "model": "stardew:block/farmland/wet_bottom_left"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "bottom_left"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_bottom_left"
+      }
     },
-    "hydrated=true,shape=bottom": {
-      "model": "stardew:block/farmland/wet_bottom"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "bottom"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_bottom"
+      }
     },
-    "hydrated=true,shape=bottom_right": {
-      "model": "stardew:block/farmland/wet_bottom_right"
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "bottom_right"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/wet_overlay_bottom_right"
+      }
     }
-  }
+  ]
 }
