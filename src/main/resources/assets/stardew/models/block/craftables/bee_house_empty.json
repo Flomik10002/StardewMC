@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
 	"textures": {
-		"0": "stardew:block/craftables/beehive",
-		"particle": "stardew:block/craftables/beehive"
+		"0": "stardew:block/craftables/bee_house",
+		"particle": "stardew:block/craftables/bee_house"
 	},
 	"elements": [
 		{

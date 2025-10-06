@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "stardew:item/cheese_press"
+    "layer0": "stardew:item/bee_house"
   }
 }

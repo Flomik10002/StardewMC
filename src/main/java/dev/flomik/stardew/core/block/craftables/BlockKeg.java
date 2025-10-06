@@ -1,19 +1,31 @@
 package dev.flomik.stardew.core.block.craftables;
 
+import dev.flomik.stardew.core.block.base.BlockEntityHasItemVisual;
+import dev.flomik.stardew.core.block.craftables.blockentity.BlockEntityCheesePress;
+import dev.flomik.stardew.core.block.craftables.blockentity.BlockEntityKeg;
+import dev.flomik.stardew.core.registry.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class BlockKeg extends Block {
+public class BlockKeg extends Block implements EntityBlock {
     private static final VoxelShape SHAPE_NORTH = Shapes.or(
             Block.box(15.000, 8.000, 0.000, 16.000, 14.000, 16.000),
             Block.box(4.000, 4.000, 0.000, 12.000, 5.000, 16.000),
@@ -207,15 +219,35 @@ public class BlockKeg extends Block {
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING)) {
             case NORTH -> SHAPE_NORTH;
-            case EAST  -> SHAPE_EAST;
+            case EAST -> SHAPE_EAST;
             case SOUTH -> SHAPE_SOUTH;
-            case WEST  -> SHAPE_WEST;
-            default    -> SHAPE_NORTH;
+            case WEST -> SHAPE_WEST;
+            default -> SHAPE_NORTH;
         };
     }
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return getShape(state, level, pos, context);
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (level.getBlockEntity(pos) instanceof BlockEntityKeg press) {
+            press.setVisualItem(new ItemStack(ModItems.WINE.get()));
+        }
+        return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new BlockEntityKeg(pos, state);
+    }
+
+    @Override
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
+        if (!level.isClientSide && level.getBlockEntity(pos) instanceof BlockEntityHasItemVisual be) {
+            be.onPlace();
+        }
     }
 }

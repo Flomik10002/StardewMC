@@ -2,11 +2,17 @@
   "itemGroup.stardew_block_tab": "StardewMC Blocks",
   "itemGroup.stardew_craftables_tab": "StardewMC Craftables",
   "itemGroup.stardew_item_tab": "StardewMC Items",
+  "itemGroup.stardew_artisan_goods_tab": "StardewMC Artisan Goods",
 
   "block.stardew.keg": "Keg",
   "block.stardew.cheese_press": "Cheese Press",
-  "block.stardew.beehive": "Beehive",
+  "block.stardew.bee_house": "Bee House",
 
   "block.stardew.dirt": "Dirt",
-  "block.stardew.farmland": "Farmland"
+  "block.stardew.farmland": "Farmland",
+
+  "item.stardew.honey": "Honey",
+  "item.stardew.cheese": "Cheese",
+  "item.stardew.goat_cheese": "Goat Cheese",
+  "item.stardew.wine": "Wine"
 }

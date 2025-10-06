@@ -32,7 +32,7 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.KEG.get()))
                     .displayItems((params, output) -> {
                         output.accept(ModBlocks.KEG.get());
-                        output.accept(ModBlocks.BEEHIVE.get());
+                        output.accept(ModBlocks.BEE_HOUSE.get());
                         output.accept(ModBlocks.CHEESE_PRESS.get());
                     }).build());
 
@@ -47,6 +47,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TOMATO_SEEDS.get());
                         output.accept(ModItems.CAULIFLOWER_SEEDS.get());
                         output.accept(ModItems.RICE_SHOOTS.get());
+                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> STARDEW_ARTISAN_GOODS_TAB =
+            TABS.register("stardew_artisan_goods_tab", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.stardew_artisan_goods_tab"))
+                    .icon(() -> new ItemStack(ModItems.WINE.get()))
+                    .displayItems((params, output) -> {
+                        output.accept(ModItems.HONEY.get());
+                        output.accept(ModItems.CHEESE.get());
+                        output.accept(ModItems.GOAT_CHEESE.get());
+                        output.accept(ModItems.WINE.get());
                     }).build());
 
     public static void register(IEventBus bus) {

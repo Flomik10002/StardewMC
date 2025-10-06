@@ -30,6 +30,15 @@ public class ModItems {
             ITEMS.register("rice_shoots", () -> new ItemStardewSeed(new Item.Properties(),
                     new ResourceLocation(StardewMod.MODID, "rice")));
 
+    public static final RegistryObject<Item> HONEY =
+            ITEMS.register("honey", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> WINE =
+            ITEMS.register("wine", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CHEESE =
+            ITEMS.register("cheese", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GOAT_CHEESE =
+            ITEMS.register("goat_cheese", () -> new Item(new Item.Properties()));
+
 
     public static void register() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());

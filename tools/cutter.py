@@ -15,14 +15,12 @@ class ChunkSelector(tk.Tk):
         self.title("Chunk Selector")
         self.geometry("1000x700")
 
-        # --- TOP BUTTONS ---
         self.btn_frame = tk.Frame(self)
         self.btn_frame.pack(side=tk.TOP, fill=tk.X)
 
         tk.Button(self.btn_frame, text="Load image", command=self.load_image).pack(side=tk.LEFT)
         tk.Button(self.btn_frame, text="Save chunks", command=self.save_chunks).pack(side=tk.LEFT)
 
-        # --- SCROLLABLE CANVAS SETUP ---
         self.scroll_frame = tk.Frame(self)
         self.scroll_frame.pack(fill=tk.BOTH, expand=True)
 
@@ -36,7 +34,6 @@ class ChunkSelector(tk.Tk):
 
         self.canvas.config(xscrollcommand=self.h_scroll.set, yscrollcommand=self.v_scroll.set)
 
-        # --- Drag selection support ---
         self.drag_start = None
         self.drag_rect = None
 

@@ -2,9 +2,9 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "stardew:block/craftables/beehive",
-		"1": "stardew:block/craftables/beehive_honey",
-		"particle": "stardew:block/craftables/beehive"
+		"0": "stardew:block/craftables/bee_house",
+		"1": "stardew:block/craftables/bee_house_honey",
+		"particle": "stardew:block/craftables/bee_house"
 	},
 	"elements": [
 		{

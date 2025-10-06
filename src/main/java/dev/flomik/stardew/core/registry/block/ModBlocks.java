@@ -1,23 +1,18 @@
 package dev.flomik.stardew.core.registry.block;
 
 import dev.flomik.stardew.StardewMod;
-import dev.flomik.stardew.core.block.craftables.BlockBeehive;
+import dev.flomik.stardew.core.block.craftables.BlockBeeHouse;
 import dev.flomik.stardew.core.block.craftables.BlockCheesePress;
 import dev.flomik.stardew.core.block.craftables.BlockKeg;
 import dev.flomik.stardew.core.crop.block.BlockCrop;
 import dev.flomik.stardew.core.registry.item.ModItems;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -49,8 +44,8 @@ public class ModBlocks {
                     .dynamicShape().noOcclusion()
                     .pushReaction(PushReaction.NORMAL)));
 
-    public static final RegistryObject<Block> BEEHIVE = registerBlock("beehive",
-            () -> new BlockBeehive(BlockBehaviour.Properties.of()
+    public static final RegistryObject<Block> BEE_HOUSE = registerBlock("bee_house",
+            () -> new BlockBeeHouse(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
                     .strength(3.0f)
                     .sound(SoundType.WOOD)
