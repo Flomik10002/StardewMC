@@ -18,7 +18,7 @@ public final class GrowthSystem {
             var fbe = level.getBlockEntity(farmPos);
             if (!(fbe instanceof FarmlandBlockEntity fb)) continue;
 
-            boolean watered = fb.isHydrated(today);                             // вода на сегодня
+            boolean watered = fb.isHydrated(today - 1);
             boolean firstHarvestPhase = !cropBe.isReady();                      // ускорение только до первого созревания
             float speedMul = fb.getFertilizer().isSpeedBoost() ? fb.getFertilizer().strength : 0f;
             boolean paddy = isPaddyBoost(level, farmPos, cropBe);

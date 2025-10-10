@@ -58,12 +58,15 @@ public class CropBlockEntity extends BlockEntity {
     }
 
     public void onHarvestDone() {
-        var d = def(); if (d == null) return;
+        var d = def();
+        if (d == null) return;
         if (d.regrowDays < 0) {
             level.removeBlock(worldPosition, false);
         } else {
             readyToHarvest = false;
-            regrowCountdown = d.regrowDays; // держим на full-grown спрайте
+            regrowCountdown = d.regrowDays;
+            currentPhase = d.daysInPhase.size() - 2; // чуть откатить на предпоследнюю фазу
+            daysInCurrentPhase = 0;
             setChanged();
         }
     }
@@ -72,7 +75,10 @@ public class CropBlockEntity extends BlockEntity {
         var d = def(); if (d == null || d.regrowDays < 0) return;
         if (regrowCountdown > 0) {
             regrowCountdown--;
-            if (regrowCountdown == 0) readyToHarvest = true;
+            if (regrowCountdown == 0) {
+                readyToHarvest = false;
+                daysInCurrentPhase = 0;
+            }
             setChanged();
         }
     }

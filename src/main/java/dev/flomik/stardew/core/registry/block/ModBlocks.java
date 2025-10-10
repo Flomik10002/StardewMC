@@ -4,6 +4,7 @@ import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.core.block.craftables.BlockBeeHouse;
 import dev.flomik.stardew.core.block.craftables.BlockCheesePress;
 import dev.flomik.stardew.core.block.craftables.BlockKeg;
+import dev.flomik.stardew.core.block.craftables.BlockScarecrow;
 import dev.flomik.stardew.core.crop.block.BlockCrop;
 import dev.flomik.stardew.core.registry.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -57,6 +58,14 @@ public class ModBlocks {
                     .mapColor(MapColor.TERRACOTTA_YELLOW)
                     .strength(3.0f)
                     .sound(SoundType.GRAVEL)
+                    .pushReaction(PushReaction.NORMAL)));
+
+    public static final RegistryObject<Block> SCARECROW = registerBlock("scarecrow",
+            () -> new BlockScarecrow(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .strength(3.0f)
+                    .sound(SoundType.WOOD)
+                    .dynamicShape().noOcclusion()
                     .pushReaction(PushReaction.NORMAL)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, java.util.function.Supplier<T> block) {
