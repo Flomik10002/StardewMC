@@ -25,9 +25,9 @@ public class ToolWateringCan extends Item {
 
     private final int maxWater;
     private final int waterCostPerUse;
-    private final WateringPattern pattern;
+    private final Pattern pattern;
 
-    public ToolWateringCan(Properties props, int maxWater, int waterCostPerUse, WateringPattern pattern) {
+    public ToolWateringCan(Properties props, int maxWater, int waterCostPerUse, Pattern pattern) {
         super(props.durability(maxWater + 1));
         this.maxWater = maxWater;
         this.waterCostPerUse = waterCostPerUse;
@@ -73,8 +73,7 @@ public class ToolWateringCan extends Item {
 
             BlockEntity be = level.getBlockEntity(pos);
             if (be instanceof FarmlandBlockEntity farmland) {
-                int day = StardewDateData.get((ServerLevel) level).getTotalDays();
-                farmland.hydrate(day);
+                farmland.hydrate();
                 hydratedCount++;
                 currentWater--;
             }

@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class FarmlandBlockEntity extends BlockEntity {
 
-    private int hydratedUntilDay = 0;
+    private boolean hydrated = false;
     private FertilizerType fertilizer = FertilizerType.NONE;
 
     public FarmlandBlockEntity(BlockPos pos, BlockState state) {
@@ -45,8 +45,8 @@ public class FarmlandBlockEntity extends BlockEntity {
         return true;
     }
 
-    public void hydrate(int currentDay) {
-        this.hydratedUntilDay = currentDay + 1;
+    public void hydrate() {
+        this.hydrated = true;
         if (level != null && !level.isClientSide) {
             BlockState state = getBlockState();
             if (!state.getValue(BlockFarmland.HYDRATED)) {
@@ -64,12 +64,10 @@ public class FarmlandBlockEntity extends BlockEntity {
         return fertilizer != FertilizerType.NONE;
     }
 
-    public boolean isHydrated(int currentDay) {
-        return currentDay <= hydratedUntilDay;
-    }
+    public boolean isHydrated() { return hydrated; }
     
-    public void dehydrate(int currentDay) {
-        this.hydratedUntilDay = 0;
+    public void dehydrate() {
+        this.hydrated = false;
         if (level != null && !level.isClientSide) {
             BlockState state = getBlockState();
             if (state.getValue(BlockFarmland.HYDRATED)) {
@@ -81,7 +79,7 @@ public class FarmlandBlockEntity extends BlockEntity {
 
     @Override
     protected void saveAdditional(CompoundTag tag) {
-        tag.putInt("hydratedUntilDay", hydratedUntilDay);
+        tag.putBoolean("hydrated", hydrated);
         tag.putString("fertilizer", fertilizer.name());
     }
 
@@ -89,6 +87,6 @@ public class FarmlandBlockEntity extends BlockEntity {
     public void load(CompoundTag tag) {
         super.load(tag);
         fertilizer = FertilizerType.valueOf(tag.getString("fertilizer"));
-        this.hydratedUntilDay = tag.getInt("hydratedUntilDay");
+        this.hydrated = tag.contains("hydrated") ? tag.getBoolean("hydrated") : false;
     }
 }

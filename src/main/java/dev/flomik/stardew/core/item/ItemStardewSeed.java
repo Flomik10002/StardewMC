@@ -25,6 +25,7 @@ public class ItemStardewSeed extends Item {
     @Override
     public InteractionResult useOn(UseOnContext ctx) {
         Level level = ctx.getLevel();
+        if (level.isClientSide) return InteractionResult.SUCCESS;
         BlockPos pos = ctx.getClickedPos();
         BlockPos above = pos.above();
 
@@ -38,7 +39,9 @@ public class ItemStardewSeed extends Item {
         CropDef def = CropRegistry.get(cropId);
         if (def == null) return InteractionResult.FAIL;
 
-        // TODO: проверить сезон через твой StardewDateData/Season
+        // Проверка сезона по SV
+        var date = dev.flomik.stardew.core.time.StardewDateData.get((net.minecraft.server.level.ServerLevel) level);
+        if (!def.seasons.contains(date.getSeason().name().toLowerCase())) return InteractionResult.FAIL;
         // TODO: проверить trellis/isRaised коллизию (если захочешь)
 
         // Если удобрение качества нельзя вносить после посадки — проверяй заранее (твои флаги before/after в FertilizerType)
@@ -48,9 +51,10 @@ public class ItemStardewSeed extends Item {
         level.setBlock(above, ModBlocks.CROP.get().defaultBlockState(), 3);
         var cropBe = (CropBlockEntity) level.getBlockEntity(above);
         cropBe.init(cropId);
+        cropBe.applyPlantingSpeedBonuses();
         dev.flomik.stardew.core.crop.runtime.CropTracker.onLoad(cropBe);
 
         ctx.getItemInHand().shrink(1);
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return InteractionResult.SUCCESS;
     }
 }

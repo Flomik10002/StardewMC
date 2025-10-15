@@ -1,6 +1,9 @@
 package dev.flomik.stardew.core.crop.logic;
 
 import dev.flomik.stardew.core.crop.runtime.FarmlandTracker;
+import dev.flomik.stardew.core.time.StardewDateData;
+import dev.flomik.stardew.core.time.Weather;
+import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
 import dev.flomik.stardew.core.registry.blockentity.FarmlandBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -8,24 +11,42 @@ import net.minecraft.server.level.ServerLevel;
 public final class MorningPass {
 
     public static void run(ServerLevel level, int today, boolean isRaining) {
+        // Backward compat params kept; compute authoritative weather from date state
+        var date = StardewDateData.get(level);
+        Weather w = date.getTodayWeather();
         for (BlockPos pos : FarmlandTracker.all(level)) {
             var be = level.getBlockEntity(pos);
             if (be instanceof FarmlandBlockEntity fb) {
-                fb.dehydrate(today);
+                fb.dehydrate();
             }
         }
-        
+
         for (BlockPos pos : FarmlandTracker.all(level)) {
             var be = level.getBlockEntity(pos);
             if (be instanceof FarmlandBlockEntity fb) {
-                if (isRaining) {
-                    fb.hydrate(today);
+                if (w == Weather.RAIN || w == Weather.STORM || isRaining) {
+                    fb.hydrate();
                 } else {
                     var fert = fb.getFertilizer();
                     float p = fert.isRetention() ? fert.strength : 0f;
                     if (p > 0f && level.random.nextFloat() < p) {
-                        fb.hydrate(today);
+                        fb.hydrate();
                     }
+                }
+            }
+        }
+
+        // Убийство культур вне сезона на улице зимой/не по сезону (приближение SV)
+        var date2 = StardewDateData.get(level);
+        for (BlockPos pos : dev.flomik.stardew.core.crop.runtime.CropTracker.all(level)) {
+            var be = level.getBlockEntity(pos);
+            if (be instanceof CropBlockEntity crop) {
+                var def = crop.def();
+                if (def == null) continue;
+                // только если мир не теплица (у тебя пока нет теплицы — считаем весь мир уличным)
+                boolean inSeason = def.seasons.contains(date2.getSeason().name().toLowerCase());
+                if (!inSeason) {
+                    level.removeBlock(pos, false);
                 }
             }
         }

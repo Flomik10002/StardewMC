@@ -8,6 +8,6 @@ import net.minecraft.world.level.Level;
 import java.util.List;
 
 @FunctionalInterface
-public interface WateringPattern {
+public interface Pattern {
     List<BlockPos> getAffectedPositions(Level level, BlockPos origin, Direction facing, Player player);
 }

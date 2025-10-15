@@ -15,9 +15,9 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class ToolHoe extends Item {
 
-    private final HoePattern pattern;
+    private final Pattern pattern;
 
-    public ToolHoe(Properties properties, HoePattern pattern) {
+    public ToolHoe(Properties properties, Pattern pattern) {
         super(properties);
         this.pattern = pattern;
     }

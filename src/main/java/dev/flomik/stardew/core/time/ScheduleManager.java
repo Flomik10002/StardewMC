@@ -41,11 +41,14 @@ public class ScheduleManager {
 
     public static void forceNextDay(ServerLevel level) {
         StardewDateData date = StardewDateData.get(level);
+        // Generate tomorrow weather/luck before promoting day
+        WeatherSystem.generateTomorrow(level);
+
         date.advance();
         date.setDirty();
-        
+
         level.setDayTime(StardewTimeUtils.toTicks(6, 0));
-        
+
         for (ScheduleEntry entry : entries) {
             if (entry.getStartTick() == StardewTimeUtils.toTicks(6, 0)) {
                 entry.trigger();
