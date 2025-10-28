@@ -10,10 +10,12 @@ import net.minecraft.server.level.ServerLevel;
 
 public final class MorningPass {
 
-    public static void run(ServerLevel level, int today, boolean isRaining) {
-        // Backward compat params kept; compute authoritative weather from date state
+    public static void run(ServerLevel level) {
+        // Получаем погоду из StardewDateData (детерминированно сгенерированную)
         var date = StardewDateData.get(level);
         Weather w = date.getTodayWeather();
+        
+        // Сначала обезвоживаем всю землю
         for (BlockPos pos : FarmlandTracker.all(level)) {
             var be = level.getBlockEntity(pos);
             if (be instanceof FarmlandBlockEntity fb) {
@@ -21,10 +23,11 @@ public final class MorningPass {
             }
         }
 
+        // Затем увлажняем в зависимости от погоды и удобрений
         for (BlockPos pos : FarmlandTracker.all(level)) {
             var be = level.getBlockEntity(pos);
             if (be instanceof FarmlandBlockEntity fb) {
-                if (w == Weather.RAIN || w == Weather.STORM || isRaining) {
+                if (w == Weather.RAIN || w == Weather.STORM) {
                     fb.hydrate();
                 } else {
                     var fert = fb.getFertilizer();

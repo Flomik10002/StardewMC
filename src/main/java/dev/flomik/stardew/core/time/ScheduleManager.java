@@ -41,14 +41,21 @@ public class ScheduleManager {
 
     public static void forceNextDay(ServerLevel level) {
         StardewDateData date = StardewDateData.get(level);
-        // Generate tomorrow weather/luck before promoting day
+        
+        // 1. Генерируем погоду на завтра ПЕРЕД переходом на следующий день
         WeatherSystem.generateTomorrow(level);
 
+        // 2. Переходим на следующий день (tomorrowWeather -> todayWeather)
         date.advance();
         date.setDirty();
 
+        // 3. Применяем сегодняшнюю погоду к миру Minecraft
+        WeatherSystem.applyWeatherToWorld(level, date.getTodayWeather());
+
+        // 4. Устанавливаем время на 6:00
         level.setDayTime(StardewTimeUtils.toTicks(6, 0));
 
+        // 5. Запускаем утренние процедуры
         for (ScheduleEntry entry : entries) {
             if (entry.getStartTick() == StardewTimeUtils.toTicks(6, 0)) {
                 entry.trigger();

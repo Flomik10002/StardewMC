@@ -1,6 +1,6 @@
 {
 	"format_version": "1.9.0",
-	"credit": "Made with Blockbench",
+	"credit": "Made by Flomik",
 	"texture_size": [128, 128],
 	"textures": {
 		"2": "stardew:block/craftables/keg",

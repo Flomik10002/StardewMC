@@ -49,15 +49,22 @@ public class ModCreativeModeTabs {
 //                        output.accept(ModItems.RICE_SHOOTS.get());
 //                    }).build());
 
-    public static final RegistryObject<CreativeModeTab> STARDEW_TOOLs_TAB =
+    public static final RegistryObject<CreativeModeTab> STARDEW_TOOLS_TAB =
             TABS.register("stardew_tools_tab", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.stardew_tools_tab"))
                     .icon(() -> new ItemStack(ModItems.BASIC_HOE.get()))
                     .displayItems((params, output) -> {
                         output.accept(ModItems.BASIC_HOE.get());
                         output.accept(ModItems.COPPER_HOE.get());
+                        output.accept(ModItems.STEEL_HOE.get());
+                        output.accept(ModItems.GOLD_HOE.get());
+                        output.accept(ModItems.IRIDIUM_HOE.get());
+
                         output.accept(ModItems.BASIC_WATERING_CAN.get());
                         output.accept(ModItems.COPPER_WATERING_CAN.get());
+                        output.accept(ModItems.STEEL_WATERING_CAN.get());
+                        output.accept(ModItems.GOLD_WATERING_CAN.get());
+                        output.accept(ModItems.IRIDIUM_WATERING_CAN.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> STARDEW_ARTISAN_GOODS_TAB =

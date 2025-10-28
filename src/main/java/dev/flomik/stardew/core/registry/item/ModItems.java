@@ -2,18 +2,15 @@ package dev.flomik.stardew.core.registry.item;
 
 import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.core.item.ItemStardewSeed;
+import dev.flomik.stardew.core.item.tool.PatternType;
 import dev.flomik.stardew.core.item.tool.ToolHoe;
 import dev.flomik.stardew.core.item.tool.ToolWateringCan;
-import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -46,26 +43,29 @@ public class ModItems {
             ITEMS.register("goat_cheese", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> BASIC_HOE = ITEMS.register("basic_hoe", () ->
-                    new ToolHoe(new Item.Properties().stacksTo(1), (level, origin, facing, player) -> List.of(origin))
-            );
+            new ToolHoe(new Item.Properties().stacksTo(1), PatternType.SINGLE)
+    );
 
     public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe", () ->
-            new ToolHoe(new Item.Properties().stacksTo(1), (level, origin, facing, player) -> {
-                List<BlockPos> list = new ArrayList<>();
-                BlockPos base = origin.relative(facing);
-                for (int i = -1; i <= 1; i++) {
-                    list.add(base.relative(facing.getClockWise(), i));
-                }
-                return list;
-            })
+            new ToolHoe(new Item.Properties().stacksTo(1), PatternType.THREE)
+    ); 
+    public static final RegistryObject<Item> STEEL_HOE = ITEMS.register("steel_hoe", () ->
+            new ToolHoe(new Item.Properties().stacksTo(1), PatternType.FIVE)
+    );
+
+    public static final RegistryObject<Item> GOLD_HOE = ITEMS.register("gold_hoe", () ->
+            new ToolHoe(new Item.Properties().stacksTo(1), PatternType.GRID_3X3)
+    );
+
+    public static final RegistryObject<Item> IRIDIUM_HOE = ITEMS.register("iridium_hoe", () ->
+            new ToolHoe(new Item.Properties().stacksTo(1), PatternType.GRID_5X5)
     );
 
     public static final RegistryObject<Item> BASIC_WATERING_CAN = ITEMS.register("basic_watering_can", () ->
             new ToolWateringCan(
                     new Item.Properties().stacksTo(1),
                     40,
-                    1,
-                    (level, origin, facing, player) -> List.of(origin)
+                    PatternType.SINGLE
             )
     );
 
@@ -73,18 +73,33 @@ public class ModItems {
             new ToolWateringCan(
                     new Item.Properties().stacksTo(1),
                     55,
-                    2,
-                    (level, origin, facing, player) -> {
-                        List<BlockPos> result = new java.util.ArrayList<>();
-                        for (int i = 0; i < 3; i++) {
-                            result.add(origin.relative(facing, i));
-                        }
-                        return result;
-                    }
+                    PatternType.THREE
             )
     );
 
+    public static final RegistryObject<Item> STEEL_WATERING_CAN = ITEMS.register("steel_watering_can", () ->
+            new ToolWateringCan(
+                    new Item.Properties().stacksTo(1),
+                    70,
+                    PatternType.FIVE
+            )
+    );
 
+    public static final RegistryObject<Item> GOLD_WATERING_CAN = ITEMS.register("gold_watering_can", () ->
+            new ToolWateringCan(
+                    new Item.Properties().stacksTo(1),
+                    85,
+                    PatternType.GRID_3X3
+            )
+    );
+
+    public static final RegistryObject<Item> IRIDIUM_WATERING_CAN = ITEMS.register("iridium_watering_can", () ->
+            new ToolWateringCan(
+                    new Item.Properties().stacksTo(1),
+                    100,
+                    PatternType.GRID_5X5
+            )
+    );
     public static void register() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }

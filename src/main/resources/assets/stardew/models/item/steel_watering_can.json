@@ -2,7 +2,8 @@
 	"format_version": "1.21.6",
 	"credit": "Made by Flomik",
 	"textures": {
-		"1": "stardew:item/copper_watering_can"
+      "1": "stardew:item/steel_watering_can",
+      "particle": "stardew:item/steel_watering_can"
 	},
 	"elements": [
 		{

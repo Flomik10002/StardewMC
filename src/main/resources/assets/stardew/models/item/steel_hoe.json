@@ -1,40 +1,68 @@
 {
 	"format_version": "1.9.0",
-	"credit": "Made by Flomik",
+	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "stardew:item/copper_hoe"
+		"0": "stardew:item/steel_hoe"
 	},
 	"elements": [
 		{
-			"name": "copper_hoe_0",
-			"from": [10, 8, 8],
+			"name": "steel_hoe_0",
+			"from": [9, 8, 8],
+			"to": [11, 15, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [11, 1, 9, 8], "texture": "#0"},
+				"east": {"uv": [10, 1, 11, 8], "texture": "#0"},
+				"south": {"uv": [9, 1, 11, 8], "texture": "#0"},
+				"west": {"uv": [9, 1, 10, 8], "texture": "#0"},
+				"up": {"uv": [9, 1, 11, 2], "texture": "#0"},
+				"down": {"uv": [9, 7, 11, 8], "texture": "#0"}
+			}
+		},
+		{
+			"name": "steel_hoe_1",
+			"from": [8, 7, 8],
+			"to": [9, 14, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [9, 2, 8, 9], "texture": "#0"},
+				"east": {"uv": [8, 2, 9, 9], "texture": "#0"},
+				"south": {"uv": [8, 2, 9, 9], "texture": "#0"},
+				"west": {"uv": [8, 2, 9, 9], "texture": "#0"},
+				"up": {"uv": [8, 2, 9, 3], "texture": "#0"},
+				"down": {"uv": [8, 8, 9, 9], "texture": "#0"}
+			}
+		},
+		{
+			"name": "steel_hoe_2",
+			"from": [11, 7, 8],
 			"to": [12, 14, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
 			"faces": {
-				"north": {"uv": [12, 2, 10, 8], "texture": "#0"},
-				"east": {"uv": [11, 2, 12, 8], "texture": "#0"},
-				"south": {"uv": [10, 2, 12, 8], "texture": "#0"},
-				"west": {"uv": [10, 2, 11, 8], "texture": "#0"},
-				"up": {"uv": [10, 2, 12, 3], "texture": "#0"},
-				"down": {"uv": [10, 7, 12, 8], "texture": "#0"}
+				"north": {"uv": [12, 2, 11, 9], "texture": "#0"},
+				"east": {"uv": [11, 2, 12, 9], "texture": "#0"},
+				"south": {"uv": [11, 2, 12, 9], "texture": "#0"},
+				"west": {"uv": [11, 2, 12, 9], "texture": "#0"},
+				"up": {"uv": [11, 2, 12, 3], "texture": "#0"},
+				"down": {"uv": [11, 8, 12, 9], "texture": "#0"}
 			}
 		},
 		{
-			"name": "copper_hoe_1",
-			"from": [9, 8, 8],
-			"to": [10, 13, 9],
+			"name": "steel_hoe_3",
+			"from": [7, 11, 8],
+			"to": [8, 13, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
 			"faces": {
-				"north": {"uv": [10, 3, 9, 8], "texture": "#0"},
-				"east": {"uv": [9, 3, 10, 8], "texture": "#0"},
-				"south": {"uv": [9, 3, 10, 8], "texture": "#0"},
-				"west": {"uv": [9, 3, 10, 8], "texture": "#0"},
-				"up": {"uv": [9, 3, 10, 4], "texture": "#0"},
-				"down": {"uv": [9, 7, 10, 8], "texture": "#0"}
+				"north": {"uv": [8, 3, 7, 5], "texture": "#0"},
+				"east": {"uv": [7, 3, 8, 5], "texture": "#0"},
+				"south": {"uv": [7, 3, 8, 5], "texture": "#0"},
+				"west": {"uv": [7, 3, 8, 5], "texture": "#0"},
+				"up": {"uv": [7, 3, 8, 4], "texture": "#0"},
+				"down": {"uv": [7, 4, 8, 5], "texture": "#0"}
 			}
 		},
 		{
-			"name": "copper_hoe_2",
+			"name": "steel_hoe_4",
 			"from": [12, 6, 8],
 			"to": [13, 13, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
@@ -48,21 +76,7 @@
 			}
 		},
 		{
-			"name": "copper_hoe_3",
-			"from": [8, 7, 8],
-			"to": [9, 12, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
-			"faces": {
-				"north": {"uv": [9, 4, 8, 9], "texture": "#0"},
-				"east": {"uv": [8, 4, 9, 9], "texture": "#0"},
-				"south": {"uv": [8, 4, 9, 9], "texture": "#0"},
-				"west": {"uv": [8, 4, 9, 9], "texture": "#0"},
-				"up": {"uv": [8, 4, 9, 5], "texture": "#0"},
-				"down": {"uv": [8, 8, 9, 9], "texture": "#0"}
-			}
-		},
-		{
-			"name": "copper_hoe_4",
+			"name": "steel_hoe_5",
 			"from": [13, 6, 8],
 			"to": [14, 12, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
@@ -76,7 +90,7 @@
 			}
 		},
 		{
-			"name": "copper_hoe_5",
+			"name": "steel_hoe_6",
 			"from": [14, 6, 8],
 			"to": [15, 11, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
@@ -90,7 +104,7 @@
 			}
 		},
 		{
-			"name": "copper_hoe_6",
+			"name": "steel_hoe_7",
 			"from": [15, 7, 8],
 			"to": [16, 10, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
@@ -104,7 +118,7 @@
 			}
 		},
 		{
-			"name": "copper_hoe_7",
+			"name": "steel_hoe_8",
 			"from": [7, 6, 8],
 			"to": [8, 9, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
@@ -118,7 +132,7 @@
 			}
 		},
 		{
-			"name": "copper_hoe_8",
+			"name": "steel_hoe_9",
 			"from": [6, 5, 8],
 			"to": [7, 8, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
@@ -132,21 +146,7 @@
 			}
 		},
 		{
-			"name": "copper_hoe_9",
-			"from": [11, 7, 8],
-			"to": [12, 8, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
-			"faces": {
-				"north": {"uv": [12, 8, 11, 9], "texture": "#0"},
-				"east": {"uv": [11, 8, 12, 9], "texture": "#0"},
-				"south": {"uv": [11, 8, 12, 9], "texture": "#0"},
-				"west": {"uv": [11, 8, 12, 9], "texture": "#0"},
-				"up": {"uv": [11, 8, 12, 9], "texture": "#0"},
-				"down": {"uv": [11, 8, 12, 9], "texture": "#0"}
-			}
-		},
-		{
-			"name": "copper_hoe_10",
+			"name": "steel_hoe_10",
 			"from": [5, 4, 8],
 			"to": [6, 7, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
@@ -160,7 +160,7 @@
 			}
 		},
 		{
-			"name": "copper_hoe_11",
+			"name": "steel_hoe_11",
 			"from": [4, 3, 8],
 			"to": [5, 6, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
@@ -174,7 +174,7 @@
 			}
 		},
 		{
-			"name": "copper_hoe_12",
+			"name": "steel_hoe_12",
 			"from": [3, 2, 8],
 			"to": [4, 5, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
@@ -188,50 +188,36 @@
 			}
 		},
 		{
-			"name": "copper_hoe_13",
-			"from": [2, 1, 8],
+			"name": "steel_hoe_13",
+			"from": [2, 0, 8],
 			"to": [3, 4, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
 			"faces": {
-				"north": {"uv": [3, 12, 2, 15], "texture": "#0"},
-				"east": {"uv": [2, 12, 3, 15], "texture": "#0"},
-				"south": {"uv": [2, 12, 3, 15], "texture": "#0"},
-				"west": {"uv": [2, 12, 3, 15], "texture": "#0"},
+				"north": {"uv": [3, 12, 2, 16], "texture": "#0"},
+				"east": {"uv": [2, 12, 3, 16], "texture": "#0"},
+				"south": {"uv": [2, 12, 3, 16], "texture": "#0"},
+				"west": {"uv": [2, 12, 3, 16], "texture": "#0"},
 				"up": {"uv": [2, 12, 3, 13], "texture": "#0"},
-				"down": {"uv": [2, 14, 3, 15], "texture": "#0"}
+				"down": {"uv": [2, 15, 3, 16], "texture": "#0"}
 			}
 		},
 		{
-			"name": "copper_hoe_14",
-			"from": [1, 0, 8],
+			"name": "steel_hoe_14",
+			"from": [0, 0, 8],
 			"to": [2, 3, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
 			"faces": {
-				"north": {"uv": [2, 13, 1, 16], "texture": "#0"},
+				"north": {"uv": [2, 13, 0, 16], "texture": "#0"},
 				"east": {"uv": [1, 13, 2, 16], "texture": "#0"},
-				"south": {"uv": [1, 13, 2, 16], "texture": "#0"},
-				"west": {"uv": [1, 13, 2, 16], "texture": "#0"},
-				"up": {"uv": [1, 13, 2, 14], "texture": "#0"},
-				"down": {"uv": [1, 15, 2, 16], "texture": "#0"}
-			}
-		},
-		{
-			"name": "copper_hoe_15",
-			"from": [0, 0, 8],
-			"to": [1, 2, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
-			"faces": {
-				"north": {"uv": [1, 14, 0, 16], "texture": "#0"},
-				"east": {"uv": [0, 14, 1, 16], "texture": "#0"},
-				"south": {"uv": [0, 14, 1, 16], "texture": "#0"},
-				"west": {"uv": [0, 14, 1, 16], "texture": "#0"},
-				"up": {"uv": [0, 14, 1, 15], "texture": "#0"},
-				"down": {"uv": [0, 15, 1, 16], "texture": "#0"}
+				"south": {"uv": [0, 13, 2, 16], "texture": "#0"},
+				"west": {"uv": [0, 13, 1, 16], "texture": "#0"},
+				"up": {"uv": [0, 13, 2, 14], "texture": "#0"},
+				"down": {"uv": [0, 15, 2, 16], "texture": "#0"}
 			}
 		}
 	],
-  "gui_light": "front",
-  "display": {
+	"gui_light": "front",
+	"display": {
 		"thirdperson_righthand": {
 			"rotation": [0, 90, 45],
 			"translation": [0, 1.75, 1.5],
@@ -264,10 +250,10 @@
 	},
 	"groups": [
 		{
-			"name": "copper_hoe",
+			"name": "steel_hoe",
 			"origin": [8, 8, 8],
 			"color": 0,
-			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 		}
 	]
 }

@@ -17,6 +17,7 @@ public class StardewDateData extends SavedData {
     private float dailyLuck = 0f;
     private String festivalToday = null;
     private String festivalTomorrow = null;
+    private boolean weatherInitialized = false; // флаг инициализации погоды
 
     public Season getSeason() {
         return season;
@@ -75,11 +76,20 @@ public class StardewDateData extends SavedData {
     }
 
     public static StardewDateData get(ServerLevel level) {
-        return level.getDataStorage().computeIfAbsent(
+        StardewDateData data = level.getDataStorage().computeIfAbsent(
                 StardewDateData::load,
                 StardewDateData::new,
                 NAME
         );
+        
+        // Инициализируем погоду при первом создании данных
+        if (!data.weatherInitialized) {
+            WeatherSystem.initializeWeather(level, data);  // Передаём data как параметр, чтобы избежать рекурсии
+            data.weatherInitialized = true;
+            data.setDirty();
+        }
+        
+        return data;
     }
 
     public static StardewDateData load(CompoundTag tag) {
@@ -92,6 +102,7 @@ public class StardewDateData extends SavedData {
         data.dailyLuck = tag.getFloat("dailyLuck");
         if (tag.contains("festivalToday")) data.festivalToday = tag.getString("festivalToday");
         if (tag.contains("festivalTomorrow")) data.festivalTomorrow = tag.getString("festivalTomorrow");
+        if (tag.contains("weatherInitialized")) data.weatherInitialized = tag.getBoolean("weatherInitialized");
         return data;
     }
 
@@ -105,6 +116,7 @@ public class StardewDateData extends SavedData {
         tag.putFloat("dailyLuck", dailyLuck);
         if (festivalToday != null) tag.putString("festivalToday", festivalToday);
         if (festivalTomorrow != null) tag.putString("festivalTomorrow", festivalTomorrow);
+        tag.putBoolean("weatherInitialized", weatherInitialized);
         return tag;
     }
 

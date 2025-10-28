@@ -9,7 +9,7 @@ import net.minecraft.server.level.ServerLevel;
 
 public final class GrowthSystem {
 
-    public static void run(ServerLevel level, int today) {
+    public static void run(ServerLevel level) {
         for (BlockPos cropPos : CropTracker.all(level)) {
             var be = level.getBlockEntity(cropPos);
             if (!(be instanceof CropBlockEntity cropBe)) continue;

@@ -19,7 +19,13 @@
 
   "item.stardew.basic_hoe": "Hoe",
   "item.stardew.copper_hoe": "Copper Hoe",
+  "item.stardew.steel_hoe": "Steel Hoe",
+  "item.stardew.gold_hoe": "Gold Hoe",
+  "item.stardew.iridium_hoe": "Iridium Hoe",
 
   "item.stardew.basic_watering_can": "Watering Can",
-  "item.stardew.copper_watering_can": "Copper Watering Can"
+  "item.stardew.copper_watering_can": "Copper Watering Can",
+  "item.stardew.steel_watering_can": "Steel Watering Can",
+  "item.stardew.gold_watering_can": "Gold Watering Can",
+  "item.stardew.iridium_watering_can": "Iridium Watering Can"
 }

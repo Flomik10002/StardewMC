@@ -1,0 +1,21 @@
+{
+  "hoe_till": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "stardew:tools/hoe_till",
+        "stream": false
+      }
+    ]
+  },
+  "watering_can_use": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "stardew:tools/watering_can_use",
+        "stream": false
+      }
+    ]
+  }
+}
+
