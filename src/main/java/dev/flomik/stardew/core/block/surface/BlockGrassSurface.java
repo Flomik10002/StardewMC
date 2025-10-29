@@ -37,16 +37,6 @@ public class BlockGrassSurface extends Block {
     }
 
     @Override
-    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        Season current = StardewDateData.get(level).getSeason();
-        Season stored = state.getValue(SEASON);
-        if (current != stored) {
-            level.setBlock(pos, state.setValue(SEASON, current), 2);
-        }
-        level.scheduleTick(pos, this, 100);
-    }
-
-    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(SHAPE, SEASON);
     }

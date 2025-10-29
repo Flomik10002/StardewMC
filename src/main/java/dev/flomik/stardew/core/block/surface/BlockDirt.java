@@ -21,7 +21,6 @@ import net.minecraft.world.level.material.MapColor;
 public class BlockDirt extends Block {
 
     public static final EnumProperty<Season> SEASON = EnumProperty.create("season", Season.class);
-    public static final BooleanProperty FROZEN = BooleanProperty.create("frozen");
 
     public BlockDirt() {
         super(BlockBehaviour.Properties.of()
@@ -30,23 +29,12 @@ public class BlockDirt extends Block {
                 .sound(SoundType.GRAVEL)
         );
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(SEASON, Season.SPRING)
-                .setValue(FROZEN, false));
-    }
-
-    @Override
-    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        Season current = StardewDateData.get(level).getSeason();
-        Season stored = state.getValue(SEASON);
-        if (current != stored) {
-            level.setBlock(pos, state.setValue(SEASON, current), 2);
-        }
-        level.scheduleTick(pos, this, 100);
+                .setValue(SEASON, Season.SPRING));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(SEASON, FROZEN);
+        builder.add(SEASON);
     }
 
     @Override

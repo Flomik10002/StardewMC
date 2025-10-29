@@ -65,7 +65,6 @@ public class StardewMod {
                     
                     StardewDateData dateData = StardewDateData.get(sl);
                     
-                    // Применяем погоду из StardewDateData (которая была сгенерирована вчера как "завтрашняя")
                     dev.flomik.stardew.core.time.WeatherSystem.applyWeatherToWorld(sl, dateData.getTodayWeather());
 
                     MorningPass.run(sl);

@@ -44,13 +44,11 @@ public class PatternOverlayRenderer {
         Player player = mc.player;
         if (player == null) return;
 
-        // Проверяем что в руке инструмент с паттерном
         ItemStack heldItem = player.getMainHandItem();
         if (!(heldItem.getItem() instanceof IPatternTool tool)) {
             return;
         }
 
-        // Проверяем что игрок смотрит на блок
         HitResult hitResult = mc.hitResult;
         if (!(hitResult instanceof BlockHitResult blockHit) || hitResult.getType() != HitResult.Type.BLOCK) {
             return;
@@ -59,14 +57,12 @@ public class PatternOverlayRenderer {
         Level level = player.level();
         BlockPos targetPos = blockHit.getBlockPos();
         
-        // Проверяем что целевой блок - это грядка или земля
         BlockState targetState = level.getBlockState(targetPos);
         if (!targetState.is(ModBlocks.FARMLAND.get()) 
             && !targetState.is(ModBlocks.DIRT.get())) {
-            return; // Не показываем визуализацию для других блоков
+            return;
         }
 
-        // Получаем паттерн и затронутые блоки
         PatternType patternType = tool.getCurrentPattern(heldItem);
         Pattern pattern = patternType.getPattern();
         Direction facing = blockHit.getDirection().getAxis().isHorizontal() 
@@ -75,11 +71,9 @@ public class PatternOverlayRenderer {
         
         List<BlockPos> affectedBlocks = pattern.getAffectedPositions(level, targetPos, facing, player);
 
-        // Рендерим оверлей для каждого блока
         PoseStack poseStack = event.getPoseStack();
         poseStack.pushPose();
 
-        // Смещение камеры
         var camera = mc.gameRenderer.getMainCamera().getPosition();
         poseStack.translate(-camera.x, -camera.y, -camera.z);
 
@@ -89,10 +83,8 @@ public class PatternOverlayRenderer {
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
 
-        // Группируем блоки по типу (валидные/невалидные) для батчинга
         BufferBuilder buffer = Tesselator.getInstance().getBuilder();
         
-        // Рендерим зелёные (валидные) блоки
         RenderSystem.setShaderTexture(0, GREEN_OVERLAY);
         buffer.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
         for (BlockPos pos : affectedBlocks) {
@@ -102,7 +94,6 @@ public class PatternOverlayRenderer {
         }
         Tesselator.getInstance().end();
 
-        // Рендерим красные (невалидные) блоки
         RenderSystem.setShaderTexture(0, RED_OVERLAY);
         buffer.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
         for (BlockPos pos : affectedBlocks) {
@@ -121,18 +112,16 @@ public class PatternOverlayRenderer {
 
     private static void renderBlockOverlay(PoseStack poseStack, BufferBuilder buffer, BlockPos pos) {
         double x = pos.getX();
-        double y = pos.getY() + 1.001; // Чуть выше блока
+        double y = pos.getY() + 1.001;
         double z = pos.getZ();
 
         Matrix4f matrix = poseStack.last().pose();
 
-        // Используем белый цвет (255, 255, 255) чтобы текстура отображалась как есть
         int red = 255;
         int green = 255;
         int blue = 255;
-        int alpha = 200; // Полупрозрачность
+        int alpha = 200;
 
-        // Рисуем квад на верхней грани блока
         buffer.vertex(matrix, (float) x, (float) y, (float) z).uv(0, 0).color(red, green, blue, alpha).endVertex();
         buffer.vertex(matrix, (float) x, (float) y, (float) (z + 1)).uv(0, 1).color(red, green, blue, alpha).endVertex();
         buffer.vertex(matrix, (float) (x + 1), (float) y, (float) (z + 1)).uv(1, 1).color(red, green, blue, alpha).endVertex();
