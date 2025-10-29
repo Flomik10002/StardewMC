@@ -1,6 +1,6 @@
 package dev.flomik.stardew.core.registry.block;
 
-import dev.flomik.stardew.core.block.shape.PlotShape;
+import dev.flomik.stardew.core.block.shape.Shape;
 import dev.flomik.stardew.core.crop.FertilizerType;
 import dev.flomik.stardew.core.registry.blockentity.FarmlandBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -35,8 +35,8 @@ public class BlockFarmland extends Block implements EntityBlock {
                     .toArray(FertilizerType[]::new)
     );
 
-    public static final EnumProperty<PlotShape> SHAPE = EnumProperty.create("shape", PlotShape.class);
-    public static final EnumProperty<PlotShape> WET_SHAPE = EnumProperty.create("wet_shape", PlotShape.class);
+    public static final EnumProperty<Shape> SHAPE = EnumProperty.create("shape", Shape.class);
+    public static final EnumProperty<Shape> WET_SHAPE = EnumProperty.create("wet_shape", Shape.class);
 
     public BlockFarmland() {
         super(BlockBehaviour.Properties.of()
@@ -45,7 +45,7 @@ public class BlockFarmland extends Block implements EntityBlock {
                 .strength(0.5F, 0.5F)
                 .sound(SoundType.GRAVEL)
         );
-        this.registerDefaultState(this.stateDefinition.any().setValue(HYDRATED, false).setValue(FERTILIZER, FertilizerType.NONE).setValue(SHAPE, PlotShape.SINGLE));
+        this.registerDefaultState(this.stateDefinition.any().setValue(HYDRATED, false).setValue(FERTILIZER, FertilizerType.NONE).setValue(SHAPE, Shape.SINGLE));
     }
 
     @Override
@@ -69,62 +69,62 @@ public class BlockFarmland extends Block implements EntityBlock {
                 .setValue(WET_SHAPE, calculateWetShape(level, pos));
     }
 
-    private PlotShape calculateShape(LevelAccessor level, BlockPos pos) {
+    private Shape calculateShape(LevelAccessor level, BlockPos pos) {
         boolean up    = isSameFarmland(level.getBlockState(pos.north()));
         boolean down  = isSameFarmland(level.getBlockState(pos.south()));
         boolean left  = isSameFarmland(level.getBlockState(pos.west()));
         boolean right = isSameFarmland(level.getBlockState(pos.east()));
 
-        if (up && down && left && right) return PlotShape.CENTER;
+        if (up && down && left && right) return Shape.CENTER;
 
-        if (!up   && down && left && right) return PlotShape.TOP;
-        if (up    && !down && left && right) return PlotShape.BOTTOM;
-        if (up    && down && !left && right) return PlotShape.LEFT;
-        if (up    && down && left && !right) return PlotShape.RIGHT;
+        if (!up   && down && left && right) return Shape.TOP;
+        if (up    && !down && left && right) return Shape.BOTTOM;
+        if (up    && down && !left && right) return Shape.LEFT;
+        if (up    && down && left && !right) return Shape.RIGHT;
 
-        if (left && right && !up && !down) return PlotShape.HORIZONTAL_MID;
-        if (up && down && !left && !right) return PlotShape.VERTICAL_MID;
+        if (left && right && !up && !down) return Shape.HORIZONTAL_MID;
+        if (up && down && !left && !right) return Shape.VERTICAL_MID;
 
-        if (up && right && !down && !left)   return PlotShape.BOTTOM_LEFT;
-        if (up && left  && !down && !right)  return PlotShape.BOTTOM_RIGHT;
-        if (down && right && !up && !left)   return PlotShape.TOP_LEFT;
-        if (down && left  && !up && !right)  return PlotShape.TOP_RIGHT;
+        if (up && right && !down && !left)   return Shape.BOTTOM_LEFT;
+        if (up && left  && !down && !right)  return Shape.BOTTOM_RIGHT;
+        if (down && right && !up && !left)   return Shape.TOP_LEFT;
+        if (down && left  && !up && !right)  return Shape.TOP_RIGHT;
 
-        if (right && !left && !up && !down)  return PlotShape.HORIZONTAL_LEFT;
-        if (left && !right && !up && !down)  return PlotShape.HORIZONTAL_RIGHT;
-        if (down && !up && !left && !right)  return PlotShape.VERTICAL_TOP;
-        if (up && !down && !left && !right)  return PlotShape.VERTICAL_BOTTOM;
+        if (right && !left && !up && !down)  return Shape.HORIZONTAL_LEFT;
+        if (left && !right && !up && !down)  return Shape.HORIZONTAL_RIGHT;
+        if (down && !up && !left && !right)  return Shape.VERTICAL_TOP;
+        if (up && !down && !left && !right)  return Shape.VERTICAL_BOTTOM;
 
-        return PlotShape.SINGLE;
+        return Shape.SINGLE;
     }
 
-    private PlotShape calculateWetShape(LevelAccessor level, BlockPos pos) {
+    private Shape calculateWetShape(LevelAccessor level, BlockPos pos) {
         boolean up    = isHydratedFarmland(level.getBlockState(pos.north()));
         boolean down  = isHydratedFarmland(level.getBlockState(pos.south()));
         boolean left  = isHydratedFarmland(level.getBlockState(pos.west()));
         boolean right = isHydratedFarmland(level.getBlockState(pos.east()));
 
-        if (up && down && left && right) return PlotShape.CENTER;
+        if (up && down && left && right) return Shape.CENTER;
 
-        if (!up   && down && left && right) return PlotShape.TOP;
-        if (up    && !down && left && right) return PlotShape.BOTTOM;
-        if (up    && down && !left && right) return PlotShape.LEFT;
-        if (up    && down && left && !right) return PlotShape.RIGHT;
+        if (!up   && down && left && right) return Shape.TOP;
+        if (up    && !down && left && right) return Shape.BOTTOM;
+        if (up    && down && !left && right) return Shape.LEFT;
+        if (up    && down && left && !right) return Shape.RIGHT;
 
-        if (left && right && !up && !down) return PlotShape.HORIZONTAL_MID;
-        if (up && down && !left && !right) return PlotShape.VERTICAL_MID;
+        if (left && right && !up && !down) return Shape.HORIZONTAL_MID;
+        if (up && down && !left && !right) return Shape.VERTICAL_MID;
 
-        if (up && right && !down && !left)   return PlotShape.BOTTOM_LEFT;
-        if (up && left  && !down && !right)  return PlotShape.BOTTOM_RIGHT;
-        if (down && right && !up && !left)   return PlotShape.TOP_LEFT;
-        if (down && left  && !up && !right)  return PlotShape.TOP_RIGHT;
+        if (up && right && !down && !left)   return Shape.BOTTOM_LEFT;
+        if (up && left  && !down && !right)  return Shape.BOTTOM_RIGHT;
+        if (down && right && !up && !left)   return Shape.TOP_LEFT;
+        if (down && left  && !up && !right)  return Shape.TOP_RIGHT;
 
-        if (right && !left && !up && !down)  return PlotShape.HORIZONTAL_LEFT;
-        if (left && !right && !up && !down)  return PlotShape.HORIZONTAL_RIGHT;
-        if (down && !up && !left && !right)  return PlotShape.VERTICAL_TOP;
-        if (up && !down && !left && !right)  return PlotShape.VERTICAL_BOTTOM;
+        if (right && !left && !up && !down)  return Shape.HORIZONTAL_LEFT;
+        if (left && !right && !up && !down)  return Shape.HORIZONTAL_RIGHT;
+        if (down && !up && !left && !right)  return Shape.VERTICAL_TOP;
+        if (up && !down && !left && !right)  return Shape.VERTICAL_BOTTOM;
 
-        return PlotShape.SINGLE;
+        return Shape.SINGLE;
     }
 
     private boolean isSameFarmland(BlockState state) {

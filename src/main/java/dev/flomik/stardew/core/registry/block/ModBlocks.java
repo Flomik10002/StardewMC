@@ -5,6 +5,9 @@ import dev.flomik.stardew.core.block.craftables.BlockBeeHouse;
 import dev.flomik.stardew.core.block.craftables.BlockCheesePress;
 import dev.flomik.stardew.core.block.craftables.BlockKeg;
 import dev.flomik.stardew.core.block.craftables.BlockScarecrow;
+import dev.flomik.stardew.core.block.surface.BlockDirt;
+import dev.flomik.stardew.core.block.surface.BlockGrassFull;
+import dev.flomik.stardew.core.block.surface.BlockGrassSurface;
 import dev.flomik.stardew.core.crop.block.BlockCrop;
 import dev.flomik.stardew.core.registry.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -53,12 +56,11 @@ public class ModBlocks {
                     .dynamicShape().noOcclusion()
                     .pushReaction(PushReaction.NORMAL)));
 
-    public static final RegistryObject<Block> DIRT = registerBlock("dirt",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .strength(3.0f)
-                    .sound(SoundType.GRAVEL)
-                    .pushReaction(PushReaction.NORMAL)));
+    public static final RegistryObject<Block> DIRT = registerBlock("dirt", BlockDirt::new);
+
+    public static final RegistryObject<Block> GRASS = registerBlock("grass", BlockGrassSurface::new);
+
+    public static final RegistryObject<Block> GRASS_FULL = registerBlock("grass_full", BlockGrassFull::new);
 
     public static final RegistryObject<Block> SCARECROW = registerBlock("scarecrow",
             () -> new BlockScarecrow(BlockBehaviour.Properties.of()

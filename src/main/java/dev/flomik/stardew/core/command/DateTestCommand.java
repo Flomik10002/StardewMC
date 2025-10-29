@@ -82,8 +82,14 @@ public class DateTestCommand {
                                             ServerLevel level = ctx.getSource().getLevel();
                                             Season season = SeasonArgument.getSeason(ctx, "value");
                                             StardewDateData date = StardewDateData.get(level);
+                                            Season previousSeason = date.getSeason();
                                             date.setSeason(season);
                                             date.setDirty();
+                                            
+//                                            if (previousSeason != season) {
+//                                                GrassBlockUpdateSystem.updateAllGrassBlocks(level);
+//                                            }
+                                            
                                             ctx.getSource().sendSuccess(() -> Component.literal("§aУстановлен сезон: " + season), false);
                                             return 1;
                                         })))

@@ -2,7 +2,7 @@ package dev.flomik.stardew.core.block.shape;
 
 import net.minecraft.util.StringRepresentable;
 
-public enum PlotShape implements StringRepresentable {
+public enum Shape implements StringRepresentable {
     SINGLE("single"),
     HORIZONTAL_LEFT("horizontal_left"),
     HORIZONTAL_MID("horizontal_mid"),
@@ -18,11 +18,15 @@ public enum PlotShape implements StringRepresentable {
     RIGHT("right"),
     BOTTOM_LEFT("bottom_left"),
     BOTTOM("bottom"),
-    BOTTOM_RIGHT("bottom_right");
+    BOTTOM_RIGHT("bottom_right"),
+    INNER_TOP_LEFT("inner_top_left"),
+    INNER_TOP_RIGHT("inner_top_right"),
+    INNER_BOTTOM_LEFT("inner_bottom_left"),
+    INNER_BOTTOM_RIGHT("inner_bottom_right");
 
     private final String name;
 
-    PlotShape(String name) {
+    Shape(String name) {
         this.name = name;
     }
 

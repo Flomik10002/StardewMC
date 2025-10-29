@@ -72,6 +72,12 @@ public class StardewDateData extends SavedData {
         this.festivalToday = this.festivalTomorrow;
         // dailyLuck will be generated for the new day externally by WeatherSystem
 
+        if (this.season != newSeason) {
+            this.season = newSeason;
+            SeasonSyncManager.syncAll(serverLevel, newSeason);
+        }
+
+
         setDirty();
     }
 

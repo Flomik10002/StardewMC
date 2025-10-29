@@ -24,6 +24,8 @@ public class ModCreativeModeTabs {
                     .displayItems((params, output) -> {
                         output.accept(ModBlocks.DIRT.get());
                         output.accept(ModBlocks.FARMLAND.get());
+                        output.accept(ModBlocks.GRASS.get());
+                        output.accept(ModBlocks.GRASS_FULL.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> STARDEW_CRAFTABLES_TAB =

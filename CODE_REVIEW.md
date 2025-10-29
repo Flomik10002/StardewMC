@@ -479,7 +479,7 @@ for (BlockPos pos : FarmlandTracker.all(level)) {
 **Рекомендации:**
 Рефакторинг дублирования:
 ```java
-private PlotShape calculateShapeInternal(LevelAccessor level, BlockPos pos, Predicate<BlockState> predicate) {
+private Shape calculateShapeInternal(LevelAccessor level, BlockPos pos, Predicate<BlockState> predicate) {
     boolean up    = predicate.test(level.getBlockState(pos.north()));
     boolean down  = predicate.test(level.getBlockState(pos.south()));
     boolean left  = predicate.test(level.getBlockState(pos.west()));
@@ -488,11 +488,11 @@ private PlotShape calculateShapeInternal(LevelAccessor level, BlockPos pos, Pred
     // ... остальная логика
 }
 
-private PlotShape calculateShape(LevelAccessor level, BlockPos pos) {
+private Shape calculateShape(LevelAccessor level, BlockPos pos) {
     return calculateShapeInternal(level, pos, this::isSameFarmland);
 }
 
-private PlotShape calculateWetShape(LevelAccessor level, BlockPos pos) {
+private Shape calculateWetShape(LevelAccessor level, BlockPos pos) {
     return calculateShapeInternal(level, pos, this::isHydratedFarmland);
 }
 ```
