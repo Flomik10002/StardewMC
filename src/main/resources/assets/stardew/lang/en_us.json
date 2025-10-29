@@ -1,7 +1,31 @@
 {
   "itemGroup.stardew_block_tab": "StardewMC Blocks",
+  "itemGroup.stardew_craftables_tab": "StardewMC Craftables",
   "itemGroup.stardew_item_tab": "StardewMC Items",
+  "itemGroup.stardew_artisan_goods_tab": "StardewMC Artisan Goods",
+  "itemGroup.stardew_tools_tab": "StardewMC Tools",
+
+  "block.stardew.keg": "Keg",
+  "block.stardew.cheese_press": "Cheese Press",
+  "block.stardew.bee_house": "Bee House",
 
   "block.stardew.dirt": "Dirt",
-  "block.stardew.farmland": "Farmland"
+  "block.stardew.farmland": "Farmland",
+
+  "item.stardew.honey": "Honey",
+  "item.stardew.cheese": "Cheese",
+  "item.stardew.goat_cheese": "Goat Cheese",
+  "item.stardew.wine": "Wine",
+
+  "item.stardew.basic_hoe": "Hoe",
+  "item.stardew.copper_hoe": "Copper Hoe",
+  "item.stardew.steel_hoe": "Steel Hoe",
+  "item.stardew.gold_hoe": "Gold Hoe",
+  "item.stardew.iridium_hoe": "Iridium Hoe",
+
+  "item.stardew.basic_watering_can": "Watering Can",
+  "item.stardew.copper_watering_can": "Copper Watering Can",
+  "item.stardew.steel_watering_can": "Steel Watering Can",
+  "item.stardew.gold_watering_can": "Gold Watering Can",
+  "item.stardew.iridium_watering_can": "Iridium Watering Can"
 }

@@ -1,0 +1,20 @@
+{
+  "multipart": [
+    {
+      "when": { "season": "spring" },
+      "apply": { "model": "stardew:block/grass/spring/center" }
+    },
+    {
+      "when": { "season": "summer" },
+      "apply": { "model": "stardew:block/grass/summer/center" }
+    },
+    {
+      "when": { "season": "fall" },
+      "apply": { "model": "stardew:block/grass/fall/center" }
+    },
+    {
+      "when": { "season": "winter" },
+      "apply": { "model": "stardew:block/grass/winter/center" }
+    }
+  ]
+}

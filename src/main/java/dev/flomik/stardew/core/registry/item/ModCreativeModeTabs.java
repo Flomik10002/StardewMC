@@ -24,19 +24,60 @@ public class ModCreativeModeTabs {
                     .displayItems((params, output) -> {
                         output.accept(ModBlocks.DIRT.get());
                         output.accept(ModBlocks.FARMLAND.get());
+                        output.accept(ModBlocks.GRASS.get());
+                        output.accept(ModBlocks.GRASS_FULL.get());
                     }).build());
 
-    public static final RegistryObject<CreativeModeTab> STARDEW_ITEM_TAB =
-            TABS.register("stardew_item_tab", () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.stardew_block_tab"))
-                    .icon(() -> new ItemStack(ModItems.TOMATO_ITEM.get()))
+    public static final RegistryObject<CreativeModeTab> STARDEW_CRAFTABLES_TAB =
+            TABS.register("stardew_craftables_tab", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.stardew_craftables_tab"))
+                    .icon(() -> new ItemStack(ModBlocks.KEG.get()))
                     .displayItems((params, output) -> {
-                        output.accept(ModItems.TOMATO_ITEM.get());
-                        output.accept(ModItems.CAULIFLOWER_ITEM.get());
-                        output.accept(ModItems.RICE_ITEM.get());
-                        output.accept(ModItems.TOMATO_SEEDS.get());
-                        output.accept(ModItems.CAULIFLOWER_SEEDS.get());
-                        output.accept(ModItems.RICE_SHOOTS.get());
+                        output.accept(ModBlocks.KEG.get());
+                        output.accept(ModBlocks.BEE_HOUSE.get());
+                        output.accept(ModBlocks.CHEESE_PRESS.get());
+                    }).build());
+
+//    public static final RegistryObject<CreativeModeTab> STARDEW_ITEM_TAB =
+//            TABS.register("stardew_item_tab", () -> CreativeModeTab.builder()
+//                    .title(Component.translatable("itemGroup.stardew_item_tab"))
+//                    .icon(() -> new ItemStack(ModItems.TOMATO_ITEM.get()))
+//                    .displayItems((params, output) -> {
+//                        output.accept(ModItems.TOMATO_ITEM.get());
+//                        output.accept(ModItems.CAULIFLOWER_ITEM.get());
+//                        output.accept(ModItems.RICE_ITEM.get());
+//                        output.accept(ModItems.TOMATO_SEEDS.get());
+//                        output.accept(ModItems.CAULIFLOWER_SEEDS.get());
+//                        output.accept(ModItems.RICE_SHOOTS.get());
+//                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> STARDEW_TOOLS_TAB =
+            TABS.register("stardew_tools_tab", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.stardew_tools_tab"))
+                    .icon(() -> new ItemStack(ModItems.BASIC_HOE.get()))
+                    .displayItems((params, output) -> {
+                        output.accept(ModItems.BASIC_HOE.get());
+                        output.accept(ModItems.COPPER_HOE.get());
+                        output.accept(ModItems.STEEL_HOE.get());
+                        output.accept(ModItems.GOLD_HOE.get());
+                        output.accept(ModItems.IRIDIUM_HOE.get());
+
+                        output.accept(ModItems.BASIC_WATERING_CAN.get());
+                        output.accept(ModItems.COPPER_WATERING_CAN.get());
+                        output.accept(ModItems.STEEL_WATERING_CAN.get());
+                        output.accept(ModItems.GOLD_WATERING_CAN.get());
+                        output.accept(ModItems.IRIDIUM_WATERING_CAN.get());
+                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> STARDEW_ARTISAN_GOODS_TAB =
+            TABS.register("stardew_artisan_goods_tab", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.stardew_artisan_goods_tab"))
+                    .icon(() -> new ItemStack(ModItems.WINE.get()))
+                    .displayItems((params, output) -> {
+                        output.accept(ModItems.HONEY.get());
+                        output.accept(ModItems.CHEESE.get());
+                        output.accept(ModItems.GOAT_CHEESE.get());
+                        output.accept(ModItems.WINE.get());
                     }).build());
 
     public static void register(IEventBus bus) {

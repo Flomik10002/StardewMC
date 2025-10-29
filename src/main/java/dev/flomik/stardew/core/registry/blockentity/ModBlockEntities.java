@@ -1,9 +1,11 @@
 package dev.flomik.stardew.core.registry.blockentity;
 
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.core.block.craftables.blockentity.BlockEntityBeeHouse;
+import dev.flomik.stardew.core.block.craftables.blockentity.BlockEntityCheesePress;
+import dev.flomik.stardew.core.block.craftables.blockentity.BlockEntityKeg;
 import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
 import dev.flomik.stardew.core.registry.block.ModBlocks;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,6 +24,21 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<CropBlockEntity>> CROP =
             BLOCK_ENTITIES.register("crop", () ->
                     BlockEntityType.Builder.of(CropBlockEntity::new, ModBlocks.CROP.get()).build(null)
+            );
+
+    public static final RegistryObject<BlockEntityType<BlockEntityBeeHouse>> BEE_HOUSE =
+            BLOCK_ENTITIES.register("bee_house", () ->
+                    BlockEntityType.Builder.of(BlockEntityBeeHouse::new, ModBlocks.BEE_HOUSE.get()).build(null)
+            );
+
+    public static final RegistryObject<BlockEntityType<BlockEntityKeg>> KEG =
+            BLOCK_ENTITIES.register("keg", () ->
+                    BlockEntityType.Builder.of(BlockEntityKeg::new, ModBlocks.KEG.get()).build(null)
+            );
+
+    public static final RegistryObject<BlockEntityType<BlockEntityCheesePress>> CHEESE_PRESS =
+            BLOCK_ENTITIES.register("cheese_press", () ->
+                    BlockEntityType.Builder.of(BlockEntityCheesePress::new, ModBlocks.CHEESE_PRESS.get()).build(null)
             );
 
     public static void register() {

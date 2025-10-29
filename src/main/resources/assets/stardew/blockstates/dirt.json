@@ -1,5 +1,20 @@
 {
-  "variants": {
-    "": { "model": "stardew:block/dirt" }
-  }
+  "multipart": [
+    {
+      "when": { "season": "spring" },
+      "apply": { "model": "stardew:block/dirt/spring" }
+    },
+    {
+      "when": { "season": "summer" },
+      "apply": { "model": "stardew:block/dirt/summer" }
+    },
+    {
+      "when": { "season": "fall" },
+      "apply": { "model": "stardew:block/dirt/fall" }
+    },
+    {
+      "when": { "season": "winter" },
+      "apply": { "model": "stardew:block/dirt/winter" }
+    }
+  ]
 }

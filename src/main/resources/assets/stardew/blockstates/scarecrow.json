@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "stardew:block/scarecrow" },
+    "facing=south": { "model": "stardew:block/scarecrow", "y": 180 },
+    "facing=west":  { "model": "stardew:block/scarecrow", "y": 270 },
+    "facing=east":  { "model": "stardew:block/scarecrow", "y": 90 }
+  }
+}

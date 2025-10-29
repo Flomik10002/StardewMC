@@ -41,11 +41,29 @@ public class ScheduleManager {
 
     public static void forceNextDay(ServerLevel level) {
         StardewDateData date = StardewDateData.get(level);
+        
+        // 1. Генерируем погоду на завтра ПЕРЕД переходом на следующий день
+        WeatherSystem.generateTomorrow(level);
+
+        // 2. Сохраняем текущий сезон для проверки изменений
+        Season previousSeason = date.getSeason();
+
+        // 3. Переходим на следующий день (tomorrowWeather -> todayWeather)
         date.advance();
         date.setDirty();
-        
+
+        // 4. Если сезон изменился, обновляем все блоки травы
+//        if (previousSeason != date.getSeason()) {
+//            GrassBlockUpdateSystem.updateAllGrassBlocks(level);
+//        }
+
+        // 5. Применяем сегодняшнюю погоду к миру Minecraft
+        WeatherSystem.applyWeatherToWorld(level, date.getTodayWeather());
+
+        // 6. Устанавливаем время на 6:00
         level.setDayTime(StardewTimeUtils.toTicks(6, 0));
-        
+
+        // 7. Запускаем утренние процедуры
         for (ScheduleEntry entry : entries) {
             if (entry.getStartTick() == StardewTimeUtils.toTicks(6, 0)) {
                 entry.trigger();

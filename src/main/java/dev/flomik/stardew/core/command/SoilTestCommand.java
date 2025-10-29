@@ -26,7 +26,7 @@ public class SoilTestCommand {
                             for (BlockPos pos : FarmlandTracker.all(level)) {
                                 var be = level.getBlockEntity(pos);
                                 if (be instanceof FarmlandBlockEntity fb) {
-                                    fb.dehydrate(999999); // Принудительно засыхаем
+                                    fb.dehydrate(); // Принудительно засыхаем
                                     driedCount++;
                                 }
                             }
@@ -45,7 +45,7 @@ public class SoilTestCommand {
                             for (BlockPos pos : FarmlandTracker.all(level)) {
                                 var be = level.getBlockEntity(pos);
                                 if (be instanceof FarmlandBlockEntity fb) {
-                                    fb.hydrate(0); // Принудительно увлажняем
+                                    fb.hydrate(); // Принудительно увлажняем
                                     hydratedCount++;
                                 }
                             }
@@ -66,7 +66,7 @@ public class SoilTestCommand {
                                 var be = level.getBlockEntity(pos);
                                 if (be instanceof FarmlandBlockEntity fb) {
                                     totalCount++;
-                                    if (fb.isHydrated(0)) {
+                                    if (fb.isHydrated()) {
                                         hydratedCount++;
                                     }
                                 }

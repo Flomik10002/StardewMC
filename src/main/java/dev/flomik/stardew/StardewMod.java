@@ -8,6 +8,7 @@ import dev.flomik.stardew.core.config.StardewConfig;
 import dev.flomik.stardew.core.registry.blockentity.ModBlockEntities;
 import dev.flomik.stardew.core.registry.item.ModCreativeModeTabs;
 import dev.flomik.stardew.core.registry.item.ModItems;
+import dev.flomik.stardew.core.registry.sound.ModSounds;
 import dev.flomik.stardew.core.time.ScheduleManager;
 import dev.flomik.stardew.core.time.StardewClock;
 import dev.flomik.stardew.core.time.StardewDateData;
@@ -38,6 +39,7 @@ public class StardewMod {
         ModBlocks.register();
         ModBlockEntities.register();
         ModCreativeModeTabs.register(modEventBus);
+        ModSounds.register(modEventBus);
 
 
         ArgumentTypeInfos.registerByClass(
@@ -61,21 +63,12 @@ public class StardewMod {
                         continue;
                     }
                     
-                    int day = StardewDateData.get(sl).getTotalDays();
-
-                    boolean simulateRain = sl.random.nextFloat() < 0.2f;
+                    StardewDateData dateData = StardewDateData.get(sl);
                     
-                    if (simulateRain) {
-                        // Устанавливаем дождь на весь день (24000 тиков = 20 минут в реальном времени)
-                        sl.setWeatherParameters(20000, 0, true, false);
-                        LOGGER.info("[StardewMC] Установлен дождь в Minecraft для уровня: {}", sl.dimension().location());
-                    } else {
-                        // Убеждаемся, что дождя нет
-                        sl.setWeatherParameters(0, 0, false, false);
-                    }
+                    dev.flomik.stardew.core.time.WeatherSystem.applyWeatherToWorld(sl, dateData.getTodayWeather());
 
-                    MorningPass.run(sl, day, simulateRain);
-                    GrowthSystem.run(sl, day);
+                    MorningPass.run(sl);
+                    GrowthSystem.run(sl);
                 }
             });
         });

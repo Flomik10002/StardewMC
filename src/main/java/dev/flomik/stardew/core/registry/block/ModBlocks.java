@@ -1,11 +1,19 @@
 package dev.flomik.stardew.core.registry.block;
 
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.core.block.craftables.BlockBeeHouse;
+import dev.flomik.stardew.core.block.craftables.BlockCheesePress;
+import dev.flomik.stardew.core.block.craftables.BlockKeg;
+import dev.flomik.stardew.core.block.craftables.BlockScarecrow;
+import dev.flomik.stardew.core.block.surface.BlockDirt;
+import dev.flomik.stardew.core.block.surface.BlockGrassFull;
+import dev.flomik.stardew.core.block.surface.BlockGrassSurface;
 import dev.flomik.stardew.core.crop.block.BlockCrop;
 import dev.flomik.stardew.core.registry.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -23,11 +31,43 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> FARMLAND = registerBlock("farmland", BlockFarmland::new);
 
-    public static final RegistryObject<Block> DIRT = registerBlock("dirt",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.TERRACOTTA_YELLOW)
+
+    public static final RegistryObject<Block> CHEESE_PRESS = registerBlock("cheese_press",
+            () -> new BlockCheesePress(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
                     .strength(3.0f)
-                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.WOOD)
+                    .dynamicShape().noOcclusion()
+                    .pushReaction(PushReaction.NORMAL)));
+
+    public static final RegistryObject<Block> KEG = registerBlock("keg",
+            () -> new BlockKeg(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .strength(3.0f)
+                    .sound(SoundType.WOOD)
+                    .dynamicShape().noOcclusion()
+                    .pushReaction(PushReaction.NORMAL)));
+
+    public static final RegistryObject<Block> BEE_HOUSE = registerBlock("bee_house",
+            () -> new BlockBeeHouse(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .strength(3.0f)
+                    .sound(SoundType.WOOD)
+                    .dynamicShape().noOcclusion()
+                    .pushReaction(PushReaction.NORMAL)));
+
+    public static final RegistryObject<Block> DIRT = registerBlock("dirt", BlockDirt::new);
+
+    public static final RegistryObject<Block> GRASS = registerBlock("grass", BlockGrassSurface::new);
+
+    public static final RegistryObject<Block> GRASS_FULL = registerBlock("grass_full", BlockGrassFull::new);
+
+    public static final RegistryObject<Block> SCARECROW = registerBlock("scarecrow",
+            () -> new BlockScarecrow(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .strength(3.0f)
+                    .sound(SoundType.WOOD)
+                    .dynamicShape().noOcclusion()
                     .pushReaction(PushReaction.NORMAL)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, java.util.function.Supplier<T> block) {

@@ -9,7 +9,7 @@ import net.minecraft.server.level.ServerLevel;
 
 public final class GrowthSystem {
 
-    public static void run(ServerLevel level, int today) {
+    public static void run(ServerLevel level) {
         for (BlockPos cropPos : CropTracker.all(level)) {
             var be = level.getBlockEntity(cropPos);
             if (!(be instanceof CropBlockEntity cropBe)) continue;
@@ -18,9 +18,9 @@ public final class GrowthSystem {
             var fbe = level.getBlockEntity(farmPos);
             if (!(fbe instanceof FarmlandBlockEntity fb)) continue;
 
-            boolean watered = fb.isHydrated(today);                             // вода на сегодня
-            boolean firstHarvestPhase = !cropBe.isReady();                      // ускорение только до первого созревания
-            float speedMul = fb.getFertilizer().isSpeedBoost() ? fb.getFertilizer().strength : 0f;
+            boolean watered = fb.isHydrated();
+            boolean firstHarvestPhase = !cropBe.isReady(); // сохраняем флаг, но скорость теперь применена при посадке
+            float speedMul = 0f;
             boolean paddy = isPaddyBoost(level, farmPos, cropBe);
 
             cropBe.growOneDay(watered, firstHarvestPhase, speedMul, paddy);

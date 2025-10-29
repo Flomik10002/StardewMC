@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "stardew:block/grass/summer/inner_bottom_right"
+  }
+}
