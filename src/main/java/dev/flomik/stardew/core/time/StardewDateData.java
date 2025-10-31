@@ -1,5 +1,6 @@
 package dev.flomik.stardew.core.time;
 
+import dev.flomik.stardew.client.SeasonChunkSyncHandler;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.saveddata.SavedData;
@@ -29,6 +30,7 @@ public class StardewDateData extends SavedData {
 
     public void setSeason(Season newSeason) {
         season = newSeason;
+        onSeasonChangedAllWorlds();
         syncTotalDaysFromDate();
         setDirty();
     }
@@ -67,11 +69,21 @@ public class StardewDateData extends SavedData {
             season = season.next();
         }
 
+        onSeasonChangedAllWorlds();
+
         this.todayWeather = this.tomorrowWeather;
         this.festivalToday = this.festivalTomorrow;
 
         setDirty();
     }
+
+    private void onSeasonChangedAllWorlds() {
+        for (ServerLevel level : net.minecraftforge.server.ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
+            Season newSeason = this.season;
+            SeasonChunkSyncHandler.reloadWorldSeason(level, newSeason);
+        }
+    }
+
 
     public static StardewDateData get(ServerLevel level) {
         StardewDateData data = level.getDataStorage().computeIfAbsent(

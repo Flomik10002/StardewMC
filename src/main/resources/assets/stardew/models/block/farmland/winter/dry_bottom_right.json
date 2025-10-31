@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "stardew:block/farmland/winter/dry_bottom_right"
+  }
+}

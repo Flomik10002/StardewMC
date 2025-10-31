@@ -1,11 +1,14 @@
 package dev.flomik.stardew.core.registry.block;
 
-import dev.flomik.stardew.core.block.shape.Shape;
+import dev.flomik.stardew.core.registry.block.shape.Shape;
 import dev.flomik.stardew.core.crop.FertilizerType;
 import dev.flomik.stardew.core.registry.blockentity.FarmlandBlockEntity;
+import dev.flomik.stardew.core.time.Season;
+import dev.flomik.stardew.core.time.StardewDateData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
@@ -37,6 +40,7 @@ public class BlockFarmland extends Block implements EntityBlock {
 
     public static final EnumProperty<Shape> SHAPE = EnumProperty.create("shape", Shape.class);
     public static final EnumProperty<Shape> WET_SHAPE = EnumProperty.create("wet_shape", Shape.class);
+    public static final EnumProperty<Season> SEASON = EnumProperty.create("season", Season.class);
 
     public BlockFarmland() {
         super(BlockBehaviour.Properties.of()
@@ -44,13 +48,41 @@ public class BlockFarmland extends Block implements EntityBlock {
                 .dynamicShape()
                 .strength(0.5F, 0.5F)
                 .sound(SoundType.GRAVEL)
+                .randomTicks()
         );
-        this.registerDefaultState(this.stateDefinition.any().setValue(HYDRATED, false).setValue(FERTILIZER, FertilizerType.NONE).setValue(SHAPE, Shape.SINGLE));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(HYDRATED, false)
+                .setValue(FERTILIZER, FertilizerType.NONE)
+                .setValue(SHAPE, Shape.SINGLE)
+                .setValue(SEASON, Season.SPRING));
+    }
+
+    @Override
+    public boolean isRandomlyTicking(BlockState state) {
+        return true;
+    }
+
+    @Override
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        Season current = getCurrentSeason(level);
+        if (state.getValue(SEASON) != current) {
+            level.setBlockAndUpdate(pos, state.setValue(SEASON, current));
+        }
+
+        if (random.nextFloat() < 0.25f) {
+            for (Direction dir : Direction.Plane.HORIZONTAL) {
+                BlockPos np = pos.relative(dir);
+                BlockState ns = level.getBlockState(np);
+                if (ns.getBlock() instanceof BlockFarmland farmland) {
+                    level.scheduleTick(np, farmland, 10 + random.nextInt(20));
+                }
+            }
+        }
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(HYDRATED, FERTILIZER, SHAPE, WET_SHAPE);
+        builder.add(HYDRATED, FERTILIZER, SHAPE, WET_SHAPE, SEASON);
     }
 
     @Override
@@ -69,7 +101,7 @@ public class BlockFarmland extends Block implements EntityBlock {
                 .setValue(WET_SHAPE, calculateWetShape(level, pos));
     }
 
-    private Shape calculateShape(LevelAccessor level, BlockPos pos) {
+    public Shape calculateShape(LevelAccessor level, BlockPos pos) {
         boolean up    = isSameFarmland(level.getBlockState(pos.north()));
         boolean down  = isSameFarmland(level.getBlockState(pos.south()));
         boolean left  = isSameFarmland(level.getBlockState(pos.west()));
@@ -98,7 +130,7 @@ public class BlockFarmland extends Block implements EntityBlock {
         return Shape.SINGLE;
     }
 
-    private Shape calculateWetShape(LevelAccessor level, BlockPos pos) {
+    public Shape calculateWetShape(LevelAccessor level, BlockPos pos) {
         boolean up    = isHydratedFarmland(level.getBlockState(pos.north()));
         boolean down  = isHydratedFarmland(level.getBlockState(pos.south()));
         boolean left  = isHydratedFarmland(level.getBlockState(pos.west()));
@@ -137,7 +169,16 @@ public class BlockFarmland extends Block implements EntityBlock {
 
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
-        if (!level.isClientSide && level.getBlockEntity(pos) instanceof FarmlandBlockEntity be) {
+        if (level.isClientSide) return;
+
+        Season current = getCurrentSeason(level);
+        BlockState newState = state.setValue(SEASON, current);
+
+        if (!state.equals(newState)) {
+            level.setBlockAndUpdate(pos, newState);
+        }
+
+        if (level.getBlockEntity(pos) instanceof FarmlandBlockEntity be) {
             be.onPlace();
         }
     }
@@ -147,5 +188,12 @@ public class BlockFarmland extends Block implements EntityBlock {
         return level.isClientSide ? null : (lvl, pos, st, be) -> {
             if (be instanceof FarmlandBlockEntity fbe) FarmlandBlockEntity.serverTick(lvl, pos, st, fbe);
         };
+    }
+
+    public Season getCurrentSeason(LevelAccessor level) {
+        if (level instanceof ServerLevel serverLevel) {
+            return StardewDateData.get(serverLevel).getSeason();
+        }
+        return Season.SPRING;
     }
 }

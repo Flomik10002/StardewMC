@@ -1,9 +1,9 @@
 package dev.flomik.stardew.core.registry.blockentity;
 
 import dev.flomik.stardew.StardewMod;
-import dev.flomik.stardew.core.block.craftables.blockentity.BlockEntityBeeHouse;
-import dev.flomik.stardew.core.block.craftables.blockentity.BlockEntityCheesePress;
-import dev.flomik.stardew.core.block.craftables.blockentity.BlockEntityKeg;
+import dev.flomik.stardew.core.registry.block.craftables.blockentity.BlockEntityBeeHouse;
+import dev.flomik.stardew.core.registry.block.craftables.blockentity.BlockEntityCheesePress;
+import dev.flomik.stardew.core.registry.block.craftables.blockentity.BlockEntityKeg;
 import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
 import dev.flomik.stardew.core.registry.block.ModBlocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
