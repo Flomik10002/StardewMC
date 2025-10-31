@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "stardew:block/farmland/dry_left"
+    "all": "stardew:block/farmland/spring/dry_right"
   }
 }
