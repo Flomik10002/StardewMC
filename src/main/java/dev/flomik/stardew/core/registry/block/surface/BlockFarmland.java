@@ -1,4 +1,4 @@
-package dev.flomik.stardew.core.registry.block;
+package dev.flomik.stardew.core.registry.block.surface;
 
 import dev.flomik.stardew.core.registry.block.shape.Shape;
 import dev.flomik.stardew.core.crop.FertilizerType;
@@ -65,16 +65,22 @@ public class BlockFarmland extends Block implements EntityBlock {
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         Season current = getCurrentSeason(level);
-        if (state.getValue(SEASON) != current) {
-            level.setBlockAndUpdate(pos, state.setValue(SEASON, current));
-        }
+        Shape currentShape = state.getValue(SHAPE);
+        Shape recalculated = calculateShape(level, pos);
 
-        if (random.nextFloat() < 0.25f) {
+        if (state.getValue(SEASON) != current || currentShape != recalculated) {
+            level.setBlock(pos, state.setValue(SEASON, current).setValue(SHAPE, recalculated), Block.UPDATE_CLIENTS);
+        }
+//        if (state.getValue(SEASON) != current) {
+//            level.setBlockAndUpdate(pos, state.setValue(SEASON, current));
+//        }
+
+        if (random.nextFloat() < 0.15f) {
             for (Direction dir : Direction.Plane.HORIZONTAL) {
                 BlockPos np = pos.relative(dir);
                 BlockState ns = level.getBlockState(np);
                 if (ns.getBlock() instanceof BlockFarmland farmland) {
-                    level.scheduleTick(np, farmland, 10 + random.nextInt(20));
+                    level.scheduleTick(np, farmland, 20 + random.nextInt(20));
                 }
             }
         }

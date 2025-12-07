@@ -49,19 +49,21 @@ public class BlockGrassSurface extends Block {
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         Season current = getCurrentSeason(level);
+        Shape currentShape = state.getValue(SHAPE);
+        Shape recalculated = calculateShape(level, pos);
 
-        if (state.getValue(SEASON) != current) {
-            BlockState newState = state.setValue(SEASON, current)
-                    .setValue(SHAPE, calculateShape(level, pos));
-            level.setBlock(pos, newState, 2);
+        if (state.getValue(SEASON) != current || currentShape != recalculated) {
+            level.setBlock(pos, state.setValue(SEASON, current).setValue(SHAPE, recalculated), Block.UPDATE_NONE);
+            level.sendBlockUpdated(pos, state, state, Block.UPDATE_CLIENTS);
         }
 
-        if (random.nextFloat() < 0.2f) {
+        if (random.nextFloat() < 0.15f) {
             for (Direction dir : Direction.Plane.HORIZONTAL) {
-                BlockPos neighborPos = pos.relative(dir);
-                BlockState neighborState = level.getBlockState(neighborPos);
-                if (neighborState.getBlock() instanceof BlockGrassSurface neighborGrass) {
-                    level.scheduleTick(neighborPos, neighborGrass, 10 + random.nextInt(20));
+                BlockPos nPos = pos.relative(dir);
+                BlockState nState = level.getBlockState(nPos);
+                if (nState.getBlock() instanceof BlockGrassSurface nGrass) {
+                    if (!level.isClientSide)
+                        level.scheduleTick(nPos, nGrass, 20 + random.nextInt(20));
                 }
             }
         }
@@ -81,16 +83,22 @@ public class BlockGrassSurface extends Block {
                 .setValue(SEASON, currentSeason)
                 .setValue(SHAPE, calculateShape(level, pos));
 
-        if (!state.equals(newState)) {
-            level.setBlockAndUpdate(pos, newState);
+        if (state.getValue(SEASON) != currentSeason || state.getValue(SHAPE) != calculateShape(level, pos)) {
+            level.setBlock(pos, newState, Block.UPDATE_CLIENTS);
         }
+
     }
 
     @Override
     public BlockState updateShape(BlockState state, Direction dir, BlockState neighborState,
                                   LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        return state
-                .setValue(SHAPE, calculateShape(level, pos));
+        Shape recalculated = calculateShape(level, pos);
+        Shape currentShape = state.getValue(SHAPE);
+
+        if (currentShape != recalculated) {
+            return state.setValue(SHAPE, recalculated);
+        }
+        return state;
     }
 
     public Shape calculateShape(LevelAccessor level, BlockPos pos) {
@@ -125,6 +133,7 @@ public class BlockGrassSurface extends Block {
     }
 
     private boolean isSameGrass(LevelAccessor level, BlockPos pos) {
+        if (!level.hasChunkAt(pos)) return false;
         Block block = level.getBlockState(pos).getBlock();
         return block instanceof BlockGrassSurface || block instanceof BlockGrassFull;
     }

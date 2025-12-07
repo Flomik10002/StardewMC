@@ -1,7 +1,7 @@
 package dev.flomik.stardew.core.registry.blockentity;
 
 import dev.flomik.stardew.core.crop.FertilizerType;
-import dev.flomik.stardew.core.registry.block.BlockFarmland;
+import dev.flomik.stardew.core.registry.block.surface.BlockFarmland;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.Level;

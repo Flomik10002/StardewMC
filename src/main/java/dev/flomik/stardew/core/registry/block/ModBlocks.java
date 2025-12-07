@@ -6,6 +6,7 @@ import dev.flomik.stardew.core.registry.block.craftables.BlockCheesePress;
 import dev.flomik.stardew.core.registry.block.craftables.BlockKeg;
 import dev.flomik.stardew.core.registry.block.craftables.BlockScarecrow;
 import dev.flomik.stardew.core.registry.block.surface.BlockDirt;
+import dev.flomik.stardew.core.registry.block.surface.BlockFarmland;
 import dev.flomik.stardew.core.registry.block.surface.BlockGrassFull;
 import dev.flomik.stardew.core.registry.block.surface.BlockGrassSurface;
 import dev.flomik.stardew.core.crop.block.BlockCrop;

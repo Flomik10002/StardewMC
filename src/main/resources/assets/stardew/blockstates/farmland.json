@@ -450,6 +450,166 @@
     },
     {
       "when": {
+        "hydrated": true,
+        "wet_shape": "single",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_single"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "horizontal_left",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_horizontal_left"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "horizontal_mid",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_horizontal_mid"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "horizontal_right",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_horizontal_right"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "vertical_top",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_vertical_top"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "vertical_mid",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_vertical_mid"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "vertical_bottom",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_vertical_bottom"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "top_left",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_top_left"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "top",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_top"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "top_right",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_top_right"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "left",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_left"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "center",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_center"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "right",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_right"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "bottom_left",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_bottom_left"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "bottom",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_bottom"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "bottom_right",
+        "season": "summer"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/summer/wet_overlay_bottom_right"
+      }
+    },
+    {
+      "when": {
         "shape": "single",
         "season": "fall"
       },
@@ -590,6 +750,166 @@
       },
       "apply": {
         "model": "stardew:block/farmland/fall/dry_bottom_right"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "single",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_single"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "horizontal_left",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_horizontal_left"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "horizontal_mid",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_horizontal_mid"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "horizontal_right",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_horizontal_right"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "vertical_top",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_vertical_top"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "vertical_mid",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_vertical_mid"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "vertical_bottom",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_vertical_bottom"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "top_left",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_top_left"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "top",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_top"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "top_right",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_top_right"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "left",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_left"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "center",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_center"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "right",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_right"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "bottom_left",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_bottom_left"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "bottom",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_bottom"
+      }
+    },
+    {
+      "when": {
+        "hydrated": true,
+        "wet_shape": "bottom_right",
+        "season": "fall"
+      },
+      "apply": {
+        "model": "stardew:block/farmland/fall/wet_overlay_bottom_right"
       }
     },
     {
