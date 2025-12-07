@@ -33,8 +33,8 @@ public class SeasonChunkSyncHandler {
     private static final Set<PendingChunk> PENDING_SYNC = ConcurrentHashMap.newKeySet();
     private static final Set<ChunkPos> CHECKED_CHUNKS = ConcurrentHashMap.newKeySet();
     private static int tickCounter = 0;
-    private static final int CHECK_INTERVAL = 20;
-    private static final int CHUNKS_PER_TICK = 20;
+    private static final int CHECK_INTERVAL = 10;
+    private static final int CHUNKS_PER_TICK = 50;
 
     @SubscribeEvent
     public static void onChunkLoad(ChunkEvent.Load event) {
@@ -99,6 +99,10 @@ public class SeasonChunkSyncHandler {
                     if (state.getValue(BlockGrassSurface.SEASON) != currentSeason) {
                         return true;
                     }
+                } else if (state.getBlock() instanceof BlockGrassFull) {
+                    if (state.getValue(BlockGrassFull.SEASON) != currentSeason) {
+                        return true;
+                    }
                 } else if (state.getBlock() instanceof BlockDirt) {
                     if (state.getValue(BlockDirt.SEASON) != currentSeason) {
                         return true;
@@ -137,7 +141,6 @@ public class SeasonChunkSyncHandler {
                         ChunkPos chunkPos = chunk.getPos();
                         if (CHECKED_CHUNKS.contains(chunkPos)) continue;
                         
-                        // Синхронизируем и отправляем пакеты
                         if (needsSync(level, chunk)) {
                             syncChunk(level, chunk, currentSeason);
                             sendChunkUpdate(level, chunk);
@@ -213,9 +216,6 @@ public class SeasonChunkSyncHandler {
         }
     }
 
-    /**
-     * Немедленно синхронизирует все загруженные чанки при изменении сезона
-     */
     public static void reloadWorldSeason(ServerLevel level, Season currentSeason) {
         ServerChunkCache cache = level.getChunkSource();
         int radius = level.getServer().getPlayerList().getViewDistance();
@@ -231,10 +231,8 @@ public class SeasonChunkSyncHandler {
                     LevelChunk chunk = cache.getChunkNow(cx, cz);
                     if (chunk == null) continue;
 
-                    // Синхронизируем все блоки чанка
                     syncChunk(level, chunk, currentSeason);
                     
-                    // Отправляем обновление игроку
                     ClientboundLevelChunkWithLightPacket packet =
                             new ClientboundLevelChunkWithLightPacket(chunk, level.getLightEngine(), null, null);
                     player.connection.send(packet);
