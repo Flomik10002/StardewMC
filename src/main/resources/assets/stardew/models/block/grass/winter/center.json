@@ -1,6 +1,8 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube_bottom_top",
   "textures": {
-    "all": "stardew:block/grass/winter/center"
+    "bottom": "stardew:block/dirt/winter/dirt_1",
+    "side": "stardew:block/grass/winter/bottom",
+    "top": "stardew:block/grass/winter/center"
   }
 }

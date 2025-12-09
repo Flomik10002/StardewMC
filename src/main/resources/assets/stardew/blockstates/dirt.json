@@ -1,20 +1,18 @@
 {
-  "multipart": [
-    {
-      "when": { "season": "spring" },
-      "apply": { "model": "stardew:block/dirt/spring" }
-    },
-    {
-      "when": { "season": "summer" },
-      "apply": { "model": "stardew:block/dirt/summer" }
-    },
-    {
-      "when": { "season": "fall" },
-      "apply": { "model": "stardew:block/dirt/fall" }
-    },
-    {
-      "when": { "season": "winter" },
-      "apply": { "model": "stardew:block/dirt/winter" }
-    }
-  ]
+  "variants": {
+    "variant=0":  { "model": "stardew:block/dirt/spring/dirt_0" },
+    "variant=1":  { "model": "stardew:block/dirt/spring/dirt_1" },
+    "variant=2":  { "model": "stardew:block/dirt/spring/dirt_2" },
+    "variant=3":  { "model": "stardew:block/dirt/spring/dirt_3" },
+    "variant=4":  { "model": "stardew:block/dirt/spring/dirt_4" },
+    "variant=5":  { "model": "stardew:block/dirt/spring/dirt_5" },
+    "variant=6":  { "model": "stardew:block/dirt/spring/dirt_6" },
+    "variant=7":  { "model": "stardew:block/dirt/spring/dirt_7" },
+    "variant=8":  { "model": "stardew:block/dirt/spring/dirt_8" },
+    "variant=9":  { "model": "stardew:block/dirt/spring/dirt_9" },
+    "variant=10": { "model": "stardew:block/dirt/spring/dirt_10" },
+    "variant=11": { "model": "stardew:block/dirt/spring/dirt_11" },
+    "variant=12": { "model": "stardew:block/dirt/spring/dirt_12" },
+    "variant=13": { "model": "stardew:block/dirt/spring/dirt_13" }
+  }
 }

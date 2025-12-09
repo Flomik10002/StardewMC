@@ -2,6 +2,7 @@ package dev.flomik.stardew;
 
 import dev.flomik.stardew.core.crop.logic.GrowthSystem;
 import dev.flomik.stardew.core.crop.logic.MorningPass;
+import dev.flomik.stardew.core.network.PacketHandler;
 import dev.flomik.stardew.core.registry.block.ModBlocks;
 import dev.flomik.stardew.core.command.SeasonArgument;
 import dev.flomik.stardew.core.config.StardewConfig;
@@ -53,6 +54,10 @@ public class StardewMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            PacketHandler.init();
+        });
+
         event.enqueueWork(() -> {
             dev.flomik.stardew.core.crop.CropRegistry.bootstrapVanillaLike(StardewMod.MODID);
 

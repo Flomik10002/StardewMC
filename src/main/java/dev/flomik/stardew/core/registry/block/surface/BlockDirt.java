@@ -1,94 +1,52 @@
 package dev.flomik.stardew.core.registry.block.surface;
 
-import dev.flomik.stardew.core.time.Season;
-import dev.flomik.stardew.core.time.StardewDateData;
+import dev.flomik.stardew.core.registry.block.shape.Shape;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.MapColor;
+import org.jetbrains.annotations.Nullable;
 
 public class BlockDirt extends Block {
 
-    public static final EnumProperty<Season> SEASON = EnumProperty.create("season", Season.class);
+    public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 0, 13);
 
     public BlockDirt() {
         super(BlockBehaviour.Properties.of()
                 .mapColor(MapColor.TERRACOTTA_YELLOW)
                 .strength(3.0f)
                 .sound(SoundType.GRAVEL)
-                .randomTicks()
         );
-        this.registerDefaultState(this.stateDefinition.any()
-                .setValue(SEASON, Season.SPRING));
-    }
-
-    @Override
-    public boolean isRandomlyTicking(BlockState state) {
-        return true;
-    }
-
-    @Override
-    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        Season current = getCurrentSeason(level);
-
-        if (state.getValue(SEASON) != current) {
-            BlockState newState = state.setValue(SEASON, current);
-            level.setBlock(pos, newState, 2);
-        }
-
-        if (random.nextFloat() < 0.2f) {
-            for (Direction dir : Direction.Plane.HORIZONTAL) {
-                BlockPos neighborPos = pos.relative(dir);
-                BlockState neighborState = level.getBlockState(neighborPos);
-                if (neighborState.getBlock() instanceof BlockGrassSurface neighborGrass) {
-                    level.scheduleTick(neighborPos, neighborGrass, 10 + random.nextInt(20));
-                }
-            }
-        }
+        this.registerDefaultState(this.stateDefinition.any().setValue(VARIANT, 0));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(SEASON);
+        builder.add(VARIANT);
     }
 
+    @Nullable
     @Override
-    public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.MODEL;
-    }
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        RandomSource random = context.getLevel().getRandom();
+        float chance = random.nextFloat();
+        int variant;
 
-    @Override
-    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
-        if (level.isClientSide) return;
-
-        Season current = getCurrentSeason(level);
-        BlockState newState = state.setValue(SEASON, current);
-        if (!state.equals(newState)) {
-            level.setBlock(pos, newState, 2);
+        if (chance < 0.45f) {
+            variant = 0;
+        } else if (chance < 0.90f) {
+            variant = 1;
+        } else {
+            variant = 2 + random.nextInt(12);
         }
-    }
 
-    @Override
-    public BlockState updateShape(BlockState state, Direction dir, BlockState neighborState,
-                                  LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        return state;
-    }
-
-    public Season getCurrentSeason(LevelAccessor level) {
-        if (level instanceof ServerLevel serverLevel) {
-            return StardewDateData.get(serverLevel).getSeason();
-        }
-        return Season.SPRING;
+        return this.defaultBlockState().setValue(VARIANT, variant);
     }
 }
-
