@@ -3,6 +3,7 @@ package dev.flomik.stardew.core.registry.blockentity;
 import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.core.registry.block.craftables.blockentity.BlockEntityBeeHouse;
 import dev.flomik.stardew.core.registry.block.craftables.blockentity.BlockEntityCheesePress;
+import dev.flomik.stardew.core.registry.block.craftables.blockentity.BlockEntityChest;
 import dev.flomik.stardew.core.registry.block.craftables.blockentity.BlockEntityKeg;
 import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
 import dev.flomik.stardew.core.registry.block.ModBlocks;
@@ -39,6 +40,11 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<BlockEntityCheesePress>> CHEESE_PRESS =
             BLOCK_ENTITIES.register("cheese_press", () ->
                     BlockEntityType.Builder.of(BlockEntityCheesePress::new, ModBlocks.CHEESE_PRESS.get()).build(null)
+            );
+
+    public static final RegistryObject<BlockEntityType<BlockEntityChest>> CHEST =
+            BLOCK_ENTITIES.register("chest", () ->
+                    BlockEntityType.Builder.of(BlockEntityChest::new, ModBlocks.CHEST.get()).build(null)
             );
 
     public static void register() {

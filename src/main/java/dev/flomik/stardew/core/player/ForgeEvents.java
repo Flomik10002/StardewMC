@@ -3,10 +3,14 @@ package dev.flomik.stardew.core.player;
 import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.core.network.PacketHandler;
 import dev.flomik.stardew.core.network.S2CSeasonSync;
+import dev.flomik.stardew.core.registry.block.craftables.blockentity.BlockEntityChest;
 import dev.flomik.stardew.core.time.Season;
 import dev.flomik.stardew.core.time.StardewDateData;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -28,6 +32,22 @@ public class ForgeEvents {
         if (event.getEntity() instanceof ServerPlayer player) {
             StardewDateData dateData = StardewDateData.get(player.serverLevel());
             PacketHandler.sendToPlayer(new S2CSeasonSync(dateData.getSeason()), player);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onBlockBreak(BlockEvent.BreakEvent event) {
+        if (event.getLevel().isClientSide()) return;
+
+        BlockEntity be = event.getLevel().getBlockEntity(event.getPos());
+        if (be instanceof BlockEntityChest chest) {
+            if (!chest.isEmpty()) {
+                event.setCanceled(true);
+
+                if (event.getPlayer() != null && !event.getPlayer().level().isClientSide) {
+                    event.getPlayer().displayClientMessage(Component.literal("Chest is not empty!"), true);
+                }
+            }
         }
     }
 }

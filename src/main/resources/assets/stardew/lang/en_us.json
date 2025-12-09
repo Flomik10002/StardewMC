@@ -8,14 +8,26 @@
   "block.stardew.keg": "Keg",
   "block.stardew.cheese_press": "Cheese Press",
   "block.stardew.bee_house": "Bee House",
+  "block.stardew.chest": "Chest",
+  "block.stardew.scarecrow": "Scarecrow",
 
   "block.stardew.dirt": "Dirt",
   "block.stardew.farmland": "Farmland",
+  "block.stardew.grass": "Grass",
+  "block.stardew.grass_full": "Grass",
+  "block.stardew.crop": "Crop",
 
   "item.stardew.honey": "Honey",
   "item.stardew.cheese": "Cheese",
   "item.stardew.goat_cheese": "Goat Cheese",
   "item.stardew.wine": "Wine",
+
+  "item.stardew.tomato_item": "Tomato",
+  "item.stardew.cauliflower_item": "Cauliflower",
+  "item.stardew.rice_item": "Rice",
+  "item.stardew.tomato_seeds": "Tomato Seeds",
+  "item.stardew.cauliflower_seeds": "Cauliflower Seeds",
+  "item.stardew.rice_shoots": "Rice Shoots",
 
   "item.stardew.basic_hoe": "Hoe",
   "item.stardew.copper_hoe": "Copper Hoe",

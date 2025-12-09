@@ -36,6 +36,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.KEG.get());
                         output.accept(ModBlocks.BEE_HOUSE.get());
                         output.accept(ModBlocks.CHEESE_PRESS.get());
+                        output.accept(ModBlocks.CHEST.get());
                     }).build());
 
 //    public static final RegistryObject<CreativeModeTab> STARDEW_ITEM_TAB =
