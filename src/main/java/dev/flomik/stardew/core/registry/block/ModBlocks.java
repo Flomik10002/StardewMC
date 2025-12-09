@@ -1,13 +1,14 @@
 package dev.flomik.stardew.core.registry.block;
 
 import dev.flomik.stardew.StardewMod;
-import dev.flomik.stardew.core.block.craftables.BlockBeeHouse;
-import dev.flomik.stardew.core.block.craftables.BlockCheesePress;
-import dev.flomik.stardew.core.block.craftables.BlockKeg;
-import dev.flomik.stardew.core.block.craftables.BlockScarecrow;
-import dev.flomik.stardew.core.block.surface.BlockDirt;
-import dev.flomik.stardew.core.block.surface.BlockGrassFull;
-import dev.flomik.stardew.core.block.surface.BlockGrassSurface;
+import dev.flomik.stardew.core.registry.block.craftables.BlockBeeHouse;
+import dev.flomik.stardew.core.registry.block.craftables.BlockCheesePress;
+import dev.flomik.stardew.core.registry.block.craftables.BlockKeg;
+import dev.flomik.stardew.core.registry.block.craftables.BlockScarecrow;
+import dev.flomik.stardew.core.registry.block.surface.BlockDirt;
+import dev.flomik.stardew.core.registry.block.surface.BlockFarmland;
+import dev.flomik.stardew.core.registry.block.surface.BlockGrassFull;
+import dev.flomik.stardew.core.registry.block.surface.BlockGrassSurface;
 import dev.flomik.stardew.core.crop.block.BlockCrop;
 import dev.flomik.stardew.core.registry.item.ModItems;
 import net.minecraft.world.item.BlockItem;

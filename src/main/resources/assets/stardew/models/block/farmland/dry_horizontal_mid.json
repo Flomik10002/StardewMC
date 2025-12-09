@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "stardew:block/farmland/dry_horizontal_mid"
-  }
-}

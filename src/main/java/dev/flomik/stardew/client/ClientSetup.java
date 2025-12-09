@@ -2,7 +2,7 @@
 package dev.flomik.stardew.client;
 
 import dev.flomik.stardew.StardewMod;
-import dev.flomik.stardew.core.block.base.VisualItemAboveRenderer;
+import dev.flomik.stardew.core.registry.block.base.VisualItemAboveRenderer;
 import dev.flomik.stardew.core.registry.block.ModBlocks;
 import dev.flomik.stardew.core.registry.blockentity.ModBlockEntities;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "stardew:block/farmland/winter/wet_overlay_vertical_bottom"
+  }
+}

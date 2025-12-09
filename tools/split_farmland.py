@@ -2,7 +2,7 @@ from PIL import Image
 import os
 
 TILE_SIZE = 16
-INPUT_PATH = "farmland_wet_full.png"  # или farmland_dry_full.png
+INPUT_PATH = "farmland generator/farmland_wet_full_spring.png"  # или farmland_dry_full_spring.png
 PREFIX = "wet"  # или "dry"
 OUTPUT_FOLDER = "split_farmland"
 

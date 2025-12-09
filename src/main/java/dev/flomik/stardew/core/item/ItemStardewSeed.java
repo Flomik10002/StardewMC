@@ -4,7 +4,6 @@ package dev.flomik.stardew.core.item;
 import dev.flomik.stardew.core.crop.CropRegistry;
 import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
 import dev.flomik.stardew.core.crop.def.CropDef;
-import dev.flomik.stardew.core.registry.block.BlockFarmland;
 import dev.flomik.stardew.core.registry.block.ModBlocks;
 import dev.flomik.stardew.core.registry.blockentity.FarmlandBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -42,7 +41,7 @@ public class ItemStardewSeed extends Item {
         // Проверка сезона по SV
         var date = dev.flomik.stardew.core.time.StardewDateData.get((net.minecraft.server.level.ServerLevel) level);
         if (!def.seasons.contains(date.getSeason().name().toLowerCase())) return InteractionResult.FAIL;
-        // TODO: проверить trellis/isRaised коллизию (если захочешь)
+        // TODO: проверить trellis/isRaised коллизию
 
         // Если удобрение качества нельзя вносить после посадки — проверяй заранее (твои флаги before/after в FertilizerType)
         // (логика вноса удобрений у тебя уже есть) :contentReference[oaicite:6]{index=6} :contentReference[oaicite:7]{index=7}

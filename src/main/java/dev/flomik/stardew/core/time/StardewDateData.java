@@ -1,5 +1,7 @@
 package dev.flomik.stardew.core.time;
 
+import dev.flomik.stardew.core.network.PacketHandler;
+import dev.flomik.stardew.core.network.S2CSeasonSync;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.saveddata.SavedData;
@@ -17,7 +19,7 @@ public class StardewDateData extends SavedData {
     private float dailyLuck = 0f;
     private String festivalToday = null;
     private String festivalTomorrow = null;
-    private boolean weatherInitialized = false; // флаг инициализации погоды
+    private boolean weatherInitialized = false;
 
     public Season getSeason() {
         return season;
@@ -31,6 +33,8 @@ public class StardewDateData extends SavedData {
         season = newSeason;
         syncTotalDaysFromDate();
         setDirty();
+
+        PacketHandler.sendToAll(new S2CSeasonSync(newSeason));
     }
 
     public void setDay(int newDay) {
@@ -65,6 +69,7 @@ public class StardewDateData extends SavedData {
         if (day > 28) {
             day = 1;
             season = season.next();
+            PacketHandler.sendToAll(new S2CSeasonSync(season));
         }
 
         this.todayWeather = this.tomorrowWeather;
@@ -80,9 +85,8 @@ public class StardewDateData extends SavedData {
                 NAME
         );
         
-        // Инициализируем погоду при первом создании данных
         if (!data.weatherInitialized) {
-            WeatherSystem.initializeWeather(level, data);  // Передаём data как параметр, чтобы избежать рекурсии
+            WeatherSystem.initializeWeather(level, data);
             data.weatherInitialized = true;
             data.setDirty();
         }

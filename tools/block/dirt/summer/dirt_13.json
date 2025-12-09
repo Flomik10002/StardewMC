@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "stardew:block/dirt/summer/dirt_13",
+    "side": "stardew:block/dirt/summer/dirt_0"
+  }
+}
