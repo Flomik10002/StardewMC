@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
@@ -36,12 +37,14 @@ public class BlockChest extends BaseEntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 14, 15);
     public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 0, 20);
+    public static final BooleanProperty HAS_ITEMS = BooleanProperty.create("has_items");
 
     public BlockChest() {
         super(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.5f).noOcclusion());
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
-                .setValue(VARIANT, 0));
+                .setValue(VARIANT, 0)
+                .setValue(HAS_ITEMS, false));
     }
 
     @Override
@@ -75,13 +78,31 @@ public class BlockChest extends BaseEntityBlock {
 
     @Override
     public float getDestroyProgress(BlockState state, Player player, BlockGetter level, BlockPos pos) {
-        BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (blockEntity instanceof BlockEntityChest chest) {
-            if (!chest.isEmpty()) {
-                return 0.0f;
-            }
+        if (player.isCreative()) {
+            return super.getDestroyProgress(state, player, level, pos);
         }
+        
+        if (state.getValue(HAS_ITEMS)) {
+            return -1.0f;
+        }
+
         return super.getDestroyProgress(state, player, level, pos);
+    }
+
+    @Override
+    public boolean canHarvestBlock(BlockState state, BlockGetter level, BlockPos pos, Player player) {
+        // В креативном режиме разрешаем
+        if (player.isCreative()) {
+            return super.canHarvestBlock(state, level, pos, player);
+        }
+        
+        // Используем BlockState для проверки на клиенте
+        if (state.getValue(HAS_ITEMS)) {
+            // Блок не может быть сломан, если в нем есть предметы
+            return false;
+        }
+
+        return super.canHarvestBlock(state, level, pos, player);
     }
 
     @Nullable
@@ -92,7 +113,7 @@ public class BlockChest extends BaseEntityBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, VARIANT);
+        builder.add(FACING, VARIANT, HAS_ITEMS);
     }
 
     @Nullable

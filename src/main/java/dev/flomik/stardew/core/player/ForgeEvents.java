@@ -50,4 +50,22 @@ public class ForgeEvents {
             }
         }
     }
+
+    @SubscribeEvent
+    public static void onBreakSpeed(PlayerEvent.BreakSpeed event) {
+        if (event.getEntity().level().isClientSide()) return;
+
+        // Проверяем позицию блока из события
+        event.getPosition().ifPresent(pos -> {
+            BlockEntity be = event.getEntity().level().getBlockEntity(pos);
+            if (be instanceof BlockEntityChest chest) {
+                if (!chest.isEmpty()) {
+                    // Полностью останавливаем разрушение, устанавливая скорость 0
+                    // Это делает блок неуязвимым, как bedrock
+                    event.setNewSpeed(0.0f);
+                    event.setCanceled(true);
+                }
+            }
+        });
+    }
 }

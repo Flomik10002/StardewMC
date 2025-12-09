@@ -14,6 +14,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class ChestScreen extends AbstractContainerScreen<ModChestMenu> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(StardewMod.MODID, "textures/gui/container/container_36.png");
+    private static final ResourceLocation PLATFORM_TEXTURE = new ResourceLocation(StardewMod.MODID, "textures/gui/container/color_platform.png");
 
     private static final int[] COLORS = {
             0x00000000, 0x5555FF, 0x77BFFF, 0x00AAAA, 0x00EAAF, 0x00AA00, 0x9FEC00,
@@ -24,7 +25,10 @@ public class ChestScreen extends AbstractContainerScreen<ModChestMenu> {
     private static final int BUTTON_SIZE = 12;
     private static final int SPACING = 2;
     private static final int BUTTON_FULL_SIZE = BUTTON_SIZE + SPACING;
-    private static final int Y_OFFSET_FROM_TOP = -30;
+    private static final int Y_OFFSET_FROM_TOP = -40;
+    private static final int PLATFORM_PADDING = 3; // Отступ плашки от кнопок
+    private static final int PLATFORM_HEIGHT = 40; // Высота плашки в пикселях
+    private static final int PLATFORM_WIDTH = 166; // Ширина плашки в пикселях
 
     public ChestScreen(ModChestMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
@@ -55,7 +59,23 @@ public class ChestScreen extends AbstractContainerScreen<ModChestMenu> {
 
         guiGraphics.blit(TEXTURE, x, y, 0, 0, this.imageWidth, this.imageHeight);
 
+        drawColorButtonPlatform(guiGraphics, x, y);
         drawColorButtons(guiGraphics, x, y, mouseX, mouseY);
+    }
+
+    private void drawColorButtonPlatform(GuiGraphics guiGraphics, int guiLeft, int guiTop) {
+        int startY = guiTop + Y_OFFSET_FROM_TOP;
+        int row1Width = 11 * BUTTON_FULL_SIZE - SPACING;
+        int row2Width = 11 * BUTTON_FULL_SIZE - SPACING;
+        int maxWidth = Math.max(row1Width, row2Width);
+        
+        // Координаты плашки (центрирована относительно GUI)
+        // Плашка центрируется по GUI, а не по кнопкам
+        int platformX = guiLeft + (this.imageWidth - PLATFORM_WIDTH) / 2;
+        int platformY = startY - (PLATFORM_HEIGHT - (2 * BUTTON_FULL_SIZE - SPACING)) / 2;
+        
+        // Рисуем текстуру плашки
+        guiGraphics.blit(PLATFORM_TEXTURE, platformX, platformY, 0, 0, PLATFORM_WIDTH, PLATFORM_HEIGHT, PLATFORM_WIDTH, PLATFORM_HEIGHT);
     }
 
     private void drawColorButtons(GuiGraphics guiGraphics, int guiLeft, int guiTop, int mouseX, int mouseY) {
@@ -63,7 +83,7 @@ public class ChestScreen extends AbstractContainerScreen<ModChestMenu> {
         int startY = guiTop + Y_OFFSET_FROM_TOP;
 
         int row1Width = 11 * BUTTON_FULL_SIZE - SPACING;
-        int row2Width = 10 * BUTTON_FULL_SIZE - SPACING;
+        int row2Width = 11 * BUTTON_FULL_SIZE - SPACING;
 
         int startX1 = guiLeft + (this.imageWidth - row1Width) / 2;
         int startX2 = guiLeft + (this.imageWidth - row2Width) / 2;
@@ -71,7 +91,7 @@ public class ChestScreen extends AbstractContainerScreen<ModChestMenu> {
         for (int i = 0; i < COLORS.length; i++) {
             int btnX, btnY;
 
-            if (i <= 11) {
+            if (i <= 10) {
                 btnX = startX1 + (i * BUTTON_FULL_SIZE);
                 btnY = startY;
             } else {
@@ -106,7 +126,7 @@ public class ChestScreen extends AbstractContainerScreen<ModChestMenu> {
             int y = (this.height - this.imageHeight) / 2;
             int startY = y + Y_OFFSET_FROM_TOP;
             int row1Width = 11 * BUTTON_FULL_SIZE - SPACING;
-            int row2Width = 10 * BUTTON_FULL_SIZE - SPACING;
+            int row2Width = 11 * BUTTON_FULL_SIZE - SPACING;
             int startX1 = x + (this.imageWidth - row1Width) / 2;
             int startX2 = x + (this.imageWidth - row2Width) / 2;
 

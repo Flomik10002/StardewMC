@@ -143,4 +143,41 @@ public class BlockEntityChest extends RandomizableContainerBlockEntity implement
     public float getOpenNess(float partialTick) {
         return this.chestLidController.getOpenness(partialTick);
     }
+
+    @Override
+    public void setItem(int slot, ItemStack stack) {
+        boolean wasEmpty = this.isEmpty();
+        super.setItem(slot, stack);
+        boolean isEmptyNow = this.isEmpty();
+        
+        // Если состояние "пустоты" изменилось, обновляем BlockState
+        if (wasEmpty != isEmptyNow) {
+            updateBlockState(!isEmptyNow);
+        }
+    }
+    
+    @Override
+    public void setChanged() {
+        boolean wasEmpty = this.isEmpty();
+        super.setChanged();
+        boolean isEmptyNow = this.isEmpty();
+        
+        // В setChanged() тоже проверяем изменение состояния, на всякий случай
+        if (this.level != null && !this.level.isClientSide) {
+             BlockState state = this.level.getBlockState(this.worldPosition);
+             if (state.hasProperty(BlockChest.HAS_ITEMS) && state.getValue(BlockChest.HAS_ITEMS) != !isEmptyNow) {
+                 updateBlockState(!isEmptyNow);
+             }
+        }
+    }
+
+    private void updateBlockState(boolean hasItems) {
+        if (this.level != null && !this.level.isClientSide) {
+            BlockState state = this.level.getBlockState(this.worldPosition);
+            if (state.hasProperty(BlockChest.HAS_ITEMS)) {
+                this.level.setBlock(this.worldPosition, state.setValue(BlockChest.HAS_ITEMS, hasItems), 3);
+            }
+        }
+    }
+
 }
