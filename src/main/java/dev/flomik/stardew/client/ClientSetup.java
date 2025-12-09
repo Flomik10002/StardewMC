@@ -2,9 +2,13 @@
 package dev.flomik.stardew.client;
 
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.client.renderer.ChestRenderer;
+import dev.flomik.stardew.client.screen.ChestScreen;
 import dev.flomik.stardew.core.registry.block.base.VisualItemAboveRenderer;
 import dev.flomik.stardew.core.registry.block.ModBlocks;
 import dev.flomik.stardew.core.registry.blockentity.ModBlockEntities;
+import dev.flomik.stardew.core.registry.menu.ModMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,11 +33,25 @@ public class ClientSetup {
                 ModBlockEntities.KEG.get(),
                 VisualItemAboveRenderer::new
         );
+        event.registerBlockEntityRenderer(
+                ModBlockEntities.CHEST.get(),
+                ChestRenderer::new
+        );
     }
+
+    @SubscribeEvent
+    public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(ChestRenderer.LAYER_LOCATION, ChestRenderer::createBodyLayer);
+    }
+
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.FARMLAND.get(), RenderType.translucent());
+        });
+
+        event.enqueueWork(() -> {
+            MenuScreens.register(ModMenuTypes.CHEST_MENU.get(), ChestScreen::new);
         });
     }
 }

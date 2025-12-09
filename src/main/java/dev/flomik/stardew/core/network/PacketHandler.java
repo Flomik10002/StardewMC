@@ -20,6 +20,7 @@ public class PacketHandler {
     public static void init() {
         int id = 0;
         CHANNEL.registerMessage(id++, S2CSeasonSync.class, S2CSeasonSync::encode, S2CSeasonSync::decode, S2CSeasonSync::handle);
+        CHANNEL.registerMessage(id++, PacketChangeChestVariant.class, PacketChangeChestVariant::encode, PacketChangeChestVariant::decode, PacketChangeChestVariant::handle);
     }
 
     public static void sendToAll(Object message) {

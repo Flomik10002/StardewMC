@@ -1,10 +1,7 @@
 package dev.flomik.stardew.core.registry.block;
 
 import dev.flomik.stardew.StardewMod;
-import dev.flomik.stardew.core.registry.block.craftables.BlockBeeHouse;
-import dev.flomik.stardew.core.registry.block.craftables.BlockCheesePress;
-import dev.flomik.stardew.core.registry.block.craftables.BlockKeg;
-import dev.flomik.stardew.core.registry.block.craftables.BlockScarecrow;
+import dev.flomik.stardew.core.registry.block.craftables.*;
 import dev.flomik.stardew.core.registry.block.surface.BlockDirt;
 import dev.flomik.stardew.core.registry.block.surface.BlockFarmland;
 import dev.flomik.stardew.core.registry.block.surface.BlockGrassFull;
@@ -56,6 +53,8 @@ public class ModBlocks {
                     .sound(SoundType.WOOD)
                     .dynamicShape().noOcclusion()
                     .pushReaction(PushReaction.NORMAL)));
+
+    public static final RegistryObject<Block> CHEST = registerBlock("chest", BlockChest::new);
 
     public static final RegistryObject<Block> DIRT = registerBlock("dirt", BlockDirt::new);
 

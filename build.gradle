@@ -3,6 +3,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.neoforged.gradle' version '[6.0.18,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = "${mc_version}-${mod_version}"
@@ -14,6 +15,7 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 import net.minecraftforge.gradle.common.tasks.SignJar
+
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: mapping_channel, version: mc_version
@@ -60,17 +62,26 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-  flatDir { dir 'libs' } 
-  maven {
-    name = "Progwml6 maven"
-    url = 'https://dvs1.progwml6.com/files/maven/'
-  }
-  maven {
-  	name = "curios"
-    url = 'https://maven.theillusivec4.top/'
-  }
-  maven { url = 'https://maven.blamejared.com' }    
-  maven { url = 'https://www.cursemaven.com'  }
+    flatDir { dir 'libs' }
+    maven {
+        name = "Progwml6 maven"
+        url = 'https://dvs1.progwml6.com/files/maven/'
+    }
+    maven {
+        name = "curios"
+        url = 'https://maven.theillusivec4.top/'
+    }
+    maven { url = 'https://maven.blamejared.com' }
+    maven { url = 'https://www.cursemaven.com' }
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroupByRegex("software\\.bernie.*")
+            includeGroup("com.eliotlash.mclib")
+        }
+    }
+
 }
 
 dependencies {
@@ -80,6 +91,9 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+
+    implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
+    implementation("com.eliotlash.mclib:mclib:20")
 
 /*
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:${mc_version}-${patchouli_version}-FORGE:api")
@@ -95,11 +109,11 @@ dependencies {
 
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
-            mc_version: mc_version, flib_version: flib_version,
+            mc_version          : mc_version, flib_version: flib_version,
             loader_version_range: loader_version_range,
-            neo_version_range: neo_version_range, neo_version: neo_version, 
-            mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-            mod_authors: mod_authors, mod_description: mod_description, curse_slug: curse_slug
+            neo_version_range   : neo_version_range, neo_version: neo_version,
+            mod_id              : mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
+            mod_authors         : mod_authors, mod_description: mod_description, curse_slug: curse_slug
     ]
     inputs.properties replaceProperties
 
@@ -145,7 +159,7 @@ task signJar(type: SignJar, dependsOn: jar) {
     outputFile = jar.archivePath
 }
 task cleanJar {
-  delete 'build/libs'
+    delete 'build/libs'
 }
 
 

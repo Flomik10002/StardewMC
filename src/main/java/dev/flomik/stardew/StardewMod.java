@@ -9,6 +9,7 @@ import dev.flomik.stardew.core.config.StardewConfig;
 import dev.flomik.stardew.core.registry.blockentity.ModBlockEntities;
 import dev.flomik.stardew.core.registry.item.ModCreativeModeTabs;
 import dev.flomik.stardew.core.registry.item.ModItems;
+import dev.flomik.stardew.core.registry.menu.ModMenuTypes;
 import dev.flomik.stardew.core.registry.sound.ModSounds;
 import dev.flomik.stardew.core.time.ScheduleManager;
 import dev.flomik.stardew.core.time.StardewClock;
@@ -41,7 +42,7 @@ public class StardewMod {
         ModBlockEntities.register();
         ModCreativeModeTabs.register(modEventBus);
         ModSounds.register(modEventBus);
-
+        ModMenuTypes.register(modEventBus);
 
         ArgumentTypeInfos.registerByClass(
                 SeasonArgument.class,
