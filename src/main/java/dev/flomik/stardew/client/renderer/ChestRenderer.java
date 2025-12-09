@@ -73,10 +73,10 @@ public class ChestRenderer implements BlockEntityRenderer<BlockEntityChest> {
         poseStack.translate(0.5D, 0.5D, 0.5D);
         Direction dir = state.getValue(BlockChest.FACING);
         float rot = switch (dir) {
-            case SOUTH -> 0f;
-            case WEST  -> 90f;
-            case NORTH -> 180f;
-            case EAST  -> 270f;
+            case SOUTH -> 180f;
+            case WEST  -> 270f;
+            case NORTH -> 0f;
+            case EAST  -> 90f;
             default -> 0f;
         };
 
