@@ -1,0 +1,13 @@
+<!--
+  ~ Copyright (c) PORTB 2025
+  ~
+  ~ Licensed under GNU LGPL v3
+  ~ https://www.gnu.org/licenses/lgpl-3.0.txt
+  -->
+
+<transformers>
+<class path="dan200/computercraft/shared/turtle/apis/TurtleAPI" transformChildren="false">
+    <method name="checkCount" transformer="replace64"/>
+    <method name="getItemSpace" transformer="replace64"/>
+</class>
+</transformers>

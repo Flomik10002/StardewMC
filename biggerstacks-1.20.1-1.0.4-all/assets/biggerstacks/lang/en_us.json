@@ -1,0 +1,13 @@
+{
+    "biggerstacks.exact.count": "Exact Count: %s",
+    "biggerstacks.enchbox.alt": "Enchanted books stack limit",
+    "biggerstacks.potsbox.alt": "Potions stack limit",
+    "biggerstacks.normalbox.alt": "Normal items stack limit",
+    "biggerstacks.enchbox.label": "Enchanted books",
+    "biggerstacks.potsbox.label": "Potions",
+    "biggerstacks.normalbox.label": "Normal items",
+    "biggerstacks.config.title": "Configure stack limit",
+    "biggerstacks.player.expected": "Command must be run by a player",
+    "biggerstacks.overwrite.warn": "This will overwrite your custom rules file!",
+    "biggerstacks.save": "Save"
+}

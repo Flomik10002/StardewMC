@@ -3,8 +3,23 @@
   "minVersion": "0.8",
   "package": "dev.flomik.stardew.mixin",
   "compatibilityLevel": "JAVA_17",
+  "plugin": "dev.flomik.stardew.mixin.TransformerEngine",
   "refmap": "stardew.refmap.json",
   "mixins": [
+    "stacksize.ItemMixin",
+    "stacksize.ItemStackMixin",
+    "stacksize.ItemStackAccessor",
+    "stacksize.ItemPropertiesMixin",
+    "stacksize.FriendlyByteBufMixin",
+    "stacksize.ItemEntityMixin",
+    "stacksize.ItemStackHandlerMixin",
+    "stacksize.ServerGamePacketListenerImplMixin",
+    "stacksize.ContainersMixin",
+    "stacksize.BundleItemMixin",
+    "stacksize.AnvilMenuMixin"
+  ],
+  "client": [
+    "client.GuiGraphicsMixin"
   ],
   "injectors": {
     "defaultRequire": 1

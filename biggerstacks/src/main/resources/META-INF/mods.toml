@@ -1,0 +1,25 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+license = "GNU LGPLv3"
+
+[[mods]]
+modId = "biggerstacks"
+version = "${file.jarVersion}"
+displayName = "Bigger Stacks"
+logoFile = "BiggerStacks.png"
+authors = "PORTB"
+description = '''Allows increasing stack sizes past 64 up to MAXINT/2 (about 1 billion)'''
+
+[[dependencies.biggerstacks]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.biggerstacks]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20,1.21)"
+ordering = "NONE"
+side = "BOTH"

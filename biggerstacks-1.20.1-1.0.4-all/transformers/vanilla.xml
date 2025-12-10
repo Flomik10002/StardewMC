@@ -1,0 +1,32 @@
+<!--
+  ~ Copyright (c) PORTB 2025
+  ~
+  ~ Licensed under GNU LGPL v3
+  ~ https://www.gnu.org/licenses/lgpl-3.0.txt
+  -->
+
+<transformers>
+    <class path="net.minecraft.world.Container" transformChildren="true">
+        <!--
+        A crash was observed while running EasyShulkerBoxes/puzzlelib due to a class overloading this method, the desc should stop that.
+        However, this should only be possible in a dev environment anyway due to the deobfuscation.
+        ... Unless it was hitting some user method coincidentally called getMaxStackSize, in which case it might cause the uprising of satan!!!
+        -->
+        <method name="getMaxStackSize" transformer="slotLimit" desc="()I"/>
+        <method name="m_6893_" transformer="slotLimit"/>
+    </class>
+
+    <class path="net/minecraftforge/items/IItemHandler" transformChildren="true">
+        <method name="getSlotLimit" transformer="slotLimit" desc="(I)I"/>
+        <!--      I don't remember what this does exactly. I think it was to preserve the behaviour of sophisticated stuff's stack upgrade system  -->
+
+        <blacklist>net/p3pp3rf1y/sophisticatedcore/inventory/InventoryHandler</blacklist>
+    </class>
+
+    <class path="net.minecraft.world.inventory.Slot" transformChildren="true">
+        <method name="getMaxStackSize" transformer="slotLimit" desc="()I"/>
+        <method name="m_6641_" transformer="slotLimit"/>
+        <!--      I don't remember what this does exactly. I think it was to preserve the behaviour of sophisticated stuff's stack upgrade system  -->
+        <blacklist>net/p3pp3rf1y/sophisticatedcore/common/gui/StorageInventorySlot</blacklist>
+    </class>
+</transformers>

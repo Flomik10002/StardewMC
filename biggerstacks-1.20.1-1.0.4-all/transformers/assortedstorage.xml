@@ -1,0 +1,21 @@
+<!--
+  ~ Copyright (c) PORTB 2025
+  ~
+  ~ Licensed under GNU LGPL v3
+  ~ https://www.gnu.org/licenses/lgpl-3.0.txt
+  -->
+
+<transformers>
+    <class path="com.grim3212.assorted.lib.core.inventory.IItemStorageHandler" transformChildren="true">
+        <method name="getStackInSlot" transformer="replace64"/>
+        <method name="getSlotLimit" transformer="slotLimit" desc="(I)I"/>
+    </class>
+
+    <class path="com.grim3212.assorted.storage.api.LargeItemStack" transformChildren="false">
+        <method name="split" transformer="replace64"/>
+    </class>
+
+    <class path="com.grim3212.assorted.storage.common.block.blockentity.CrateBlockEntity" transformChildren="false">
+        <method name="attack" transformer="replace64"/>
+    </class>
+</transformers>

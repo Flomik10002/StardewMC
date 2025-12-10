@@ -1,0 +1,27 @@
+<!--
+  Stardew Stack Size Transformers
+  Based on BiggerStacks implementation
+  
+  These transformers modify getMaxStackSize/getSlotLimit methods in interfaces
+  to increase stack limits. This is necessary because Mixins cannot directly
+  modify interface methods and all their inheritors.
+-->
+<transformers>
+    <!-- Container interface - affects all container implementations -->
+    <class path="net.minecraft.world.Container" transformChildren="true">
+        <method name="getMaxStackSize" transformer="slotLimit" desc="()I"/>
+        <method name="m_6893_" transformer="slotLimit"/>
+    </class>
+
+    <!-- Forge IItemHandler - affects all item handler implementations -->
+    <class path="net/minecraftforge/items/IItemHandler" transformChildren="true">
+        <method name="getSlotLimit" transformer="slotLimit" desc="(I)I"/>
+    </class>
+
+    <!-- Slot class - affects all slot implementations -->
+    <class path="net.minecraft.world.inventory.Slot" transformChildren="true">
+        <method name="getMaxStackSize" transformer="slotLimit" desc="()I"/>
+        <method name="m_6641_" transformer="slotLimit"/>
+    </class>
+</transformers>
+

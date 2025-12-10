@@ -19,9 +19,6 @@ import net.minecraftforge.gradle.common.tasks.SignJar
 mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
     config "${mod_id}.mixins.json"
-
-    debug.verbose = true
-    debug.export = true
 }
 // ---------------------------
 
@@ -93,6 +90,8 @@ repositories {
             includeGroup("com.eliotlash.mclib")
         }
     }
+    // XStream for TransformerLib XML parsing
+    mavenCentral()
 }
 
 dependencies {
@@ -107,6 +106,12 @@ dependencies {
 
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
     implementation("com.eliotlash.mclib:mclib:20")
+
+    // BiggerStacks TransformerLib dependencies (from libs/)
+    implementation files('libs/BiggerStacksTransformerLib-1.5.1.jar')
+    implementation files('libs/BiggerStacksConfigLib-1.8.jar')
+    implementation files('libs/SimpleLoggerWrapper-1.0.jar')
+    implementation files('libs/xstream-1.4.20.jar')
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -124,7 +129,20 @@ tasks.named('processResources', ProcessResources).configure {
     }
 }
 
+// Copy jarjar libraries to build resources
+tasks.register('copyJarJarLibs', Copy) {
+    from('libs') {
+        include 'BiggerStacksTransformerLib-1.5.1.jar'
+        include 'BiggerStacksConfigLib-1.8.jar'
+        include 'SimpleLoggerWrapper-1.0.jar'
+        include 'xstream-1.4.20.jar'
+    }
+    into layout.buildDirectory.dir('jarjarlibs')
+}
+
 tasks.named('jar', Jar).configure {
+    dependsOn 'copyJarJarLibs'
+    
     manifest {
         attributes([
                 'Specification-Title'     : mod_id,
@@ -137,8 +155,77 @@ tasks.named('jar', Jar).configure {
                 'MixinConfigs'            : "${mod_id}.mixins.json"
         ])
     }
+    
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    
+    // Include jarjar libraries
+    from(layout.buildDirectory.dir('jarjarlibs')) {
+        into 'META-INF/jarjar'
+    }
 
     finalizedBy 'reobfJar'
+}
+
+// Create jarjar metadata in resources
+tasks.register('createJarJarMetadata') {
+    doLast {
+        def metadataDir = file('src/main/resources/META-INF/jarjar')
+        metadataDir.mkdirs()
+        
+        def metadata = """{
+  "jars": [
+    {
+      "identifier": {
+        "group": "portb",
+        "artifact": "BiggerStacksTransformerLib"
+      },
+      "version": {
+        "range": "[1.5.1]",
+        "artifactVersion": "1.5.1"
+      },
+      "path": "META-INF/jarjar/BiggerStacksTransformerLib-1.5.1.jar",
+      "isObfuscated": false
+    },
+    {
+      "identifier": {
+        "group": "portb",
+        "artifact": "BiggerStacksConfigLib"
+      },
+      "version": {
+        "range": "[1.8]",
+        "artifactVersion": "1.8"
+      },
+      "path": "META-INF/jarjar/BiggerStacksConfigLib-1.8.jar",
+      "isObfuscated": false
+    },
+    {
+      "identifier": {
+        "group": "portb",
+        "artifact": "SimpleLoggerWrapper"
+      },
+      "version": {
+        "range": "[1.0]",
+        "artifactVersion": "1.0"
+      },
+      "path": "META-INF/jarjar/SimpleLoggerWrapper-1.0.jar",
+      "isObfuscated": false
+    },
+    {
+      "identifier": {
+        "group": "com.thoughtworks.xstream",
+        "artifact": "xstream"
+      },
+      "version": {
+        "range": "[1.4.20]",
+        "artifactVersion": "1.4.20"
+      },
+      "path": "META-INF/jarjar/xstream-1.4.20.jar",
+      "isObfuscated": false
+    }
+  ]
+}"""
+        new File(metadataDir, 'metadata.json').text = metadata
+    }
 }
 
 publishing {
