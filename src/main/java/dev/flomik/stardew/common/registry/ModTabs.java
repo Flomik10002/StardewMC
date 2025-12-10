@@ -6,9 +6,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModTabs {
-    public static final RegistryObject<CreativeModeTab> BLOCK = StardewRegistry.TABS.register("block",
+    public static final RegistryObject<CreativeModeTab> BLOCK = StardewRegistry.TABS.register("blocks",
             () -> CreativeModeTab.builder()
-                    .title(Component.translatable("tab.block"))
+                    .title(Component.translatable("tab.blocks"))
                     .icon(() -> new ItemStack(ModBlocks.DIRT.get()))
                     .build());
 

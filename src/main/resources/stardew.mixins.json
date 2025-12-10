@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.flomik.stardew.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "stardew.refmap.json",
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
