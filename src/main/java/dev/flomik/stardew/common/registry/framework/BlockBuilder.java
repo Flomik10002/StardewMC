@@ -1,6 +1,8 @@
 package dev.flomik.stardew.common.registry.framework;
 
 import dev.flomik.stardew.common.registry.StardewRegistry;
+import dev.flomik.stardew.common.registry.framework.datagen.DataGenManager;
+import dev.flomik.stardew.common.registry.framework.datagen.ItemModelGen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
@@ -55,10 +57,6 @@ public class BlockBuilder<T extends Block> {
         return this;
     }
 
-    /**
-     * Добавляет BlockEntity к этому блоку.
-     * @param beFactory Фабрика BE, например: ChestBlockEntity::new
-     */
     public <E extends BlockEntity> BlockEntityBuilder<E> blockEntity(BiFunction<BlockPos, BlockState, E> beFactory) {
         return new BlockEntityBuilder<>(beFactory);
     }
@@ -68,21 +66,25 @@ public class BlockBuilder<T extends Block> {
     }
 
     public RegistryObject<T> noItem() {
-        return registerInternal(false, null, null).getBlock();
+        return registerInternal(false, null, null, null).getBlock();
     }
 
     public RegistryObject<T> register() {
-        return registerInternal(true, new Item.Properties(), null).getBlock();
+        return registerInternal(true, new Item.Properties(), null, null).getBlock();
     }
 
-    protected BlockEntry<T, ?> registerInternal(boolean hasItem, Item.Properties itemProps, RegistryObject<CreativeModeTab> tab) {
+    protected BlockEntry<T, ?> registerInternal(boolean hasItem, Item.Properties itemProps, RegistryObject<CreativeModeTab> tab, ItemModelGen modelGen) {
         RegistryObject<T> blockReg = StardewRegistry.BLOCKS.register(name, () -> factory.apply(properties));
         RegistryObject<Item> itemReg = null;
 
         if (hasItem) {
             itemReg = StardewRegistry.ITEMS.register(name, () -> new BlockItem(blockReg.get(), itemProps));
+
             if (tab != null) {
                 TabManager.assign(tab, itemReg);
+            }
+            if (modelGen != null) {
+                DataGenManager.assign(itemReg, modelGen);
             }
         }
 
@@ -93,6 +95,7 @@ public class BlockBuilder<T extends Block> {
         private final BlockBuilder<T> parent;
         private final Item.Properties itemProperties = new Item.Properties();
         private RegistryObject<CreativeModeTab> tab;
+        private ItemModelGen modelGen; // Храним генератор
 
         public BlockItemBuilder(BlockBuilder<T> parent) { this.parent = parent; }
 
@@ -101,8 +104,18 @@ public class BlockBuilder<T extends Block> {
             return this;
         }
 
+        public BlockItemBuilder stacksTo(int count) {
+            this.itemProperties.stacksTo(count);
+            return this;
+        }
+
+        public BlockItemBuilder model(ItemModelGen gen) {
+            this.modelGen = gen;
+            return this;
+        }
+
         public RegistryObject<T> register() {
-            return parent.registerInternal(true, itemProperties, tab).getBlock();
+            return parent.registerInternal(true, itemProperties, tab, modelGen).getBlock();
         }
     }
 
@@ -111,12 +124,13 @@ public class BlockBuilder<T extends Block> {
         private Item.Properties itemProperties = new Item.Properties();
         private RegistryObject<CreativeModeTab> tab;
         private boolean hasItem = true;
+        private ItemModelGen modelGen; // Храним генератор
 
         public BlockEntityBuilder(BiFunction<BlockPos, BlockState, E> beFactory) {
             this.beFactory = beFactory;
         }
 
-        public BlockEntityBuilder<E> item() { return this; } // Сахар
+        public BlockEntityBuilder<E> item() { return this; }
 
         public BlockEntityBuilder<E> noItem() {
             this.hasItem = false;
@@ -128,8 +142,13 @@ public class BlockBuilder<T extends Block> {
             return this;
         }
 
+        public BlockEntityBuilder<E> model(ItemModelGen gen) {
+            this.modelGen = gen;
+            return this;
+        }
+
         public BlockEntry<T, E> register() {
-            BlockEntry<T, ?> base = BlockBuilder.this.registerInternal(hasItem, itemProperties, tab);
+            BlockEntry<T, ?> base = BlockBuilder.this.registerInternal(hasItem, itemProperties, tab, modelGen);
 
             RegistryObject<BlockEntityType<E>> typeReg = StardewRegistry.BLOCK_ENTITIES.register(name, () ->
                     BlockEntityType.Builder.of(beFactory::apply, base.get()).build(null)

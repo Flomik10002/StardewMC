@@ -11,6 +11,7 @@ import dev.flomik.stardew.common.registry.block.surface.BlockDirt;
 import dev.flomik.stardew.common.registry.block.surface.BlockFarmland;
 import dev.flomik.stardew.common.registry.block.surface.BlockGrassSurface;
 import dev.flomik.stardew.common.registry.framework.BlockEntry;
+import dev.flomik.stardew.common.registry.framework.datagen.ModelPresets;
 import dev.flomik.stardew.core.crop.block.BlockCrop;
 import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
 import net.minecraft.world.level.block.Block;
@@ -24,25 +25,33 @@ public class ModBlocks {
     public static final BlockEntry<BlockKeg, BlockEntityKeg> KEG = BlockBuilder.create("keg", BlockKeg::new)
             .transform(woodMachine())
             .blockEntity(BlockEntityKeg::new)
-            .item().tab(ModTabs.CRAFTABLES)
+            .item()
+            .tab(ModTabs.CRAFTABLES)
+            .model(ModelPresets.simple())
             .register();
 
     public static final BlockEntry<BlockChest, BlockEntityChest> CHEST = BlockBuilder.create("chest", BlockChest::new)
             .transform(woodMachine())
             .blockEntity(BlockEntityChest::new)
-            .item().tab(ModTabs.CRAFTABLES)
+            .item()
+            .tab(ModTabs.CRAFTABLES)
+            .model(ModelPresets.simple())
             .register();
 
     public static final BlockEntry<BlockBeeHouse, BlockEntityBeeHouse> BEE_HOUSE = BlockBuilder.create("bee_house", BlockBeeHouse::new)
             .transform(woodMachine())
             .blockEntity(BlockEntityBeeHouse::new)
-            .item().tab(ModTabs.CRAFTABLES)
+            .item()
+            .tab(ModTabs.CRAFTABLES)
+            .model(ModelPresets.simple())
             .register();
 
     public static final BlockEntry<BlockCheesePress, BlockEntityCheesePress> CHEESE_PRESS = BlockBuilder.create("cheese_press", BlockCheesePress::new)
             .transform(woodMachine())
             .blockEntity(BlockEntityCheesePress::new)
-            .item().tab(ModTabs.CRAFTABLES)
+            .item()
+            .tab(ModTabs.CRAFTABLES)
+            .model(ModelPresets.simple())
             .register();
 
     public static final BlockEntry<BlockFarmland, FarmlandBlockEntity> FARMLAND = BlockBuilder.create("farmland", BlockFarmland::new)
@@ -79,5 +88,6 @@ public class ModBlocks {
             .noItem()
             .register();
 
-    public static void load() {}
+    public static void load() {
+    }
 }
