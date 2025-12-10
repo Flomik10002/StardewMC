@@ -19,43 +19,39 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(GuiGraphics.class)
 public abstract class GuiGraphicsMixin {
     
-    private static double calculateStringScale(Font font, String countString) {
-        var width = font.width(countString);
-        
-        if (width < 16)
-            return 1.0;
-        else
-            return 16.0 / width;
+    private static final float MAX_SCALE = 0.75f;
+    private static final float MAX_WIDTH = 15f;
+    
+    private static float calculateStringScale(Font font, String countString) {
+        float width = font.width(countString);
+        float scale = MAX_WIDTH / width;
+        return Math.min(scale, MAX_SCALE);
     }
     
-    // Отключаем ванильный рендер количества - используем SRG имена для production
     @Redirect(method = "m_280302_", // renderItemDecorations
               at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;m_252880_(FFF)V"), // translate
               remap = false)
     private void doNothing1(PoseStack instance, float x, float y, float z) {
-        // Пропускаем ванильный translate
     }
-    
+
     @Redirect(method = "m_280302_", // renderItemDecorations
               at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;m_280056_(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I"), // drawString
               remap = false)
     private int doNothing2(GuiGraphics instance, Font font, String text, int x, int y, int color, boolean shadow) {
-        return 0; // Пропускаем ванильный drawString
+        return 0;
     }
-    
-    // Рендерим свой текст с масштабированием
+
     @Inject(method = "m_280302_", // renderItemDecorations
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;m_280056_(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I"), // drawString
             remap = false)
     private void renderText(Font font, ItemStack itemStack, int x, int y, String alternateCount, CallbackInfo ci) {
         var poseStack = ((GuiGraphics) (Object) this).pose();
         
-        // Просто число, без форматирования
         String text = alternateCount == null ? String.valueOf(itemStack.getCount()) : alternateCount;
         
-        float scale = (float) calculateStringScale(font, text);
+        float scale = calculateStringScale(font, text);
         float inverseScale = 1 / scale;
-        float xTransform = (x + 16) * inverseScale - font.width(text);
+        float xTransform = (x + 15) * inverseScale - font.width(text);
         float yTransform = (y + 16) * inverseScale - font.lineHeight;
         
         poseStack.scale(scale, scale, 1);
@@ -64,18 +60,17 @@ public abstract class GuiGraphicsMixin {
         MultiBufferSource.BufferSource bufferSource = MultiBufferSource.immediate(Tesselator.getInstance().getBuilder());
         font.drawInBatch(
                 text,
-                0, // x - позиционирование через poseStack
-                0, // y
-                16777215, // белый цвет
-                true, // тень
+                0,
+                0,
+                16777215,
+                true,
                 poseStack.last().pose(),
                 bufferSource,
                 Font.DisplayMode.NORMAL,
-                0, // фон
-                15728880 // свет
+                0,
+                15728880
         );
         
-        // Возвращаем позицию для durability bar
         poseStack.translate(-xTransform, -yTransform, 0);
         
         bufferSource.endBatch();

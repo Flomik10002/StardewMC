@@ -1,12 +1,11 @@
-
 package dev.flomik.stardew.client;
 
 import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.client.renderer.ChestRenderer;
 import dev.flomik.stardew.client.screen.ChestScreen;
-import dev.flomik.stardew.common.registry.block.base.VisualItemAboveRenderer;
 import dev.flomik.stardew.common.registry.ModBlocks;
 import dev.flomik.stardew.common.registry.ModMenuTypes;
+import dev.flomik.stardew.common.registry.framework.RendererRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -18,24 +17,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = StardewMod.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientSetup {
+    
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(
-                ModBlocks.BEE_HOUSE.getTypeValue(),
-                VisualItemAboveRenderer::new
-        );
-        event.registerBlockEntityRenderer(
-                ModBlocks.CHEESE_PRESS.getTypeValue(),
-                VisualItemAboveRenderer::new
-        );
-        event.registerBlockEntityRenderer(
-                ModBlocks.KEG.getTypeValue(),
-                VisualItemAboveRenderer::new
-        );
-        event.registerBlockEntityRenderer(
-                ModBlocks.CHEST.getTypeValue(),
-                ChestRenderer::new
-        );
+        RendererRegistry.registerAll(event);
     }
 
     @SubscribeEvent

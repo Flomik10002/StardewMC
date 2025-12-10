@@ -15,6 +15,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.RegistryObject;
 
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
@@ -124,7 +126,8 @@ public class BlockBuilder<T extends Block> {
         private Item.Properties itemProperties = new Item.Properties();
         private RegistryObject<CreativeModeTab> tab;
         private boolean hasItem = true;
-        private ItemModelGen modelGen; // Храним генератор
+        private ItemModelGen modelGen;
+        private BlockEntityRendererProvider<E> rendererProvider;
 
         public BlockEntityBuilder(BiFunction<BlockPos, BlockState, E> beFactory) {
             this.beFactory = beFactory;
@@ -147,12 +150,26 @@ public class BlockBuilder<T extends Block> {
             return this;
         }
 
+        /**
+         * Устанавливает рендерер для блок-энтити.
+         * Рендерер будет автоматически зарегистрирован на клиенте.
+         */
+        public BlockEntityBuilder<E> renderer(BlockEntityRendererProvider<E> provider) {
+            this.rendererProvider = provider;
+            return this;
+        }
+
         public BlockEntry<T, E> register() {
             BlockEntry<T, ?> base = BlockBuilder.this.registerInternal(hasItem, itemProperties, tab, modelGen);
 
             RegistryObject<BlockEntityType<E>> typeReg = StardewRegistry.BLOCK_ENTITIES.register(name, () ->
                     BlockEntityType.Builder.of(beFactory::apply, base.get()).build(null)
             );
+
+            // Регистрируем рендерер если указан
+            if (rendererProvider != null) {
+                RendererRegistry.register(typeReg::get, rendererProvider);
+            }
 
             return new BlockEntry<>(base.getBlock(), base.getItem(), typeReg);
         }
