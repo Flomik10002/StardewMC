@@ -13,41 +13,37 @@ public class ModItems {
 
     public static final RegistryObject<Item> TOMATO = ItemBuilder.create("tomato")
             .tab(ModTabs.CROPS)
-            .model(ModelPresets.simple())
+            .visual(ModelPresets.simple())
             .register();
 
     public static final RegistryObject<ItemStardewSeed> TOMATO_SEEDS = ItemBuilder.create("tomato_seeds",
                     p -> new ItemStardewSeed(p, StardewRegistry.id("tomato")))
             .tab(ModTabs.CROPS)
-            .model(ModelPresets.seed())
+            .visual(ModelPresets.seed())
             .register();
 
     public static final RegistryObject<Item> HONEY = ItemBuilder
             .create("honey")
-            .stacksTo(999)
             .tab(ModTabs.ARTISAN_GOODS)
-            .model(ModelPresets.simple())
+            .visual(ModelPresets.simple())
             .register();
 
     public static final RegistryObject<Item> WINE = ItemBuilder
             .create("wine")
-            .stacksTo(999)
             .tab(ModTabs.ARTISAN_GOODS)
-            .model(ModelPresets.simple())
+            .visual(ModelPresets.simple())
             .register();
 
     public static final RegistryObject<Item> CHEESE = ItemBuilder
             .create("cheese")
-            .stacksTo(999)
             .tab(ModTabs.ARTISAN_GOODS)
-            .model(ModelPresets.simple())
+            .visual(ModelPresets.simple())
             .register();
 
     public static final RegistryObject<Item> GOAT_CHEESE = ItemBuilder
             .create("goat_cheese")
-            .stacksTo(999)
             .tab(ModTabs.ARTISAN_GOODS)
-            .model(ModelPresets.simple())
+            .visual(ModelPresets.simple())
             .register();
 
     public static final RegistryObject<ToolHoe> BASIC_HOE = ItemBuilder

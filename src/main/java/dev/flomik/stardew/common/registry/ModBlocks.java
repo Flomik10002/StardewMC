@@ -30,7 +30,7 @@ public class ModBlocks {
             .renderer(VisualItemAboveRenderer::new)
             .item()
             .tab(ModTabs.CRAFTABLES)
-            .model(ModelPresets.simple())
+            .visual(ModelPresets.simple())
             .register();
 
     public static final BlockEntry<BlockChest, BlockEntityChest> CHEST = BlockBuilder.create("chest", BlockChest::new)
@@ -39,7 +39,7 @@ public class ModBlocks {
             .renderer(ChestRenderer::new)
             .item()
             .tab(ModTabs.CRAFTABLES)
-            .model(ModelPresets.simple())
+            .visual(ModelPresets.simple())
             .register();
 
     public static final BlockEntry<BlockBeeHouse, BlockEntityBeeHouse> BEE_HOUSE = BlockBuilder.create("bee_house", BlockBeeHouse::new)
@@ -48,7 +48,7 @@ public class ModBlocks {
             .renderer(VisualItemAboveRenderer::new)
             .item()
             .tab(ModTabs.CRAFTABLES)
-            .model(ModelPresets.simple())
+            .visual(ModelPresets.simple())
             .register();
 
     public static final BlockEntry<BlockCheesePress, BlockEntityCheesePress> CHEESE_PRESS = BlockBuilder.create("cheese_press", BlockCheesePress::new)
@@ -57,7 +57,7 @@ public class ModBlocks {
             .renderer(VisualItemAboveRenderer::new)
             .item()
             .tab(ModTabs.CRAFTABLES)
-            .model(ModelPresets.simple())
+            .visual(ModelPresets.simple())
             .register();
 
     public static final BlockEntry<BlockFarmland, FarmlandBlockEntity> FARMLAND = BlockBuilder.create("farmland", BlockFarmland::new)
@@ -66,7 +66,7 @@ public class ModBlocks {
             .blockEntity(FarmlandBlockEntity::new)
             .item()
             .tab(ModTabs.BLOCK)
-            .model(ModelPresets.simple())
+            .visual(ModelPresets.simple())
             .register();
 
     public static final RegistryObject<BlockDirt> DIRT = BlockBuilder.create("dirt", BlockDirt::new)

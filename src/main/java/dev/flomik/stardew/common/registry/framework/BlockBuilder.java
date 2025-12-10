@@ -75,7 +75,7 @@ public class BlockBuilder<T extends Block> {
         return registerInternal(true, new Item.Properties(), null, null).getBlock();
     }
 
-    protected BlockEntry<T, ?> registerInternal(boolean hasItem, Item.Properties itemProps, RegistryObject<CreativeModeTab> tab, ItemModelGen modelGen) {
+    protected BlockEntry<T, ?> registerInternal(boolean hasItem, Item.Properties itemProps, RegistryObject<CreativeModeTab> tab, ItemModelGen visualGen) {
         RegistryObject<T> blockReg = StardewRegistry.BLOCKS.register(name, () -> factory.apply(properties));
         RegistryObject<Item> itemReg = null;
 
@@ -85,8 +85,8 @@ public class BlockBuilder<T extends Block> {
             if (tab != null) {
                 TabManager.assign(tab, itemReg);
             }
-            if (modelGen != null) {
-                DataGenManager.assign(itemReg, modelGen);
+            if (visualGen != null) {
+                DataGenManager.assign(itemReg, visualGen);
             }
         }
 
@@ -97,7 +97,7 @@ public class BlockBuilder<T extends Block> {
         private final BlockBuilder<T> parent;
         private final Item.Properties itemProperties = new Item.Properties();
         private RegistryObject<CreativeModeTab> tab;
-        private ItemModelGen modelGen; // Храним генератор
+        private ItemModelGen visualGen; // Храним генератор
 
         public BlockItemBuilder(BlockBuilder<T> parent) { this.parent = parent; }
 
@@ -111,13 +111,13 @@ public class BlockBuilder<T extends Block> {
             return this;
         }
 
-        public BlockItemBuilder model(ItemModelGen gen) {
-            this.modelGen = gen;
+        public BlockItemBuilder visual(ItemModelGen gen) {
+            this.visualGen = gen;
             return this;
         }
 
         public RegistryObject<T> register() {
-            return parent.registerInternal(true, itemProperties, tab, modelGen).getBlock();
+            return parent.registerInternal(true, itemProperties, tab, visualGen).getBlock();
         }
     }
 
@@ -126,7 +126,7 @@ public class BlockBuilder<T extends Block> {
         private Item.Properties itemProperties = new Item.Properties();
         private RegistryObject<CreativeModeTab> tab;
         private boolean hasItem = true;
-        private ItemModelGen modelGen;
+        private ItemModelGen visualGen;
         private BlockEntityRendererProvider<E> rendererProvider;
 
         public BlockEntityBuilder(BiFunction<BlockPos, BlockState, E> beFactory) {
@@ -145,8 +145,8 @@ public class BlockBuilder<T extends Block> {
             return this;
         }
 
-        public BlockEntityBuilder<E> model(ItemModelGen gen) {
-            this.modelGen = gen;
+        public BlockEntityBuilder<E> visual(ItemModelGen gen) {
+            this.visualGen = gen;
             return this;
         }
 
@@ -160,13 +160,12 @@ public class BlockBuilder<T extends Block> {
         }
 
         public BlockEntry<T, E> register() {
-            BlockEntry<T, ?> base = BlockBuilder.this.registerInternal(hasItem, itemProperties, tab, modelGen);
+            BlockEntry<T, ?> base = BlockBuilder.this.registerInternal(hasItem, itemProperties, tab, visualGen);
 
             RegistryObject<BlockEntityType<E>> typeReg = StardewRegistry.BLOCK_ENTITIES.register(name, () ->
                     BlockEntityType.Builder.of(beFactory::apply, base.get()).build(null)
             );
 
-            // Регистрируем рендерер если указан
             if (rendererProvider != null) {
                 RendererRegistry.register(typeReg::get, rendererProvider);
             }

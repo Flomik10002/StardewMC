@@ -12,10 +12,10 @@ import java.util.function.Function;
 public class ItemBuilder<T extends Item> {
     private final String name;
     private Function<Item.Properties, T> factory;
-    private Item.Properties properties = new Item.Properties();
+    private Item.Properties properties = new Item.Properties().stacksTo(999);
     private RegistryObject<CreativeModeTab> tab = null;
 
-    private ItemModelGen modelGenerator = null;
+    private ItemModelGen visualGenerator = null;
 
     public static ItemBuilder<Item> create(String name) {
         return new ItemBuilder<>(name, Item::new);
@@ -44,8 +44,8 @@ public class ItemBuilder<T extends Item> {
      * Указывает, какую модель генерировать.
      * @param generator Пресет (например ModelPresets.simple())
      */
-    public ItemBuilder<T> model(ItemModelGen generator) {
-        this.modelGenerator = generator;
+    public ItemBuilder<T> visual(ItemModelGen generator) {
+        this.visualGenerator = generator;
         return this;
     }
 
@@ -58,8 +58,8 @@ public class ItemBuilder<T extends Item> {
             TabManager.assign(tab, itemParams);
         }
 
-        if (modelGenerator != null) {
-            DataGenManager.assign(itemParams, modelGenerator);
+        if (visualGenerator != null) {
+            DataGenManager.assign(itemParams, visualGenerator);
         }
 
         return itemParams;
