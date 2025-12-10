@@ -1,7 +1,7 @@
 package dev.flomik.stardew.core.crop.block;
 
 import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
-import dev.flomik.stardew.core.registry.block.ModBlocks;
+import dev.flomik.stardew.common.registry.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
@@ -25,8 +25,8 @@ import org.jetbrains.annotations.Nullable;
 public class BlockCrop extends Block implements EntityBlock {
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7); // визуальный диапазон, маппим на фазы
 
-    public BlockCrop() {
-        super(Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP));
+    public BlockCrop(Properties p) {
+        super(p);
         this.registerDefaultState(stateDefinition.any().setValue(AGE, 0));
     }
 

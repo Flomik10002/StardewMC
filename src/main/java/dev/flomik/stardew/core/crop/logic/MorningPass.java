@@ -4,7 +4,7 @@ import dev.flomik.stardew.core.crop.runtime.FarmlandTracker;
 import dev.flomik.stardew.core.time.StardewDateData;
 import dev.flomik.stardew.core.time.Weather;
 import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
-import dev.flomik.stardew.core.registry.blockentity.FarmlandBlockEntity;
+import dev.flomik.stardew.common.registry.blockentity.FarmlandBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 

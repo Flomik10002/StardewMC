@@ -1,10 +1,9 @@
 package dev.flomik.stardew.core.crop.logic;
 
 import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
-import dev.flomik.stardew.core.registry.blockentity.FarmlandBlockEntity;
+import dev.flomik.stardew.common.registry.blockentity.FarmlandBlockEntity;
 import dev.flomik.stardew.core.crop.FertilizerType;
 import dev.flomik.stardew.core.time.StardewDateData;
-import dev.flomik.stardew.core.registry.blockentity.FarmlandBlockEntity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;

@@ -1,6 +1,6 @@
 package dev.flomik.stardew.core.network;
 
-import dev.flomik.stardew.core.registry.block.craftables.BlockChest;
+import dev.flomik.stardew.common.registry.block.craftables.BlockChest;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;

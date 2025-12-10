@@ -3,7 +3,7 @@ package dev.flomik.stardew.core.command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
-import dev.flomik.stardew.core.registry.block.surface.BlockDirt;
+import dev.flomik.stardew.common.registry.block.surface.BlockDirt;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.core.BlockPos;

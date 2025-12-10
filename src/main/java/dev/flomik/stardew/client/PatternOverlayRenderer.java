@@ -6,7 +6,7 @@ import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.core.item.tool.IPatternTool;
 import dev.flomik.stardew.core.item.tool.Pattern;
 import dev.flomik.stardew.core.item.tool.PatternType;
-import dev.flomik.stardew.core.registry.block.ModBlocks;
+import dev.flomik.stardew.common.registry.ModBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.core.BlockPos;

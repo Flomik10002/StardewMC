@@ -1,9 +1,10 @@
 package dev.flomik.stardew.core.crop.blockentity;
 
+import dev.flomik.stardew.common.registry.ModBlocks;
+import dev.flomik.stardew.common.registry.blockentity.FarmlandBlockEntity;
 import dev.flomik.stardew.core.crop.CropRegistry;
 import dev.flomik.stardew.core.crop.def.CropDef;
 import dev.flomik.stardew.core.crop.runtime.CropTracker;
-import dev.flomik.stardew.core.registry.blockentity.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -23,7 +24,7 @@ public class CropBlockEntity extends BlockEntity {
     private java.util.List<Integer> phaseDaysAdjusted = new java.util.ArrayList<>();
     private boolean fullyGrown;
 
-    public CropBlockEntity(BlockPos pos, BlockState state) { super(ModBlockEntities.CROP.get(), pos, state); }
+    public CropBlockEntity(BlockPos pos, BlockState state) { super(ModBlocks.CROP.getTypeValue(), pos, state); }
 
     public void init(ResourceLocation id) {
         this.cropId = id; this.currentPhase = 0; this.dayOfCurrentPhase = 0;
@@ -144,7 +145,7 @@ public class CropBlockEntity extends BlockEntity {
         float speedIncrease = 0f;
         var below = worldPosition.below();
         var be = level.getBlockEntity(below);
-        if (be instanceof dev.flomik.stardew.core.registry.blockentity.FarmlandBlockEntity fb) {
+        if (be instanceof FarmlandBlockEntity fb) {
             var fert = fb.getFertilizer();
             if (fert.isSpeedBoost()) speedIncrease += fert.strength; // 0.1 / 0.25 / 0.33
         }

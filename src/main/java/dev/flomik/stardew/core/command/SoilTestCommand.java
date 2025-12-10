@@ -6,7 +6,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import dev.flomik.stardew.core.crop.runtime.FarmlandTracker;
-import dev.flomik.stardew.core.registry.blockentity.FarmlandBlockEntity;
+import dev.flomik.stardew.common.registry.blockentity.FarmlandBlockEntity;
 import net.minecraft.core.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

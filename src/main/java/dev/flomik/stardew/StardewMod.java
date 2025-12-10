@@ -1,26 +1,23 @@
 package dev.flomik.stardew;
 
+import dev.flomik.stardew.common.registry.*;
 import dev.flomik.stardew.core.crop.logic.GrowthSystem;
 import dev.flomik.stardew.core.crop.logic.MorningPass;
 import dev.flomik.stardew.core.network.PacketHandler;
-import dev.flomik.stardew.core.registry.block.ModBlocks;
 import dev.flomik.stardew.core.command.SeasonArgument;
-import dev.flomik.stardew.core.config.StardewConfig;
-import dev.flomik.stardew.core.registry.blockentity.ModBlockEntities;
-import dev.flomik.stardew.core.registry.item.ModCreativeModeTabs;
-import dev.flomik.stardew.core.registry.item.ModItems;
-import dev.flomik.stardew.core.registry.menu.ModMenuTypes;
-import dev.flomik.stardew.core.registry.sound.ModSounds;
 import dev.flomik.stardew.core.time.ScheduleManager;
-import dev.flomik.stardew.core.time.StardewClock;
 import dev.flomik.stardew.core.time.StardewDateData;
+import dev.flomik.stardew.datagen.StardewItemModels;
 import net.minecraft.commands.synchronization.ArgumentTypeInfos;
 import net.minecraft.commands.synchronization.SingletonArgumentInfo;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -37,12 +34,13 @@ public class StardewMod {
     public StardewMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register();
-        ModBlocks.register();
-        ModBlockEntities.register();
-        ModCreativeModeTabs.register(modEventBus);
-        ModSounds.register(modEventBus);
-        ModMenuTypes.register(modEventBus);
+        StardewRegistry.init(modEventBus);
+
+        ModTabs.load();
+        ModBlocks.load();
+        ModItems.load();
+        ModSounds.load();
+        ModMenuTypes.load();
 
         ArgumentTypeInfos.registerByClass(
                 SeasonArgument.class,
@@ -50,8 +48,16 @@ public class StardewMod {
         );
 
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(StardewMod::onGatherData);
+    }
 
-        StardewConfig.register();
+    @SubscribeEvent
+    public static void onGatherData(GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        PackOutput output = generator.getPackOutput();
+        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+
+        generator.addProvider(event.includeClient(), new StardewItemModels(output, existingFileHelper));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

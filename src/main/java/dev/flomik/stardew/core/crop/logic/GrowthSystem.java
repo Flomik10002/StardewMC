@@ -3,7 +3,7 @@ package dev.flomik.stardew.core.crop.logic;
 import dev.flomik.stardew.core.crop.block.BlockCrop;
 import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
 import dev.flomik.stardew.core.crop.runtime.CropTracker;
-import dev.flomik.stardew.core.registry.blockentity.FarmlandBlockEntity;
+import dev.flomik.stardew.common.registry.blockentity.FarmlandBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 

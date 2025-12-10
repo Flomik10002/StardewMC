@@ -1,8 +1,8 @@
 package dev.flomik.stardew.client.model;
 
 import dev.flomik.stardew.client.ClientSeasonManager;
-import dev.flomik.stardew.core.registry.block.surface.BlockFarmland;
-import dev.flomik.stardew.core.registry.block.shape.Shape;
+import dev.flomik.stardew.common.registry.block.surface.BlockFarmland;
+import dev.flomik.stardew.common.registry.block.shape.Shape;
 import dev.flomik.stardew.core.time.Season;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.BakedQuad;

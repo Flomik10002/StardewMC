@@ -1,9 +1,8 @@
 {
-  "itemGroup.stardew_block_tab": "StardewMC Blocks",
-  "itemGroup.stardew_craftables_tab": "StardewMC Craftables",
-  "itemGroup.stardew_item_tab": "StardewMC Items",
-  "itemGroup.stardew_artisan_goods_tab": "StardewMC Artisan Goods",
-  "itemGroup.stardew_tools_tab": "StardewMC Tools",
+  "tab.blocks": "StardewMC Blocks",
+  "tab.craftables": "StardewMC Craftables",
+  "tab.artisan_goods": "StardewMC Artisan Goods",
+  "tab.tools": "StardewMC Tools",
 
   "block.stardew.keg": "Keg",
   "block.stardew.cheese_press": "Cheese Press",

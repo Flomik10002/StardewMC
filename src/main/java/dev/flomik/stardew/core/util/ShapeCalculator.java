@@ -1,11 +1,12 @@
 package dev.flomik.stardew.core.util;
 
-import dev.flomik.stardew.core.registry.block.shape.Shape;
-import dev.flomik.stardew.core.registry.block.surface.BlockFarmland;
-import dev.flomik.stardew.core.registry.block.surface.BlockGrassFull;
-import dev.flomik.stardew.core.registry.block.surface.BlockGrassSurface;
+import dev.flomik.stardew.common.registry.ModBlocks;
+import dev.flomik.stardew.common.registry.block.shape.Shape;
+import dev.flomik.stardew.common.registry.block.surface.BlockFarmland;
+import dev.flomik.stardew.common.registry.block.surface.BlockGrassSurface;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class ShapeCalculator {
@@ -73,7 +74,9 @@ public class ShapeCalculator {
 
     private static boolean isSameGrass(BlockAndTintGetter level, BlockPos pos) {
         BlockState state = level.getBlockState(pos);
-        return state.getBlock() instanceof BlockGrassSurface || state.getBlock() instanceof BlockGrassFull;
+        Block block = state.getBlock();
+
+        return block == ModBlocks.GRASS.get() || block == ModBlocks.GRASS_FULL.get();
     }
 
     private static boolean checkFarmland(BlockAndTintGetter level, BlockPos pos, boolean requireWet) {

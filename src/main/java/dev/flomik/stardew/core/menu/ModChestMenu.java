@@ -1,7 +1,6 @@
 package dev.flomik.stardew.core.menu;
 
-import dev.flomik.stardew.core.registry.block.craftables.BlockChest;
-import dev.flomik.stardew.core.registry.menu.ModMenuTypes;
+import dev.flomik.stardew.common.registry.ModMenuTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
