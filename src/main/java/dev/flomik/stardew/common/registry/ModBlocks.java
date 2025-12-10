@@ -1,21 +1,21 @@
 package dev.flomik.stardew.common.registry;
 
 import dev.flomik.stardew.client.renderer.ChestRenderer;
-import dev.flomik.stardew.common.registry.block.base.VisualItemAboveRenderer;
-import dev.flomik.stardew.common.registry.block.craftables.*;
-import dev.flomik.stardew.common.registry.block.craftables.blockentity.BlockEntityBeeHouse;
-import dev.flomik.stardew.common.registry.block.craftables.blockentity.BlockEntityCheesePress;
-import dev.flomik.stardew.common.registry.block.craftables.blockentity.BlockEntityChest;
-import dev.flomik.stardew.common.registry.block.craftables.blockentity.BlockEntityKeg;
-import dev.flomik.stardew.common.registry.blockentity.FarmlandBlockEntity;
+import dev.flomik.stardew.client.renderer.VisualItemAboveRenderer;
+import dev.flomik.stardew.common.module.craftables.block.*;
+import dev.flomik.stardew.common.module.craftables.blockentity.BlockEntityBeeHouse;
+import dev.flomik.stardew.common.module.craftables.blockentity.BlockEntityCheesePress;
+import dev.flomik.stardew.common.module.craftables.blockentity.BlockEntityChest;
+import dev.flomik.stardew.common.module.craftables.blockentity.BlockEntityKeg;
+import dev.flomik.stardew.common.module.farming.blockentity.FarmlandBlockEntity;
 import dev.flomik.stardew.common.registry.framework.BlockBuilder;
-import dev.flomik.stardew.common.registry.block.surface.BlockDirt;
-import dev.flomik.stardew.common.registry.block.surface.BlockFarmland;
-import dev.flomik.stardew.common.registry.block.surface.BlockGrassSurface;
+import dev.flomik.stardew.common.module.nature.block.BlockDirt;
+import dev.flomik.stardew.common.module.farming.block.BlockFarmland;
+import dev.flomik.stardew.common.module.nature.block.BlockGrassSurface;
 import dev.flomik.stardew.common.registry.framework.BlockEntry;
 import dev.flomik.stardew.common.registry.framework.datagen.ModelPresets;
-import dev.flomik.stardew.core.crop.block.BlockCrop;
-import dev.flomik.stardew.core.crop.blockentity.CropBlockEntity;
+import dev.flomik.stardew.common.module.farming.crop.block.BlockCrop;
+import dev.flomik.stardew.common.module.farming.crop.blockentity.CropBlockEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.RegistryObject;
@@ -64,7 +64,9 @@ public class ModBlocks {
             .transform(copy(Blocks.DIRT))
             .seasonal(true)
             .blockEntity(FarmlandBlockEntity::new)
-            .item().tab(ModTabs.BLOCK)
+            .item()
+            .tab(ModTabs.BLOCK)
+            .model(ModelPresets.simple())
             .register();
 
     public static final RegistryObject<BlockDirt> DIRT = BlockBuilder.create("dirt", BlockDirt::new)

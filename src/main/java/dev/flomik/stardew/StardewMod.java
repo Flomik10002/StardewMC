@@ -1,12 +1,14 @@
 package dev.flomik.stardew;
 
+import dev.flomik.stardew.common.module.farming.crop.CropRegistry;
+import dev.flomik.stardew.common.module.time.WeatherSystem;
 import dev.flomik.stardew.common.registry.*;
-import dev.flomik.stardew.core.crop.logic.GrowthSystem;
-import dev.flomik.stardew.core.crop.logic.MorningPass;
+import dev.flomik.stardew.common.module.farming.crop.logic.GrowthSystem;
+import dev.flomik.stardew.common.module.farming.crop.logic.MorningPass;
 import dev.flomik.stardew.core.network.PacketHandler;
-import dev.flomik.stardew.core.command.SeasonArgument;
-import dev.flomik.stardew.core.time.ScheduleManager;
-import dev.flomik.stardew.core.time.StardewDateData;
+import dev.flomik.stardew.common.admin.SeasonArgument;
+import dev.flomik.stardew.common.module.time.ScheduleManager;
+import dev.flomik.stardew.common.module.time.StardewDateData;
 import dev.flomik.stardew.datagen.StardewItemModels;
 import net.minecraft.commands.synchronization.ArgumentTypeInfos;
 import net.minecraft.commands.synchronization.SingletonArgumentInfo;
@@ -66,7 +68,7 @@ public class StardewMod {
         });
 
         event.enqueueWork(() -> {
-            dev.flomik.stardew.core.crop.CropRegistry.bootstrapVanillaLike(StardewMod.MODID);
+            CropRegistry.bootstrapVanillaLike(StardewMod.MODID);
 
             ScheduleManager.register(6, 0, () -> {
                 MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
@@ -77,7 +79,7 @@ public class StardewMod {
                     
                     StardewDateData dateData = StardewDateData.get(sl);
                     
-                    dev.flomik.stardew.core.time.WeatherSystem.applyWeatherToWorld(sl, dateData.getTodayWeather());
+                    WeatherSystem.applyWeatherToWorld(sl, dateData.getTodayWeather());
 
                     MorningPass.run(sl);
                     GrowthSystem.run(sl);

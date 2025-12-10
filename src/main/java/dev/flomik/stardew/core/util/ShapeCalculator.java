@@ -1,9 +1,8 @@
 package dev.flomik.stardew.core.util;
 
 import dev.flomik.stardew.common.registry.ModBlocks;
-import dev.flomik.stardew.common.registry.block.shape.Shape;
-import dev.flomik.stardew.common.registry.block.surface.BlockFarmland;
-import dev.flomik.stardew.common.registry.block.surface.BlockGrassSurface;
+import dev.flomik.stardew.common.api.block.Shape;
+import dev.flomik.stardew.common.module.farming.block.BlockFarmland;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Block;

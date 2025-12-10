@@ -2,10 +2,10 @@ package dev.flomik.stardew.common.registry;
 
 import dev.flomik.stardew.common.registry.framework.ItemBuilder;
 import dev.flomik.stardew.common.registry.framework.datagen.ModelPresets;
-import dev.flomik.stardew.core.item.ItemStardewSeed;
-import dev.flomik.stardew.core.item.tool.PatternType;
-import dev.flomik.stardew.core.item.tool.ToolHoe;
-import dev.flomik.stardew.core.item.tool.ToolWateringCan;
+import dev.flomik.stardew.common.module.farming.item.ItemStardewSeed;
+import dev.flomik.stardew.common.module.tools.PatternType;
+import dev.flomik.stardew.common.module.tools.item.ToolHoe;
+import dev.flomik.stardew.common.module.tools.item.ToolWateringCan;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
 

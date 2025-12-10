@@ -1,6 +1,6 @@
 package dev.flomik.stardew.common.registry;
 
-import dev.flomik.stardew.core.menu.ModChestMenu;
+import dev.flomik.stardew.common.module.craftables.menu.ModChestMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.registries.RegistryObject;
