@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "portb.biggerstacks.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "plugin": "portb.biggerstacks.TransformerEngine",
+  "refmap": "biggerstacks.refmap.json",
+  "mixins": [
+    "compat.refinedstorage.UpgradeItemHandlerMixin",
+    "vanilla.AnvilMenuMixin",
+    "vanilla.ContainersMixin",
+    "vanilla.FriendlyByteBufMixin",
+    "vanilla.ItemPropertiesMixin",
+    "vanilla.stacksize.BundleItemMixin",
+    "vanilla.stacksize.ItemEntityMixin",
+    "vanilla.stacksize.ItemMixin",
+    "vanilla.stacksize.ItemStackAccessor",
+    "vanilla.stacksize.ItemStackMixin",
+    "vanilla.stacksize.ServerGamePacketListenerImplMixin"
+  ],
+  "client": [
+    "client.ItemRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

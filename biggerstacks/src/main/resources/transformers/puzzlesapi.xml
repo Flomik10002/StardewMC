@@ -1,0 +1,12 @@
+<!--
+  ~ Copyright (c) PORTB 2025
+  ~
+  ~ Licensed under GNU LGPL v3
+  ~ https://www.gnu.org/licenses/lgpl-3.0.txt
+  -->
+
+<transformers>
+    <class path="fuzs.puzzlesapi.api.iteminteractions.v1.provider.BundleProvider" transformChildren="false">
+        <method name="getCapacity" transformer="slotLimit"/>
+    </class>
+</transformers>

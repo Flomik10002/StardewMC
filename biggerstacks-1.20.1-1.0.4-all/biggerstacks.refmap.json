@@ -1,0 +1,98 @@
+{
+  "mappings": {
+    "portb/biggerstacks/mixin/vanilla/stacksize/ItemStackAccessor": {
+      "count": "f_41587_:I"
+    },
+    "portb/biggerstacks/mixin/vanilla/AnvilMenuMixin": {
+      "onTake": "Lnet/minecraft/world/inventory/AnvilMenu;m_142365_(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)V",
+      "Lnet/minecraft/world/Container;setItem(ILnet/minecraft/world/item/ItemStack;)V": "Lnet/minecraft/world/Container;m_6836_(ILnet/minecraft/world/item/ItemStack;)V"
+    },
+    "portb/biggerstacks/mixin/vanilla/ContainersMixin": {
+      "dropItemStack": "Lnet/minecraft/world/Containers;m_18992_(Lnet/minecraft/world/level/Level;DDDLnet/minecraft/world/item/ItemStack;)V"
+    },
+    "portb/biggerstacks/mixin/client/ItemRendererMixin": {
+      "renderItemDecorations(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280302_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V",
+      "Lnet/minecraft/client/gui/GuiGraphics;drawString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I": "Lnet/minecraft/client/gui/GuiGraphics;m_280056_(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I",
+      "Lcom/mojang/blaze3d/vertex/PoseStack;translate(FFF)V": "Lcom/mojang/blaze3d/vertex/PoseStack;m_252880_(FFF)V"
+    },
+    "portb/biggerstacks/mixin/vanilla/stacksize/BundleItemMixin": {
+      "add": "Lnet/minecraft/world/item/BundleItem;m_150763_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)I",
+      "getFullnessDisplay": "Lnet/minecraft/world/item/BundleItem;m_150766_(Lnet/minecraft/world/item/ItemStack;)F",
+      "overrideStackedOnOther": "Lnet/minecraft/world/item/BundleItem;m_142207_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/inventory/Slot;Lnet/minecraft/world/inventory/ClickAction;Lnet/minecraft/world/entity/player/Player;)Z",
+      "getBarWidth": "Lnet/minecraft/world/item/BundleItem;m_142158_(Lnet/minecraft/world/item/ItemStack;)I",
+      "getWeight": "Lnet/minecraft/world/item/BundleItem;m_150776_(Lnet/minecraft/world/item/ItemStack;)I",
+      "appendHoverText": "Lnet/minecraft/world/item/BundleItem;m_7373_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V"
+    },
+    "portb/biggerstacks/mixin/vanilla/stacksize/ItemStackMixin": {
+      "getMaxStackSize": "Lnet/minecraft/world/item/ItemStack;m_41741_()I",
+      "save": "Lnet/minecraft/world/item/ItemStack;m_41739_(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;",
+      "Lnet/minecraft/nbt/CompoundTag;putByte(Ljava/lang/String;B)V": "Lnet/minecraft/nbt/CompoundTag;m_128344_(Ljava/lang/String;B)V",
+      "Lnet/minecraft/world/item/ItemStack;count:I": "Lnet/minecraft/world/item/ItemStack;f_41587_:I",
+      "<init>(Lnet/minecraft/nbt/CompoundTag;)V": "Lnet/minecraft/world/item/ItemStack;<init>(Lnet/minecraft/nbt/CompoundTag;)V"
+    },
+    "portb/biggerstacks/mixin/vanilla/FriendlyByteBufMixin": {
+      "readItem": "Lnet/minecraft/network/FriendlyByteBuf;m_130267_()Lnet/minecraft/world/item/ItemStack;"
+    },
+    "portb/biggerstacks/mixin/vanilla/stacksize/ItemMixin": {
+      "getMaxStackSize": "Lnet/minecraft/world/item/Item;m_41459_()I"
+    },
+    "portb/biggerstacks/mixin/vanilla/stacksize/ServerGamePacketListenerImplMixin": {
+      "handleSetCreativeModeSlot": "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;m_5964_(Lnet/minecraft/network/protocol/game/ServerboundSetCreativeModeSlotPacket;)V"
+    },
+    "portb/biggerstacks/mixin/vanilla/ItemPropertiesMixin": {
+      "stacksTo": "Lnet/minecraft/world/item/Item$Properties;m_41487_(I)Lnet/minecraft/world/item/Item$Properties;"
+    },
+    "portb/biggerstacks/mixin/vanilla/stacksize/ItemEntityMixin": {
+      "merge(Lnet/minecraft/world/entity/item/ItemEntity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)V": "Lnet/minecraft/world/entity/item/ItemEntity;m_32022_(Lnet/minecraft/world/entity/item/ItemEntity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)V"
+    }
+  },
+  "data": {
+    "searge": {
+      "portb/biggerstacks/mixin/vanilla/stacksize/ItemStackAccessor": {
+        "count": "f_41587_:I"
+      },
+      "portb/biggerstacks/mixin/vanilla/AnvilMenuMixin": {
+        "onTake": "Lnet/minecraft/world/inventory/AnvilMenu;m_142365_(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)V",
+        "Lnet/minecraft/world/Container;setItem(ILnet/minecraft/world/item/ItemStack;)V": "Lnet/minecraft/world/Container;m_6836_(ILnet/minecraft/world/item/ItemStack;)V"
+      },
+      "portb/biggerstacks/mixin/vanilla/ContainersMixin": {
+        "dropItemStack": "Lnet/minecraft/world/Containers;m_18992_(Lnet/minecraft/world/level/Level;DDDLnet/minecraft/world/item/ItemStack;)V"
+      },
+      "portb/biggerstacks/mixin/client/ItemRendererMixin": {
+        "renderItemDecorations(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280302_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V",
+        "Lnet/minecraft/client/gui/GuiGraphics;drawString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I": "Lnet/minecraft/client/gui/GuiGraphics;m_280056_(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I",
+        "Lcom/mojang/blaze3d/vertex/PoseStack;translate(FFF)V": "Lcom/mojang/blaze3d/vertex/PoseStack;m_252880_(FFF)V"
+      },
+      "portb/biggerstacks/mixin/vanilla/stacksize/BundleItemMixin": {
+        "add": "Lnet/minecraft/world/item/BundleItem;m_150763_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)I",
+        "getFullnessDisplay": "Lnet/minecraft/world/item/BundleItem;m_150766_(Lnet/minecraft/world/item/ItemStack;)F",
+        "overrideStackedOnOther": "Lnet/minecraft/world/item/BundleItem;m_142207_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/inventory/Slot;Lnet/minecraft/world/inventory/ClickAction;Lnet/minecraft/world/entity/player/Player;)Z",
+        "getBarWidth": "Lnet/minecraft/world/item/BundleItem;m_142158_(Lnet/minecraft/world/item/ItemStack;)I",
+        "getWeight": "Lnet/minecraft/world/item/BundleItem;m_150776_(Lnet/minecraft/world/item/ItemStack;)I",
+        "appendHoverText": "Lnet/minecraft/world/item/BundleItem;m_7373_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V"
+      },
+      "portb/biggerstacks/mixin/vanilla/stacksize/ItemStackMixin": {
+        "getMaxStackSize": "Lnet/minecraft/world/item/ItemStack;m_41741_()I",
+        "save": "Lnet/minecraft/world/item/ItemStack;m_41739_(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;",
+        "Lnet/minecraft/nbt/CompoundTag;putByte(Ljava/lang/String;B)V": "Lnet/minecraft/nbt/CompoundTag;m_128344_(Ljava/lang/String;B)V",
+        "Lnet/minecraft/world/item/ItemStack;count:I": "Lnet/minecraft/world/item/ItemStack;f_41587_:I",
+        "<init>(Lnet/minecraft/nbt/CompoundTag;)V": "Lnet/minecraft/world/item/ItemStack;<init>(Lnet/minecraft/nbt/CompoundTag;)V"
+      },
+      "portb/biggerstacks/mixin/vanilla/FriendlyByteBufMixin": {
+        "readItem": "Lnet/minecraft/network/FriendlyByteBuf;m_130267_()Lnet/minecraft/world/item/ItemStack;"
+      },
+      "portb/biggerstacks/mixin/vanilla/stacksize/ItemMixin": {
+        "getMaxStackSize": "Lnet/minecraft/world/item/Item;m_41459_()I"
+      },
+      "portb/biggerstacks/mixin/vanilla/stacksize/ServerGamePacketListenerImplMixin": {
+        "handleSetCreativeModeSlot": "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;m_5964_(Lnet/minecraft/network/protocol/game/ServerboundSetCreativeModeSlotPacket;)V"
+      },
+      "portb/biggerstacks/mixin/vanilla/ItemPropertiesMixin": {
+        "stacksTo": "Lnet/minecraft/world/item/Item$Properties;m_41487_(I)Lnet/minecraft/world/item/Item$Properties;"
+      },
+      "portb/biggerstacks/mixin/vanilla/stacksize/ItemEntityMixin": {
+        "merge(Lnet/minecraft/world/entity/item/ItemEntity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)V": "Lnet/minecraft/world/entity/item/ItemEntity;m_32022_(Lnet/minecraft/world/entity/item/ItemEntity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)V"
+      }
+    }
+  }
+}

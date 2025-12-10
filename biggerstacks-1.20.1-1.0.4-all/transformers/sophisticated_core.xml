@@ -1,0 +1,41 @@
+<!--
+  ~ Copyright (c) PORTB 2024
+  ~
+  ~ Licensed under GNU LGPL v3
+  ~ https://www.gnu.org/licenses/lgpl-3.0.txt
+  -->
+<transformers>
+    <class path="net.p3pp3rf1y.sophisticatedcore.inventory.InventoryHandler" transformChildren="false">
+        <method name="getBaseStackLimit" transformer="replace64"/>
+        <method name="getBaseStackLimit" transformer="replace64D"/>
+    </class>
+
+    <class path="net.p3pp3rf1y.sophisticatedcore.client.gui.StorageScreenBase" transformChildren="false">
+        <method name="renderSlot" transformer="replace64"/>
+    </class>
+
+    <class path="net.p3pp3rf1y.sophisticatedcore.common.gui.StorageContainerMenuBase" transformChildren="false">
+        <method name="mergeItemStack" transformer="replace64"
+                desc="(Lnet/minecraft/world/item/ItemStack;IIZZZ)Lnet/minecraft/world/item/ItemStack;"/>
+    </class>
+
+    <class path="net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.CookingLogic" transformChildren="false">
+        <method name="canSmelt" transformer="replace64"/>
+    </class>
+
+    <class path="net.p3pp3rf1y.sophisticatedcore.upgrades.stack.StackUpgradeItem" transformChildren="false">
+        <method name="canRemoveUpgradeFrom" transformer="replace64"/>
+        <method name="canSwapUpgradeFor" transformer="replace64"/>
+        <method name="getInventorySlotLimit" transformer="replace64D" desc="(Lnet/p3pp3rf1y/sophisticatedcore/api/IStorageWrapper;D)I"/>
+        <method name="canRemoveUpgradeFrom" transformer="replace64D"/>
+        <method name="canSwapUpgradeFor" transformer="replace64D"/>
+    </class>
+
+    <class path="net.p3pp3rf1y.sophisticatedcore.util.InventoryHelper" transformChildren="false">
+        <method name="getAnalogOutputSignal" transformer="replace64"/>
+    </class>
+
+    <class path="net.p3pp3rf1y.sophisticatedcore.util.NoopStorageWrapper" transformChildren="false">
+        <method name="getInventoryHandler" transformer="replace64"/>
+    </class>
+</transformers>

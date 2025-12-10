@@ -1,0 +1,13 @@
+<!--
+  ~ Copyright (c) PORTB 2025
+  ~
+  ~ Licensed under GNU LGPL v3
+  ~ https://www.gnu.org/licenses/lgpl-3.0.txt
+  -->
+
+<transformers>
+    <!--    region ic2 classic. this will make upgrades stack past 64 in the machines. best way to fix that is to use rules to limit their stack size. -->
+    <class path="ic2.core.inventory.base.IHasInventory" transformChildren="true">
+        <method name="getMaxStackSize" transformer="slotLimit"/>
+    </class>
+</transformers>

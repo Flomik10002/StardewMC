@@ -1,0 +1,37 @@
+<!--
+  ~ Copyright (c) PORTB 2025
+  ~
+  ~ Licensed under GNU LGPL v3
+  ~ https://www.gnu.org/licenses/lgpl-3.0.txt
+  -->
+
+<transformers>
+    <!-- not sure about "advanced item detector cover" -->
+
+    <class path="com.gregtechceu.gtceu.utils.GTUtil">
+        <method name="copyAmount" desc="(ILnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;" transformer="replace64"/>
+    </class>
+
+    <class path="com.gregtechceu.gtceu.data.recipe.misc.RecyclineRecipes">
+        <method name="splitStacks" transformer="replace64"/>
+        <method name="finalizeOutputs" transformer="replace64"/>
+        <method name="shrinkStacks" transformer="replace64"/>
+    </class>
+
+    <class path="com.gregtechceu.gtceu.common.block.ItemPipeBlock">
+        <method name="appendHoverText" transformer="replace64"/>
+    </class>
+
+    <class path="com.gregtechceu.gtceu.common.machine.storage.QuantumChestMachine$1">
+        <method name="extractItem" transformer="replace64"/>
+    </class>
+
+    <class path="com.gregtechceu.gtceu.common.pipelike.item.ItemNetHandler">
+        <method name="checkTransferable" transformer="replace64"/>
+    </class>
+
+    <!-- Also effects a method in the above class -->
+    <class path="com.lowdragmc.lowdraglib.side.item.IItemTransfer" transformChildren="true">
+        <method name="getSlotLimit" transformer="slotLimit"/>
+    </class>
+</transformers>

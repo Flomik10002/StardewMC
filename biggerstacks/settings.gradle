@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) PORTB 2025
+ *
+ * Licensed under GNU LGPL v3
+ * https://www.gnu.org/licenses/lgpl-3.0.txt
+ */
+
+pluginManagement {
+    repositories {
+        maven {
+            url = "https://codeberg.org/api/packages/PORTB/maven"
+        }
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = "BiggerStacks-$minecraftVersion"

@@ -2,7 +2,7 @@
 
 Этот документ описывает процесс добавления нового контента в проект с использованием кастомной системы регистров, расположенной в `src/main/java/dev/flomik/stardew/common/registry/`.
 
-Система построена на паттерне **Builder**, который упрощает регистрацию предметов, блоков и связанных с ними сущностей, а также автоматически связывает их с вкладками креатива и генерацией моделей.
+Система построена на паттерне **Builder**, который упрощает регистрацию предметов, блоков и связанных с ними сущностей, а также автоматически связывает их с вкладками креатива, генерацией моделей и рендерерами.
 
 ---
 
@@ -61,7 +61,7 @@ public static final RegistryObject<Block> MY_BLOCK = BlockBuilder.create("my_blo
 
 ## 3. Блоки с Block Entity (Tile Entities)
 
-Система позволяет зарегистрировать Блок, Предмет и Тип Блок Энтити (BlockEntityType) одним вызовом.
+Система позволяет зарегистрировать Блок, Предмет, Тип Блок Энтити (BlockEntityType) и Рендерер одним вызовом.
 
 **Важно:** Для этого используется метод `.blockEntity(...)`.
 
@@ -70,7 +70,8 @@ public static final RegistryObject<Block> MY_BLOCK = BlockBuilder.create("my_blo
 // Возвращает BlockEntry, содержащий ссылки на Блок, Предмет и Тип BE
 public static final BlockEntry<MyBlock, MyBlockEntity> MY_MACHINE = BlockBuilder.create("my_machine", MyBlock::new)
         .transform(BlockPresets.woodMachine())
-        .blockEntity(MyBlockEntity::new) // Регистрация фабрики BE
+        .blockEntity(MyBlockEntity::new)      // Регистрация фабрики BE
+        .renderer(VisualItemAboveRenderer::new) // Автоматическая регистрация рендерера
         .item()
             .tab(ModTabs.CRAFTABLES)
             .model(ModelPresets.simple())
@@ -81,6 +82,13 @@ public static final BlockEntry<MyBlock, MyBlockEntity> MY_MACHINE = BlockBuilder
 - `MY_MACHINE.get()` -> Блок
 - `MY_MACHINE.getItem()` -> Предмет
 - `MY_MACHINE.getTypeValue()` -> Тип Block Entity (`BlockEntityType<MyBlockEntity>`)
+
+### Доступные методы `BlockEntityBuilder`
+- `.renderer(BlockEntityRendererProvider)`: Автоматически регистрирует рендерер для BE на клиенте.
+- `.item()`: Переключается в режим настройки предмета.
+- `.noItem()`: BE без предмета.
+- `.tab(RegistryObject<CreativeModeTab>)`: Вкладка креатива.
+- `.model(ItemModelGen)`: Генератор модели предмета.
 
 ---
 
@@ -103,25 +111,26 @@ public static final BlockEntry<MyBlock, MyBlockEntity> MY_MACHINE = BlockBuilder
 
 ## 5. Клиентская часть (Рендереры)
 
-Регистрация `BlockEntityRenderer` происходит в классе `ClientSetup.java` (пакет `client`).
+### Автоматическая регистрация (рекомендуется)
+Рендереры автоматически регистрируются при использовании `.renderer()` в `BlockBuilder`:
 
-### Регистрация рендерера
-Используйте событие `EntityRenderersEvent.RegisterRenderers`.
+```java
+public static final BlockEntry<MyBlock, MyBlockEntity> MY_MACHINE = BlockBuilder.create("my_machine", MyBlock::new)
+        .blockEntity(MyBlockEntity::new)
+        .renderer(MyRenderer::new)  // Рендерер будет зарегистрирован автоматически
+        .item()
+        .register();
+```
+
+Все рендереры обрабатываются классом `RendererRegistry` и регистрируются в `ClientSetup.java`.
+
+### Ручная регистрация (для особых случаев)
+Если нужна ручная регистрация (например, для слоёв моделей), используйте `ClientSetup.java`:
 
 ```java
 @SubscribeEvent
-public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-    // Пример для обычного блока
-    event.registerBlockEntityRenderer(
-            ModBlockEntities.MY_ENTITY_TYPE.get(), 
-            MyRenderer::new
-    );
-
-    // Пример для блока, зарегистрированного через BlockEntry (ModBlocks)
-    event.registerBlockEntityRenderer(
-            ModBlocks.MY_MACHINE.getTypeValue(), // Получение типа из Entry
-            MyRenderer::new
-    );
+public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+    event.registerLayerDefinition(ChestRenderer.LAYER_LOCATION, ChestRenderer::createBodyLayer);
 }
 ```
 
@@ -131,8 +140,29 @@ public static void registerRenderers(EntityRenderersEvent.RegisterRenderers even
 
 1. **Создать классы**: Создайте классы для `Block` и `BlockEntity` (если нужны) в `common/registry/block/...`.
 2. **Зарегистрировать Блок/BE**: В `ModBlocks.java` добавьте поле с `BlockBuilder`.
+   - Используйте `.renderer()` для автоматической регистрации рендерера.
 3. **Зарегистрировать Предмет**: Если предмет отдельный (не блок), добавьте его в `ModItems.java` через `ItemBuilder`.
 4. **Ресурсы**: Добавьте текстуры в `resources/assets/stardew/textures/...`.
-5. **Клиент**: Если у BE есть особый рендер, зарегистрируйте его в `ClientSetup.java`.
-6. **Lang**: Не забудьте добавить название в `en_us.json` / `ru_ru.json`.
+5. **Lang**: Не забудьте добавить название в `en_us.json` / `ru_ru.json`.
 
+---
+
+## Пример полной регистрации блока с BE и рендерером
+
+```java
+// В ModBlocks.java
+public static final BlockEntry<BlockKeg, BlockEntityKeg> KEG = BlockBuilder.create("keg", BlockKeg::new)
+        .transform(woodMachine())
+        .blockEntity(BlockEntityKeg::new)
+        .renderer(VisualItemAboveRenderer::new)  // Рендерер регистрируется автоматически
+        .item()
+        .tab(ModTabs.CRAFTABLES)
+        .model(ModelPresets.simple())
+        .register();
+```
+
+Это создаст:
+- Блок `stardew:keg`
+- BlockItem для него
+- BlockEntityType для `BlockEntityKeg`
+- Автоматически зарегистрирует `VisualItemAboveRenderer` на клиенте

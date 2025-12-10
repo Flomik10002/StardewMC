@@ -1,5 +1,7 @@
 package dev.flomik.stardew.common.registry;
 
+import dev.flomik.stardew.client.renderer.ChestRenderer;
+import dev.flomik.stardew.common.registry.block.base.VisualItemAboveRenderer;
 import dev.flomik.stardew.common.registry.block.craftables.*;
 import dev.flomik.stardew.common.registry.block.craftables.blockentity.BlockEntityBeeHouse;
 import dev.flomik.stardew.common.registry.block.craftables.blockentity.BlockEntityCheesePress;
@@ -25,6 +27,7 @@ public class ModBlocks {
     public static final BlockEntry<BlockKeg, BlockEntityKeg> KEG = BlockBuilder.create("keg", BlockKeg::new)
             .transform(woodMachine())
             .blockEntity(BlockEntityKeg::new)
+            .renderer(VisualItemAboveRenderer::new)
             .item()
             .tab(ModTabs.CRAFTABLES)
             .model(ModelPresets.simple())
@@ -33,6 +36,7 @@ public class ModBlocks {
     public static final BlockEntry<BlockChest, BlockEntityChest> CHEST = BlockBuilder.create("chest", BlockChest::new)
             .transform(woodMachine())
             .blockEntity(BlockEntityChest::new)
+            .renderer(ChestRenderer::new)
             .item()
             .tab(ModTabs.CRAFTABLES)
             .model(ModelPresets.simple())
@@ -41,6 +45,7 @@ public class ModBlocks {
     public static final BlockEntry<BlockBeeHouse, BlockEntityBeeHouse> BEE_HOUSE = BlockBuilder.create("bee_house", BlockBeeHouse::new)
             .transform(woodMachine())
             .blockEntity(BlockEntityBeeHouse::new)
+            .renderer(VisualItemAboveRenderer::new)
             .item()
             .tab(ModTabs.CRAFTABLES)
             .model(ModelPresets.simple())
@@ -49,6 +54,7 @@ public class ModBlocks {
     public static final BlockEntry<BlockCheesePress, BlockEntityCheesePress> CHEESE_PRESS = BlockBuilder.create("cheese_press", BlockCheesePress::new)
             .transform(woodMachine())
             .blockEntity(BlockEntityCheesePress::new)
+            .renderer(VisualItemAboveRenderer::new)
             .item()
             .tab(ModTabs.CRAFTABLES)
             .model(ModelPresets.simple())
