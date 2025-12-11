@@ -28,7 +28,6 @@ minecraft {
     mappings channel: mapping_channel, version: mc_version
     copyIdeResources = true
 
-    jarJar.enable()
     runs {
         configureEach {
             workingDirectory project.file('run')
@@ -68,8 +67,6 @@ minecraft {
         }
     }
 }
-
-jarJar.enable()
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
