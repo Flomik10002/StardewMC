@@ -6,6 +6,7 @@ import dev.flomik.stardew.common.module.tools.PatternType;
 import dev.flomik.stardew.common.registry.ModBlocks;
 import dev.flomik.stardew.common.module.farming.blockentity.FarmlandBlockEntity;
 import dev.flomik.stardew.common.registry.ModSounds;
+import dev.flomik.stardew.common.registry.framework.StardewItemBase;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -28,7 +29,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class ToolWateringCan extends Item implements IPatternTool {
+public class ToolWateringCan extends StardewItemBase implements IPatternTool {
 
     private static final String NBT_PATTERN = "Pattern";
     private final int tier;
@@ -40,24 +41,6 @@ public class ToolWateringCan extends Item implements IPatternTool {
         this.tier = tier;
         this.maxWater = getCapacityForTier(tier);
         this.maxPattern = getPatternForTier(tier);
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("tooltip.stardew.tool_type")
-                .withStyle(ChatFormatting.GRAY));
-
-        tooltip.add(Component.translatable("tooltip.stardew.watering_can.desc1")
-                .withStyle(ChatFormatting.DARK_GRAY));
-        tooltip.add(Component.translatable("tooltip.stardew.watering_can.desc2")
-                .withStyle(ChatFormatting.DARK_GRAY));
-        tooltip.add(Component.empty());
-
-        PatternType current = getCurrentPattern(stack);
-        tooltip.add(Component.literal("Pattern: " + current.getDisplayName())
-                .withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.literal("Shift + Right Click to change pattern")
-                .withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
     }
 
     private static int getCapacityForTier(int tier) {

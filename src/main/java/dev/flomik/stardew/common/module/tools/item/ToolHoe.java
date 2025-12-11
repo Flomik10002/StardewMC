@@ -9,19 +9,19 @@ import dev.flomik.stardew.common.module.farming.blockentity.FarmlandBlockEntity;
 import dev.flomik.stardew.common.registry.ModSounds;
 import dev.flomik.stardew.common.module.time.StardewDateData;
 import dev.flomik.stardew.common.module.time.Weather;
+import dev.flomik.stardew.common.registry.framework.StardewItemBase;
+import dev.flomik.stardew.common.registry.framework.tooltip.StardewTooltip;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
@@ -33,7 +33,7 @@ import org.joml.Vector3f;
 
 import java.util.List;
 
-public class ToolHoe extends Item implements IPatternTool {
+public class ToolHoe extends StardewItemBase implements IPatternTool {
 
     private static final String NBT_PATTERN = "Pattern";
     private final int tier;
@@ -43,28 +43,6 @@ public class ToolHoe extends Item implements IPatternTool {
         super(properties);
         this.tier = tier;
         this.maxPattern = getPatternForTier(tier);
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("tooltip.stardew.tool_type")
-                .withStyle(ChatFormatting.GRAY));
-
-        tooltip.add(Component.translatable("tooltip.stardew.hoe.desc")
-                .withStyle(ChatFormatting.DARK_GRAY));
-        tooltip.add(Component.empty());
-
-        PatternType current = getCurrentPattern(stack);
-        tooltip.add(Component.literal("Pattern: " + current.getDisplayName())
-                .withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.literal("Shift + Right Click to change pattern")
-                .withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
-
-        if (tier >= 4 && stack.hasTag() && stack.getTag().getBoolean("reaching")) {
-            tooltip.add(Component.empty());
-            tooltip.add(Component.literal("✰ Reaching")
-                    .withStyle(ChatFormatting.LIGHT_PURPLE)); // Magenta
-        }
     }
 
     private static PatternType getPatternForTier(int tier) {

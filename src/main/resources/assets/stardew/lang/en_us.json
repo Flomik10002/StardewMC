@@ -54,7 +54,9 @@
   "container.stardew.stone_chest": "Stone Chest",
   "container.stardew.big_stone_chest": "Big Stone Chest",
 
-  "tooltip.stardew.tool_type": "Tool",
+  "tooltip.stardew.category.tool": "Tool",
+  "tooltip.stardew.category.artisan": "Artisan Goods",
+
   "tooltip.stardew.hoe.desc": "Used to dig and till soil.",
   "tooltip.stardew.watering_can.desc1": "Used to water crops. It can be",
   "tooltip.stardew.watering_can.desc2": "refilled at any water source.",

@@ -3,10 +3,13 @@ package dev.flomik.stardew.common.registry.framework;
 import dev.flomik.stardew.common.registry.StardewRegistry;
 import dev.flomik.stardew.common.registry.framework.datagen.DataGenManager;
 import dev.flomik.stardew.common.registry.framework.datagen.ItemModelGen;
+import dev.flomik.stardew.common.registry.framework.tooltip.StardewTooltip;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 public class ItemBuilder<T extends Item> {
@@ -14,6 +17,7 @@ public class ItemBuilder<T extends Item> {
     private Function<Item.Properties, T> factory;
     private Item.Properties properties = new Item.Properties().stacksTo(999);
     private RegistryObject<CreativeModeTab> tab = null;
+    private final List<StardewTooltip> tooltips = new ArrayList<>();
 
     private ItemModelGen visualGenerator = null;
 
@@ -28,6 +32,11 @@ public class ItemBuilder<T extends Item> {
     private ItemBuilder(String name, Function<Item.Properties, T> factory) {
         this.name = name;
         this.factory = factory;
+    }
+
+    public ItemBuilder<T> addTooltip(StardewTooltip tooltip) {
+        this.tooltips.add(tooltip);
+        return this;
     }
 
     public ItemBuilder<T> stacksTo(int count) {
@@ -49,10 +58,14 @@ public class ItemBuilder<T extends Item> {
         return this;
     }
 
-    // -------------------
-
     public RegistryObject<T> register() {
-        RegistryObject<T> itemParams = StardewRegistry.ITEMS.register(name, () -> factory.apply(properties));
+        T itemInstance = factory.apply(properties);
+
+        if (itemInstance instanceof IStardewItem stardewItem) {
+            stardewItem.setTooltips(new ArrayList<>(this.tooltips));
+        }
+
+        RegistryObject<T> itemParams = StardewRegistry.ITEMS.register(name, () -> itemInstance);
 
         if (tab != null) {
             TabManager.assign(tab, itemParams);
