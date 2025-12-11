@@ -36,11 +36,46 @@ import java.util.List;
 public class ToolHoe extends Item implements IPatternTool {
 
     private static final String NBT_PATTERN = "Pattern";
+    private final int tier;
     private final PatternType maxPattern;
 
-    public ToolHoe(Properties properties, PatternType maxPattern) {
+    public ToolHoe(Properties properties, int tier) {
         super(properties);
-        this.maxPattern = maxPattern;
+        this.tier = tier;
+        this.maxPattern = getPatternForTier(tier);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(Component.translatable("tooltip.stardew.tool_type")
+                .withStyle(ChatFormatting.GRAY));
+
+        tooltip.add(Component.translatable("tooltip.stardew.hoe.desc")
+                .withStyle(ChatFormatting.DARK_GRAY));
+        tooltip.add(Component.empty());
+
+        PatternType current = getCurrentPattern(stack);
+        tooltip.add(Component.literal("Pattern: " + current.getDisplayName())
+                .withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.literal("Shift + Right Click to change pattern")
+                .withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
+
+        if (tier >= 4 && stack.hasTag() && stack.getTag().getBoolean("reaching")) {
+            tooltip.add(Component.empty());
+            tooltip.add(Component.literal("✰ Reaching")
+                    .withStyle(ChatFormatting.LIGHT_PURPLE)); // Magenta
+        }
+    }
+
+    private static PatternType getPatternForTier(int tier) {
+        return switch (tier) {
+            case 0 -> PatternType.SINGLE;
+            case 1 -> PatternType.THREE;
+            case 2 -> PatternType.FIVE;
+            case 3 -> PatternType.GRID_3X3;
+            case 4 -> PatternType.GRID_6X3;
+            default -> PatternType.SINGLE;
+        };
     }
 
     @Override
@@ -52,8 +87,13 @@ public class ToolHoe extends Item implements IPatternTool {
     public PatternType getCurrentPattern(ItemStack stack) {
         if (stack.hasTag() && stack.getTag().contains(NBT_PATTERN)) {
             PatternType pattern = PatternType.fromString(stack.getTag().getString(NBT_PATTERN));
-            if (pattern.ordinal() > maxPattern.ordinal()) {
-                return maxPattern;
+            PatternType limit = maxPattern;
+            if (tier >= 4 && stack.getTag().getBoolean("reaching")) {
+                limit = PatternType.GRID_5X5;
+            }
+
+            if (pattern.ordinal() > limit.ordinal()) {
+                return limit;
             }
             return pattern;
         }
@@ -81,7 +121,13 @@ public class ToolHoe extends Item implements IPatternTool {
         if (player.isShiftKeyDown()) {
             if (!level.isClientSide) {
                 PatternType current = getCurrentPattern(stack);
-                PatternType next = current.next(maxPattern);
+                PatternType max = this.maxPattern;
+
+                if (tier >= 4 && stack.hasTag() && stack.getTag().getBoolean("reaching")) {
+                    max = PatternType.GRID_5X5;
+                }
+
+                PatternType next = current.next(max);
                 setCurrentPattern(stack, next);
                 
                 player.displayClientMessage(
@@ -89,8 +135,8 @@ public class ToolHoe extends Item implements IPatternTool {
                         .withStyle(ChatFormatting.GREEN),
                     true
                 );
-                level.playSound(null, player.blockPosition(), SoundEvents.UI_BUTTON_CLICK.get(), 
-                    SoundSource.PLAYERS, 0.3F, 1.5F);
+                level.playSound(null, player.blockPosition(), ModSounds.TOOL_CHARGE.get(),
+                        SoundSource.PLAYERS, 0.5F, 1.0F);
             }
             return InteractionResultHolder.success(stack);
         }
@@ -164,9 +210,6 @@ public class ToolHoe extends Item implements IPatternTool {
         return InteractionResult.SUCCESS;
     }
 
-    /**
-     * Спавнит частицы земли при вспашке/обработке блока
-     */
     private void spawnTillingParticles(ServerLevel level, BlockPos pos) {
         double x = pos.getX() + 0.5;
         double y = pos.getY() + 1.0;
@@ -219,15 +262,5 @@ public class ToolHoe extends Item implements IPatternTool {
         }
         DustParticleOptions dustOptions = new DustParticleOptions(particleColor, 1.0f);
         return dustOptions;
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        PatternType current = getCurrentPattern(stack);
-        tooltip.add(Component.literal("Pattern: " + current.getDisplayName())
-            .withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.literal("Shift + Right Click to change pattern")
-            .withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
-        super.appendHoverText(stack, level, tooltip, flag);
     }
 }

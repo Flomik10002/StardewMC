@@ -22,6 +22,7 @@ public class PacketHandler {
         int id = 0;
         CHANNEL.registerMessage(id++, S2CSeasonSync.class, S2CSeasonSync::encode, S2CSeasonSync::decode, S2CSeasonSync::handle);
         CHANNEL.registerMessage(id++, PacketChangeChestVariant.class, PacketChangeChestVariant::encode, PacketChangeChestVariant::decode, PacketChangeChestVariant::handle);
+        CHANNEL.registerMessage(id++, dev.flomik.stardew.common.module.craftables.network.PacketPlayChestSound.class, dev.flomik.stardew.common.module.craftables.network.PacketPlayChestSound::encode, dev.flomik.stardew.common.module.craftables.network.PacketPlayChestSound::decode, dev.flomik.stardew.common.module.craftables.network.PacketPlayChestSound::handle);
     }
 
     public static void sendToAll(Object message) {

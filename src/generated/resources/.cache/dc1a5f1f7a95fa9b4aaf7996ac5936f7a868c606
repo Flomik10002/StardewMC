@@ -1,11 +1,19 @@
-// 1.20.1	2025-12-10T05:58:07.113045373	Item Models: stardew
+// 1.20.1	2025-12-11T10:32:12.935537717	Item Models: stardew
+7a1838f35aa2c6faf9ce39fdb286f21d3f5c6782 assets/stardew/models/item/basic_pickaxe.json
 d7cd2e9047c664a54e99d14c931b549a4cbdf640 assets/stardew/models/item/bee_house.json
+4489c3660eb44eab52118ed32a280c55e579e300 assets/stardew/models/item/big_chest.json
+4f509cc2874fef7e9865919608545f67a195dfd7 assets/stardew/models/item/big_stone_chest.json
 205defe26e5eaf3dc37c8fbf08ae81fc09bfc815 assets/stardew/models/item/cheese.json
 9e34e536b08aecc2453de30c27c4da16edfa5e1d assets/stardew/models/item/cheese_press.json
 157501a20342c54d2769e9eb4b57b27fdd8e37d1 assets/stardew/models/item/chest.json
+3d3e5d912f05896292f8bcd4ffcd0f74a2b55445 assets/stardew/models/item/copper_pickaxe.json
 bb590c5555d240bf34f91c5049ae73f5c22b8d35 assets/stardew/models/item/goat_cheese.json
+42f05dd31cb86e27ac83352085eb3992eca9497e assets/stardew/models/item/gold_pickaxe.json
 78b9358b0178694bc351d7d272f1c00ba3e18b10 assets/stardew/models/item/honey.json
+96e291ed047e1a0c7effbcedb208542f4d4e8f90 assets/stardew/models/item/iridium_pickaxe.json
 6e59b5dd4c1a170ddf9b71670f6de8cc6d3d15a2 assets/stardew/models/item/keg.json
+a3bd3fe1358ca02415fcbf089efa2c32de88963d assets/stardew/models/item/steel_pickaxe.json
+41cc8e99da3034a15bbe4186e328481e177c3a57 assets/stardew/models/item/stone_chest.json
 fbae1e0c70e147b8890711d8913186b97ed7ed09 assets/stardew/models/item/tomato.json
 029cf96593b706915285a925b8663726d69027a0 assets/stardew/models/item/tomato_seeds.json
 a6e9692d32a52de6973735418ca9cff96aa56c35 assets/stardew/models/item/wine.json

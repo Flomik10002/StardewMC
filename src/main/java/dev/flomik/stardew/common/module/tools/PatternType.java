@@ -8,6 +8,7 @@ public enum PatternType {
     THREE("Line 3", 3, PatternProvider.THREE),
     FIVE("Line 5", 5, PatternProvider.FIVE),
     GRID_3X3("Grid 3x3", 9, PatternProvider.GRID_3X3),
+    GRID_6X3("Grid 6x3", 18, PatternProvider.GRID_6X3),
     GRID_5X5("Grid 5x5", 25, PatternProvider.GRID_5X5);
 
     private final String displayName;

@@ -31,13 +31,55 @@ import java.util.List;
 public class ToolWateringCan extends Item implements IPatternTool {
 
     private static final String NBT_PATTERN = "Pattern";
+    private final int tier;
     private final int maxWater;
     private final PatternType maxPattern;
 
-    public ToolWateringCan(Properties props, int maxWater, PatternType maxPattern) {
-        super(props.durability(maxWater + 1));
-        this.maxWater = maxWater;
-        this.maxPattern = maxPattern;
+    public ToolWateringCan(Properties props, int tier) {
+        super(props.durability(getCapacityForTier(tier) + 1));
+        this.tier = tier;
+        this.maxWater = getCapacityForTier(tier);
+        this.maxPattern = getPatternForTier(tier);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(Component.translatable("tooltip.stardew.tool_type")
+                .withStyle(ChatFormatting.GRAY));
+
+        tooltip.add(Component.translatable("tooltip.stardew.watering_can.desc1")
+                .withStyle(ChatFormatting.DARK_GRAY));
+        tooltip.add(Component.translatable("tooltip.stardew.watering_can.desc2")
+                .withStyle(ChatFormatting.DARK_GRAY));
+        tooltip.add(Component.empty());
+
+        PatternType current = getCurrentPattern(stack);
+        tooltip.add(Component.literal("Pattern: " + current.getDisplayName())
+                .withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.literal("Shift + Right Click to change pattern")
+                .withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
+    }
+
+    private static int getCapacityForTier(int tier) {
+        return switch (tier) {
+            case 0 -> 40;
+            case 1 -> 55;
+            case 2 -> 70;
+            case 3 -> 85;
+            case 4 -> 100;
+            default -> 40;
+        };
+    }
+
+    private static PatternType getPatternForTier(int tier) {
+        return switch (tier) {
+            case 0 -> PatternType.SINGLE;
+            case 1 -> PatternType.THREE;
+            case 2 -> PatternType.FIVE;
+            case 3 -> PatternType.GRID_3X3;
+            case 4 -> PatternType.GRID_6X3;
+            default -> PatternType.SINGLE;
+        };
     }
 
     @Override
@@ -49,7 +91,6 @@ public class ToolWateringCan extends Item implements IPatternTool {
     public PatternType getCurrentPattern(ItemStack stack) {
         if (stack.hasTag() && stack.getTag().contains(NBT_PATTERN)) {
             PatternType pattern = PatternType.fromString(stack.getTag().getString(NBT_PATTERN));
-            // Убеждаемся, что паттерн не превышает максимальный
             if (pattern.ordinal() > maxPattern.ordinal()) {
                 return maxPattern;
             }
@@ -101,8 +142,8 @@ public class ToolWateringCan extends Item implements IPatternTool {
                         .withStyle(ChatFormatting.GREEN),
                     true
                 );
-                level.playSound(null, player.blockPosition(), SoundEvents.UI_BUTTON_CLICK.get(), 
-                    SoundSource.PLAYERS, 0.3F, 1.5F);
+                level.playSound(null, player.blockPosition(), ModSounds.TOOL_CHARGE.get(),
+                        SoundSource.PLAYERS, 0.5F, 1.0F);
             }
             return InteractionResultHolder.success(stack);
         }
@@ -200,19 +241,5 @@ public class ToolWateringCan extends Item implements IPatternTool {
                 0
             );
         }
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.literal("Water: " + getWater(stack) + " / " + maxWater)
-            .withStyle(ChatFormatting.AQUA));
-        
-        PatternType current = getCurrentPattern(stack);
-        tooltip.add(Component.literal("Pattern: " + current.getDisplayName())
-            .withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.literal("Shift + Right Click to change pattern")
-            .withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
-        
-        super.appendHoverText(stack, level, tooltip, flag);
     }
 }

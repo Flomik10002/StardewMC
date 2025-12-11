@@ -94,7 +94,6 @@ public class ModBlocks {
             .blockEntity(FarmlandBlockEntity::new)
             .item()
             .tab(ModTabs.BLOCK)
-            .visual(ModelPresets.simple())
             .register();
 
     public static final RegistryObject<BlockDirt> DIRT = BlockBuilder.create("dirt", BlockDirt::new)

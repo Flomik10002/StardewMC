@@ -8,6 +8,9 @@
   "block.stardew.cheese_press": "Cheese Press",
   "block.stardew.bee_house": "Bee House",
   "block.stardew.chest": "Chest",
+  "block.stardew.big_chest": "Big Chest",
+  "block.stardew.stone_chest": "Stone Chest",
+  "block.stardew.big_stone_chest": "Big Stone Chest",
   "block.stardew.scarecrow": "Scarecrow",
 
   "block.stardew.dirt": "Dirt",
@@ -34,6 +37,12 @@
   "item.stardew.gold_hoe": "Gold Hoe",
   "item.stardew.iridium_hoe": "Iridium Hoe",
 
+  "item.stardew.basic_pickaxe": "Pickaxe",
+  "item.stardew.copper_pickaxe": "Copper Pickaxe",
+  "item.stardew.steel_pickaxe": "Steel Pickaxe",
+  "item.stardew.gold_pickaxe": "Gold Pickaxe",
+  "item.stardew.iridium_pickaxe": "Iridium Pickaxe",
+
   "item.stardew.basic_watering_can": "Watering Can",
   "item.stardew.copper_watering_can": "Copper Watering Can",
   "item.stardew.steel_watering_can": "Steel Watering Can",
@@ -43,5 +52,11 @@
   "container.stardew.chest": "Chest",
   "container.stardew.big_chest": "Big Chest",
   "container.stardew.stone_chest": "Stone Chest",
-  "container.stardew.big_stone_chest": "Big Stone Chest"
+  "container.stardew.big_stone_chest": "Big Stone Chest",
+
+  "tooltip.stardew.tool_type": "Tool",
+  "tooltip.stardew.hoe.desc": "Used to dig and till soil.",
+  "tooltip.stardew.watering_can.desc1": "Used to water crops. It can be",
+  "tooltip.stardew.watering_can.desc2": "refilled at any water source.",
+  "tooltip.stardew.pickaxe.desc": "Used to break stones."
 }

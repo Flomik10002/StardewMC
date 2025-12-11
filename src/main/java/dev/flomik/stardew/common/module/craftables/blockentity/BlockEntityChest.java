@@ -1,8 +1,12 @@
 package dev.flomik.stardew.common.module.craftables.blockentity;
 
+import dev.flomik.stardew.common.module.craftables.network.PacketPlayChestSound;
+import dev.flomik.stardew.common.registry.ModSounds;
 import dev.flomik.stardew.common.registry.ModBlocks;
 import dev.flomik.stardew.common.module.craftables.menu.ModChestMenu;
 import dev.flomik.stardew.common.module.craftables.block.BlockChest;
+import dev.flomik.stardew.core.network.PacketHandler;
+import net.minecraftforge.network.PacketDistributor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -29,14 +33,16 @@ public class BlockEntityChest extends RandomizableContainerBlockEntity implement
     private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter() {
         @Override
         protected void onOpen(Level level, BlockPos pos, BlockState state) {
-            level.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
-                    SoundEvents.CHEST_OPEN, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
+            if (!level.isClientSide) {
+                PacketHandler.CHANNEL.send(PacketDistributor.ALL.noArg(), new PacketPlayChestSound(pos, true));
+            }
         }
 
         @Override
         protected void onClose(Level level, BlockPos pos, BlockState state) {
-            level.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
-                    SoundEvents.CHEST_CLOSE, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
+            if (!level.isClientSide) {
+                PacketHandler.CHANNEL.send(PacketDistributor.ALL.noArg(), new PacketPlayChestSound(pos, false));
+            }
         }
 
         @Override

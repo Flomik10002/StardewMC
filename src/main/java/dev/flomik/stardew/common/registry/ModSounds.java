@@ -9,6 +9,9 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> HOE_TILL = register("hoe_till");
     public static final RegistryObject<SoundEvent> WATERING_CAN_USE = register("watering_can_use");
+    public static final RegistryObject<SoundEvent> CHEST_OPEN = register("open_chest");
+    public static final RegistryObject<SoundEvent> CHEST_CLOSE = register("close_chest");
+    public static final RegistryObject<SoundEvent> TOOL_CHARGE = register("tool_charge");
 
     private static RegistryObject<SoundEvent> register(String name) {
         return StardewRegistry.SOUNDS.register(name,

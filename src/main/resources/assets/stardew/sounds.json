@@ -1,6 +1,6 @@
 {
   "hoe_till": {
-    "category": "block",
+    "category": "player",
     "sounds": [
       {
         "name": "stardew:tools/hoe_till",
@@ -13,6 +13,33 @@
     "sounds": [
       {
         "name": "stardew:tools/watering_can_use",
+        "stream": false
+      }
+    ]
+  },
+  "open_chest": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "stardew:miscellaneous/open_chest",
+        "stream": false
+      }
+    ]
+  },
+  "close_chest": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "stardew:miscellaneous/close_chest",
+        "stream": false
+      }
+    ]
+  },
+  "tool_charge": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "stardew:miscellaneous/tool_charge",
         "stream": false
       }
     ]

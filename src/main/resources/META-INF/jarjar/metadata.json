@@ -1,53 +1,20 @@
-{
-  "jars": [
+[
     {
-      "identifier": {
-        "group": "portb",
-        "artifact": "BiggerStacksTransformerLib"
-      },
-      "version": {
-        "range": "[1.5.1]",
-        "artifactVersion": "1.5.1"
-      },
-      "path": "META-INF/jarjar/BiggerStacksTransformerLib-1.5.1.jar",
-      "isObfuscated": false
+        "group": "com.github.BiggerStacks",
+        "artifact": "TransformerLib",
+        "version": "[1.5.1,)",
+        "path": "libs/BiggerStacksTransformerLib-1.5.1.jar"
     },
     {
-      "identifier": {
-        "group": "portb",
-        "artifact": "BiggerStacksConfigLib"
-      },
-      "version": {
-        "range": "[1.8]",
-        "artifactVersion": "1.8"
-      },
-      "path": "META-INF/jarjar/BiggerStacksConfigLib-1.8.jar",
-      "isObfuscated": false
+        "group": "com.github.BiggerStacks",
+        "artifact": "ConfigLib",
+        "version": "[1.8,)",
+        "path": "libs/BiggerStacksConfigLib-1.8.jar"
     },
     {
-      "identifier": {
-        "group": "portb",
-        "artifact": "SimpleLoggerWrapper"
-      },
-      "version": {
-        "range": "[1.0]",
-        "artifactVersion": "1.0"
-      },
-      "path": "META-INF/jarjar/SimpleLoggerWrapper-1.0.jar",
-      "isObfuscated": false
-    },
-    {
-      "identifier": {
-        "group": "com.thoughtworks.xstream",
-        "artifact": "xstream"
-      },
-      "version": {
-        "range": "[1.4.20]",
-        "artifactVersion": "1.4.20"
-      },
-      "path": "META-INF/jarjar/xstream-1.4.20.jar",
-      "isObfuscated": false
+        "group": "com.github.SimpleLogger",
+        "artifact": "Wrapper",
+        "version": "[1.0,)",
+        "path": "libs/SimpleLoggerWrapper-1.0.jar"
     }
-  ]
-}
-
+]

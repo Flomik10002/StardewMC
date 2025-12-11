@@ -46,8 +46,8 @@ public class BigStoneChestRenderer<T extends BlockEntityBigStoneChest> extends B
         PartDefinition partdefinition = meshdefinition.getRoot();
 
         partdefinition.addOrReplaceChild("bottom", CubeListBuilder.create()
-                        .texOffs(34, 42).addBox(2.0F, 0.0F, 1.0F, 3.0F, 2.0F, 14.0F)
-                        .texOffs(0, 42).addBox(11.0F, 0.0F, 1.0F, 3.0F, 2.0F, 14.0F)
+                        .texOffs(0, 42).addBox(2.0F, 0.0F, 1.0F, 3.0F, 2.0F, 14.0F)
+                        .texOffs(34, 42).addBox(11.0F, 0.0F, 1.0F, 3.0F, 2.0F, 14.0F)
                         .texOffs(0, 0).addBox(1.0F, 2.0F, 1.0F, 14.0F, 10.0F, 14.0F),
                 PartPose.ZERO);
 
@@ -56,7 +56,7 @@ public class BigStoneChestRenderer<T extends BlockEntityBigStoneChest> extends B
                 PartPose.offset(0.0F, 12, 15.0F));
 
         lid.addOrReplaceChild("lock", CubeListBuilder.create()
-                        .texOffs(56, 0).addBox(6.0F, -3.0F, -15.0F, 4.0F, 4.0F, 1.0F),
+                        .texOffs(56, 0).addBox(6.0F, -1.0F, -15.0F, 4.0F, 4.0F, 1.0F),
                 PartPose.offset(0.0F, 0.0F, 0.0F));
 
         return LayerDefinition.create(meshdefinition, 128, 128);
