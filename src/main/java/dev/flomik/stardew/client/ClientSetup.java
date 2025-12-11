@@ -1,14 +1,22 @@
 package dev.flomik.stardew.client;
 
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.client.renderer.BigChestRenderer;
+import dev.flomik.stardew.client.renderer.BigStoneChestRenderer;
 import dev.flomik.stardew.client.renderer.ChestRenderer;
+import dev.flomik.stardew.client.renderer.StoneChestRenderer;
+import dev.flomik.stardew.client.screen.BigChestScreen;
 import dev.flomik.stardew.client.screen.ChestScreen;
+import dev.flomik.stardew.common.module.craftables.menu.ModBigChestMenu;
+import dev.flomik.stardew.common.module.craftables.menu.ModChestMenu;
 import dev.flomik.stardew.common.registry.ModBlocks;
 import dev.flomik.stardew.common.registry.ModMenuTypes;
 import dev.flomik.stardew.common.registry.framework.RendererRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,6 +34,9 @@ public class ClientSetup {
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ChestRenderer.LAYER_LOCATION, ChestRenderer::createBodyLayer);
+        event.registerLayerDefinition(BigChestRenderer.LAYER_LOCATION, BigChestRenderer::createBodyLayer);
+        event.registerLayerDefinition(StoneChestRenderer.LAYER_LOCATION, StoneChestRenderer::createBodyLayer);
+        event.registerLayerDefinition(BigStoneChestRenderer.LAYER_LOCATION, BigStoneChestRenderer::createBodyLayer);
     }
 
     @SubscribeEvent
@@ -35,7 +46,12 @@ public class ClientSetup {
         });
 
         event.enqueueWork(() -> {
-            MenuScreens.register(ModMenuTypes.CHEST_MENU.get(), ChestScreen::new);
+            MenuScreens.register(ModMenuTypes.CHEST_MENU.get(),
+                    (ModChestMenu menu, Inventory inv, Component title) -> new ChestScreen<>(menu, inv, title));
+
+            MenuScreens.register(ModMenuTypes.BIG_CHEST_MENU.get(),
+                    (ModBigChestMenu menu, Inventory inv, Component title) -> new BigChestScreen(menu, inv, title));
         });
+
     }
 }

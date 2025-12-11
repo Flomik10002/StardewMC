@@ -1,8 +1,8 @@
 {
-  "tab.blocks": "StardewMC Blocks",
-  "tab.craftables": "StardewMC Craftables",
-  "tab.artisan_goods": "StardewMC Artisan Goods",
-  "tab.tools": "StardewMC Tools",
+  "tab.stardew.blocks": "StardewMC Blocks",
+  "tab.stardew.craftables": "StardewMC Craftables",
+  "tab.stardew.artisan_goods": "StardewMC Artisan Goods",
+  "tab.stardew.tools": "StardewMC Tools",
 
   "block.stardew.keg": "Keg",
   "block.stardew.cheese_press": "Cheese Press",
@@ -38,5 +38,10 @@
   "item.stardew.copper_watering_can": "Copper Watering Can",
   "item.stardew.steel_watering_can": "Steel Watering Can",
   "item.stardew.gold_watering_can": "Gold Watering Can",
-  "item.stardew.iridium_watering_can": "Iridium Watering Can"
+  "item.stardew.iridium_watering_can": "Iridium Watering Can",
+
+  "container.stardew.chest": "Chest",
+  "container.stardew.big_chest": "Big Chest",
+  "container.stardew.stone_chest": "Stone Chest",
+  "container.stardew.big_stone_chest": "Big Stone Chest"
 }

@@ -14,16 +14,15 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.ChestLidController;
-import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
-import net.minecraft.world.level.block.entity.LidBlockEntity;
-import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
+import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockEntityChest extends RandomizableContainerBlockEntity implements LidBlockEntity {
-    private NonNullList<ItemStack> items = NonNullList.withSize(36, ItemStack.EMPTY);
+    protected NonNullList<ItemStack> items;
+    protected final ContainerData data;
 
     private final ChestLidController chestLidController = new ChestLidController();
 
@@ -55,7 +54,21 @@ public class BlockEntityChest extends RandomizableContainerBlockEntity implement
     };
 
     public BlockEntityChest(BlockPos pos, BlockState state) {
-        super(ModBlocks.CHEST.getTypeValue(), pos, state);
+        this(ModBlocks.CHEST.getTypeValue(), pos, state);
+        this.items = NonNullList.withSize(36, ItemStack.EMPTY);
+    }
+
+    public BlockEntityChest(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
+        this.items = NonNullList.withSize(36, ItemStack.EMPTY);
+        this.data = new SimpleContainerData(1) {
+            @Override
+            public int get(int index) { return 0; }
+            @Override
+            public void set(int index, int value) { }
+            @Override
+            public int getCount() { return 1; }
+        };
     }
 
     @Override
@@ -70,7 +83,9 @@ public class BlockEntityChest extends RandomizableContainerBlockEntity implement
     }
 
     @Override
-    protected Component getDefaultName() { return Component.literal("Chest"); }
+    protected Component getDefaultName() {
+        return Component.translatable("container.stardew.chest");
+    }
 
     @Override
     protected AbstractContainerMenu createMenu(int id, Inventory playerInv) {
@@ -157,11 +172,9 @@ public class BlockEntityChest extends RandomizableContainerBlockEntity implement
     
     @Override
     public void setChanged() {
-        boolean wasEmpty = this.isEmpty();
         super.setChanged();
         boolean isEmptyNow = this.isEmpty();
         
-        // В setChanged() тоже проверяем изменение состояния, на всякий случай
         if (this.level != null && !this.level.isClientSide) {
              BlockState state = this.level.getBlockState(this.worldPosition);
              if (state.hasProperty(BlockChest.HAS_ITEMS) && state.getValue(BlockChest.HAS_ITEMS) != !isEmptyNow) {

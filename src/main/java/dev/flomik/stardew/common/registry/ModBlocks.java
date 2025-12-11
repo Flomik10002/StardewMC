@@ -1,12 +1,13 @@
 package dev.flomik.stardew.common.registry;
 
+import dev.flomik.stardew.client.renderer.BigChestRenderer;
+import dev.flomik.stardew.client.renderer.BigStoneChestRenderer;
 import dev.flomik.stardew.client.renderer.ChestRenderer;
+import dev.flomik.stardew.client.renderer.StoneChestRenderer;
 import dev.flomik.stardew.client.renderer.VisualItemAboveRenderer;
+import dev.flomik.stardew.client.screen.BigChestScreen;
 import dev.flomik.stardew.common.module.craftables.block.*;
-import dev.flomik.stardew.common.module.craftables.blockentity.BlockEntityBeeHouse;
-import dev.flomik.stardew.common.module.craftables.blockentity.BlockEntityCheesePress;
-import dev.flomik.stardew.common.module.craftables.blockentity.BlockEntityChest;
-import dev.flomik.stardew.common.module.craftables.blockentity.BlockEntityKeg;
+import dev.flomik.stardew.common.module.craftables.blockentity.*;
 import dev.flomik.stardew.common.module.farming.blockentity.FarmlandBlockEntity;
 import dev.flomik.stardew.common.registry.framework.BlockBuilder;
 import dev.flomik.stardew.common.module.nature.block.BlockDirt;
@@ -37,6 +38,33 @@ public class ModBlocks {
             .transform(woodMachine())
             .blockEntity(BlockEntityChest::new)
             .renderer(ChestRenderer::new)
+            .item()
+            .tab(ModTabs.CRAFTABLES)
+            .visual(ModelPresets.simple())
+            .register();
+
+    public static final BlockEntry<BlockBigChest, BlockEntityBigChest> BIG_CHEST = BlockBuilder.create("big_chest", BlockBigChest::new)
+            .transform(woodMachine())
+            .blockEntity(BlockEntityBigChest::new)
+            .renderer(BigChestRenderer::new)
+            .item()
+            .tab(ModTabs.CRAFTABLES)
+            .visual(ModelPresets.simple())
+            .register();
+
+    public static final BlockEntry<BlockStoneChest, BlockEntityStoneChest> STONE_CHEST = BlockBuilder.create("stone_chest", BlockStoneChest::new)
+            .transform(stoneMachine())
+            .blockEntity(BlockEntityStoneChest::new)
+            .renderer(StoneChestRenderer::new)
+            .item()
+            .tab(ModTabs.CRAFTABLES)
+            .visual(ModelPresets.simple())
+            .register();
+
+    public static final BlockEntry<BlockBigStoneChest, BlockEntityBigStoneChest> BIG_STONE_CHEST = BlockBuilder.create("big_stone_chest", BlockBigStoneChest::new)
+            .transform(stoneMachine())
+            .blockEntity(BlockEntityBigStoneChest::new)
+            .renderer(BigStoneChestRenderer::new)
             .item()
             .tab(ModTabs.CRAFTABLES)
             .visual(ModelPresets.simple())

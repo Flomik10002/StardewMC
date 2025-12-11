@@ -17,6 +17,15 @@ public class BlockPresets {
         );
     }
 
+    public static <B extends BlockBuilder<?>> UnaryOperator<B> stoneMachine() {
+        return builder -> (B) builder.properties(p -> p
+                .mapColor(MapColor.STONE)
+                .strength(2.5F)
+                .sound(SoundType.STONE)
+                .noOcclusion()
+        );
+    }
+
     public static <B extends BlockBuilder<?>> UnaryOperator<B> crop() {
         return builder -> (B) builder.properties(p -> p
                 .mapColor(MapColor.PLANT)

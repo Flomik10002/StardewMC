@@ -1,5 +1,6 @@
 package dev.flomik.stardew.common.module.craftables.network;
 
+import dev.flomik.stardew.common.module.craftables.block.BlockBigChest;
 import dev.flomik.stardew.common.module.craftables.block.BlockChest;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -30,12 +31,12 @@ public class PacketChangeChestVariant {
     public static void handle(PacketChangeChestVariant msg, Supplier<NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
             ServerLevel level = ctx.get().getSender().serverLevel();
-            // Проверяем, прогружен ли чанк
             if (level.hasChunkAt(msg.pos)) {
                 BlockState state = level.getBlockState(msg.pos);
                 if (state.getBlock() instanceof BlockChest) {
-                    // Меняем BlockState
                     level.setBlock(msg.pos, state.setValue(BlockChest.VARIANT, msg.variant), 3);
+                } else if (state.getBlock() instanceof BlockBigChest) {
+                    level.setBlock(msg.pos, state.setValue(BlockBigChest.VARIANT, msg.variant), 3);
                 }
             }
         });

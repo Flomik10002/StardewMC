@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "stardew:block/craftables/big_chest" },
+    "facing=east":  { "model": "stardew:block/craftables/big_chest" },
+    "facing=south": { "model": "stardew:block/craftables/big_chest" },
+    "facing=west":  { "model": "stardew:block/craftables/big_chest" }
+  }
+}

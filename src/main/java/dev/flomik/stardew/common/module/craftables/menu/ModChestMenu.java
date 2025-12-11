@@ -13,7 +13,8 @@ import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
-public class ModChestMenu extends AbstractContainerMenu {
+// ВАЖНО: implements IChestMenu
+public class ModChestMenu extends AbstractContainerMenu implements IChestMenu {
     private final Container container;
     private final ContainerData data;
     private final BlockPos pos;
@@ -30,37 +31,41 @@ public class ModChestMenu extends AbstractContainerMenu {
         this.pos = pos;
 
         container.startOpen(playerInventory.player);
-
         this.addDataSlots(data);
 
+        // Слоты сундука
         for (int row = 0; row < 4; ++row) {
             for (int col = 0; col < 9; ++col) {
                 this.addSlot(new Slot(container, col + row * 9, 8 + col * 18, 18 + row * 18));
             }
         }
 
+        // Инвентарь игрока
         int playerInvY = 103;
-
         for (int row = 0; row < 3; ++row) {
             for (int col = 0; col < 9; ++col) {
                 this.addSlot(new Slot(playerInventory, col + row * 9 + 9, 8 + col * 18, playerInvY + row * 18));
             }
         }
 
+        // Хотбар
         int hotbarY = 161;
-
         for (int col = 0; col < 9; ++col) {
             this.addSlot(new Slot(playerInventory, col, 8 + col * 18, hotbarY));
         }
     }
 
+    // --- Реализация интерфейса IChestMenu ---
+    @Override
     public int getVariant() {
         return this.data.get(0);
     }
 
+    @Override
     public BlockPos getPos() {
         return pos;
     }
+    // ----------------------------------------
 
     @Override
     public boolean stillValid(Player player) {
