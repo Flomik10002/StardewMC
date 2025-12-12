@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "stardew:item/egg"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "stardew:variant": 1
+      },
+      "model": "stardew:item/brown_egg"
+    }
+  ]
+}

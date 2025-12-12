@@ -1,0 +1,13 @@
+<!--
+  ~ Copyright (c) PORTB 2025
+  ~
+  ~ Licensed under GNU LGPL v3
+  ~ https://www.gnu.org/licenses/lgpl-3.0.txt
+  -->
+
+<transformers>
+    <!--    Fix the amount that is extracted from the terminal -->
+    <class path="com.refinedmods.refinedstorage.api.network.grid.handler.IItemGridHandler" transformChildren="true">
+        <method name="onExtract" transformer="replace64" desc="(Lnet/minecraft/server/level/ServerPlayer;Ljava/util/UUID;II)V"/>
+    </class>
+</transformers>

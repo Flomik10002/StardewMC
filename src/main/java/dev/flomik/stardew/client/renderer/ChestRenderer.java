@@ -4,8 +4,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import dev.flomik.stardew.StardewMod;
-import dev.flomik.stardew.core.registry.block.craftables.BlockChest;
-import dev.flomik.stardew.core.registry.block.craftables.blockentity.BlockEntityChest;
+import dev.flomik.stardew.common.module.machinery.block.BlockChest;
+import dev.flomik.stardew.common.module.machinery.blockentity.BlockEntityChest;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -21,25 +21,34 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ChestRenderer implements BlockEntityRenderer<BlockEntityChest> {
+public class ChestRenderer<T extends BlockEntityChest> implements BlockEntityRenderer<T> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(StardewMod.MODID, "chest"), "main");
 
-    private static final ResourceLocation[] TEXTURES = new ResourceLocation[21];
+    protected static final ResourceLocation[] TEXTURES = new ResourceLocation[21];
     static {
         for (int i = 0; i < 21; i++) {
             TEXTURES[i] = new ResourceLocation(StardewMod.MODID, "textures/block/craftables/chest/chest_" + i + ".png");
         }
     }
 
-    private final ModelPart lid;
-    private final ModelPart bottom;
-    private final ModelPart lock;
+    protected final ModelPart lid;
+    protected final ModelPart bottom;
+    protected final ModelPart lock;
 
     public ChestRenderer(BlockEntityRendererProvider.Context context) {
-        ModelPart root = context.bakeLayer(LAYER_LOCATION);
+        this(context, LAYER_LOCATION);
+    }
+
+    protected ChestRenderer(BlockEntityRendererProvider.Context context, ModelLayerLocation layer) {
+        ModelPart root = context.bakeLayer(layer);
         this.bottom = root.getChild("bottom");
         this.lid = root.getChild("lid");
         this.lock = this.lid.getChild("lock");
+    }
+
+    protected ResourceLocation getTexture(int variant) {
+        if (variant < 0 || variant >= TEXTURES.length) variant = 0;
+        return TEXTURES[variant];
     }
 
     public static LayerDefinition createBodyLayer() {
@@ -90,9 +99,8 @@ public class ChestRenderer implements BlockEntityRenderer<BlockEntityChest> {
         this.lid.xRot = (openFactor * ((float)Math.PI / 2F));
 
         int variant = state.getValue(BlockChest.VARIANT);
-        if (variant < 0 || variant >= TEXTURES.length) variant = 0;
-
-        VertexConsumer consumer = bufferSource.getBuffer(RenderType.entityCutout(TEXTURES[variant]));
+        
+        VertexConsumer consumer = bufferSource.getBuffer(RenderType.entityCutout(getTexture(variant)));
 
         this.lid.render(poseStack, consumer, packedLight, packedOverlay);
         this.bottom.render(poseStack, consumer, packedLight, packedOverlay);

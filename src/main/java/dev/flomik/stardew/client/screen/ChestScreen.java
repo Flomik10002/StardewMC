@@ -2,8 +2,8 @@ package dev.flomik.stardew.client.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.flomik.stardew.StardewMod;
-import dev.flomik.stardew.core.menu.ModChestMenu;
-import dev.flomik.stardew.core.network.PacketChangeChestVariant;
+import dev.flomik.stardew.common.module.machinery.menu.IChestMenu;
+import dev.flomik.stardew.common.module.machinery.network.PacketChangeChestVariant;
 import dev.flomik.stardew.core.network.PacketHandler;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -11,9 +11,9 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 
-public class ChestScreen extends AbstractContainerScreen<ModChestMenu> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(StardewMod.MODID, "textures/gui/container/container_36.png");
+public class ChestScreen<T extends AbstractContainerMenu & IChestMenu> extends AbstractContainerScreen<T> {    private static final ResourceLocation TEXTURE = new ResourceLocation(StardewMod.MODID, "textures/gui/container/container_36.png");
     private static final ResourceLocation PLATFORM_TEXTURE = new ResourceLocation(StardewMod.MODID, "textures/gui/container/color_platform.png");
 
     private static final int[] COLORS = {
@@ -26,11 +26,10 @@ public class ChestScreen extends AbstractContainerScreen<ModChestMenu> {
     private static final int SPACING = 2;
     private static final int BUTTON_FULL_SIZE = BUTTON_SIZE + SPACING;
     private static final int Y_OFFSET_FROM_TOP = -40;
-    private static final int PLATFORM_PADDING = 3; // Отступ плашки от кнопок
-    private static final int PLATFORM_HEIGHT = 40; // Высота плашки в пикселях
-    private static final int PLATFORM_WIDTH = 166; // Ширина плашки в пикселях
+    private static final int PLATFORM_HEIGHT = 40;
+    private static final int PLATFORM_WIDTH = 166;
 
-    public ChestScreen(ModChestMenu menu, Inventory playerInventory, Component title) {
+    public ChestScreen(T menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
         this.imageWidth = 176;
         this.imageHeight = 185;
@@ -57,28 +56,23 @@ public class ChestScreen extends AbstractContainerScreen<ModChestMenu> {
         int x = (this.width - this.imageWidth) / 2;
         int y = (this.height - this.imageHeight) / 2;
 
-        guiGraphics.blit(TEXTURE, x, y, 0, 0, this.imageWidth, this.imageHeight);
+        int visualWidth = this.imageWidth + 17;
+
+        guiGraphics.blit(TEXTURE, x, y, 0, 0, visualWidth, this.imageHeight);
 
         drawColorButtonPlatform(guiGraphics, x, y);
         drawColorButtons(guiGraphics, x, y, mouseX, mouseY);
     }
 
-    private void drawColorButtonPlatform(GuiGraphics guiGraphics, int guiLeft, int guiTop) {
+    protected void drawColorButtonPlatform(GuiGraphics guiGraphics, int guiLeft, int guiTop) {
         int startY = guiTop + Y_OFFSET_FROM_TOP;
-        int row1Width = 11 * BUTTON_FULL_SIZE - SPACING;
-        int row2Width = 11 * BUTTON_FULL_SIZE - SPACING;
-        int maxWidth = Math.max(row1Width, row2Width);
-        
-        // Координаты плашки (центрирована относительно GUI)
-        // Плашка центрируется по GUI, а не по кнопкам
         int platformX = guiLeft + (this.imageWidth - PLATFORM_WIDTH) / 2;
         int platformY = startY - (PLATFORM_HEIGHT - (2 * BUTTON_FULL_SIZE - SPACING)) / 2;
         
-        // Рисуем текстуру плашки
         guiGraphics.blit(PLATFORM_TEXTURE, platformX, platformY, 0, 0, PLATFORM_WIDTH, PLATFORM_HEIGHT, PLATFORM_WIDTH, PLATFORM_HEIGHT);
     }
 
-    private void drawColorButtons(GuiGraphics guiGraphics, int guiLeft, int guiTop, int mouseX, int mouseY) {
+    protected void drawColorButtons(GuiGraphics guiGraphics, int guiLeft, int guiTop, int mouseX, int mouseY) {
         int currentVariant = this.menu.getVariant();
         int startY = guiTop + Y_OFFSET_FROM_TOP;
 

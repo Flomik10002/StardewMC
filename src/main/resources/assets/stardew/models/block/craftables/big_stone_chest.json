@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "stardew:block/craftables/big_stone_chest/big_stone_chest_0"
+  }
+}

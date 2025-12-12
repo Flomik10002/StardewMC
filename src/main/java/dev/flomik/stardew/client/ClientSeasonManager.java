@@ -1,6 +1,6 @@
 package dev.flomik.stardew.client;
 
-import dev.flomik.stardew.core.time.Season;
+import dev.flomik.stardew.common.module.time.Season;
 import net.minecraft.client.Minecraft;
 
 public class ClientSeasonManager {
