@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "stardew:block/craftables/oil_maker" },
+    "facing=south": { "model": "stardew:block/craftables/oil_maker", "y": 180 },
+    "facing=west":  { "model": "stardew:block/craftables/oil_maker", "y": 270 },
+    "facing=east":  { "model": "stardew:block/craftables/oil_maker", "y": 90 }
+  }
+}

@@ -21,8 +21,8 @@ public class ItemBuilder<T extends Item> {
 
     private ItemModelGen visualGenerator = null;
 
-    public static ItemBuilder<Item> create(String name) {
-        return new ItemBuilder<>(name, Item::new);
+    public static ItemBuilder<StardewItemBase> create(String name) {
+        return new ItemBuilder<>(name, StardewItemBase::new);
     }
 
     public static <I extends Item> ItemBuilder<I> create(String name, Function<Item.Properties, I> factory) {

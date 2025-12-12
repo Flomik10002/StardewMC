@@ -2,8 +2,8 @@ package dev.flomik.stardew.client.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.flomik.stardew.StardewMod;
-import dev.flomik.stardew.common.module.craftables.menu.IChestMenu;
-import dev.flomik.stardew.common.module.craftables.network.PacketChangeChestVariant;
+import dev.flomik.stardew.common.module.machinery.menu.IChestMenu;
+import dev.flomik.stardew.common.module.machinery.network.PacketChangeChestVariant;
 import dev.flomik.stardew.core.network.PacketHandler;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;

@@ -1,7 +1,9 @@
 package dev.flomik.stardew.common.registry.framework;
 
+import dev.flomik.stardew.common.api.quality.Quality;
 import dev.flomik.stardew.common.registry.framework.tooltip.StardewTooltip;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -16,6 +18,19 @@ public class StardewItemBase extends Item implements IStardewItem {
 
     public StardewItemBase(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public Component getName(ItemStack stack) {
+        Quality q = Quality.get(stack);
+        Component baseName = super.getName(stack);
+
+        if (q != Quality.NORMAL) {
+            MutableComponent nameWithStar = baseName.copy();
+            nameWithStar.append(Component.literal(" " + q.getIcon()).withStyle(q.getColor()));
+            return nameWithStar;
+        }
+        return baseName;
     }
 
     @Override

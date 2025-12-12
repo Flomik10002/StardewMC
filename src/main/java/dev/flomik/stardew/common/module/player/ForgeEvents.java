@@ -3,7 +3,7 @@ package dev.flomik.stardew.common.module.player;
 import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.core.network.PacketHandler;
 import dev.flomik.stardew.common.module.time.network.S2CSeasonSync;
-import dev.flomik.stardew.common.module.craftables.blockentity.BlockEntityChest;
+import dev.flomik.stardew.common.module.machinery.blockentity.BlockEntityChest;
 import dev.flomik.stardew.common.module.time.Season;
 import dev.flomik.stardew.common.module.time.StardewDateData;
 import net.minecraft.network.chat.Component;

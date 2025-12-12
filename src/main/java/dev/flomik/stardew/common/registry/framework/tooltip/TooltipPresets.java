@@ -21,14 +21,6 @@ public class TooltipPresets {
                         .withStyle(category.getColor()));
     }
 
-    public static StardewTooltip tool(String descKey) {
-        return (stack, level, tooltip) -> {
-            tooltip.add(Component.translatable(ItemCategory.TOOL.getTranslationKey())
-                    .withStyle(ItemCategory.TOOL.getColor()));
-            tooltip.add(Component.translatable(descKey).withStyle(ChatFormatting.DARK_GRAY));
-        };
-    }
-
     public static StardewTooltip patternInfo() {
         return (stack, level, tooltip) -> {
             if (stack.getItem() instanceof IPatternTool tool) {
@@ -56,7 +48,7 @@ public class TooltipPresets {
         return (stack, level, tooltip) -> {
             int totalValue = basePrice * stack.getCount();
             tooltip.add(Component.empty());
-            tooltip.add(Component.literal("⛀⛁⛂⛃ " + totalValue).withStyle(ChatFormatting.GOLD));
+            tooltip.add(Component.literal("⛃ " + totalValue).withStyle(ChatFormatting.GOLD));
         };
     }
 }

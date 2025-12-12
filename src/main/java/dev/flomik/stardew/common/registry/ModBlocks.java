@@ -5,10 +5,9 @@ import dev.flomik.stardew.client.renderer.BigStoneChestRenderer;
 import dev.flomik.stardew.client.renderer.ChestRenderer;
 import dev.flomik.stardew.client.renderer.StoneChestRenderer;
 import dev.flomik.stardew.client.renderer.VisualItemAboveRenderer;
-import dev.flomik.stardew.client.screen.BigChestScreen;
-import dev.flomik.stardew.common.module.craftables.block.*;
-import dev.flomik.stardew.common.module.craftables.blockentity.*;
 import dev.flomik.stardew.common.module.farming.blockentity.FarmlandBlockEntity;
+import dev.flomik.stardew.common.module.machinery.block.*;
+import dev.flomik.stardew.common.module.machinery.blockentity.*;
 import dev.flomik.stardew.common.registry.framework.BlockBuilder;
 import dev.flomik.stardew.common.module.nature.block.BlockDirt;
 import dev.flomik.stardew.common.module.farming.block.BlockFarmland;
@@ -28,6 +27,15 @@ public class ModBlocks {
     public static final BlockEntry<BlockKeg, BlockEntityKeg> KEG = BlockBuilder.create("keg", BlockKeg::new)
             .transform(woodMachine())
             .blockEntity(BlockEntityKeg::new)
+            .renderer(VisualItemAboveRenderer::new)
+            .item()
+            .tab(ModTabs.CRAFTABLES)
+            .visual(ModelPresets.simple())
+            .register();
+
+    public static final BlockEntry<BlockOilMaker, BlockEntityOilMaker> OIL_MAKER = BlockBuilder.create("oil_maker", BlockOilMaker::new)
+            .transform(woodMachine())
+            .blockEntity(BlockEntityOilMaker::new)
             .renderer(VisualItemAboveRenderer::new)
             .item()
             .tab(ModTabs.CRAFTABLES)

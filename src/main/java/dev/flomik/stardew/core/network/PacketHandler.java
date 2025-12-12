@@ -1,7 +1,8 @@
 package dev.flomik.stardew.core.network;
 
 import dev.flomik.stardew.StardewMod;
-import dev.flomik.stardew.common.module.craftables.network.PacketChangeChestVariant;
+import dev.flomik.stardew.common.module.machinery.network.PacketChangeChestVariant;
+import dev.flomik.stardew.common.module.machinery.network.PacketPlayChestSound;
 import dev.flomik.stardew.common.module.time.network.S2CSeasonSync;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -22,7 +23,7 @@ public class PacketHandler {
         int id = 0;
         CHANNEL.registerMessage(id++, S2CSeasonSync.class, S2CSeasonSync::encode, S2CSeasonSync::decode, S2CSeasonSync::handle);
         CHANNEL.registerMessage(id++, PacketChangeChestVariant.class, PacketChangeChestVariant::encode, PacketChangeChestVariant::decode, PacketChangeChestVariant::handle);
-        CHANNEL.registerMessage(id++, dev.flomik.stardew.common.module.craftables.network.PacketPlayChestSound.class, dev.flomik.stardew.common.module.craftables.network.PacketPlayChestSound::encode, dev.flomik.stardew.common.module.craftables.network.PacketPlayChestSound::decode, dev.flomik.stardew.common.module.craftables.network.PacketPlayChestSound::handle);
+        CHANNEL.registerMessage(id++, PacketPlayChestSound.class, PacketPlayChestSound::encode, PacketPlayChestSound::decode, PacketPlayChestSound::handle);
     }
 
     public static void sendToAll(Object message) {

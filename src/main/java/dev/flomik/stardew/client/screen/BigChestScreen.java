@@ -2,7 +2,7 @@ package dev.flomik.stardew.client.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.flomik.stardew.StardewMod;
-import dev.flomik.stardew.common.module.craftables.menu.ModBigChestMenu;
+import dev.flomik.stardew.common.module.machinery.menu.ModBigChestMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;

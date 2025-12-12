@@ -5,7 +5,11 @@ import net.minecraft.ChatFormatting;
 public enum ItemCategory {
     TOOL("tooltip.stardew.category.tool",ChatFormatting.GRAY),
 
-    RESOURCE("tooltip.stardew.category.resource", ChatFormatting.GOLD);
+    ARTISAN_GOODS("tooltip.stardew.category.artisan_goods", ChatFormatting.DARK_AQUA),
+
+    COOKING("tooltip.stardew.category.cooking", ChatFormatting.DARK_RED),
+
+    ANIMAL_PRODUCT("tooltip.stardew.category.animal_product", ChatFormatting.RED);
 
     private final String translationKey;
     private final ChatFormatting color;

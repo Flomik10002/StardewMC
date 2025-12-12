@@ -30,6 +30,12 @@ public class ModTabs {
                     .icon(() -> new ItemStack(ModItems.WINE.get()))
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> ANIMAL_PRODUCT = StardewRegistry.TABS.register("animal_product",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("tab.stardew.animal_product"))
+                    .icon(() -> new ItemStack(ModItems.MILK.get()))
+                    .build());
+
     public static final RegistryObject<CreativeModeTab> CROPS = StardewRegistry.TABS.register("crops",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("tab.stardew.crops"))

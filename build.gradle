@@ -107,7 +107,6 @@ dependencies {
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
     implementation("com.eliotlash.mclib:mclib:20")
 
-    // BiggerStacks TransformerLib dependencies (from libs/)
     implementation files('libs/BiggerStacksTransformerLib-1.5.1.jar')
     implementation files('libs/BiggerStacksConfigLib-1.8.jar')
     implementation files('libs/SimpleLoggerWrapper-1.0.jar')
@@ -142,7 +141,7 @@ tasks.register('copyJarJarLibs', Copy) {
 
 tasks.named('jar', Jar).configure {
     dependsOn 'copyJarJarLibs'
-    
+
     manifest {
         attributes([
                 'Specification-Title'     : mod_id,
@@ -155,9 +154,9 @@ tasks.named('jar', Jar).configure {
                 'MixinConfigs'            : "${mod_id}.mixins.json"
         ])
     }
-    
+
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    
+
     // Include jarjar libraries
     from(layout.buildDirectory.dir('jarjarlibs')) {
         into 'META-INF/jarjar'
@@ -171,7 +170,7 @@ tasks.register('createJarJarMetadata') {
     doLast {
         def metadataDir = file('src/main/resources/META-INF/jarjar')
         metadataDir.mkdirs()
-        
+
         def metadata = """{
   "jars": [
     {

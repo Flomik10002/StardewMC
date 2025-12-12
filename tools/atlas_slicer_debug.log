@@ -1,0 +1,167 @@
+2025-12-12 05:31:29,086 - INFO - Application started successfully.
+2025-12-12 05:31:34,769 - INFO - Loading image: /home/flomik/IdeaProjects/StardewMC/tools/output.png
+2025-12-12 05:31:34,783 - DEBUG - STREAM b'IHDR' 16 13
+2025-12-12 05:31:34,783 - DEBUG - STREAM b'IDAT' 41 1094
+2025-12-12 05:31:34,784 - INFO - Image loaded in 0.0124s. Size: (128, 128)
+2025-12-12 05:31:34,784 - DEBUG - Redrawing: Scale=1.00, Size=128x128
+2025-12-12 05:31:34,785 - INFO - Frame render time: 0.0008s
+2025-12-12 05:31:36,051 - DEBUG - Redrawing: Scale=1.25, Size=160x160
+2025-12-12 05:31:36,052 - INFO - Frame render time: 0.0006s
+2025-12-12 05:31:36,178 - DEBUG - Redrawing: Scale=1.56, Size=200x200
+2025-12-12 05:31:36,179 - INFO - Frame render time: 0.0008s
+2025-12-12 05:31:36,318 - DEBUG - Redrawing: Scale=1.95, Size=250x250
+2025-12-12 05:31:36,320 - INFO - Frame render time: 0.0015s
+2025-12-12 05:31:36,439 - DEBUG - Redrawing: Scale=2.44, Size=312x312
+2025-12-12 05:31:36,441 - INFO - Frame render time: 0.0026s
+2025-12-12 05:31:36,806 - DEBUG - Redrawing: Scale=3.05, Size=390x390
+2025-12-12 05:31:36,809 - INFO - Frame render time: 0.0033s
+2025-12-12 05:31:36,851 - DEBUG - Redrawing: Scale=3.81, Size=488x488
+2025-12-12 05:31:36,856 - INFO - Frame render time: 0.0051s
+2025-12-12 05:31:36,890 - DEBUG - Redrawing: Scale=4.77, Size=610x610
+2025-12-12 05:31:36,898 - INFO - Frame render time: 0.0078s
+2025-12-12 05:31:36,945 - DEBUG - Redrawing: Scale=5.96, Size=762x762
+2025-12-12 05:31:36,952 - INFO - Frame render time: 0.0070s
+2025-12-12 05:31:38,047 - DEBUG - Redrawing: Scale=4.77, Size=610x610
+2025-12-12 05:31:38,051 - INFO - Frame render time: 0.0041s
+2025-12-12 05:31:38,105 - DEBUG - Redrawing: Scale=3.81, Size=488x488
+2025-12-12 05:31:38,108 - INFO - Frame render time: 0.0032s
+2025-12-12 05:31:38,169 - DEBUG - Redrawing: Scale=3.05, Size=390x390
+2025-12-12 05:31:38,171 - INFO - Frame render time: 0.0017s
+2025-12-12 05:31:38,216 - DEBUG - Redrawing: Scale=2.44, Size=312x312
+2025-12-12 05:31:38,219 - INFO - Frame render time: 0.0031s
+2025-12-12 05:31:38,259 - DEBUG - Redrawing: Scale=1.95, Size=250x250
+2025-12-12 05:31:38,260 - INFO - Frame render time: 0.0012s
+2025-12-12 05:31:38,324 - DEBUG - Redrawing: Scale=1.56, Size=200x200
+2025-12-12 05:31:38,325 - INFO - Frame render time: 0.0008s
+2025-12-12 05:31:38,450 - DEBUG - Redrawing: Scale=1.25, Size=160x160
+2025-12-12 05:31:38,451 - INFO - Frame render time: 0.0007s
+2025-12-12 05:31:38,546 - DEBUG - Redrawing: Scale=1.00, Size=128x128
+2025-12-12 05:31:38,547 - INFO - Frame render time: 0.0005s
+2025-12-12 05:31:38,690 - DEBUG - Redrawing: Scale=1.25, Size=160x160
+2025-12-12 05:31:38,690 - INFO - Frame render time: 0.0004s
+2025-12-12 05:31:38,712 - DEBUG - Redrawing: Scale=1.56, Size=200x200
+2025-12-12 05:31:38,712 - INFO - Frame render time: 0.0005s
+2025-12-12 05:31:38,740 - DEBUG - Redrawing: Scale=1.95, Size=250x250
+2025-12-12 05:31:38,742 - INFO - Frame render time: 0.0013s
+2025-12-12 05:31:38,786 - DEBUG - Redrawing: Scale=2.44, Size=312x312
+2025-12-12 05:31:38,788 - INFO - Frame render time: 0.0015s
+2025-12-12 05:31:38,808 - DEBUG - Redrawing: Scale=3.05, Size=390x390
+2025-12-12 05:31:38,812 - INFO - Frame render time: 0.0035s
+2025-12-12 05:31:38,838 - DEBUG - Redrawing: Scale=3.81, Size=488x488
+2025-12-12 05:31:38,841 - INFO - Frame render time: 0.0034s
+2025-12-12 05:31:38,868 - DEBUG - Redrawing: Scale=4.77, Size=610x610
+2025-12-12 05:31:38,875 - INFO - Frame render time: 0.0065s
+2025-12-12 05:31:38,910 - DEBUG - Redrawing: Scale=5.96, Size=762x762
+2025-12-12 05:31:38,916 - INFO - Frame render time: 0.0056s
+2025-12-12 05:31:38,977 - DEBUG - Redrawing: Scale=7.45, Size=953x953
+2025-12-12 05:31:38,992 - INFO - Frame render time: 0.0150s
+2025-12-12 05:31:39,436 - DEBUG - Redrawing: Scale=9.31, Size=1192x1192
+2025-12-12 05:31:39,448 - INFO - Frame render time: 0.0118s
+2025-12-12 05:31:39,459 - DEBUG - Redrawing: Scale=11.64, Size=1490x1490
+2025-12-12 05:31:39,477 - INFO - Frame render time: 0.0181s
+2025-12-12 05:31:39,488 - DEBUG - Redrawing: Scale=14.55, Size=1862x1862
+2025-12-12 05:31:39,512 - INFO - Frame render time: 0.0242s
+2025-12-12 05:31:39,513 - DEBUG - Redrawing: Scale=18.19, Size=2328x2328
+2025-12-12 05:31:39,550 - INFO - Frame render time: 0.0378s
+2025-12-12 05:31:39,567 - DEBUG - Redrawing: Scale=22.74, Size=2910x2910
+2025-12-12 05:31:39,620 - INFO - Frame render time: 0.0531s
+2025-12-12 05:31:39,771 - DEBUG - Redrawing: Scale=18.19, Size=2328x2328
+2025-12-12 05:31:39,804 - INFO - Frame render time: 0.0332s
+2025-12-12 05:31:39,811 - DEBUG - Redrawing: Scale=14.55, Size=1862x1862
+2025-12-12 05:31:39,833 - INFO - Frame render time: 0.0217s
+2025-12-12 05:31:39,841 - DEBUG - Redrawing: Scale=11.64, Size=1490x1490
+2025-12-12 05:31:39,855 - INFO - Frame render time: 0.0144s
+2025-12-12 05:31:39,870 - DEBUG - Redrawing: Scale=9.31, Size=1192x1192
+2025-12-12 05:31:39,878 - INFO - Frame render time: 0.0082s
+2025-12-12 05:31:39,898 - DEBUG - Redrawing: Scale=7.45, Size=953x953
+2025-12-12 05:31:39,904 - INFO - Frame render time: 0.0061s
+2025-12-12 05:31:39,927 - DEBUG - Redrawing: Scale=5.96, Size=762x762
+2025-12-12 05:31:39,933 - INFO - Frame render time: 0.0055s
+2025-12-12 05:31:39,960 - DEBUG - Redrawing: Scale=4.77, Size=610x610
+2025-12-12 05:31:39,964 - INFO - Frame render time: 0.0038s
+2025-12-12 05:31:40,012 - DEBUG - Redrawing: Scale=3.81, Size=488x488
+2025-12-12 05:31:40,014 - INFO - Frame render time: 0.0021s
+2025-12-12 05:31:40,576 - DEBUG - Redrawing: Scale=3.05, Size=390x390
+2025-12-12 05:31:40,578 - INFO - Frame render time: 0.0023s
+2025-12-12 05:31:40,699 - DEBUG - Redrawing: Scale=3.81, Size=488x488
+2025-12-12 05:31:40,702 - INFO - Frame render time: 0.0026s
+2025-12-12 05:31:40,726 - DEBUG - Redrawing: Scale=4.77, Size=610x610
+2025-12-12 05:31:40,730 - INFO - Frame render time: 0.0037s
+2025-12-12 05:31:40,774 - DEBUG - Redrawing: Scale=5.96, Size=762x762
+2025-12-12 05:31:40,780 - INFO - Frame render time: 0.0058s
+2025-12-12 05:31:40,805 - DEBUG - Redrawing: Scale=7.45, Size=953x953
+2025-12-12 05:31:40,812 - INFO - Frame render time: 0.0067s
+2025-12-12 05:31:40,840 - DEBUG - Redrawing: Scale=9.31, Size=1192x1192
+2025-12-12 05:31:40,854 - INFO - Frame render time: 0.0134s
+2025-12-12 05:31:40,884 - DEBUG - Redrawing: Scale=11.64, Size=1490x1490
+2025-12-12 05:31:40,899 - INFO - Frame render time: 0.0153s
+2025-12-12 05:31:41,176 - DEBUG - Redrawing: Scale=14.55, Size=1862x1862
+2025-12-12 05:31:41,205 - INFO - Frame render time: 0.0290s
+2025-12-12 05:31:41,206 - DEBUG - Redrawing: Scale=18.19, Size=2328x2328
+2025-12-12 05:31:41,251 - INFO - Frame render time: 0.0454s
+2025-12-12 05:31:41,252 - DEBUG - Redrawing: Scale=22.74, Size=2910x2910
+2025-12-12 05:31:41,302 - INFO - Frame render time: 0.0509s
+2025-12-12 05:31:41,304 - DEBUG - Redrawing: Scale=28.42, Size=3637x3637
+2025-12-12 05:31:41,388 - INFO - Frame render time: 0.0839s
+2025-12-12 05:31:41,391 - DEBUG - Redrawing: Scale=32.00, Size=4096x4096
+2025-12-12 05:31:41,499 - INFO - Frame render time: 0.1087s
+2025-12-12 05:31:41,674 - DEBUG - Redrawing: Scale=25.60, Size=3276x3276
+2025-12-12 05:31:41,745 - INFO - Frame render time: 0.0713s
+2025-12-12 05:31:41,746 - DEBUG - Redrawing: Scale=20.48, Size=2621x2621
+2025-12-12 05:31:41,790 - INFO - Frame render time: 0.0442s
+2025-12-12 05:31:41,791 - DEBUG - Redrawing: Scale=16.38, Size=2097x2097
+2025-12-12 05:31:41,820 - INFO - Frame render time: 0.0296s
+2025-12-12 05:31:41,820 - DEBUG - Redrawing: Scale=13.11, Size=1677x1677
+2025-12-12 05:31:41,839 - INFO - Frame render time: 0.0182s
+2025-12-12 05:31:41,848 - DEBUG - Redrawing: Scale=10.49, Size=1342x1342
+2025-12-12 05:31:41,859 - INFO - Frame render time: 0.0111s
+2025-12-12 05:31:41,967 - DEBUG - Redrawing: Scale=8.39, Size=1073x1073
+2025-12-12 05:31:41,979 - INFO - Frame render time: 0.0116s
+2025-12-12 05:31:42,506 - DEBUG - Redrawing: Scale=10.49, Size=1342x1342
+2025-12-12 05:31:42,524 - INFO - Frame render time: 0.0174s
+2025-12-12 05:31:42,536 - DEBUG - Redrawing: Scale=13.11, Size=1677x1677
+2025-12-12 05:31:42,556 - INFO - Frame render time: 0.0196s
+2025-12-12 05:31:42,564 - DEBUG - Redrawing: Scale=16.38, Size=2097x2097
+2025-12-12 05:31:42,593 - INFO - Frame render time: 0.0295s
+2025-12-12 05:31:42,594 - DEBUG - Redrawing: Scale=20.48, Size=2621x2621
+2025-12-12 05:31:42,635 - INFO - Frame render time: 0.0411s
+2025-12-12 05:31:42,635 - DEBUG - Redrawing: Scale=25.60, Size=3276x3276
+2025-12-12 05:31:42,700 - INFO - Frame render time: 0.0648s
+2025-12-12 05:31:42,700 - DEBUG - Redrawing: Scale=32.00, Size=4096x4096
+2025-12-12 05:31:42,801 - INFO - Frame render time: 0.1005s
+2025-12-12 05:31:44,237 - DEBUG - Redrawing: Scale=25.60, Size=3276x3276
+2025-12-12 05:31:44,474 - INFO - Frame render time: 0.2374s
+2025-12-12 05:31:44,475 - DEBUG - Redrawing: Scale=20.48, Size=2621x2621
+2025-12-12 05:31:44,568 - INFO - Frame render time: 0.0928s
+2025-12-12 05:31:44,568 - DEBUG - Redrawing: Scale=16.38, Size=2097x2097
+2025-12-12 05:31:44,628 - INFO - Frame render time: 0.0596s
+2025-12-12 05:31:44,628 - DEBUG - Redrawing: Scale=13.11, Size=1677x1677
+2025-12-12 05:31:44,672 - INFO - Frame render time: 0.0437s
+2025-12-12 05:31:44,673 - DEBUG - Redrawing: Scale=10.49, Size=1342x1342
+2025-12-12 05:31:44,700 - INFO - Frame render time: 0.0272s
+2025-12-12 05:31:44,701 - DEBUG - Redrawing: Scale=8.39, Size=1073x1073
+2025-12-12 05:31:44,717 - INFO - Frame render time: 0.0160s
+2025-12-12 05:31:45,798 - DEBUG - Redrawing: Scale=6.71, Size=858x858
+2025-12-12 05:31:45,804 - INFO - Frame render time: 0.0057s
+2025-12-12 05:31:46,280 - DEBUG - Redrawing: Scale=5.37, Size=687x687
+2025-12-12 05:31:46,286 - INFO - Frame render time: 0.0054s
+2025-12-12 05:31:55,688 - INFO - Loading image: /home/flomik/IdeaProjects/StardewMC/tools/raw data/fall_outdoorsTileSheet.png
+2025-12-12 05:31:55,694 - DEBUG - STREAM b'IHDR' 16 13
+2025-12-12 05:31:55,694 - DEBUG - STREAM b'IDAT' 41 224403
+2025-12-12 05:31:55,702 - INFO - Image loaded in 0.0114s. Size: (400, 1264)
+2025-12-12 05:31:55,702 - DEBUG - Redrawing: Scale=1.00, Size=400x1264
+2025-12-12 05:31:56,007 - INFO - Frame render time: 0.3044s
+2025-12-12 05:31:57,540 - DEBUG - Redrawing: Scale=1.25, Size=500x1580
+2025-12-12 05:31:57,891 - INFO - Frame render time: 0.3505s
+2025-12-12 05:31:57,891 - DEBUG - Redrawing: Scale=1.56, Size=625x1975
+2025-12-12 05:31:58,406 - INFO - Frame render time: 0.5155s
+2025-12-12 05:31:58,407 - DEBUG - Redrawing: Scale=1.95, Size=781x2468
+2025-12-12 05:31:59,149 - INFO - Frame render time: 0.7428s
+2025-12-12 05:31:59,150 - DEBUG - Redrawing: Scale=2.44, Size=976x3085
+2025-12-12 05:32:00,254 - INFO - Frame render time: 1.1042s
+2025-12-12 05:32:00,254 - DEBUG - Redrawing: Scale=3.05, Size=1220x3857
+2025-12-12 05:32:01,464 - INFO - Frame render time: 1.2102s
+2025-12-12 05:32:07,730 - DEBUG - Redrawing: Scale=2.44, Size=976x3085
+2025-12-12 05:32:08,634 - INFO - Frame render time: 0.9034s
+2025-12-12 05:32:09,483 - DEBUG - Redrawing: Scale=1.95, Size=781x2468
+2025-12-12 05:32:10,247 - INFO - Frame render time: 0.7636s
