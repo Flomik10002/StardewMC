@@ -1,0 +1,808 @@
+Id,Name,DisplayName,Description,Type,Category,Price,Edibility,IsDrink,SpriteIndex,CanBeGivenAsGift,CanBeTrashed,ExcludeFromShippingCollection,ContextTags
+0,Weeds,[LocalizedText Strings\Objects:Weeds_Name],[LocalizedText Strings\Objects:Weeds_Description],Litter,-999,0,-300,False,0,True,True,False,
+2,Stone,[LocalizedText Strings\Objects:DiamondStone_Name],[LocalizedText Strings\Objects:DiamondStone_Description],Litter,-999,0,-300,False,2,True,True,False,
+4,Stone,[LocalizedText Strings\Objects:RubyStone_Name],[LocalizedText Strings\Objects:RubyStone_Description],Litter,-999,0,-300,False,4,True,True,False,
+6,Stone,[LocalizedText Strings\Objects:JadeStone_Name],[LocalizedText Strings\Objects:JadeStone_Description],Litter,-999,0,-300,False,6,True,True,False,
+8,Stone,[LocalizedText Strings\Objects:AmethystStone_Name],[LocalizedText Strings\Objects:AmethystStone_Description],Litter,-999,0,-300,False,8,True,True,False,
+10,Stone,[LocalizedText Strings\Objects:TopazStone_Name],[LocalizedText Strings\Objects:TopazStone_Description],Litter,-999,0,-300,False,10,True,True,False,
+12,Stone,[LocalizedText Strings\Objects:EmeraldStone_Name],[LocalizedText Strings\Objects:EmeraldStone_Description],Litter,-999,0,-300,False,12,True,True,False,
+14,Stone,[LocalizedText Strings\Objects:AquamarineStone_Name],[LocalizedText Strings\Objects:AquamarineStone_Description],Litter,-999,0,-300,False,14,True,True,False,
+16,Wild Horseradish,[LocalizedText Strings\Objects:WildHorseradish_Name],[LocalizedText Strings\Objects:WildHorseradish_Description],Basic,-81,50,5,False,16,True,True,False,"color_brown,forage_item,season_spring"
+18,Daffodil,[LocalizedText Strings\Objects:Daffodil_Name],[LocalizedText Strings\Objects:Daffodil_Description],Basic,-81,30,0,False,18,True,True,False,"color_yellow,forage_item,season_spring"
+20,Leek,[LocalizedText Strings\Objects:Leek_Name],[LocalizedText Strings\Objects:Leek_Description],Basic,-81,60,16,False,20,True,True,False,"color_white,forage_item,season_spring"
+22,Dandelion,[LocalizedText Strings\Objects:Dandelion_Name],[LocalizedText Strings\Objects:Dandelion_Description],Basic,-81,40,10,False,22,True,True,False,"color_yellow,forage_item,season_spring"
+24,Parsnip,[LocalizedText Strings\Objects:Parsnip_Name],[LocalizedText Strings\Objects:Parsnip_Description],Basic,-75,35,10,False,24,True,True,False,"color_yellow,dye_medium,season_spring"
+25,Stone,[LocalizedText Strings\Objects:MusselStone_Name],[LocalizedText Strings\Objects:MusselStone_Description],Litter,-999,0,-300,False,25,True,True,False,
+30,Lumber,[LocalizedText Strings\Objects:Lumber_Name],[LocalizedText Strings\Objects:Lumber_Description],Basic,0,2,10,False,30,True,True,False,"color_brown,wood_item"
+32,Stone,[LocalizedText Strings\Objects:Stone_Node_Name],[LocalizedText Strings\Objects:Stone_Node_Description],Litter,-999,0,-300,False,32,True,True,False,
+34,Stone,[LocalizedText Strings\Objects:Stone_Node_Name],[LocalizedText Strings\Objects:Stone_Node_Description],Litter,-999,0,-300,False,34,True,True,False,
+36,Stone,[LocalizedText Strings\Objects:Stone_Node_Name],[LocalizedText Strings\Objects:Stone_Node_Description],Litter,-999,0,-300,False,36,True,True,False,
+38,Stone,[LocalizedText Strings\Objects:Stone_Node_Name],[LocalizedText Strings\Objects:Stone_Node_Description],Litter,-999,0,-300,False,38,True,True,False,
+40,Stone,[LocalizedText Strings\Objects:Stone_Node_Name],[LocalizedText Strings\Objects:Stone_Node_Description],Litter,-999,0,-300,False,40,True,True,False,
+42,Stone,[LocalizedText Strings\Objects:Stone_Node_Name],[LocalizedText Strings\Objects:Stone_Node_Description],Litter,-999,0,-300,False,42,True,True,False,
+44,Stone,[LocalizedText Strings\Objects:GemStone_Name],[LocalizedText Strings\Objects:GemStone_Description],Litter,-999,0,-300,False,44,True,True,False,
+46,Stone,[LocalizedText Strings\Objects:MysticStone_Name],[LocalizedText Strings\Objects:MysticStone_Description],Litter,-999,0,-300,False,46,True,True,False,
+48,Stone,[LocalizedText Strings\Objects:SnowyStone_Name],[LocalizedText Strings\Objects:SnowyStone_Description],Litter,-999,0,-300,False,48,True,True,False,
+50,Stone,[LocalizedText Strings\Objects:SnowyStone_Name],[LocalizedText Strings\Objects:SnowyStone_Description],Litter,-999,0,-300,False,50,True,True,False,
+52,Stone,[LocalizedText Strings\Objects:SnowyStone_Name],[LocalizedText Strings\Objects:SnowyStone_Description],Litter,-999,0,-300,False,52,True,True,False,
+54,Stone,[LocalizedText Strings\Objects:SnowyStone_Name],[LocalizedText Strings\Objects:SnowyStone_Description],Litter,-999,0,-300,False,54,True,True,False,
+56,Stone,[LocalizedText Strings\Objects:SnowyStone_Name],[LocalizedText Strings\Objects:SnowyStone_Description],Litter,-999,0,-300,False,56,True,True,False,
+58,Stone,[LocalizedText Strings\Objects:SnowyStone_Name],[LocalizedText Strings\Objects:SnowyStone_Description],Litter,-999,0,-300,False,58,True,True,False,
+60,Emerald,[LocalizedText Strings\Objects:Emerald_Name],[LocalizedText Strings\Objects:Emerald_Description],Minerals,-2,250,-300,False,60,True,True,False,color_green
+62,Aquamarine,[LocalizedText Strings\Objects:Aquamarine_Name],[LocalizedText Strings\Objects:Aquamarine_Description],Minerals,-2,180,-300,False,62,True,True,False,color_aquamarine
+64,Ruby,[LocalizedText Strings\Objects:Ruby_Name],[LocalizedText Strings\Objects:Ruby_Description],Minerals,-2,250,-300,False,64,True,True,False,color_red
+66,Amethyst,[LocalizedText Strings\Objects:Amethyst_Name],[LocalizedText Strings\Objects:Amethyst_Description],Minerals,-2,100,-300,False,66,True,True,False,color_purple
+68,Topaz,[LocalizedText Strings\Objects:Topaz_Name],[LocalizedText Strings\Objects:Topaz_Description],Minerals,-2,80,-300,False,68,True,True,False,color_gold
+69,Banana Sapling,[LocalizedText Strings\Objects:BananaSapling_Name],[LocalizedText Strings\Objects:BananaSapling_Description],Basic,-74,850,-300,False,69,True,True,False,
+70,Jade,[LocalizedText Strings\Objects:Jade_Name],[LocalizedText Strings\Objects:Jade_Description],Minerals,-2,200,-300,False,70,True,True,False,color_jade
+71,Trimmed Lucky Purple Shorts,[LocalizedText Strings\Objects:TrimmedLuckyPurpleShorts_Name],[LocalizedText Strings\Objects:TrimmedLuckyPurpleShorts_Description],Quest,0,0,-300,False,71,True,True,False,
+72,Diamond,[LocalizedText Strings\Objects:Diamond_Name],[LocalizedText Strings\Objects:Diamond_Description],Minerals,-2,750,-300,False,72,True,True,False,color_white
+73,Golden Walnut,[LocalizedText Strings\Objects:GoldenWalnut_Name],[LocalizedText Strings\Objects:GoldenWalnut_Description],Basic,0,250,-300,False,73,True,True,False,
+74,Prismatic Shard,[LocalizedText Strings\Objects:PrismaticShard_Name],[LocalizedText Strings\Objects:PrismaticShard_Description],Minerals,-2,2000,-300,False,74,True,True,False,"color_prismatic,crystalarium_banned"
+75,Stone,[LocalizedText Strings\Objects:GeodeStone_Name],[LocalizedText Strings\Objects:GeodeStone_Description],Litter,-999,0,-300,False,75,True,True,False,
+76,Stone,[LocalizedText Strings\Objects:FrozenGeodeStone_Name],[LocalizedText Strings\Objects:FrozenGeodeStone_Description],Litter,-999,0,-300,False,76,True,True,False,
+77,Stone,[LocalizedText Strings\Objects:MagmaGeodeStone_Name],[LocalizedText Strings\Objects:MagmaGeodeStone_Description],Litter,-999,0,-300,False,77,True,True,False,
+78,Cave Carrot,[LocalizedText Strings\Objects:CaveCarrot_Name],[LocalizedText Strings\Objects:CaveCarrot_Description],Basic,-81,25,12,False,78,True,True,False,"color_brown,forage_item,forage_item_mines,season_all"
+79,Secret Note,[LocalizedText Strings\Objects:SecretNote_Name],[LocalizedText Strings\Objects:SecretNote_Description],asdf,0,1,-300,False,79,True,True,False,
+80,Quartz,[LocalizedText Strings\Objects:Quartz_Name],[LocalizedText Strings\Objects:Quartz_Description],Minerals,-2,25,-300,False,80,True,True,False,color_white
+82,Fire Quartz,[LocalizedText Strings\Objects:FireQuartz_Name],[LocalizedText Strings\Objects:FireQuartz_Description],Minerals,-2,100,-300,False,82,True,True,False,color_red
+84,Frozen Tear,[LocalizedText Strings\Objects:FrozenTear_Name],[LocalizedText Strings\Objects:FrozenTear_Description],Minerals,-2,75,-300,False,84,True,True,False,color_cyan
+86,Earth Crystal,[LocalizedText Strings\Objects:EarthCrystal_Name],[LocalizedText Strings\Objects:EarthCrystal_Description],Minerals,-2,50,-300,False,86,True,True,False,color_copper
+88,Coconut,[LocalizedText Strings\Objects:Coconut_Name],[LocalizedText Strings\Objects:Coconut_Description],Basic,-79,100,-300,False,88,True,True,False,"color_dark_brown,forage_item,forage_item_desert,season_all"
+90,Cactus Fruit,[LocalizedText Strings\Objects:CactusFruit_Name],[LocalizedText Strings\Objects:CactusFruit_Description],Basic,-79,75,30,False,90,True,True,False,"color_green,forage_item,forage_item_desert"
+91,Banana,[LocalizedText Strings\Objects:Banana_Name],[LocalizedText Strings\Objects:Banana_Description],Basic,-79,150,30,False,91,True,True,False,"color_yellow,fruit_item,fruit_tree_item"
+92,Sap,[LocalizedText Strings\Objects:Sap_Name],[LocalizedText Strings\Objects:Sap_Description],Basic,-81,2,-1,False,92,True,True,False,color_yellow
+93,Torch,[LocalizedText Strings\Objects:Torch_Name],[LocalizedText Strings\Objects:Torch_Description],Crafting,0,5,-300,False,93,True,True,False,"color_yellow,light_source,torch_item"
+94,Spirit Torch,[LocalizedText Strings\Objects:SpiritTorch_Name],[LocalizedText Strings\Objects:SpiritTorch_Description],Crafting,0,5,-300,False,94,True,True,False,"color_light_cyan,light_source,torch_item"
+95,Stone,[LocalizedText Strings\Objects:RadioactiveStone_Name],[LocalizedText Strings\Objects:RadioactiveStone_Description],Litter,-999,0,-300,False,95,True,True,False,
+96,Dwarf Scroll I,[LocalizedText Strings\Objects:DwarfScrollI_Name],[LocalizedText Strings\Objects:DwarfScrollI_Description],Arch,0,1,-300,False,96,True,True,False,"color_red,dye_strong,scroll_item"
+97,Dwarf Scroll II,[LocalizedText Strings\Objects:DwarfScrollII_Name],[LocalizedText Strings\Objects:DwarfScrollII_Description],Arch,0,1,-300,False,97,True,True,False,"color_green,dye_strong,scroll_item"
+98,Dwarf Scroll III,[LocalizedText Strings\Objects:DwarfScrollIII_Name],[LocalizedText Strings\Objects:DwarfScrollIII_Description],Arch,0,1,-300,False,98,True,True,False,"color_blue,dye_strong,scroll_item"
+99,Dwarf Scroll IV,[LocalizedText Strings\Objects:DwarfScrollIV_Name],[LocalizedText Strings\Objects:DwarfScrollIV_Description],Arch,0,1,-300,False,99,True,True,False,"color_yellow,dye_strong,scroll_item"
+100,Chipped Amphora,[LocalizedText Strings\Objects:ChippedAmphora_Name],[LocalizedText Strings\Objects:ChippedAmphora_Description],Arch,0,40,-300,False,100,True,True,False,"ancient_item,ceramic_item,color_brown,dye_strong"
+101,Arrowhead,[LocalizedText Strings\Objects:Arrowhead_Name],[LocalizedText Strings\Objects:Arrowhead_Description],Arch,0,40,-300,False,101,True,True,False,"color_gray,dye_strong,hunting_item"
+102,Lost Book,[LocalizedText Strings\Objects:LostBook_Name],[LocalizedText Strings\Objects:LostBook_Description],asdf,0,0,-300,False,102,True,True,False,book_item
+103,Ancient Doll,[LocalizedText Strings\Objects:AncientDoll_Name],[LocalizedText Strings\Objects:AncientDoll_Description],Arch,0,60,-300,False,103,True,True,False,"color_blue,doll_item,dye_strong,toy_item"
+104,Elvish Jewelry,[LocalizedText Strings\Objects:ElvishJewelry_Name],[LocalizedText Strings\Objects:ElvishJewelry_Description],Arch,0,200,-300,False,104,True,True,False,"color_yellow,dye_strong,elvish_item"
+105,Chewing Stick,[LocalizedText Strings\Objects:ChewingStick_Name],[LocalizedText Strings\Objects:ChewingStick_Description],Arch,0,50,-300,False,105,True,True,False,"ancient_item,color_brown,dye_strong"
+106,Ornamental Fan,[LocalizedText Strings\Objects:OrnamentalFan_Name],[LocalizedText Strings\Objects:OrnamentalFan_Description],Arch,0,300,-300,False,106,True,True,False,"color_white,dye_strong,noble_item"
+107,Dinosaur Egg,[LocalizedText Strings\Objects:DinosaurEgg_Name],[LocalizedText Strings\Objects:DinosaurEgg_Description],Arch,0,350,-300,False,107,True,True,False,"color_green,dinosaur_item,dye_strong,egg_item"
+108,Rare Disc,[LocalizedText Strings\Objects:RareDisc_Name],[LocalizedText Strings\Objects:RareDisc_Description],Arch,0,300,-300,False,108,True,True,False,"color_dark_gray,dye_strong"
+109,Ancient Sword,[LocalizedText Strings\Objects:AncientSword_Name],[LocalizedText Strings\Objects:AncientSword_Description],Arch,0,100,-300,False,109,True,True,False,"ancient_item,color_gray,dye_strong"
+110,Rusty Spoon,[LocalizedText Strings\Objects:RustySpoon_Name],[LocalizedText Strings\Objects:RustySpoon_Description],Arch,0,25,-300,False,110,True,True,False,"color_gray,cooking_item,dye_strong"
+111,Rusty Spur,[LocalizedText Strings\Objects:RustySpur_Name],[LocalizedText Strings\Objects:RustySpur_Description],Arch,0,25,-300,False,111,True,True,False,"color_brown,cowboy_item,dye_strong"
+112,Rusty Cog,[LocalizedText Strings\Objects:RustyCog_Name],[LocalizedText Strings\Objects:RustyCog_Description],Arch,0,25,-300,False,112,True,True,False,"color_brown,dye_strong,machine_item"
+113,Chicken Statue,[LocalizedText Strings\Objects:ChickenStatue_Name],[LocalizedText Strings\Objects:ChickenStatue_Description],Arch,0,50,-300,False,113,True,True,False,"chicken_item,color_sand,dye_strong,statue_item"
+114,Ancient Seed,[LocalizedText Strings\Objects:AncientSeed_Name],[LocalizedText Strings\Objects:AncientSeed_Description],Arch,0,5,-300,False,114,True,True,False,
+115,Prehistoric Tool,[LocalizedText Strings\Objects:PrehistoricTool_Name],[LocalizedText Strings\Objects:PrehistoricTool_Description],Arch,0,50,-300,False,115,True,True,False,"color_gray,dye_strong,prehistoric_item"
+116,Dried Starfish,[LocalizedText Strings\Objects:DriedStarfish_Name],[LocalizedText Strings\Objects:DriedStarfish_Description],Arch,0,40,-300,False,116,True,True,False,"color_yellow,dye_strong,marine_item"
+117,Anchor,[LocalizedText Strings\Objects:Anchor_Name],[LocalizedText Strings\Objects:Anchor_Description],Arch,0,100,-300,False,117,True,True,False,"color_gray,dye_strong,marine_item"
+118,Glass Shards,[LocalizedText Strings\Objects:GlassShards_Name],[LocalizedText Strings\Objects:GlassShards_Description],Arch,0,20,-300,False,118,True,True,False,"color_cyan,dye_strong"
+119,Bone Flute,[LocalizedText Strings\Objects:BoneFlute_Name],[LocalizedText Strings\Objects:BoneFlute_Description],Arch,0,100,-300,False,119,True,True,False,"bone_item,color_sand,dye_strong,instrument_item,prehistoric_item"
+120,Prehistoric Handaxe,[LocalizedText Strings\Objects:PrehistoricHandaxe_Name],[LocalizedText Strings\Objects:PrehistoricHandaxe_Description],Arch,0,50,-300,False,120,True,True,False,"color_gray,dye_strong,prehistoric_item"
+121,Dwarvish Helm,[LocalizedText Strings\Objects:DwarvishHelm_Name],[LocalizedText Strings\Objects:DwarvishHelm_Description],Arch,0,100,-300,False,121,True,True,False,"color_brown,dwarvish_item,dye_strong"
+122,Dwarf Gadget,[LocalizedText Strings\Objects:DwarfGadget_Name],[LocalizedText Strings\Objects:DwarfGadget_Description],Arch,0,200,-300,False,122,True,True,False,"color_gray,dwarvish_item,dye_strong,machine_item"
+123,Ancient Drum,[LocalizedText Strings\Objects:AncientDrum_Name],[LocalizedText Strings\Objects:AncientDrum_Description],Arch,0,100,-300,False,123,True,True,False,"ancient_item,color_purple,dye_strong,instrument_item"
+124,Golden Mask,[LocalizedText Strings\Objects:GoldenMask_Name],[LocalizedText Strings\Objects:GoldenMask_Description],Arch,0,500,-300,False,124,True,True,False,"color_gold,dye_strong,golden_relic_item"
+125,Golden Relic,[LocalizedText Strings\Objects:GoldenRelic_Name],[LocalizedText Strings\Objects:GoldenRelic_Description],Arch,0,250,-300,False,125,True,True,False,"color_gold,dye_strong,golden_relic_item"
+126,Strange Doll,[LocalizedText Strings\Objects:StrangeDoll_Name],[LocalizedText Strings\Objects:StrangeDoll_Description],Arch,0,1000,-300,False,126,True,True,False,"color_green,doll_item,dye_strong,strange_doll_1"
+127,Strange Doll,[LocalizedText Strings\Objects:StrangeDoll_Name],[LocalizedText Strings\Objects:StrangeDoll_Description],Arch,0,1000,-300,False,127,True,True,False,"color_yellow,doll_item,dye_strong,strange_doll_2"
+128,Pufferfish,[LocalizedText Strings\Objects:Pufferfish_Name],[LocalizedText Strings\Objects:Pufferfish_Description],Fish,-4,200,-40,False,128,True,True,False,"color_yellow,fish_has_roe,fish_ocean,fish_upright,season_summer"
+129,Anchovy,[LocalizedText Strings\Objects:Anchovy_Name],[LocalizedText Strings\Objects:Anchovy_Description],Fish,-4,30,5,False,129,True,True,False,"color_blue,fish_has_roe,fish_ocean,fish_talk_demanding,season_fall,season_spring"
+130,Tuna,[LocalizedText Strings\Objects:Tuna_Name],[LocalizedText Strings\Objects:Tuna_Description],Fish,-4,100,15,False,130,True,True,False,"color_blue,fish_has_roe,fish_ocean,season_summer,season_winter"
+131,Sardine,[LocalizedText Strings\Objects:Sardine_Name],[LocalizedText Strings\Objects:Sardine_Description],Fish,-4,40,5,False,131,True,True,False,"color_blue,fish_has_roe,fish_ocean,fish_talk_demanding,season_fall,season_spring,season_winter"
+132,Bream,[LocalizedText Strings\Objects:Bream_Name],[LocalizedText Strings\Objects:Bream_Description],Fish,-4,45,5,False,132,True,True,False,"color_blue,fish_has_roe,fish_river,season_all"
+136,Largemouth Bass,[LocalizedText Strings\Objects:LargemouthBass_Name],[LocalizedText Strings\Objects:LargemouthBass_Description],Fish,-4,100,15,False,136,True,True,False,"color_green,fish_has_roe,fish_lake,season_all"
+137,Smallmouth Bass,[LocalizedText Strings\Objects:SmallmouthBass_Name],[LocalizedText Strings\Objects:SmallmouthBass_Description],Fish,-4,50,10,False,137,True,True,False,"color_brown,fish_has_roe,fish_pond,fish_river,season_fall,season_spring"
+138,Rainbow Trout,[LocalizedText Strings\Objects:RainbowTrout_Name],[LocalizedText Strings\Objects:RainbowTrout_Description],Fish,-4,65,10,False,138,True,True,False,"color_orange,fish_has_roe,fish_river,season_summer"
+139,Salmon,[LocalizedText Strings\Objects:Salmon_Name],[LocalizedText Strings\Objects:Salmon_Description],Fish,-4,75,15,False,139,True,True,False,"color_salmon,fish_has_roe,fish_river,season_fall"
+140,Walleye,[LocalizedText Strings\Objects:Walleye_Name],[LocalizedText Strings\Objects:Walleye_Description],Fish,-4,105,12,False,140,True,True,False,"color_yellow,fish_has_roe,fish_lake,fish_pond,fish_river,season_fall,season_winter"
+141,Perch,[LocalizedText Strings\Objects:Perch_Name],[LocalizedText Strings\Objects:Perch_Description],Fish,-4,55,10,False,141,True,True,False,"color_yellow,fish_has_roe,fish_lake,fish_pond,fish_river,season_winter"
+142,Carp,[LocalizedText Strings\Objects:Carp_Name],[LocalizedText Strings\Objects:Carp_Description],Fish,-4,30,5,False,142,True,True,False,"color_yellow,fish_has_roe,fish_lake,fish_secret_pond,fish_sewers,season_fall,season_spring,season_winter"
+143,Catfish,[LocalizedText Strings\Objects:Catfish_Name],[LocalizedText Strings\Objects:Catfish_Description],Fish,-4,200,20,False,143,True,True,False,"color_gray,fish_has_roe,fish_river,fish_secret_pond,fish_swamp,season_fall,season_spring,season_summer"
+144,Pike,[LocalizedText Strings\Objects:Pike_Name],[LocalizedText Strings\Objects:Pike_Description],Fish,-4,100,15,False,144,True,True,False,"color_yellow,fish_carnivorous,fish_has_roe,fish_pond,fish_river,season_summer,season_winter"
+145,Sunfish,[LocalizedText Strings\Objects:Sunfish_Name],[LocalizedText Strings\Objects:Sunfish_Description],Fish,-4,30,5,False,145,True,True,False,"color_orange,fish_has_roe,fish_river,season_spring,season_summer"
+146,Red Mullet,[LocalizedText Strings\Objects:RedMullet_Name],[LocalizedText Strings\Objects:RedMullet_Description],Fish,-4,75,10,False,146,True,True,False,"color_red,fish_has_roe,fish_ocean,season_summer,season_winter"
+147,Herring,[LocalizedText Strings\Objects:Herring_Name],[LocalizedText Strings\Objects:Herring_Description],Fish,-4,30,5,False,147,True,True,False,"color_blue,fish_has_roe,fish_ocean,fish_talk_demanding,season_spring,season_winter"
+148,Eel,[LocalizedText Strings\Objects:Eel_Name],[LocalizedText Strings\Objects:Eel_Description],Fish,-4,85,12,False,148,True,True,False,"color_copper,fish_has_roe,fish_ocean,fish_talk_rude,fish_upright,season_fall,season_spring"
+149,Octopus,[LocalizedText Strings\Objects:Octopus_Name],[LocalizedText Strings\Objects:Octopus_Description],Fish,-4,150,-300,False,149,True,True,False,"color_orange,fish_has_roe,fish_ocean,fish_upright,season_summer"
+150,Red Snapper,[LocalizedText Strings\Objects:RedSnapper_Name],[LocalizedText Strings\Objects:RedSnapper_Description],Fish,-4,50,10,False,150,True,True,False,"color_red,fish_has_roe,fish_ocean,season_fall,season_summer,season_winter"
+151,Squid,[LocalizedText Strings\Objects:Squid_Name],[LocalizedText Strings\Objects:Squid_Description],Fish,-4,80,10,False,151,True,True,False,"color_white,fish_has_roe,fish_ocean,fish_upright,season_winter"
+152,Seaweed,[LocalizedText Strings\Objects:Seaweed_Name],[LocalizedText Strings\Objects:Seaweed_Description],Fish,0,20,5,False,152,True,True,False,"color_green,fish_nonfish"
+153,Green Algae,[LocalizedText Strings\Objects:GreenAlgae_Name],[LocalizedText Strings\Objects:GreenAlgae_Description],Fish,0,15,5,False,153,True,True,False,"algae_item,color_dark_green,fish_nonfish,use_reverse_name_for_sorting"
+154,Sea Cucumber,[LocalizedText Strings\Objects:SeaCucumber_Name],[LocalizedText Strings\Objects:SeaCucumber_Description],Fish,-4,75,-10,False,154,True,True,False,"color_yellow,fish_has_roe,fish_ocean,fish_upright,season_fall,season_winter"
+155,Super Cucumber,[LocalizedText Strings\Objects:SuperCucumber_Name],[LocalizedText Strings\Objects:SuperCucumber_Description],Fish,-4,250,50,False,155,True,True,False,"color_purple,fish_has_roe,fish_ocean,fish_upright,season_fall,season_summer"
+156,Ghostfish,[LocalizedText Strings\Objects:Ghostfish_Name],[LocalizedText Strings\Objects:Ghostfish_Description],Fish,-4,45,15,False,156,True,True,False,"color_white,fish_has_roe,fish_mines,season_all"
+157,White Algae,[LocalizedText Strings\Objects:WhiteAlgae_Name],[LocalizedText Strings\Objects:WhiteAlgae_Description],Fish,0,25,8,False,157,True,True,False,"algae_item,color_white,fish_nonfish,use_reverse_name_for_sorting"
+158,Stonefish,[LocalizedText Strings\Objects:Stonefish_Name],[LocalizedText Strings\Objects:Stonefish_Description],Fish,-4,300,-300,False,158,True,True,False,"color_brown,fish_has_roe,fish_mines,fish_semi_rare,fish_upright,season_all"
+159,Crimsonfish,[LocalizedText Strings\Objects:Crimsonfish_Name],[LocalizedText Strings\Objects:Crimsonfish_Description],Fish,-4,1500,15,False,159,True,True,False,"color_red,fish_has_roe,fish_legendary"
+160,Angler,[LocalizedText Strings\Objects:Angler_Name],[LocalizedText Strings\Objects:Angler_Description],Fish,-4,900,10,False,160,True,True,False,"color_yellow,fish_has_roe,fish_legendary,fish_upright"
+161,Ice Pip,[LocalizedText Strings\Objects:IcePip_Name],[LocalizedText Strings\Objects:IcePip_Description],Fish,-4,500,15,False,161,True,True,False,"color_blue,fish_has_roe,fish_mines,fish_semi_rare,fish_talk_demanding,season_all"
+162,Lava Eel,[LocalizedText Strings\Objects:LavaEel_Name],[LocalizedText Strings\Objects:LavaEel_Description],Fish,-4,700,20,False,162,True,True,False,"color_red,fish_has_roe,fish_mines,fish_semi_rare,fish_upright,season_all"
+163,Legend,[LocalizedText Strings\Objects:Legend_Name],[LocalizedText Strings\Objects:Legend_Description],Fish,-4,5000,200,False,163,True,True,False,"color_green,fish_has_roe,fish_legendary"
+164,Sandfish,[LocalizedText Strings\Objects:Sandfish_Name],[LocalizedText Strings\Objects:Sandfish_Description],Fish,-4,75,5,False,164,True,True,False,"color_yellow,fish_desert,fish_has_roe,season_all"
+165,Scorpion Carp,[LocalizedText Strings\Objects:ScorpionCarp_Name],[LocalizedText Strings\Objects:ScorpionCarp_Description],Fish,-4,150,-50,False,165,True,True,False,"color_brown,fish_desert,fish_has_roe,fish_semi_rare,season_all"
+166,Treasure Chest,[LocalizedText Strings\Objects:TreasureChest_Name],[LocalizedText Strings\Objects:TreasureChest_Description],Basic,0,5000,-300,False,166,True,True,False,color_yellow
+167,Joja Cola,[LocalizedText Strings\Objects:JojaCola_Name],[LocalizedText Strings\Objects:JojaCola_Description],Fish,-20,25,5,True,167,True,True,False,"color_blue,drink_item"
+168,Trash,[LocalizedText Strings\Objects:Trash_Name],[LocalizedText Strings\Objects:Trash_Description],Fish,-20,0,-300,False,168,True,True,False,"color_black,trash_item"
+169,Driftwood,[LocalizedText Strings\Objects:Driftwood_Name],[LocalizedText Strings\Objects:Driftwood_Description],Fish,-20,0,-300,False,169,True,True,False,"color_brown,trash_item,wood_item"
+170,Broken Glasses,[LocalizedText Strings\Objects:BrokenGlasses_Name],[LocalizedText Strings\Objects:BrokenGlasses_Description],Fish,-20,0,-300,False,170,True,True,False,"color_cyan,trash_item"
+171,Broken CD,[LocalizedText Strings\Objects:BrokenCD_Name],[LocalizedText Strings\Objects:BrokenCD_Description],Fish,-20,0,-300,False,171,True,True,False,"color_cyan,trash_item"
+172,Soggy Newspaper,[LocalizedText Strings\Objects:SoggyNewspaper_Name],[LocalizedText Strings\Objects:SoggyNewspaper_Description],Fish,-20,0,-300,False,172,True,True,False,"color_gray,trash_item"
+174,Large Egg,[LocalizedText Strings\Objects:LargeWhiteEgg_Name],[LocalizedText Strings\Objects:LargeWhiteEgg_Description],Basic,-5,95,15,False,174,True,True,False,"color_white,egg_item,large_egg_item"
+176,Egg,[LocalizedText Strings\Objects:WhiteEgg_Name],[LocalizedText Strings\Objects:WhiteEgg_Description],Basic,-5,50,10,False,176,True,True,False,"color_white,egg_item"
+178,Hay,[LocalizedText Strings\Objects:Hay_Name],[LocalizedText Strings\Objects:Hay_Description],Basic,0,0,-300,False,178,True,True,False,color_yellow
+180,Egg,[LocalizedText Strings\Objects:BrownEgg_Name],[LocalizedText Strings\Objects:BrownEgg_Description],Basic,-5,50,10,False,180,True,True,False,"color_white,egg_item"
+182,Large Egg,[LocalizedText Strings\Objects:LargeBrownEgg_Name],[LocalizedText Strings\Objects:LargeBrownEgg_Description],Basic,-5,95,15,False,182,True,True,False,"color_white,egg_item,large_egg_item"
+184,Milk,[LocalizedText Strings\Objects:Milk_Name],[LocalizedText Strings\Objects:Milk_Description],Basic,-6,125,15,True,184,True,True,False,"color_white,cow_milk_item,drink_item,milk_item"
+186,Large Milk,[LocalizedText Strings\Objects:LargeMilk_Name],[LocalizedText Strings\Objects:LargeMilk_Description],Basic,-6,190,20,True,186,True,True,False,"color_white,cow_milk_item,drink_item,large_milk_item,milk_item"
+188,Green Bean,[LocalizedText Strings\Objects:GreenBean_Name],[LocalizedText Strings\Objects:GreenBean_Description],Basic,-75,40,10,False,188,True,True,False,"color_green,dye_medium,season_spring"
+190,Cauliflower,[LocalizedText Strings\Objects:Cauliflower_Name],[LocalizedText Strings\Objects:Cauliflower_Description],Basic,-75,175,30,False,190,True,True,False,"color_white,dye_medium,season_spring"
+191,Ornate Necklace,[LocalizedText Strings\Objects:OrnateNecklace_Name],[LocalizedText Strings\Objects:OrnateNecklace_Description],Quest,0,0,-300,False,191,True,True,False,
+192,Potato,[LocalizedText Strings\Objects:Potato_Name],[LocalizedText Strings\Objects:Potato_Description],Basic,-75,80,10,False,192,True,True,False,"color_brown,dye_medium,season_spring"
+194,Fried Egg,[LocalizedText Strings\Objects:FriedEgg_Name],[LocalizedText Strings\Objects:FriedEgg_Description],Cooking,-7,35,20,False,194,True,True,False,"color_white,food_breakfast"
+195,Omelet,[LocalizedText Strings\Objects:Omelet_Name],[LocalizedText Strings\Objects:Omelet_Description],Cooking,-7,125,40,False,195,True,True,False,"color_white,food_breakfast"
+196,Salad,[LocalizedText Strings\Objects:Salad_Name],[LocalizedText Strings\Objects:Salad_Description],Cooking,-7,110,45,False,196,True,True,False,"color_green,food_salad"
+197,Cheese Cauliflower,[LocalizedText Strings\Objects:CheeseCauliflower_Name],[LocalizedText Strings\Objects:CheeseCauliflower_Description],Cooking,-7,300,55,False,197,True,True,False,color_white
+198,Baked Fish,[LocalizedText Strings\Objects:BakedFish_Name],[LocalizedText Strings\Objects:BakedFish_Description],Cooking,-7,100,30,False,198,True,True,False,color_yellow
+199,Parsnip Soup,[LocalizedText Strings\Objects:ParsnipSoup_Name],[LocalizedText Strings\Objects:ParsnipSoup_Description],Cooking,-7,120,34,False,199,True,True,False,color_yellow
+200,Vegetable Medley,[LocalizedText Strings\Objects:VegetableMedley_Name],[LocalizedText Strings\Objects:VegetableMedley_Description],Cooking,-7,120,66,False,200,True,True,False,color_green
+201,Complete Breakfast,[LocalizedText Strings\Objects:CompleteBreakfast_Name],[LocalizedText Strings\Objects:CompleteBreakfast_Description],Cooking,-7,350,80,False,201,True,True,False,"color_yellow,food_breakfast"
+202,Fried Calamari,[LocalizedText Strings\Objects:FriedCalamari_Name],[LocalizedText Strings\Objects:FriedCalamari_Description],Cooking,-7,150,32,False,202,True,True,False,color_yellow
+203,Strange Bun,[LocalizedText Strings\Objects:StrangeBun_Name],[LocalizedText Strings\Objects:StrangeBun_Description],Cooking,-7,225,40,False,203,True,True,False,color_pink
+204,Lucky Lunch,[LocalizedText Strings\Objects:LuckyLunch_Name],[LocalizedText Strings\Objects:LuckyLunch_Description],Cooking,-7,250,40,False,204,True,True,False,color_yellow
+205,Fried Mushroom,[LocalizedText Strings\Objects:FriedMushroom_Name],[LocalizedText Strings\Objects:FriedMushroom_Description],Cooking,-7,200,54,False,205,True,True,False,color_brown
+206,Pizza,[LocalizedText Strings\Objects:Pizza_Name],[LocalizedText Strings\Objects:Pizza_Description],Cooking,-7,300,60,False,206,True,True,False,"color_red,food_party"
+207,Bean Hotpot,[LocalizedText Strings\Objects:BeanHotpot_Name],[LocalizedText Strings\Objects:BeanHotpot_Description],Cooking,-7,100,50,False,207,True,True,False,color_green
+208,Glazed Yams,[LocalizedText Strings\Objects:GlazedYams_Name],[LocalizedText Strings\Objects:GlazedYams_Description],Cooking,-7,200,80,False,208,True,True,False,color_brown
+209,Carp Surprise,[LocalizedText Strings\Objects:CarpSurprise_Name],[LocalizedText Strings\Objects:CarpSurprise_Description],Cooking,-7,150,36,False,209,True,True,False,"color_brown,food_seafood"
+210,Hashbrowns,[LocalizedText Strings\Objects:Hashbrowns_Name],[LocalizedText Strings\Objects:Hashbrowns_Description],Cooking,-7,120,36,False,210,True,True,False,"color_brown,food_breakfast"
+211,Pancakes,[LocalizedText Strings\Objects:Pancakes_Name],[LocalizedText Strings\Objects:Pancakes_Description],Cooking,-7,80,36,False,211,True,True,False,"color_brown,food_breakfast"
+212,Salmon Dinner,[LocalizedText Strings\Objects:SalmonDinner_Name],[LocalizedText Strings\Objects:SalmonDinner_Description],Cooking,-7,300,50,False,212,True,True,False,"color_pink,food_seafood"
+213,Fish Taco,[LocalizedText Strings\Objects:FishTaco_Name],[LocalizedText Strings\Objects:FishTaco_Description],Cooking,-7,500,66,False,213,True,True,False,"color_yellow,food_party,food_seafood"
+214,Crispy Bass,[LocalizedText Strings\Objects:CrispyBass_Name],[LocalizedText Strings\Objects:CrispyBass_Description],Cooking,-7,150,36,False,214,True,True,False,"color_brown,food_seafood"
+215,Pepper Poppers,[LocalizedText Strings\Objects:PepperPoppers_Name],[LocalizedText Strings\Objects:PepperPoppers_Description],Cooking,-7,200,52,False,215,True,True,False,"color_brown,food_spicy"
+216,Bread,[LocalizedText Strings\Objects:Bread_Name],[LocalizedText Strings\Objects:Bread_Description],Cooking,-7,60,20,False,216,True,True,False,"color_brown,food_bakery"
+218,Tom Kha Soup,[LocalizedText Strings\Objects:TomKhaSoup_Name],[LocalizedText Strings\Objects:TomKhaSoup_Description],Cooking,-7,250,70,False,218,True,True,False,"color_white,food_soup"
+219,Trout Soup,[LocalizedText Strings\Objects:TroutSoup_Name],[LocalizedText Strings\Objects:TroutSoup_Description],Cooking,-7,100,40,False,219,True,True,False,"color_brown,food_seafood,food_soup"
+220,Chocolate Cake,[LocalizedText Strings\Objects:ChocolateCake_Name],[LocalizedText Strings\Objects:ChocolateCake_Description],Cooking,-7,200,60,False,220,True,True,False,"color_brown,food_bakery,food_cake,food_sweet"
+221,Pink Cake,[LocalizedText Strings\Objects:PinkCake_Name],[LocalizedText Strings\Objects:PinkCake_Description],Cooking,-7,480,100,False,221,True,True,False,"color_pink,food_bakery,food_sweet"
+222,Rhubarb Pie,[LocalizedText Strings\Objects:RhubarbPie_Name],[LocalizedText Strings\Objects:RhubarbPie_Description],Cooking,-7,400,86,False,222,True,True,False,"color_red,food_bakery,food_sweet"
+223,Cookie,[LocalizedText Strings\Objects:Cookie_Name],[LocalizedText Strings\Objects:Cookie_Description],Cooking,-7,140,36,False,223,True,True,False,"color_brown,food_bakery,food_sweet"
+224,Spaghetti,[LocalizedText Strings\Objects:Spaghetti_Name],[LocalizedText Strings\Objects:Spaghetti_Description],Cooking,-7,120,30,False,224,True,True,False,"color_red,dye_medium,food_pasta"
+225,Fried Eel,[LocalizedText Strings\Objects:FriedEel_Name],[LocalizedText Strings\Objects:FriedEel_Description],Cooking,-7,120,30,False,225,True,True,False,"color_yellow,food_seafood"
+226,Spicy Eel,[LocalizedText Strings\Objects:SpicyEel_Name],[LocalizedText Strings\Objects:SpicyEel_Description],Cooking,-7,175,46,False,226,True,True,False,"color_red,food_seafood,food_spicy"
+227,Sashimi,[LocalizedText Strings\Objects:Sashimi_Name],[LocalizedText Strings\Objects:Sashimi_Description],Cooking,-7,75,30,False,227,True,True,False,"color_pink,food_seafood,food_sushi"
+228,Maki Roll,[LocalizedText Strings\Objects:MakiRoll_Name],[LocalizedText Strings\Objects:MakiRoll_Description],Cooking,-7,220,40,False,228,True,True,False,"color_black,food_seafood,food_sushi"
+229,Tortilla,[LocalizedText Strings\Objects:Tortilla_Name],[LocalizedText Strings\Objects:Tortilla_Description],Cooking,-7,50,20,False,229,True,True,False,color_brown
+230,Red Plate,[LocalizedText Strings\Objects:RedPlate_Name],[LocalizedText Strings\Objects:RedPlate_Description],Cooking,-7,400,96,False,230,True,True,False,color_red
+231,Eggplant Parmesan,[LocalizedText Strings\Objects:EggplantParmesan_Name],[LocalizedText Strings\Objects:EggplantParmesan_Description],Cooking,-7,200,70,False,231,True,True,False,"color_red,dye_medium,food_pasta"
+232,Rice Pudding,[LocalizedText Strings\Objects:RicePudding_Name],[LocalizedText Strings\Objects:RicePudding_Description],Cooking,-7,260,46,False,232,True,True,False,"color_white,food_sweet"
+233,Ice Cream,[LocalizedText Strings\Objects:IceCream_Name],[LocalizedText Strings\Objects:IceCream_Description],Cooking,-7,120,40,False,233,True,True,False,"color_white,food_sweet"
+234,Blueberry Tart,[LocalizedText Strings\Objects:BlueberryTart_Name],[LocalizedText Strings\Objects:BlueberryTart_Description],Cooking,-7,150,50,False,234,True,True,False,"color_blue,food_bakery,food_sweet"
+235,Autumn's Bounty,[LocalizedText Strings\Objects:AutumnsBounty_Name],[LocalizedText Strings\Objects:AutumnsBounty_Description],Cooking,-7,350,88,False,235,True,True,False,color_brown
+236,Pumpkin Soup,[LocalizedText Strings\Objects:PumpkinSoup_Name],[LocalizedText Strings\Objects:PumpkinSoup_Description],Cooking,-7,300,80,False,236,True,True,False,"color_orange,food_soup"
+237,Super Meal,[LocalizedText Strings\Objects:SuperMeal_Name],[LocalizedText Strings\Objects:SuperMeal_Description],Cooking,-7,220,64,False,237,True,True,False,color_green
+238,Cranberry Sauce,[LocalizedText Strings\Objects:CranberrySauce_Name],[LocalizedText Strings\Objects:CranberrySauce_Description],Cooking,-7,120,50,False,238,True,True,False,"color_red,dye_strong,food_sauce"
+239,Stuffing,[LocalizedText Strings\Objects:Stuffing_Name],[LocalizedText Strings\Objects:Stuffing_Description],Cooking,-7,165,68,False,239,True,True,False,"color_brown,food_sauce"
+240,Farmer's Lunch,[LocalizedText Strings\Objects:FarmersLunch_Name],[LocalizedText Strings\Objects:FarmersLunch_Description],Cooking,-7,150,80,False,240,True,True,False,color_brown
+241,Survival Burger,[LocalizedText Strings\Objects:SurvivalBurger_Name],[LocalizedText Strings\Objects:SurvivalBurger_Description],Cooking,-7,180,50,False,241,True,True,False,"color_brown,food_party"
+242,Dish O' The Sea,[LocalizedText Strings\Objects:DishOTheSea_Name],[LocalizedText Strings\Objects:DishOTheSea_Description],Cooking,-7,220,60,False,242,True,True,False,"color_yellow,food_seafood"
+243,Miner's Treat,[LocalizedText Strings\Objects:MinersTreat_Name],[LocalizedText Strings\Objects:MinersTreat_Description],Cooking,-7,200,50,False,243,True,True,False,"color_red,food_sweet"
+244,Roots Platter,[LocalizedText Strings\Objects:RootsPlatter_Name],[LocalizedText Strings\Objects:RootsPlatter_Description],Cooking,-7,100,50,False,244,True,True,False,color_brown
+245,Sugar,[LocalizedText Strings\Objects:Sugar_Name],[LocalizedText Strings\Objects:Sugar_Description],Basic,0,50,10,False,245,True,True,False,"color_white,food_sweet"
+246,Wheat Flour,[LocalizedText Strings\Objects:WheatFlour_Name],[LocalizedText Strings\Objects:WheatFlour_Description],Basic,0,50,5,False,246,True,True,False,color_white
+247,Oil,[LocalizedText Strings\Objects:Oil_Name],[LocalizedText Strings\Objects:Oil_Description],Basic,0,100,5,True,247,True,True,False,color_yellow
+248,Garlic,[LocalizedText Strings\Objects:Garlic_Name],[LocalizedText Strings\Objects:Garlic_Description],Basic,-75,60,8,False,248,True,True,False,"color_white,crop_year_2,dye_medium,season_spring"
+250,Kale,[LocalizedText Strings\Objects:Kale_Name],[LocalizedText Strings\Objects:Kale_Description],Basic,-75,110,20,False,250,True,True,False,"color_green,dye_strong,season_spring"
+251,Tea Sapling,[LocalizedText Strings\Objects:TeaSapling_Name],[LocalizedText Strings\Objects:TeaSapling_Description],Basic,-74,250,-300,False,251,True,True,False,
+252,Rhubarb,[LocalizedText Strings\Objects:Rhubarb_Name],[LocalizedText Strings\Objects:Rhubarb_Description],Basic,-79,220,-300,False,252,True,True,False,"color_red,dye_medium,season_spring"
+253,Triple Shot Espresso,[LocalizedText Strings\Objects:TripleShotEspresso_Name],[LocalizedText Strings\Objects:TripleShotEspresso_Description],Cooking,-7,450,3,True,253,True,True,False,"color_dark_brown,dye_strong,coffee_item"
+254,Melon,[LocalizedText Strings\Objects:Melon_Name],[LocalizedText Strings\Objects:Melon_Description],Basic,-79,250,45,False,254,True,True,False,"color_pink,dye_medium,season_summer"
+256,Tomato,[LocalizedText Strings\Objects:Tomato_Name],[LocalizedText Strings\Objects:Tomato_Description],Basic,-75,60,8,False,256,True,True,False,"color_red,dye_medium,season_summer"
+257,Morel,[LocalizedText Strings\Objects:Morel_Name],[LocalizedText Strings\Objects:Morel_Description],Basic,-81,150,8,False,257,True,True,False,"color_brown,edible_mushroom,forage_item,forage_item_cave,forage_item_secret,season_spring"
+258,Blueberry,[LocalizedText Strings\Objects:Blueberry_Name],[LocalizedText Strings\Objects:Blueberry_Description],Basic,-79,50,10,False,258,True,True,False,"color_blue,dye_strong,season_summer"
+259,Fiddlehead Fern,[LocalizedText Strings\Objects:FiddleheadFern_Name],[LocalizedText Strings\Objects:FiddleheadFern_Description],Basic,-75,90,10,False,259,True,True,False,"color_green,dye_strong,forage_item,forage_item_secret,season_summer"
+260,Hot Pepper,[LocalizedText Strings\Objects:HotPepper_Name],[LocalizedText Strings\Objects:HotPepper_Description],Basic,-79,40,5,False,260,True,True,False,"color_red,dye_medium,season_summer"
+261,Warp Totem: Desert,[LocalizedText Strings\Objects:WarpTotemDesert_Name],[LocalizedText Strings\Objects:WarpTotemDesert_Description],Crafting,0,20,-300,False,261,True,True,False,"color_brown,not_placeable,totem_item"
+262,Wheat,[LocalizedText Strings\Objects:Wheat_Name],[LocalizedText Strings\Objects:Wheat_Description],Basic,-75,25,-300,False,262,True,True,False,color_yellow
+264,Radish,[LocalizedText Strings\Objects:Radish_Name],[LocalizedText Strings\Objects:Radish_Description],Basic,-75,90,18,False,264,True,True,False,"color_red,dye_medium,season_summer"
+265,Seafoam Pudding,[LocalizedText Strings\Objects:SeafoamPudding_Name],[LocalizedText Strings\Objects:SeafoamPudding_Description],Cooking,-7,300,70,False,265,True,True,False,"color_blue,food_seafood"
+266,Red Cabbage,[LocalizedText Strings\Objects:RedCabbage_Name],[LocalizedText Strings\Objects:RedCabbage_Description],Basic,-75,260,30,False,266,True,True,False,"color_purple,crop_year_2,dye_medium,season_summer"
+267,Flounder,[LocalizedText Strings\Objects:Flounder_Name],[LocalizedText Strings\Objects:Flounder_Description],Fish,-4,100,15,False,267,True,True,False,"color_brown,fish_has_roe,fish_ocean,season_spring,season_summer"
+268,Starfruit,[LocalizedText Strings\Objects:Starfruit_Name],[LocalizedText Strings\Objects:Starfruit_Description],Basic,-79,750,50,False,268,True,True,False,color_yellow
+269,Midnight Carp,[LocalizedText Strings\Objects:MidnightCarp_Name],[LocalizedText Strings\Objects:MidnightCarp_Description],Fish,-4,150,20,False,269,True,True,False,"color_iridium,fish_has_roe,fish_lake,season_fall,season_winter"
+270,Corn,[LocalizedText Strings\Objects:Corn_Name],[LocalizedText Strings\Objects:Corn_Description],Basic,-75,50,10,False,270,True,True,False,"color_yellow,dye_medium,season_fall,season_summer"
+271,Unmilled Rice,[LocalizedText Strings\Objects:UnmilledRice_Name],[LocalizedText Strings\Objects:UnmilledRice_Description],Basic,-75,30,1,False,271,True,True,False,"color_brown,crop_year_2,season_spring"
+272,Eggplant,[LocalizedText Strings\Objects:Eggplant_Name],[LocalizedText Strings\Objects:Eggplant_Description],Basic,-75,60,8,False,272,True,True,False,"color_purple,dye_medium,season_fall"
+273,Rice Shoot,[LocalizedText Strings\Objects:RiceShoot_Name],[LocalizedText Strings\Objects:RiceShoot_Description],Seeds,-74,20,-300,False,273,True,True,False,
+274,Artichoke,[LocalizedText Strings\Objects:Artichoke_Name],[LocalizedText Strings\Objects:Artichoke_Description],Basic,-75,160,12,False,274,True,True,False,"color_green,crop_year_2,dye_medium,season_fall"
+275,Artifact Trove,[LocalizedText Strings\Objects:ArtifactTrove_Name],[LocalizedText Strings\Objects:ArtifactTrove_Description],Basic,0,0,-300,False,275,True,True,False,geode_crusher_ignored
+276,Pumpkin,[LocalizedText Strings\Objects:Pumpkin_Name],[LocalizedText Strings\Objects:Pumpkin_Description],Basic,-75,320,-300,False,276,True,True,False,"color_orange,dye_medium,season_fall"
+277,Wilted Bouquet,[LocalizedText Strings\Objects:WiltedBouquet_Name],[LocalizedText Strings\Objects:WiltedBouquet_Description],Basic,0,100,-300,False,277,True,True,False,
+278,Bok Choy,[LocalizedText Strings\Objects:BokChoy_Name],[LocalizedText Strings\Objects:BokChoy_Description],Basic,-75,80,10,False,278,True,True,False,"color_green,dye_medium,season_fall"
+279,Magic Rock Candy,[LocalizedText Strings\Objects:MagicRockCandy_Name],[LocalizedText Strings\Objects:MagicRockCandy_Description],Cooking,-7,5000,200,False,279,True,True,False,
+280,Yam,[LocalizedText Strings\Objects:Yam_Name],[LocalizedText Strings\Objects:Yam_Description],Basic,-75,160,18,False,280,True,True,False,"color_brown,dye_medium,season_fall"
+281,Chanterelle,[LocalizedText Strings\Objects:Chanterelle_Name],[LocalizedText Strings\Objects:Chanterelle_Description],Basic,-81,160,30,False,281,True,True,False,"color_orange,edible_mushroom,forage_item,forage_item_cave,forage_item_secret,season_fall"
+282,Cranberries,[LocalizedText Strings\Objects:Cranberries_Name],[LocalizedText Strings\Objects:Cranberries_Description],Basic,-79,75,15,False,282,True,True,False,"color_red,dye_strong,season_fall"
+283,Holly,[LocalizedText Strings\Objects:Holly_Name],[LocalizedText Strings\Objects:Holly_Description],Basic,-81,80,-15,False,283,True,True,False,"color_red,forage_item,season_winter"
+284,Beet,[LocalizedText Strings\Objects:Beet_Name],[LocalizedText Strings\Objects:Beet_Description],Basic,-75,100,12,False,284,True,True,False,"color_dark_purple,dye_strong,season_fall"
+286,Cherry Bomb,[LocalizedText Strings\Objects:CherryBomb_Name],[LocalizedText Strings\Objects:CherryBomb_Description],Crafting,-8,50,-300,False,286,True,True,False,"bomb_item,color_red"
+287,Bomb,[LocalizedText Strings\Objects:Bomb_Name],[LocalizedText Strings\Objects:Bomb_Description],Crafting,-8,50,-300,False,287,True,True,False,"bomb_item,color_black"
+288,Mega Bomb,[LocalizedText Strings\Objects:MegaBomb_Name],[LocalizedText Strings\Objects:MegaBomb_Description],Crafting,-8,50,-300,False,288,True,True,False,"bomb_item,color_red"
+289,Ostrich Egg,[LocalizedText Strings\Objects:OstrichEgg_Name],[LocalizedText Strings\Objects:OstrichEgg_Description],Basic,-5,600,15,False,289,True,True,False,"color_white,egg_item,large_egg_item"
+290,Stone,[LocalizedText Strings\Objects:IronStone_Name],[LocalizedText Strings\Objects:IronStone_Description],Litter,-999,0,-300,False,290,True,True,False,
+292,Mahogany Seed,[LocalizedText Strings\Objects:MahoganySeed_Name],[LocalizedText Strings\Objects:MahoganySeed_Description],Crafting,-74,100,-300,False,292,True,True,False,"color_brown,tree_seed_item"
+293,Brick Floor,[LocalizedText Strings\Objects:BrickFloor_Name],[LocalizedText Strings\Objects:BrickFloor_Description],Crafting,-24,1,-300,False,293,True,True,False,
+294,Twig,[LocalizedText Strings\Objects:Twig_Name],[LocalizedText Strings\Objects:Twig_Description],Litter,-999,0,-300,False,294,True,True,False,
+295,Twig,[LocalizedText Strings\Objects:Twig_Name],[LocalizedText Strings\Objects:Twig_Description],Litter,-999,0,-300,False,295,True,True,False,
+296,Salmonberry,[LocalizedText Strings\Objects:Salmonberry_Name],[LocalizedText Strings\Objects:Salmonberry_Description],Basic,-79,5,10,False,296,True,True,False,color_red
+297,Grass Starter,[LocalizedText Strings\Objects:GrassStarter_Name],[LocalizedText Strings\Objects:GrassStarter_Description],Crafting,0,50,-300,False,297,True,True,False,use_reverse_name_for_sorting
+298,Hardwood Fence,[LocalizedText Strings\Objects:HardwoodFence_Name],[LocalizedText Strings\Objects:HardwoodFence_Description],Crafting,-8,10,-300,False,298,True,True,False,
+299,Amaranth Seeds,[LocalizedText Strings\Objects:AmaranthSeeds_Name],[LocalizedText Strings\Objects:AmaranthSeeds_Description],Seeds,-74,35,-300,False,299,True,True,False,
+300,Amaranth,[LocalizedText Strings\Objects:Amaranth_Name],[LocalizedText Strings\Objects:Amaranth_Description],Basic,-75,150,20,False,300,True,True,False,"color_pale_violet_red,dye_medium,season_fall"
+301,Grape Starter,[LocalizedText Strings\Objects:GrapeStarter_Name],[LocalizedText Strings\Objects:GrapeStarter_Description],Seeds,-74,30,-300,False,301,True,True,False,
+302,Hops Starter,[LocalizedText Strings\Objects:HopsStarter_Name],[LocalizedText Strings\Objects:HopsStarter_Description],Seeds,-74,30,-300,False,302,True,True,False,
+303,Pale Ale,[LocalizedText Strings\Objects:PaleAle_Name],[LocalizedText Strings\Objects:PaleAle_Description],Basic,-26,300,20,True,303,True,True,False,"alcohol_item,color_gold"
+304,Hops,[LocalizedText Strings\Objects:Hops_Name],[LocalizedText Strings\Objects:Hops_Description],Basic,-75,25,18,False,304,True,True,False,color_green
+305,Void Egg,[LocalizedText Strings\Objects:VoidEgg_Name],[LocalizedText Strings\Objects:VoidEgg_Description],Basic,-5,65,-15,False,305,True,True,False,"color_black,egg_item"
+306,Mayonnaise,[LocalizedText Strings\Objects:Mayonnaise_Name],[LocalizedText Strings\Objects:Mayonnaise_Description],Basic,-26,190,20,True,306,True,True,False,"color_white,mayo_item"
+307,Duck Mayonnaise,[LocalizedText Strings\Objects:DuckMayonnaise_Name],[LocalizedText Strings\Objects:DuckMayonnaise_Description],Basic,-26,375,30,True,307,True,True,False,"color_white,mayo_item,use_reverse_name_for_sorting"
+308,Void Mayonnaise,[LocalizedText Strings\Objects:VoidMayonnaise_Name],[LocalizedText Strings\Objects:VoidMayonnaise_Description],Basic,-26,275,-30,True,308,True,True,False,"color_red,mayo_item,use_reverse_name_for_sorting"
+309,Acorn,[LocalizedText Strings\Objects:Acorn_Name],[LocalizedText Strings\Objects:Acorn_Description],Crafting,-74,20,-300,False,309,True,True,False,"color_brown,tree_seed_item"
+310,Maple Seed,[LocalizedText Strings\Objects:MapleSeed_Name],[LocalizedText Strings\Objects:MapleSeed_Description],Crafting,-74,5,-300,False,310,True,True,False,"color_brown,tree_seed_item"
+311,Pine Cone,[LocalizedText Strings\Objects:PineCone_Name],[LocalizedText Strings\Objects:PineCone_Description],Crafting,-74,5,-300,False,311,True,True,False,"color_brown,tree_seed_item"
+313,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Description],Litter,-999,0,-300,False,313,True,True,False,
+314,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Description],Litter,-999,0,-300,False,314,True,True,False,
+315,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Description],Litter,-999,0,-300,False,315,True,True,False,
+316,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Description],Litter,-999,0,-300,False,316,True,True,False,
+317,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Description],Litter,-999,0,-300,False,317,True,True,False,
+318,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Description],Litter,-999,0,-300,False,318,True,True,False,
+319,Weeds,[LocalizedText Strings\Objects:IceCrystal_Name],[LocalizedText Strings\Objects:IceCrystal_Description],Litter,-999,0,-300,False,319,True,True,False,
+320,Weeds,[LocalizedText Strings\Objects:IceCrystal_Name],[LocalizedText Strings\Objects:IceCrystal_Description],Litter,-999,0,-300,False,320,True,True,False,
+321,Weeds,[LocalizedText Strings\Objects:IceCrystal_Name],[LocalizedText Strings\Objects:IceCrystal_Description],Litter,-999,0,-300,False,321,True,True,False,
+322,Wood Fence,[LocalizedText Strings\Objects:WoodFence_Name],[LocalizedText Strings\Objects:WoodFence_Description],Crafting,-8,1,-300,False,322,True,True,False,
+323,Stone Fence,[LocalizedText Strings\Objects:StoneFence_Name],[LocalizedText Strings\Objects:StoneFence_Description],Crafting,-8,2,-300,False,323,True,True,False,
+324,Iron Fence,[LocalizedText Strings\Objects:IronFence_Name],[LocalizedText Strings\Objects:IronFence_Description],Crafting,-8,6,-300,False,324,True,True,False,
+325,Gate,[LocalizedText Strings\Objects:Gate_Name],[LocalizedText Strings\Objects:Gate_Description],Crafting,-8,4,-300,False,325,True,True,False,
+326,Dwarvish Translation Guide,[LocalizedText Strings\Objects:DwarvishTranslationGuide_Name],[LocalizedText Strings\Objects:DwarvishTranslationGuide_Description],Crafting,-8,50,-300,False,326,True,True,False,
+328,Wood Floor,[LocalizedText Strings\Objects:WoodFloor_Name],[LocalizedText Strings\Objects:WoodFloor_Description],Crafting,-24,1,-300,False,328,True,True,False,
+329,Stone Floor,[LocalizedText Strings\Objects:StoneFloor_Name],[LocalizedText Strings\Objects:StoneFloor_Description],Crafting,-24,1,-300,False,329,True,True,False,
+330,Clay,[LocalizedText Strings\Objects:Clay_Name],[LocalizedText Strings\Objects:Clay_Description],Basic,-16,20,-300,False,330,True,True,False,color_brown
+331,Weathered Floor,[LocalizedText Strings\Objects:WeatheredFloor_Name],[LocalizedText Strings\Objects:WeatheredFloor_Description],Crafting,-24,1,-300,False,331,True,True,False,
+333,Crystal Floor,[LocalizedText Strings\Objects:CrystalFloor_Name],[LocalizedText Strings\Objects:CrystalFloor_Description],Crafting,-24,1,-300,False,333,True,True,False,
+334,Copper Bar,[LocalizedText Strings\Objects:CopperBar_Name],[LocalizedText Strings\Objects:CopperBar_Description],Basic,-15,60,-300,False,334,True,True,False,"color_copper,furnace_item,use_reverse_name_for_sorting"
+335,Iron Bar,[LocalizedText Strings\Objects:IronBar_Name],[LocalizedText Strings\Objects:IronBar_Description],Basic,-15,120,-300,False,335,True,True,False,"color_iron,furnace_item,use_reverse_name_for_sorting"
+336,Gold Bar,[LocalizedText Strings\Objects:GoldBar_Name],[LocalizedText Strings\Objects:GoldBar_Description],Basic,-15,250,-300,False,336,True,True,False,"color_gold,furnace_item,use_reverse_name_for_sorting"
+337,Iridium Bar,[LocalizedText Strings\Objects:IridiumBar_Name],[LocalizedText Strings\Objects:IridiumBar_Description],Basic,-15,1000,-300,False,337,True,True,False,"color_iridium,furnace_item,use_reverse_name_for_sorting"
+338,Refined Quartz,[LocalizedText Strings\Objects:RefinedQuartz_Name],[LocalizedText Strings\Objects:RefinedQuartz_Description],Basic,-15,50,-300,False,338,True,True,False,"color_iridium,furnace_item"
+340,Honey,[LocalizedText Strings\Objects:Honey_Name],[LocalizedText Strings\Objects:Honey_Description],Basic,-26,100,-300,False,340,True,True,False,"color_yellow,honey_item,use_reverse_name_for_sorting"
+341,Tea Set,[LocalizedText Strings\Objects:TeaSet_Name],[LocalizedText Strings\Objects:TeaSet_Description],Basic,-24,200,-300,False,341,True,True,False,
+342,Pickles,[LocalizedText Strings\Objects:Pickles_Name],[LocalizedText Strings\Objects:Pickles_Description],Basic,-26,100,-300,True,128,True,True,False,"color_green,pickle_item"
+343,Stone,[LocalizedText Strings\Objects:Stone_NodeStoneOnly_Name],[LocalizedText Strings\Objects:Stone_NodeStoneOnly_Description],Litter,-999,0,-300,False,343,True,True,False,
+344,Jelly,[LocalizedText Strings\Objects:Jelly_Name],[LocalizedText Strings\Objects:Jelly_Description],Basic,-26,160,-300,True,130,True,True,False,"color_dark_red,jelly_item,use_reverse_name_for_sorting"
+346,Beer,[LocalizedText Strings\Objects:Beer_Name],[LocalizedText Strings\Objects:Beer_Description],Basic,-26,200,20,True,346,True,True,False,"alcohol_item,color_yellow"
+347,Rare Seed,[LocalizedText Strings\Objects:RareSeed_Name],[LocalizedText Strings\Objects:RareSeed_Description],Seeds,-74,200,-300,False,347,True,True,False,
+348,Wine,[LocalizedText Strings\Objects:Wine_Name],[LocalizedText Strings\Objects:Wine_Description],Basic,-26,400,20,True,123,True,True,False,"alcohol_item,color_dark_purple,drink_item,use_reverse_name_for_sorting"
+349,Energy Tonic,[LocalizedText Strings\Objects:EnergyTonic_Name],[LocalizedText Strings\Objects:EnergyTonic_Description],Crafting,0,500,200,True,349,True,True,False,"color_red,medicine_item"
+350,Juice,[LocalizedText Strings\Objects:Juice_Name],[LocalizedText Strings\Objects:Juice_Description],Basic,-26,150,30,True,125,True,True,False,"color_green,drink_item,juice_item,use_reverse_name_for_sorting"
+351,Muscle Remedy,[LocalizedText Strings\Objects:MuscleRemedy_Name],[LocalizedText Strings\Objects:MuscleRemedy_Description],Crafting,0,500,20,True,351,True,True,False,"color_dark_yellow,medicine_item"
+368,Basic Fertilizer,[LocalizedText Strings\Objects:BasicFertilizer_Name],[LocalizedText Strings\Objects:BasicFertilizer_Description],Basic,-19,2,-300,False,368,True,True,False,"color_brown,fertilizer_item,use_reverse_name_for_sorting"
+369,Quality Fertilizer,[LocalizedText Strings\Objects:QualityFertilizer_Name],[LocalizedText Strings\Objects:QualityFertilizer_Description],Basic,-19,10,-300,False,369,True,True,False,"color_brown,quality_fertilizer_item,use_reverse_name_for_sorting"
+370,Basic Retaining Soil,[LocalizedText Strings\Objects:BasicRetainingSoil_Name],[LocalizedText Strings\Objects:BasicRetainingSoil_Description],Basic,-19,4,-300,False,370,True,True,False,"color_brown,fertilizer_item,use_reverse_name_for_sorting"
+371,Quality Retaining Soil,[LocalizedText Strings\Objects:QualityRetainingSoil_Name],[LocalizedText Strings\Objects:QualityRetainingSoil_Description],Basic,-19,5,-300,False,371,True,True,False,"color_brown,quality_fertilizer_item,use_reverse_name_for_sorting"
+372,Clam,[LocalizedText Strings\Objects:Clam_Name],[LocalizedText Strings\Objects:Clam_Description],Fish,-4,50,-300,False,372,True,True,False,"beach_item,color_light_cyan,fish_crab_pot,fish_has_roe,fish_ocean,fish_upright,forage_item,forage_item_beach"
+373,Golden Pumpkin,[LocalizedText Strings\Objects:GoldenPumpkin_Name],[LocalizedText Strings\Objects:GoldenPumpkin_Description],Basic,0,2500,-300,False,373,True,True,False,color_gold
+376,Poppy,[LocalizedText Strings\Objects:Poppy_Name],[LocalizedText Strings\Objects:Poppy_Description],Basic,-80,140,18,False,376,True,True,False,"color_orange,dye_medium,flower_item,season_summer"
+378,Copper Ore,[LocalizedText Strings\Objects:CopperOre_Name],[LocalizedText Strings\Objects:CopperOre_Description],Basic,-15,5,-300,False,378,True,True,False,"color_copper,ore_item,use_reverse_name_for_sorting"
+380,Iron Ore,[LocalizedText Strings\Objects:IronOre_Name],[LocalizedText Strings\Objects:IronOre_Description],Basic,-15,10,-300,False,380,True,True,False,"color_iron,ore_item,use_reverse_name_for_sorting"
+382,Coal,[LocalizedText Strings\Objects:Coal_Name],[LocalizedText Strings\Objects:Coal_Description],Basic,-15,15,-300,False,382,True,True,False,color_black
+384,Gold Ore,[LocalizedText Strings\Objects:GoldOre_Name],[LocalizedText Strings\Objects:GoldOre_Description],Basic,-15,25,-300,False,384,True,True,False,"color_gold,ore_item,use_reverse_name_for_sorting"
+386,Iridium Ore,[LocalizedText Strings\Objects:IridiumOre_Name],[LocalizedText Strings\Objects:IridiumOre_Description],Basic,-15,100,-300,False,386,True,True,False,"color_iridium,ore_item,use_reverse_name_for_sorting"
+388,Wood,[LocalizedText Strings\Objects:Wood_Name],[LocalizedText Strings\Objects:Wood_Description],Basic,-16,2,-300,False,388,True,True,False,"color_brown,wood_item"
+390,Stone,[LocalizedText Strings\Objects:Stone_Name],[LocalizedText Strings\Objects:Stone_Description],Basic,-16,2,-300,False,390,True,True,False,color_gray
+392,Nautilus Shell,[LocalizedText Strings\Objects:NautilusShell_Name],[LocalizedText Strings\Objects:NautilusShell_Description],Basic,-23,120,-300,False,392,True,True,False,"color_orange,forage_item,forage_item_beach,marine_item,season_winter"
+393,Coral,[LocalizedText Strings\Objects:Coral_Name],[LocalizedText Strings\Objects:Coral_Description],Basic,-23,80,-300,False,393,True,True,False,"color_red,forage_item,forage_item_beach"
+394,Rainbow Shell,[LocalizedText Strings\Objects:RainbowShell_Name],[LocalizedText Strings\Objects:RainbowShell_Description],Basic,-23,300,-300,False,394,True,True,False,"color_prismatic,forage_item,forage_item_beach,season_summer"
+395,Coffee,[LocalizedText Strings\Objects:Coffee_Name],[LocalizedText Strings\Objects:Coffee_Description],Crafting,0,150,1,True,395,True,True,False,"color_dark_brown,coffee_item"
+396,Spice Berry,[LocalizedText Strings\Objects:SpiceBerry_Name],[LocalizedText Strings\Objects:SpiceBerry_Description],Basic,-79,80,10,False,396,True,True,False,"color_orange,forage_item,season_summer"
+397,Sea Urchin,[LocalizedText Strings\Objects:SeaUrchin_Name],[LocalizedText Strings\Objects:SeaUrchin_Description],Basic,-23,160,-300,False,397,True,True,False,"color_purple,forage_item,forage_item_beach"
+398,Grape,[LocalizedText Strings\Objects:Grape_Name],[LocalizedText Strings\Objects:Grape_Description],Basic,-79,80,15,False,398,True,True,False,"color_purple,forage_item,season_summer"
+399,Spring Onion,[LocalizedText Strings\Objects:SpringOnion_Name],[LocalizedText Strings\Objects:SpringOnion_Description],Basic,-81,8,5,False,399,True,True,False,"color_white,forage_item,season_spring"
+400,Strawberry,[LocalizedText Strings\Objects:Strawberry_Name],[LocalizedText Strings\Objects:Strawberry_Description],Basic,-79,120,20,False,400,True,True,False,"color_red,dye_medium,season_spring"
+401,Straw Floor,[LocalizedText Strings\Objects:StrawFloor_Name],[LocalizedText Strings\Objects:StrawFloor_Description],Crafting,-24,1,-300,False,401,True,True,False,
+402,Sweet Pea,[LocalizedText Strings\Objects:SweetPea_Name],[LocalizedText Strings\Objects:SweetPea_Description],Basic,-80,50,0,False,402,True,True,False,"color_purple,dye_medium,flower_item,forage_item,season_summer"
+403,Field Snack,[LocalizedText Strings\Objects:FieldSnack_Name],[LocalizedText Strings\Objects:FieldSnack_Description],Crafting,0,20,18,False,403,True,True,False,color_brown
+404,Common Mushroom,[LocalizedText Strings\Objects:CommonMushroom_Name],[LocalizedText Strings\Objects:CommonMushroom_Description],Basic,-81,40,15,False,404,True,True,False,"color_dark_brown,edible_mushroom,forage_item,season_fall,season_spring"
+405,Wood Path,[LocalizedText Strings\Objects:WoodPath_Name],[LocalizedText Strings\Objects:WoodPath_Description],Crafting,-24,1,-300,False,405,True,True,False,
+406,Wild Plum,[LocalizedText Strings\Objects:WildPlum_Name],[LocalizedText Strings\Objects:WildPlum_Description],Basic,-79,80,10,False,406,True,True,False,"color_dark_purple,forage_item,season_fall"
+407,Gravel Path,[LocalizedText Strings\Objects:GravelPath_Name],[LocalizedText Strings\Objects:GravelPath_Description],Crafting,-24,1,-300,False,407,True,True,False,
+408,Hazelnut,[LocalizedText Strings\Objects:Hazelnut_Name],[LocalizedText Strings\Objects:Hazelnut_Description],Basic,-81,90,12,False,408,True,True,False,"color_brown,forage_item,season_fall"
+409,Crystal Path,[LocalizedText Strings\Objects:CrystalPath_Name],[LocalizedText Strings\Objects:CrystalPath_Description],Crafting,-24,1,-300,False,409,True,True,False,
+410,Blackberry,[LocalizedText Strings\Objects:Blackberry_Name],[LocalizedText Strings\Objects:Blackberry_Description],Basic,-79,20,10,False,410,True,True,False,"color_dark_blue,forage_item,season_fall"
+411,Cobblestone Path,[LocalizedText Strings\Objects:CobblestonePath_Name],[LocalizedText Strings\Objects:CobblestonePath_Description],Crafting,-24,1,-300,False,411,True,True,False,
+412,Winter Root,[LocalizedText Strings\Objects:WinterRoot_Name],[LocalizedText Strings\Objects:WinterRoot_Description],Basic,-81,70,10,False,412,True,True,False,"color_orange,forage_item,forage_item_mines,season_winter"
+413,Blue Slime Egg,[LocalizedText Strings\Objects:BlueSlimeEgg_Name],[LocalizedText Strings\Objects:BlueSlimeEgg_Description],Basic,0,1750,-300,False,413,True,True,False,"color_blue,slime_egg_item,slime_item,use_reverse_name_for_sorting"
+414,Crystal Fruit,[LocalizedText Strings\Objects:CrystalFruit_Name],[LocalizedText Strings\Objects:CrystalFruit_Description],Basic,-79,150,25,False,414,True,True,False,"color_blue,forage_item,season_winter"
+415,Stepping Stone Path,[LocalizedText Strings\Objects:SteppingStonePath_Name],[LocalizedText Strings\Objects:SteppingStonePath_Description],Crafting,-24,1,-300,False,415,True,True,False,
+416,Snow Yam,[LocalizedText Strings\Objects:SnowYam_Name],[LocalizedText Strings\Objects:SnowYam_Description],Basic,-81,100,12,False,416,True,True,False,color_white
+417,Sweet Gem Berry,[LocalizedText Strings\Objects:SweetGemBerry_Name],[LocalizedText Strings\Objects:SweetGemBerry_Description],Basic,-17,3000,-300,False,417,True,True,False,color_red
+418,Crocus,[LocalizedText Strings\Objects:Crocus_Name],[LocalizedText Strings\Objects:Crocus_Description],Basic,-80,60,0,False,418,True,True,False,"color_purple,dye_medium,flower_item,forage_item,season_winter"
+419,Vinegar,[LocalizedText Strings\Objects:Vinegar_Name],[LocalizedText Strings\Objects:Vinegar_Description],Basic,0,100,5,True,419,True,True,False,"color_white,placeable"
+420,Red Mushroom,[LocalizedText Strings\Objects:RedMushroom_Name],[LocalizedText Strings\Objects:RedMushroom_Description],Basic,-81,75,-20,False,420,True,True,False,"color_red,forage_item,forage_item_mines,forage_item_secret,season_fall,season_summer"
+421,Sunflower,[LocalizedText Strings\Objects:Sunflower_Name],[LocalizedText Strings\Objects:Sunflower_Description],Basic,-80,80,18,False,421,True,True,False,"color_yellow,dye_medium,flower_item,season_fall,season_summer"
+422,Purple Mushroom,[LocalizedText Strings\Objects:PurpleMushroom_Name],[LocalizedText Strings\Objects:PurpleMushroom_Description],Basic,-81,250,50,False,422,True,True,False,"color_purple,edible_mushroom,forage_item,forage_item_mines"
+423,Rice,[LocalizedText Strings\Objects:Rice_Name],[LocalizedText Strings\Objects:Rice_Description],Basic,0,100,5,False,423,True,True,False,color_white
+424,Cheese,[LocalizedText Strings\Objects:Cheese_Name],[LocalizedText Strings\Objects:Cheese_Description],Basic,-26,230,50,False,424,True,True,False,color_yellow
+425,Fairy Seeds,[LocalizedText Strings\Objects:FairySeeds_Name],[LocalizedText Strings\Objects:FairySeeds_Description],Seeds,-74,100,-300,False,425,True,True,False,
+426,Goat Cheese,[LocalizedText Strings\Objects:GoatCheese_Name],[LocalizedText Strings\Objects:GoatCheese_Description],Basic,-26,400,50,False,426,True,True,False,color_yellow
+427,Tulip Bulb,[LocalizedText Strings\Objects:TulipBulb_Name],[LocalizedText Strings\Objects:TulipBulb_Description],Seeds,-74,10,-300,False,427,True,True,False,
+428,Cloth,[LocalizedText Strings\Objects:Cloth_Name],[LocalizedText Strings\Objects:Cloth_Description],Basic,-26,470,-300,False,428,True,True,False,color_white
+429,Jazz Seeds,[LocalizedText Strings\Objects:JazzSeeds_Name],[LocalizedText Strings\Objects:JazzSeeds_Description],Seeds,-74,15,-300,False,429,True,True,False,
+430,Truffle,[LocalizedText Strings\Objects:Truffle_Name],[LocalizedText Strings\Objects:Truffle_Description],Basic,-17,625,5,False,430,True,True,False,color_brown
+431,Sunflower Seeds,[LocalizedText Strings\Objects:SunflowerSeeds_Name],[LocalizedText Strings\Objects:SunflowerSeeds_Description],Seeds,-74,20,-300,False,431,True,True,False,
+432,Truffle Oil,[LocalizedText Strings\Objects:TruffleOil_Name],[LocalizedText Strings\Objects:TruffleOil_Description],Basic,-26,1065,15,True,432,True,True,False,color_yellow
+433,Coffee Bean,[LocalizedText Strings\Objects:CoffeeBean_Name],[LocalizedText Strings\Objects:CoffeeBean_Description],Seeds,-74,15,-300,False,433,True,True,False,"color_brown,seedmaker_banned"
+434,Stardrop,[LocalizedText Strings\Objects:Stardrop_Name],[LocalizedText Strings\Objects:Stardrop_Description],Crafting,0,7777,100,False,434,True,True,True,
+436,Goat Milk,[LocalizedText Strings\Objects:GoatMilk_Name],[LocalizedText Strings\Objects:GoatMilk_Description],Basic,-6,225,25,True,436,True,True,False,"color_white,goat_milk_item,milk_item"
+437,Red Slime Egg,[LocalizedText Strings\Objects:RedSlimeEgg_Name],[LocalizedText Strings\Objects:RedSlimeEgg_Description],Basic,0,2500,-300,False,437,True,True,False,"color_red,slime_egg_item,slime_item,use_reverse_name_for_sorting"
+438,L. Goat Milk,[LocalizedText Strings\Objects:LGoatMilk_Name],[LocalizedText Strings\Objects:LGoatMilk_Description],Basic,-6,345,35,True,438,True,True,False,"color_white,goat_milk_item,large_milk_item,milk_item"
+439,Purple Slime Egg,[LocalizedText Strings\Objects:PurpleSlimeEgg_Name],[LocalizedText Strings\Objects:PurpleSlimeEgg_Description],Basic,0,5000,-300,False,439,True,True,False,"color_purple,slime_egg_item,slime_item,use_reverse_name_for_sorting"
+440,Wool,[LocalizedText Strings\Objects:Wool_Name],[LocalizedText Strings\Objects:Wool_Description],Basic,-18,340,-300,False,440,True,True,False,color_white
+441,Explosive Ammo,[LocalizedText Strings\Objects:ExplosiveAmmo_Name],[LocalizedText Strings\Objects:ExplosiveAmmo_Description],Basic,0,20,-300,False,441,True,True,False,color_red
+442,Duck Egg,[LocalizedText Strings\Objects:DuckEgg_Name],[LocalizedText Strings\Objects:DuckEgg_Description],Basic,-5,95,15,False,442,True,True,False,"color_white,egg_item"
+444,Duck Feather,[LocalizedText Strings\Objects:DuckFeather_Name],[LocalizedText Strings\Objects:DuckFeather_Description],Basic,-18,250,-300,False,444,True,True,False,color_green
+445,Caviar,[LocalizedText Strings\Objects:Caviar_Name],[LocalizedText Strings\Objects:Caviar_Description],Basic,-26,500,70,False,445,True,True,False,color_black
+446,Rabbit's Foot,[LocalizedText Strings\Objects:RabbitsFoot_Name],[LocalizedText Strings\Objects:RabbitsFoot_Description],Basic,-18,565,-300,False,446,True,True,False,color_yellow
+447,Aged Roe,[LocalizedText Strings\Objects:AgedRoe_Name],[LocalizedText Strings\Objects:AgedRoe_Description],Basic,-26,100,40,False,447,True,True,False,"color_orange,use_reverse_name_for_sorting"
+449,Stone Base,[LocalizedText Strings\Objects:StoneBase_Name],[LocalizedText Strings\Objects:StoneBase_Description],asdf,0,0,-300,False,449,True,True,False,
+450,Stone,[LocalizedText Strings\Objects:Stone_NodeStoneOnly_Name],[LocalizedText Strings\Objects:Stone_NodeStoneOnly_Description],Litter,-999,0,-300,False,450,True,True,False,
+452,Weeds,[LocalizedText Strings\Objects:Weeds_DryBush_Name],[LocalizedText Strings\Objects:Weeds_DryBush_Description],Litter,-999,0,-300,False,452,True,True,False,
+453,Poppy Seeds,[LocalizedText Strings\Objects:PoppySeeds_Name],[LocalizedText Strings\Objects:PoppySeeds_Description],Seeds,-74,50,-300,False,453,True,True,False,
+454,Ancient Fruit,[LocalizedText Strings\Objects:AncientFruit_Name],[LocalizedText Strings\Objects:AncientFruit_Description],Basic,-79,550,-300,False,454,True,True,False,color_cyan
+455,Spangle Seeds,[LocalizedText Strings\Objects:SpangleSeeds_Name],[LocalizedText Strings\Objects:SpangleSeeds_Description],Seeds,-74,25,-300,False,455,True,True,False,
+456,Algae Soup,[LocalizedText Strings\Objects:AlgaeSoup_Name],[LocalizedText Strings\Objects:AlgaeSoup_Description],Cooking,-7,100,30,False,456,True,True,False,color_dark_green
+457,Pale Broth,[LocalizedText Strings\Objects:PaleBroth_Name],[LocalizedText Strings\Objects:PaleBroth_Description],Cooking,-7,150,50,False,457,True,True,False,color_white
+458,Bouquet,[LocalizedText Strings\Objects:Bouquet_Name],[LocalizedText Strings\Objects:Bouquet_Description],Basic,0,100,-300,False,458,True,True,False,color_pink
+459,Mead,[LocalizedText Strings\Objects:Mead_Name],[LocalizedText Strings\Objects:Mead_Description],Basic,-26,300,30,True,459,True,True,False,"alcohol_item,color_gold"
+460,Mermaid's Pendant,[LocalizedText Strings\Objects:MermaidsPendant_Name],[LocalizedText Strings\Objects:MermaidsPendant_Description],Basic,0,2500,-300,False,460,True,False,False,
+461,Decorative Pot,[LocalizedText Strings\Objects:DecorativePot_Name],[LocalizedText Strings\Objects:DecorativePot_Description],Crafting,0,200,-300,False,461,True,True,False,
+463,Drum Block,[LocalizedText Strings\Objects:DrumBlock_Name],[LocalizedText Strings\Objects:DrumBlock_Description],Crafting,0,100,-300,False,463,True,True,False,
+464,Flute Block,[LocalizedText Strings\Objects:FluteBlock_Name],[LocalizedText Strings\Objects:FluteBlock_Description],Crafting,0,100,-300,False,464,True,True,False,
+465,Speed-Gro,[LocalizedText Strings\Objects:SpeedGro_Name],[LocalizedText Strings\Objects:SpeedGro_Description],Basic,-19,20,-300,False,465,True,True,False,"color_brown,fertilizer_item,use_reverse_name_for_sorting"
+466,Deluxe Speed-Gro,[LocalizedText Strings\Objects:DeluxeSpeedGro_Name],[LocalizedText Strings\Objects:DeluxeSpeedGro_Description],Basic,-19,40,-300,False,466,True,True,False,"color_brown,quality_fertilizer_item,use_reverse_name_for_sorting"
+472,Parsnip Seeds,[LocalizedText Strings\Objects:ParsnipSeeds_Name],[LocalizedText Strings\Objects:ParsnipSeeds_Description],Seeds,-74,10,-300,False,472,True,True,False,
+473,Bean Starter,[LocalizedText Strings\Objects:BeanStarter_Name],[LocalizedText Strings\Objects:BeanStarter_Description],Seeds,-74,30,-300,False,473,True,True,False,
+474,Cauliflower Seeds,[LocalizedText Strings\Objects:CauliflowerSeeds_Name],[LocalizedText Strings\Objects:CauliflowerSeeds_Description],Seeds,-74,40,-300,False,474,True,True,False,
+475,Potato Seeds,[LocalizedText Strings\Objects:PotatoSeeds_Name],[LocalizedText Strings\Objects:PotatoSeeds_Description],Seeds,-74,25,-300,False,475,True,True,False,
+476,Garlic Seeds,[LocalizedText Strings\Objects:GarlicSeeds_Name],[LocalizedText Strings\Objects:GarlicSeeds_Description],Seeds,-74,20,-300,False,476,True,True,False,
+477,Kale Seeds,[LocalizedText Strings\Objects:KaleSeeds_Name],[LocalizedText Strings\Objects:KaleSeeds_Description],Seeds,-74,35,-300,False,477,True,True,False,
+478,Rhubarb Seeds,[LocalizedText Strings\Objects:RhubarbSeeds_Name],[LocalizedText Strings\Objects:RhubarbSeeds_Description],Seeds,-74,50,-300,False,478,True,True,False,
+479,Melon Seeds,[LocalizedText Strings\Objects:MelonSeeds_Name],[LocalizedText Strings\Objects:MelonSeeds_Description],Seeds,-74,40,-300,False,479,True,True,False,
+480,Tomato Seeds,[LocalizedText Strings\Objects:TomatoSeeds_Name],[LocalizedText Strings\Objects:TomatoSeeds_Description],Seeds,-74,25,-300,False,480,True,True,False,
+481,Blueberry Seeds,[LocalizedText Strings\Objects:BlueberrySeeds_Name],[LocalizedText Strings\Objects:BlueberrySeeds_Description],Seeds,-74,40,-300,False,481,True,True,False,
+482,Pepper Seeds,[LocalizedText Strings\Objects:PepperSeeds_Name],[LocalizedText Strings\Objects:PepperSeeds_Description],Seeds,-74,20,-300,False,482,True,True,False,
+483,Wheat Seeds,[LocalizedText Strings\Objects:WheatSeeds_Name],[LocalizedText Strings\Objects:WheatSeeds_Description],Seeds,-74,5,-300,False,483,True,True,False,
+484,Radish Seeds,[LocalizedText Strings\Objects:RadishSeeds_Name],[LocalizedText Strings\Objects:RadishSeeds_Description],Seeds,-74,20,-300,False,484,True,True,False,
+485,Red Cabbage Seeds,[LocalizedText Strings\Objects:RedCabbageSeeds_Name],[LocalizedText Strings\Objects:RedCabbageSeeds_Description],Seeds,-74,50,-300,False,485,True,True,False,
+486,Starfruit Seeds,[LocalizedText Strings\Objects:StarfruitSeeds_Name],[LocalizedText Strings\Objects:StarfruitSeeds_Description],Seeds,-74,200,-300,False,486,True,True,False,
+487,Corn Seeds,[LocalizedText Strings\Objects:CornSeeds_Name],[LocalizedText Strings\Objects:CornSeeds_Description],Seeds,-74,75,-300,False,487,True,True,False,
+488,Eggplant Seeds,[LocalizedText Strings\Objects:EggplantSeeds_Name],[LocalizedText Strings\Objects:EggplantSeeds_Description],Seeds,-74,10,-300,False,488,True,True,False,
+489,Artichoke Seeds,[LocalizedText Strings\Objects:ArtichokeSeeds_Name],[LocalizedText Strings\Objects:ArtichokeSeeds_Description],Seeds,-74,15,-300,False,489,True,True,False,
+490,Pumpkin Seeds,[LocalizedText Strings\Objects:PumpkinSeeds_Name],[LocalizedText Strings\Objects:PumpkinSeeds_Description],Seeds,-74,50,-300,False,490,True,True,False,
+491,Bok Choy Seeds,[LocalizedText Strings\Objects:BokChoySeeds_Name],[LocalizedText Strings\Objects:BokChoySeeds_Description],Seeds,-74,25,-300,False,491,True,True,False,
+492,Yam Seeds,[LocalizedText Strings\Objects:YamSeeds_Name],[LocalizedText Strings\Objects:YamSeeds_Description],Seeds,-74,30,-300,False,492,True,True,False,
+493,Cranberry Seeds,[LocalizedText Strings\Objects:CranberrySeeds_Name],[LocalizedText Strings\Objects:CranberrySeeds_Description],Seeds,-74,120,-300,False,493,True,True,False,
+494,Beet Seeds,[LocalizedText Strings\Objects:BeetSeeds_Name],[LocalizedText Strings\Objects:BeetSeeds_Description],Seeds,-74,10,-300,False,494,True,True,False,
+495,Spring Seeds,[LocalizedText Strings\Objects:SpringSeeds_Name],[LocalizedText Strings\Objects:SpringSeeds_Description],Seeds,-74,35,-300,False,495,True,True,False,
+496,Summer Seeds,[LocalizedText Strings\Objects:SummerSeeds_Name],[LocalizedText Strings\Objects:SummerSeeds_Description],Seeds,-74,55,-300,False,496,True,True,False,
+497,Fall Seeds,[LocalizedText Strings\Objects:FallSeeds_Name],[LocalizedText Strings\Objects:FallSeeds_Description],Seeds,-74,45,-300,False,497,True,True,False,
+498,Winter Seeds,[LocalizedText Strings\Objects:WinterSeeds_Name],[LocalizedText Strings\Objects:WinterSeeds_Description],Seeds,-74,30,-300,False,498,True,True,False,
+499,Ancient Seeds,[LocalizedText Strings\Objects:AncientSeeds_Name],[LocalizedText Strings\Objects:AncientSeeds_Description],Seeds,-74,30,-300,False,499,True,True,False,
+516,Small Glow Ring,[LocalizedText Strings\Objects:SmallGlowRing_Name],[LocalizedText Strings\Objects:SmallGlowRing_Description],Ring,0,100,-300,False,516,True,True,False,"color_yellow,ring_item"
+517,Glow Ring,[LocalizedText Strings\Objects:GlowRing_Name],[LocalizedText Strings\Objects:GlowRing_Description],Ring,0,200,-300,False,517,True,True,False,"color_yellow,ring_item"
+518,Small Magnet Ring,[LocalizedText Strings\Objects:SmallMagnetRing_Name],[LocalizedText Strings\Objects:SmallMagnetRing_Description],Ring,0,100,-300,False,518,True,True,False,"color_gray,ring_item"
+519,Magnet Ring,[LocalizedText Strings\Objects:MagnetRing_Name],[LocalizedText Strings\Objects:MagnetRing_Description],Ring,0,200,-300,False,519,True,True,False,"color_gray,ring_item"
+520,Slime Charmer Ring,[LocalizedText Strings\Objects:SlimeCharmerRing_Name],[LocalizedText Strings\Objects:SlimeCharmerRing_Description],Ring,0,700,-300,False,520,True,True,False,"color_green,ring_item"
+521,Warrior Ring,[LocalizedText Strings\Objects:WarriorRing_Name],[LocalizedText Strings\Objects:WarriorRing_Description],Ring,0,1500,-300,False,521,True,True,False,"color_sand,ring_item"
+522,Vampire Ring,[LocalizedText Strings\Objects:VampireRing_Name],[LocalizedText Strings\Objects:VampireRing_Description],Ring,0,1500,-300,False,522,True,True,False,"color_red,ring_item"
+523,Savage Ring,[LocalizedText Strings\Objects:SavageRing_Name],[LocalizedText Strings\Objects:SavageRing_Description],Ring,0,1500,-300,False,523,True,True,False,"color_sand,ring_item"
+524,Ring of Yoba,[LocalizedText Strings\Objects:RingofYoba_Name],[LocalizedText Strings\Objects:RingofYoba_Description],Ring,0,1500,-300,False,524,True,True,False,"color_gold,ring_item"
+525,Sturdy Ring,[LocalizedText Strings\Objects:SturdyRing_Name],[LocalizedText Strings\Objects:SturdyRing_Description],Ring,0,1500,-300,False,525,True,True,False,"color_cyan,ring_item"
+526,Burglar's Ring,[LocalizedText Strings\Objects:BurglarsRing_Name],[LocalizedText Strings\Objects:BurglarsRing_Description],Ring,0,1500,-300,False,526,True,True,False,"color_jade,ring_item"
+527,Iridium Band,[LocalizedText Strings\Objects:IridiumBand_Name],[LocalizedText Strings\Objects:IridiumBand_Description],Ring,0,2000,-300,False,527,True,True,False,"color_iridium,ring_item"
+528,Jukebox Ring,[LocalizedText Strings\Objects:JukeboxRing_Name],[LocalizedText Strings\Objects:JukeboxRing_Description],Ring,0,200,-300,False,528,True,True,False,"color_black,ring_item"
+529,Amethyst Ring,[LocalizedText Strings\Objects:AmethystRing_Name],[LocalizedText Strings\Objects:AmethystRing_Description],Ring,0,200,-300,False,529,True,True,False,"color_purple,ring_item"
+530,Topaz Ring,[LocalizedText Strings\Objects:TopazRing_Name],[LocalizedText Strings\Objects:TopazRing_Description],Ring,0,200,-300,False,530,True,True,False,"color_orange,ring_item"
+531,Aquamarine Ring,[LocalizedText Strings\Objects:AquamarineRing_Name],[LocalizedText Strings\Objects:AquamarineRing_Description],Ring,0,400,-300,False,531,True,True,False,"color_cyan,ring_item"
+532,Jade Ring,[LocalizedText Strings\Objects:JadeRing_Name],[LocalizedText Strings\Objects:JadeRing_Description],Ring,0,400,-300,False,532,True,True,False,"color_jade,ring_item"
+533,Emerald Ring,[LocalizedText Strings\Objects:EmeraldRing_Name],[LocalizedText Strings\Objects:EmeraldRing_Description],Ring,0,600,-300,False,533,True,True,False,"color_green,ring_item"
+534,Ruby Ring,[LocalizedText Strings\Objects:RubyRing_Name],[LocalizedText Strings\Objects:RubyRing_Description],Ring,0,600,-300,False,534,True,True,False,"color_red,ring_item"
+535,Geode,[LocalizedText Strings\Objects:Geode_Name],[LocalizedText Strings\Objects:Geode_Description],Basic,0,50,-300,False,535,True,True,False,color_brown
+536,Frozen Geode,[LocalizedText Strings\Objects:FrozenGeode_Name],[LocalizedText Strings\Objects:FrozenGeode_Description],Basic,0,100,-300,False,536,True,True,False,color_cyan
+537,Magma Geode,[LocalizedText Strings\Objects:MagmaGeode_Name],[LocalizedText Strings\Objects:MagmaGeode_Description],Basic,0,150,-300,False,537,True,True,False,color_red
+538,Alamite,[LocalizedText Strings\Objects:Alamite_Name],[LocalizedText Strings\Objects:Alamite_Description],Minerals,-12,150,-300,False,538,True,True,False,color_gray
+539,Bixite,[LocalizedText Strings\Objects:Bixite_Name],[LocalizedText Strings\Objects:Bixite_Description],Minerals,-12,300,-300,False,539,True,True,False,color_black
+540,Baryte,[LocalizedText Strings\Objects:Baryte_Name],[LocalizedText Strings\Objects:Baryte_Description],Minerals,-12,50,-300,False,540,True,True,False,color_red
+541,Aerinite,[LocalizedText Strings\Objects:Aerinite_Name],[LocalizedText Strings\Objects:Aerinite_Description],Minerals,-12,125,-300,False,541,True,True,False,color_cyan
+542,Calcite,[LocalizedText Strings\Objects:Calcite_Name],[LocalizedText Strings\Objects:Calcite_Description],Minerals,-12,75,-300,False,542,True,True,False,color_yellow
+543,Dolomite,[LocalizedText Strings\Objects:Dolomite_Name],[LocalizedText Strings\Objects:Dolomite_Description],Minerals,-12,300,-300,False,543,True,True,False,color_pink
+544,Esperite,[LocalizedText Strings\Objects:Esperite_Name],[LocalizedText Strings\Objects:Esperite_Description],Minerals,-12,100,-300,False,544,True,True,False,color_green
+545,Fluorapatite,[LocalizedText Strings\Objects:Fluorapatite_Name],[LocalizedText Strings\Objects:Fluorapatite_Description],Minerals,-12,200,-300,False,545,True,True,False,color_purple
+546,Geminite,[LocalizedText Strings\Objects:Geminite_Name],[LocalizedText Strings\Objects:Geminite_Description],Minerals,-12,150,-300,False,546,True,True,False,color_gray
+547,Helvite,[LocalizedText Strings\Objects:Helvite_Name],[LocalizedText Strings\Objects:Helvite_Description],Minerals,-12,450,-300,False,547,True,True,False,color_red
+548,Jamborite,[LocalizedText Strings\Objects:Jamborite_Name],[LocalizedText Strings\Objects:Jamborite_Description],Minerals,-12,150,-300,False,548,True,True,False,color_lime
+549,Jagoite,[LocalizedText Strings\Objects:Jagoite_Name],[LocalizedText Strings\Objects:Jagoite_Description],Minerals,-12,115,-300,False,549,True,True,False,color_gold
+550,Kyanite,[LocalizedText Strings\Objects:Kyanite_Name],[LocalizedText Strings\Objects:Kyanite_Description],Minerals,-12,250,-300,False,550,True,True,False,color_dark_blue
+551,Lunarite,[LocalizedText Strings\Objects:Lunarite_Name],[LocalizedText Strings\Objects:Lunarite_Description],Minerals,-12,200,-300,False,551,True,True,False,"color_white,dye_strong"
+552,Malachite,[LocalizedText Strings\Objects:Malachite_Name],[LocalizedText Strings\Objects:Malachite_Description],Minerals,-12,100,-300,False,552,True,True,False,color_green
+553,Neptunite,[LocalizedText Strings\Objects:Neptunite_Name],[LocalizedText Strings\Objects:Neptunite_Description],Minerals,-12,400,-300,False,553,True,True,False,color_black
+554,Lemon Stone,[LocalizedText Strings\Objects:LemonStone_Name],[LocalizedText Strings\Objects:LemonStone_Description],Minerals,-12,200,-300,False,554,True,True,False,color_orange
+555,Nekoite,[LocalizedText Strings\Objects:Nekoite_Name],[LocalizedText Strings\Objects:Nekoite_Description],Minerals,-12,80,-300,False,555,True,True,False,color_pink
+556,Orpiment,[LocalizedText Strings\Objects:Orpiment_Name],[LocalizedText Strings\Objects:Orpiment_Description],Minerals,-12,80,-300,False,556,True,True,False,color_orange
+557,Petrified Slime,[LocalizedText Strings\Objects:PetrifiedSlime_Name],[LocalizedText Strings\Objects:PetrifiedSlime_Description],Minerals,-12,120,-300,False,557,True,True,False,"color_green,slime_item"
+558,Thunder Egg,[LocalizedText Strings\Objects:ThunderEgg_Name],[LocalizedText Strings\Objects:ThunderEgg_Description],Minerals,-12,100,-300,False,558,True,True,False,color_dark_purple
+559,Pyrite,[LocalizedText Strings\Objects:Pyrite_Name],[LocalizedText Strings\Objects:Pyrite_Description],Minerals,-12,120,-300,False,559,True,True,False,color_gold
+560,Ocean Stone,[LocalizedText Strings\Objects:OceanStone_Name],[LocalizedText Strings\Objects:OceanStone_Description],Minerals,-12,220,-300,False,560,True,True,False,color_green
+561,Ghost Crystal,[LocalizedText Strings\Objects:GhostCrystal_Name],[LocalizedText Strings\Objects:GhostCrystal_Description],Minerals,-12,200,-300,False,561,True,True,False,color_gray
+562,Tigerseye,[LocalizedText Strings\Objects:Tigerseye_Name],[LocalizedText Strings\Objects:Tigerseye_Description],Minerals,-12,275,-300,False,562,True,True,False,color_orange
+563,Jasper,[LocalizedText Strings\Objects:Jasper_Name],[LocalizedText Strings\Objects:Jasper_Description],Minerals,-12,150,-300,False,563,True,True,False,color_red
+564,Opal,[LocalizedText Strings\Objects:Opal_Name],[LocalizedText Strings\Objects:Opal_Description],Minerals,-12,150,-300,False,564,True,True,False,color_light_cyan
+565,Fire Opal,[LocalizedText Strings\Objects:FireOpal_Name],[LocalizedText Strings\Objects:FireOpal_Description],Minerals,-12,350,-300,False,565,True,True,False,color_dark_purple
+566,Celestine,[LocalizedText Strings\Objects:Celestine_Name],[LocalizedText Strings\Objects:Celestine_Description],Minerals,-12,125,-300,False,566,True,True,False,color_iron
+567,Marble,[LocalizedText Strings\Objects:Marble_Name],[LocalizedText Strings\Objects:Marble_Description],Minerals,-12,110,-300,False,567,True,True,False,color_gray
+568,Sandstone,[LocalizedText Strings\Objects:Sandstone_Name],[LocalizedText Strings\Objects:Sandstone_Description],Minerals,-12,60,-300,False,568,True,True,False,color_sand
+569,Granite,[LocalizedText Strings\Objects:Granite_Name],[LocalizedText Strings\Objects:Granite_Description],Minerals,-12,75,-300,False,569,True,True,False,color_gray
+570,Basalt,[LocalizedText Strings\Objects:Basalt_Name],[LocalizedText Strings\Objects:Basalt_Description],Minerals,-12,175,-300,False,570,True,True,False,color_gray
+571,Limestone,[LocalizedText Strings\Objects:Limestone_Name],[LocalizedText Strings\Objects:Limestone_Description],Minerals,-12,15,-300,False,571,True,True,False,color_gray
+572,Soapstone,[LocalizedText Strings\Objects:Soapstone_Name],[LocalizedText Strings\Objects:Soapstone_Description],Minerals,-12,120,-300,False,572,True,True,False,color_white
+573,Hematite,[LocalizedText Strings\Objects:Hematite_Name],[LocalizedText Strings\Objects:Hematite_Description],Minerals,-12,150,-300,False,573,True,True,False,color_copper
+574,Mudstone,[LocalizedText Strings\Objects:Mudstone_Name],[LocalizedText Strings\Objects:Mudstone_Description],Minerals,-12,25,-300,False,574,True,True,False,color_brown
+575,Obsidian,[LocalizedText Strings\Objects:Obsidian_Name],[LocalizedText Strings\Objects:Obsidian_Description],Minerals,-12,200,-300,False,575,True,True,False,color_black
+576,Slate,[LocalizedText Strings\Objects:Slate_Name],[LocalizedText Strings\Objects:Slate_Description],Minerals,-12,85,-300,False,576,True,True,False,color_gray
+577,Fairy Stone,[LocalizedText Strings\Objects:FairyStone_Name],[LocalizedText Strings\Objects:FairyStone_Description],Minerals,-12,250,-300,False,577,True,True,False,color_purple
+578,Star Shards,[LocalizedText Strings\Objects:StarShards_Name],[LocalizedText Strings\Objects:StarShards_Description],Minerals,-12,500,-300,False,578,True,True,False,color_pink
+579,Prehistoric Scapula,[LocalizedText Strings\Objects:PrehistoricScapula_Name],[LocalizedText Strings\Objects:PrehistoricScapula_Description],Arch,0,100,-300,False,579,True,True,False,"bone_item,color_white,prehistoric_item"
+580,Prehistoric Tibia,[LocalizedText Strings\Objects:PrehistoricTibia_Name],[LocalizedText Strings\Objects:PrehistoricTibia_Description],Arch,0,100,-300,False,580,True,True,False,"bone_item,color_white,prehistoric_item"
+581,Prehistoric Skull,[LocalizedText Strings\Objects:PrehistoricSkull_Name],[LocalizedText Strings\Objects:PrehistoricSkull_Description],Arch,0,100,-300,False,581,True,True,False,"bone_item,color_white,prehistoric_item"
+582,Skeletal Hand,[LocalizedText Strings\Objects:SkeletalHand_Name],[LocalizedText Strings\Objects:SkeletalHand_Description],Arch,0,100,-300,False,582,True,True,False,"bone_item,color_white,prehistoric_item"
+583,Prehistoric Rib,[LocalizedText Strings\Objects:PrehistoricRib_Name],[LocalizedText Strings\Objects:PrehistoricRib_Description],Arch,0,100,-300,False,583,True,True,False,"bone_item,color_white,prehistoric_item"
+584,Prehistoric Vertebra,[LocalizedText Strings\Objects:PrehistoricVertebra_Name],[LocalizedText Strings\Objects:PrehistoricVertebra_Description],Arch,0,100,-300,False,584,True,True,False,"bone_item,color_white,prehistoric_item"
+585,Skeletal Tail,[LocalizedText Strings\Objects:SkeletalTail_Name],[LocalizedText Strings\Objects:SkeletalTail_Description],Arch,0,100,-300,False,585,True,True,False,"bone_item,color_white,prehistoric_item"
+586,Nautilus Fossil,[LocalizedText Strings\Objects:NautilusFossil_Name],[LocalizedText Strings\Objects:NautilusFossil_Description],Arch,0,80,-300,False,586,True,True,False,"bone_item,color_white,fossil_item,marine_item,prehistoric_item"
+587,Amphibian Fossil,[LocalizedText Strings\Objects:AmphibianFossil_Name],[LocalizedText Strings\Objects:AmphibianFossil_Description],Arch,0,150,-300,False,587,True,True,False,"bone_item,color_white,fossil_item,marine_item,prehistoric_item"
+588,Palm Fossil,[LocalizedText Strings\Objects:PalmFossil_Name],[LocalizedText Strings\Objects:PalmFossil_Description],Arch,0,100,-300,False,588,True,True,False,"bone_item,color_white,fossil_item"
+589,Trilobite,[LocalizedText Strings\Objects:Trilobite_Name],[LocalizedText Strings\Objects:Trilobite_Description],Arch,0,50,-300,False,589,True,True,False,"bone_item,color_white,fossil_item"
+590,Artifact Spot,[LocalizedText Strings\Objects:ArtifactSpot_Name],[LocalizedText Strings\Objects:ArtifactSpot_Description],asdf,0,0,-300,False,590,True,True,False,
+591,Tulip,[LocalizedText Strings\Objects:Tulip_Name],[LocalizedText Strings\Objects:Tulip_Description],Basic,-80,30,18,False,591,True,True,False,"color_red,dye_medium,flower_item,season_spring"
+593,Summer Spangle,[LocalizedText Strings\Objects:SummerSpangle_Name],[LocalizedText Strings\Objects:SummerSpangle_Description],Basic,-80,90,18,False,593,True,True,False,"color_yellow,dye_medium,flower_item,season_summer"
+595,Fairy Rose,[LocalizedText Strings\Objects:FairyRose_Name],[LocalizedText Strings\Objects:FairyRose_Description],Basic,-80,290,18,False,595,True,True,False,"color_pink,dye_medium,flower_item,season_fall"
+597,Blue Jazz,[LocalizedText Strings\Objects:BlueJazz_Name],[LocalizedText Strings\Objects:BlueJazz_Description],Basic,-80,50,18,False,597,True,True,False,"color_blue,dye_medium,flower_item,season_spring"
+599,Sprinkler,[LocalizedText Strings\Objects:Sprinkler_Name],[LocalizedText Strings\Objects:Sprinkler_Description],Crafting,-8,100,-300,False,599,True,True,False,
+604,Plum Pudding,[LocalizedText Strings\Objects:PlumPudding_Name],[LocalizedText Strings\Objects:PlumPudding_Description],Cooking,-7,260,70,False,604,True,True,False,"color_brown,food_sweet"
+605,Artichoke Dip,[LocalizedText Strings\Objects:ArtichokeDip_Name],[LocalizedText Strings\Objects:ArtichokeDip_Description],Cooking,-7,210,40,False,605,True,True,False,color_white
+606,Stir Fry,[LocalizedText Strings\Objects:StirFry_Name],[LocalizedText Strings\Objects:StirFry_Description],Cooking,-7,335,80,False,606,True,True,False,color_brown
+607,Roasted Hazelnuts,[LocalizedText Strings\Objects:RoastedHazelnuts_Name],[LocalizedText Strings\Objects:RoastedHazelnuts_Description],Cooking,-7,270,70,False,607,True,True,False,color_dark_brown
+608,Pumpkin Pie,[LocalizedText Strings\Objects:PumpkinPie_Name],[LocalizedText Strings\Objects:PumpkinPie_Description],Cooking,-7,385,90,False,608,True,True,False,"color_orange,food_bakery,food_sweet"
+609,Radish Salad,[LocalizedText Strings\Objects:RadishSalad_Name],[LocalizedText Strings\Objects:RadishSalad_Description],Cooking,-7,300,80,False,609,True,True,False,"color_red,food_salad"
+610,Fruit Salad,[LocalizedText Strings\Objects:FruitSalad_Name],[LocalizedText Strings\Objects:FruitSalad_Description],Cooking,-7,450,105,False,610,True,True,False,"color_yellow,food_salad"
+611,Blackberry Cobbler,[LocalizedText Strings\Objects:BlackberryCobbler_Name],[LocalizedText Strings\Objects:BlackberryCobbler_Description],Cooking,-7,260,70,False,611,True,True,False,"color_dark_blue,food_bakery,food_sweet"
+612,Cranberry Candy,[LocalizedText Strings\Objects:CranberryCandy_Name],[LocalizedText Strings\Objects:CranberryCandy_Description],Cooking,-7,175,50,True,612,True,True,False,"color_red,dye_strong,food_sweet"
+613,Apple,[LocalizedText Strings\Objects:Apple_Name],[LocalizedText Strings\Objects:Apple_Description],Basic,-79,100,15,False,613,True,True,False,"color_red,fruit_item,fruit_tree_item"
+614,Green Tea,[LocalizedText Strings\Objects:GreenTea_Name],[LocalizedText Strings\Objects:GreenTea_Description],Basic,-26,100,5,True,614,True,True,False,color_green
+618,Bruschetta,[LocalizedText Strings\Objects:Bruschetta_Name],[LocalizedText Strings\Objects:Bruschetta_Description],Cooking,-7,210,45,False,618,True,True,False,"color_red,food_pasta"
+621,Quality Sprinkler,[LocalizedText Strings\Objects:QualitySprinkler_Name],[LocalizedText Strings\Objects:QualitySprinkler_Description],Crafting,-8,450,-300,False,621,True,True,False,
+628,Cherry Sapling,[LocalizedText Strings\Objects:CherrySapling_Name],[LocalizedText Strings\Objects:CherrySapling_Description],Basic,-74,850,-300,False,628,True,True,False,
+629,Apricot Sapling,[LocalizedText Strings\Objects:ApricotSapling_Name],[LocalizedText Strings\Objects:ApricotSapling_Description],Basic,-74,500,-300,False,629,True,True,False,
+630,Orange Sapling,[LocalizedText Strings\Objects:OrangeSapling_Name],[LocalizedText Strings\Objects:OrangeSapling_Description],Basic,-74,1000,-300,False,630,True,True,False,
+631,Peach Sapling,[LocalizedText Strings\Objects:PeachSapling_Name],[LocalizedText Strings\Objects:PeachSapling_Description],Basic,-74,1500,-300,False,631,True,True,False,
+632,Pomegranate Sapling,[LocalizedText Strings\Objects:PomegranateSapling_Name],[LocalizedText Strings\Objects:PomegranateSapling_Description],Basic,-74,1500,-300,False,632,True,True,False,
+633,Apple Sapling,[LocalizedText Strings\Objects:AppleSapling_Name],[LocalizedText Strings\Objects:AppleSapling_Description],Basic,-74,1000,-300,False,633,True,True,False,
+634,Apricot,[LocalizedText Strings\Objects:Apricot_Name],[LocalizedText Strings\Objects:Apricot_Description],Basic,-79,50,15,False,634,True,True,False,"color_orange,fruit_item,fruit_tree_item,season_spring"
+635,Orange,[LocalizedText Strings\Objects:Orange_Name],[LocalizedText Strings\Objects:Orange_Description],Basic,-79,100,15,False,635,True,True,False,"color_orange,fruit_item,fruit_tree_item,season_summer"
+636,Peach,[LocalizedText Strings\Objects:Peach_Name],[LocalizedText Strings\Objects:Peach_Description],Basic,-79,140,15,False,636,True,True,False,"color_pink,fruit_item,fruit_tree_item,season_summer"
+637,Pomegranate,[LocalizedText Strings\Objects:Pomegranate_Name],[LocalizedText Strings\Objects:Pomegranate_Description],Basic,-79,140,15,False,637,True,True,False,"color_dark_pink,fruit_item,fruit_tree_item,season_fall"
+638,Cherry,[LocalizedText Strings\Objects:Cherry_Name],[LocalizedText Strings\Objects:Cherry_Description],Basic,-79,80,15,False,638,True,True,False,"color_red,fruit_item,fruit_tree_item,season_spring"
+645,Iridium Sprinkler,[LocalizedText Strings\Objects:IridiumSprinkler_Name],[LocalizedText Strings\Objects:IridiumSprinkler_Description],Crafting,-8,1000,-300,False,645,True,True,False,
+648,Coleslaw,[LocalizedText Strings\Objects:Coleslaw_Name],[LocalizedText Strings\Objects:Coleslaw_Description],Cooking,-7,345,85,False,648,True,True,False,color_green
+649,Fiddlehead Risotto,[LocalizedText Strings\Objects:FiddleheadRisotto_Name],[LocalizedText Strings\Objects:FiddleheadRisotto_Description],Cooking,-7,350,90,False,649,True,True,False,"color_green,food_pasta"
+651,Poppyseed Muffin,[LocalizedText Strings\Objects:PoppyseedMuffin_Name],[LocalizedText Strings\Objects:PoppyseedMuffin_Description],Cooking,-7,250,60,False,651,True,True,False,"color_poppyseed,food_bakery,food_sweet"
+668,Stone,[LocalizedText Strings\Objects:Stone_NodeWithCoal_Name],[LocalizedText Strings\Objects:Stone_NodeWithCoal_Description],Litter,-999,0,-300,False,668,True,True,False,
+670,Stone,[LocalizedText Strings\Objects:Stone_NodeWithCoal_Name],[LocalizedText Strings\Objects:Stone_NodeWithCoal_Description],Litter,-999,0,-300,False,670,True,True,False,
+674,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Description],Litter,-999,0,-300,False,674,True,True,False,
+675,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Description],Litter,-999,0,-300,False,675,True,True,False,
+676,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Description],Litter,-999,0,-300,False,676,True,True,False,
+677,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Description],Litter,-999,0,-300,False,677,True,True,False,
+678,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Description],Litter,-999,0,-300,False,678,True,True,False,
+679,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Description],Litter,-999,0,-300,False,679,True,True,False,
+680,Green Slime Egg,[LocalizedText Strings\Objects:GreenSlimeEgg_Name],[LocalizedText Strings\Objects:GreenSlimeEgg_Description],Basic,0,1000,-300,False,680,True,True,False,"color_green,slime_egg_item,slime_item,use_reverse_name_for_sorting"
+681,Rain Totem,[LocalizedText Strings\Objects:RainTotem_Name],[LocalizedText Strings\Objects:RainTotem_Description],Crafting,0,20,-300,False,681,True,True,False,"color_brown,not_placeable,totem_item"
+682,Mutant Carp,[LocalizedText Strings\Objects:MutantCarp_Name],[LocalizedText Strings\Objects:MutantCarp_Description],Fish,-4,1000,10,False,682,True,True,False,"color_green,fish_has_roe,fish_legendary"
+684,Bug Meat,[LocalizedText Strings\Objects:BugMeat_Name],[LocalizedText Strings\Objects:BugMeat_Description],Basic,-28,8,-300,False,684,True,True,False,color_dark_pink
+685,Bait,[LocalizedText Strings\Objects:Bait_Name],[LocalizedText Strings\Objects:Bait_Description],Basic,-21,1,-300,False,685,True,True,False,color_pink
+686,Spinner,[LocalizedText Strings\Objects:Spinner_Name],[LocalizedText Strings\Objects:Spinner_Description],Basic,-22,250,-300,False,686,True,True,False,
+687,Dressed Spinner,[LocalizedText Strings\Objects:DressedSpinner_Name],[LocalizedText Strings\Objects:DressedSpinner_Description],Basic,-22,500,-300,False,687,True,True,False,
+688,Warp Totem: Farm,[LocalizedText Strings\Objects:WarpTotemFarm_Name],[LocalizedText Strings\Objects:WarpTotemFarm_Description],Crafting,0,20,-300,False,688,True,True,False,"color_brown,not_placeable,totem_item"
+689,Warp Totem: Mountains,[LocalizedText Strings\Objects:WarpTotemMountains_Name],[LocalizedText Strings\Objects:WarpTotemMountains_Description],Crafting,0,20,-300,False,689,True,True,False,"color_brown,not_placeable,totem_item"
+690,Warp Totem: Beach,[LocalizedText Strings\Objects:WarpTotemBeach_Name],[LocalizedText Strings\Objects:WarpTotemBeach_Description],Crafting,0,20,-300,False,690,True,True,False,"color_brown,not_placeable,totem_item"
+691,Barbed Hook,[LocalizedText Strings\Objects:BarbedHook_Name],[LocalizedText Strings\Objects:BarbedHook_Description],Basic,-22,500,-300,False,691,True,True,False,
+692,Lead Bobber,[LocalizedText Strings\Objects:LeadBobber_Name],[LocalizedText Strings\Objects:LeadBobber_Description],Basic,-22,150,-300,False,692,True,True,False,
+693,Treasure Hunter,[LocalizedText Strings\Objects:TreasureHunter_Name],[LocalizedText Strings\Objects:TreasureHunter_Description],Basic,-22,250,-300,False,693,True,True,False,
+694,Trap Bobber,[LocalizedText Strings\Objects:TrapBobber_Name],[LocalizedText Strings\Objects:TrapBobber_Description],Basic,-22,200,-300,False,694,True,True,False,
+695,Cork Bobber,[LocalizedText Strings\Objects:CorkBobber_Name],[LocalizedText Strings\Objects:CorkBobber_Description],Basic,-22,250,-300,False,695,True,True,False,
+698,Sturgeon,[LocalizedText Strings\Objects:Sturgeon_Name],[LocalizedText Strings\Objects:Sturgeon_Description],Fish,-4,200,10,False,698,True,True,False,"color_cyan,fish_has_roe,fish_lake,season_summer,season_winter"
+699,Tiger Trout,[LocalizedText Strings\Objects:TigerTrout_Name],[LocalizedText Strings\Objects:TigerTrout_Description],Fish,-4,150,10,False,699,True,True,False,"color_brown,fish_has_roe,fish_river,season_fall,season_winter"
+700,Bullhead,[LocalizedText Strings\Objects:Bullhead_Name],[LocalizedText Strings\Objects:Bullhead_Description],Fish,-4,75,10,False,700,True,True,False,"color_brown,fish_has_roe,fish_lake,season_all"
+701,Tilapia,[LocalizedText Strings\Objects:Tilapia_Name],[LocalizedText Strings\Objects:Tilapia_Description],Fish,-4,75,10,False,701,True,True,False,"color_gray,fish_has_roe,fish_ocean,season_fall,season_summer"
+702,Chub,[LocalizedText Strings\Objects:Chub_Name],[LocalizedText Strings\Objects:Chub_Description],Fish,-4,50,10,False,702,True,True,False,"color_gray,fish_has_roe,fish_lake,fish_river,season_all"
+703,Magnet,[LocalizedText Strings\Objects:Magnet_Name],[LocalizedText Strings\Objects:Magnet_Description],Basic,-21,15,-300,False,703,True,True,False,
+704,Dorado,[LocalizedText Strings\Objects:Dorado_Name],[LocalizedText Strings\Objects:Dorado_Description],Fish,-4,100,10,False,704,True,True,False,"color_orange,fish_carnivorous,fish_has_roe,fish_river,season_summer"
+705,Albacore,[LocalizedText Strings\Objects:Albacore_Name],[LocalizedText Strings\Objects:Albacore_Description],Fish,-4,75,10,False,705,True,True,False,"color_blue,fish_has_roe,fish_ocean,season_fall,season_winter"
+706,Shad,[LocalizedText Strings\Objects:Shad_Name],[LocalizedText Strings\Objects:Shad_Description],Fish,-4,60,10,False,706,True,True,False,"color_green,fish_has_roe,fish_river,season_fall,season_spring,season_summer"
+707,Lingcod,[LocalizedText Strings\Objects:Lingcod_Name],[LocalizedText Strings\Objects:Lingcod_Description],Fish,-4,120,10,False,707,True,True,False,"color_brown,fish_carnivorous,fish_has_roe,fish_lake,fish_river,season_winter"
+708,Halibut,[LocalizedText Strings\Objects:Halibut_Name],[LocalizedText Strings\Objects:Halibut_Description],Fish,-4,80,10,False,708,True,True,False,"color_dark_gray,fish_has_roe,fish_ocean,season_spring,season_summer,season_winter"
+709,Hardwood,[LocalizedText Strings\Objects:Hardwood_Name],[LocalizedText Strings\Objects:Hardwood_Description],Basic,-16,15,-300,False,709,True,True,False,"color_brown,wood_item"
+710,Crab Pot,[LocalizedText Strings\Objects:CrabPot_Name],[LocalizedText Strings\Objects:CrabPot_Description],Crafting,0,50,-300,False,710,True,True,False,color_brown
+715,Lobster,[LocalizedText Strings\Objects:Lobster_Name],[LocalizedText Strings\Objects:Lobster_Description],Fish,-4,120,-300,False,715,True,True,False,"color_red,fish_crab_pot,fish_has_roe,fish_ocean"
+716,Crayfish,[LocalizedText Strings\Objects:Crayfish_Name],[LocalizedText Strings\Objects:Crayfish_Description],Fish,-4,75,-300,False,716,True,True,False,"color_dark_gray,fish_crab_pot,fish_freshwater,fish_has_roe"
+717,Crab,[LocalizedText Strings\Objects:Crab_Name],[LocalizedText Strings\Objects:Crab_Description],Fish,-4,100,-300,False,717,True,True,False,"color_red,fish_crab_pot,fish_has_roe,fish_ocean,fish_upright"
+718,Cockle,[LocalizedText Strings\Objects:Cockle_Name],[LocalizedText Strings\Objects:Cockle_Description],Fish,-4,50,-300,False,718,True,True,False,"color_dark_gray,fish_crab_pot,fish_has_roe,fish_ocean,forage_item,forage_item_beach"
+719,Mussel,[LocalizedText Strings\Objects:Mussel_Name],[LocalizedText Strings\Objects:Mussel_Description],Fish,-4,30,-300,False,719,True,True,False,"color_gray,fish_crab_pot,fish_has_roe,fish_ocean,forage_item,forage_item_beach"
+720,Shrimp,[LocalizedText Strings\Objects:Shrimp_Name],[LocalizedText Strings\Objects:Shrimp_Description],Fish,-4,60,-300,False,720,True,True,False,"color_pink,fish_crab_pot,fish_has_roe,fish_ocean,fish_upright"
+721,Snail,[LocalizedText Strings\Objects:Snail_Name],[LocalizedText Strings\Objects:Snail_Description],Fish,-4,65,-300,False,721,True,True,False,"color_yellow,fish_crab_pot,fish_freshwater,fish_has_roe,fish_upright"
+722,Periwinkle,[LocalizedText Strings\Objects:Periwinkle_Name],[LocalizedText Strings\Objects:Periwinkle_Description],Fish,-4,20,-300,False,722,True,True,False,"color_cyan,fish_crab_pot,fish_freshwater,fish_has_roe,fish_upright"
+723,Oyster,[LocalizedText Strings\Objects:Oyster_Name],[LocalizedText Strings\Objects:Oyster_Description],Fish,-4,40,-300,False,723,True,True,False,"color_gray,fish_crab_pot,fish_has_roe,fish_ocean,fish_upright,forage_item,forage_item_beach"
+724,Maple Syrup,[LocalizedText Strings\Objects:MapleSyrup_Name],[LocalizedText Strings\Objects:MapleSyrup_Description],Basic,-27,200,20,True,724,True,True,False,"color_brown,syrup_item"
+725,Oak Resin,[LocalizedText Strings\Objects:OakResin_Name],[LocalizedText Strings\Objects:OakResin_Description],Basic,-27,150,-300,False,725,True,True,False,"color_green,syrup_item"
+726,Pine Tar,[LocalizedText Strings\Objects:PineTar_Name],[LocalizedText Strings\Objects:PineTar_Description],Basic,-27,100,-300,False,726,True,True,False,"color_brown,syrup_item"
+727,Chowder,[LocalizedText Strings\Objects:Chowder_Name],[LocalizedText Strings\Objects:Chowder_Description],Cooking,-7,135,90,False,727,True,True,False,"color_white,food_soup"
+728,Fish Stew,[LocalizedText Strings\Objects:FishStew_Name],[LocalizedText Strings\Objects:FishStew_Description],Cooking,-7,175,90,False,728,True,True,False,"color_gray,food_seafood,food_soup"
+729,Escargot,[LocalizedText Strings\Objects:Escargot_Name],[LocalizedText Strings\Objects:Escargot_Description],Cooking,-7,125,90,False,729,True,True,False,color_gray
+730,Lobster Bisque,[LocalizedText Strings\Objects:LobsterBisque_Name],[LocalizedText Strings\Objects:LobsterBisque_Description],Cooking,-7,205,90,False,730,True,True,False,"color_white,food_seafood,food_soup"
+731,Maple Bar,[LocalizedText Strings\Objects:MapleBar_Name],[LocalizedText Strings\Objects:MapleBar_Description],Cooking,-7,300,90,False,731,True,True,False,"color_brown,food_bakery,food_sweet"
+732,Crab Cakes,[LocalizedText Strings\Objects:CrabCakes_Name],[LocalizedText Strings\Objects:CrabCakes_Description],Cooking,-7,275,90,False,732,True,True,False,"color_brown,food_seafood"
+733,Shrimp Cocktail,[LocalizedText Strings\Objects:ShrimpCocktail_Name],[LocalizedText Strings\Objects:ShrimpCocktail_Description],Cooking,-7,160,90,False,733,True,True,False,"color_pink,food_seafood"
+734,Woodskip,[LocalizedText Strings\Objects:Woodskip_Name],[LocalizedText Strings\Objects:Woodskip_Description],Fish,-4,75,10,False,734,True,True,False,"color_orange,fish_has_roe,fish_pond,fish_secret_pond,season_all"
+742,Haley's Lost Bracelet,[LocalizedText Strings\Objects:HaleysLostBracelet_Name],[LocalizedText Strings\Objects:HaleysLostBracelet_Description],Quest,0,0,-300,False,742,True,True,False,
+745,Strawberry Seeds,[LocalizedText Strings\Objects:StrawberrySeeds_Name],[LocalizedText Strings\Objects:StrawberrySeeds_Description],Seeds,-74,0,-300,False,745,True,True,False,
+746,Jack-O-Lantern,[LocalizedText Strings\Objects:JackOLantern_Name],[LocalizedText Strings\Objects:JackOLantern_Description],Crafting,-8,0,-300,False,746,True,True,False,color_orange
+747,Rotten Plant,[LocalizedText Strings\Objects:RottenPlant_Name],[LocalizedText Strings\Objects:RottenPlant_Description],Basic,-20,0,-300,False,747,True,True,False,color_copper
+748,Rotten Plant,[LocalizedText Strings\Objects:RottenPlant_Name],[LocalizedText Strings\Objects:RottenPlant_Description],Basic,-20,0,-300,False,748,True,True,False,color_copper
+749,Omni Geode,[LocalizedText Strings\Objects:OmniGeode_Name],[LocalizedText Strings\Objects:OmniGeode_Description],Basic,0,0,-300,False,749,True,True,False,color_gray
+750,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Description],Litter,-999,0,-300,False,750,True,True,False,
+751,Stone,[LocalizedText Strings\Objects:CopperStone_Name],[LocalizedText Strings\Objects:CopperStone_Description],Litter,-999,0,-300,False,751,True,True,False,
+760,Stone,[LocalizedText Strings\Objects:Stone_Node_Name],[LocalizedText Strings\Objects:Stone_Node_Description],Litter,-999,0,-300,False,760,True,True,False,
+762,Stone,[LocalizedText Strings\Objects:Stone_Node_Name],[LocalizedText Strings\Objects:Stone_Node_Description],Litter,-999,0,-300,False,762,True,True,False,
+764,Stone,[LocalizedText Strings\Objects:GoldStone_Name],[LocalizedText Strings\Objects:GoldStone_Description],Litter,-999,0,-300,False,764,True,True,False,
+765,Stone,[LocalizedText Strings\Objects:IridiumStone_Name],[LocalizedText Strings\Objects:IridiumStone_Description],Litter,-999,0,-300,False,765,True,True,False,
+766,Slime,[LocalizedText Strings\Objects:Slime_Name],[LocalizedText Strings\Objects:Slime_Description],Basic,-28,5,-300,False,766,True,True,False,"color_gray,slime_item"
+767,Bat Wing,[LocalizedText Strings\Objects:BatWing_Name],[LocalizedText Strings\Objects:BatWing_Description],Basic,-28,15,-300,False,767,True,True,False,color_black
+768,Solar Essence,[LocalizedText Strings\Objects:SolarEssence_Name],[LocalizedText Strings\Objects:SolarEssence_Description],Basic,-28,40,-300,False,768,True,True,False,color_yellow
+769,Void Essence,[LocalizedText Strings\Objects:VoidEssence_Name],[LocalizedText Strings\Objects:VoidEssence_Description],Basic,-28,50,-300,False,769,True,True,False,color_purple
+770,Mixed Seeds,[LocalizedText Strings\Objects:MixedSeeds_Name],[LocalizedText Strings\Objects:MixedSeeds_Description],Seeds,-74,0,-300,False,770,True,True,False,
+771,Fiber,[LocalizedText Strings\Objects:Fiber_Name],[LocalizedText Strings\Objects:Fiber_Description],Basic,-16,1,-300,False,771,True,True,False,"color_green,seedmaker_banned"
+772,Oil of Garlic,[LocalizedText Strings\Objects:OilofGarlic_Name],[LocalizedText Strings\Objects:OilofGarlic_Description],Cooking,-7,1000,80,True,772,True,True,False,"color_yellow_green,potion_item"
+773,Life Elixir,[LocalizedText Strings\Objects:LifeElixir_Name],[LocalizedText Strings\Objects:LifeElixir_Description],Cooking,-7,250,80,True,773,True,True,False,"color_dark_pink,potion_item"
+774,Wild Bait,[LocalizedText Strings\Objects:WildBait_Name],[LocalizedText Strings\Objects:WildBait_Description],Basic,-21,15,-300,False,774,True,True,False,
+775,Glacierfish,[LocalizedText Strings\Objects:Glacierfish_Name],[LocalizedText Strings\Objects:Glacierfish_Description],Fish,-4,1000,10,False,775,True,True,False,"color_blue,fish_has_roe,fish_legendary,fish_upright"
+784,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Description],Litter,-999,0,-300,False,784,True,True,False,
+785,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Description],Litter,-999,0,-300,False,785,True,True,False,
+786,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Ugly_Description],Litter,-999,0,-300,False,786,True,True,False,
+787,Battery Pack,[LocalizedText Strings\Objects:BatteryPack_Name],[LocalizedText Strings\Objects:BatteryPack_Description],Basic,-16,500,-300,False,787,True,True,False,color_cyan
+788,Lost Axe,[LocalizedText Strings\Objects:LostAxe_Name],[LocalizedText Strings\Objects:LostAxe_Description],Quest,0,0,-300,False,788,True,True,False,
+789,Lucky Purple Shorts,[LocalizedText Strings\Objects:LuckyPurpleShorts_Name],[LocalizedText Strings\Objects:LuckyPurpleShorts_Description],Quest,0,0,-300,False,789,True,True,False,
+790,Berry Basket,[LocalizedText Strings\Objects:BerryBasket_Name],[LocalizedText Strings\Objects:BerryBasket_Description],Quest,0,0,-300,False,790,True,True,False,
+791,Golden Coconut,[LocalizedText Strings\Objects:GoldenCoconut_Name],[LocalizedText Strings\Objects:GoldenCoconut_Description],Quest,0,0,-300,False,791,True,True,False,"color_yellow,geode_crusher_ignored"
+792,Weeds,[LocalizedText Strings\Objects:Weeds_Fiber_Ugly_Name],[LocalizedText Strings\Objects:Weeds_Fiber_Ugly_Description],Litter,-999,0,-300,False,792,True,True,False,
+793,Weeds,[LocalizedText Strings\Objects:Weeds_Fiber_Ugly_Name],[LocalizedText Strings\Objects:Weeds_Fiber_Ugly_Description],Litter,-999,0,-300,False,793,True,True,False,
+794,Weeds,[LocalizedText Strings\Objects:Weeds_Fiber_Ugly_Name],[LocalizedText Strings\Objects:Weeds_Fiber_Ugly_Description],Litter,-999,0,-300,False,794,True,True,False,
+795,Void Salmon,[LocalizedText Strings\Objects:VoidSalmon_Name],[LocalizedText Strings\Objects:VoidSalmon_Description],Fish,-4,150,25,False,795,True,True,False,"color_dark_purple,fish_has_roe,fish_semi_rare,fish_swamp,fish_talk_stiff,season_all"
+796,Slimejack,[LocalizedText Strings\Objects:Slimejack_Name],[LocalizedText Strings\Objects:Slimejack_Description],Fish,-4,100,15,False,796,True,True,False,"color_green,fish_bug_lair,fish_has_roe,fish_semi_rare,season_all"
+797,Pearl,[LocalizedText Strings\Objects:Pearl_Name],[LocalizedText Strings\Objects:Pearl_Description],Basic,0,2500,-300,False,797,True,True,False,color_white
+798,Midnight Squid,[LocalizedText Strings\Objects:MidnightSquid_Name],[LocalizedText Strings\Objects:MidnightSquid_Description],Fish,-4,100,15,False,798,True,True,False,"color_blue,fish_has_roe,fish_night_market,fish_semi_rare,fish_talk_stiff,fish_upright"
+799,Spook Fish,[LocalizedText Strings\Objects:SpookFish_Name],[LocalizedText Strings\Objects:SpookFish_Description],Fish,-4,220,15,False,799,True,True,False,"color_blue,fish_has_roe,fish_night_market,fish_semi_rare"
+800,Blobfish,[LocalizedText Strings\Objects:Blobfish_Name],[LocalizedText Strings\Objects:Blobfish_Description],Fish,-4,500,15,False,800,True,True,False,"color_sand,fish_has_roe,fish_night_market,fish_upright"
+801,Wedding Ring,[LocalizedText Strings\Objects:WeddingRing_Name],[LocalizedText Strings\Objects:WeddingRing_Description],Ring,0,2000,-300,False,801,False,True,False,color_iridium
+802,Cactus Seeds,[LocalizedText Strings\Objects:CactusSeeds_Name],[LocalizedText Strings\Objects:CactusSeeds_Description],Seeds,-74,0,-300,False,802,True,True,False,
+803,Iridium Milk,[LocalizedText Strings\Objects:IridiumMilk_Name],[LocalizedText Strings\Objects:IridiumMilk_Description],Basic,0,0,-2,True,803,True,True,False,color_iridium
+805,Tree Fertilizer,[LocalizedText Strings\Objects:TreeFertilizer_Name],[LocalizedText Strings\Objects:TreeFertilizer_Description],Basic,-19,10,-300,False,805,True,True,False,"color_brown,fertilizer_item"
+807,Dinosaur Mayonnaise,[LocalizedText Strings\Objects:DinosaurMayonnaise_Name],[LocalizedText Strings\Objects:DinosaurMayonnaise_Description],Basic,-26,800,50,True,807,True,True,False,"color_white,dinosaur_item,mayo_item,use_reverse_name_for_sorting"
+808,Void Ghost Pendant,[LocalizedText Strings\Objects:VoidGhostPendant_Name],[LocalizedText Strings\Objects:VoidGhostPendant_Description],Basic,0,4500,-300,False,808,True,True,False,propose_roommate_krobus
+809,Movie Ticket,[LocalizedText Strings\Objects:MovieTicket_Name],[LocalizedText Strings\Objects:MovieTicket_Description],Basic,0,500,-300,False,809,True,True,False,
+810,Crabshell Ring,[LocalizedText Strings\Objects:CrabshellRing_Name],[LocalizedText Strings\Objects:CrabshellRing_Description],Ring,0,2000,-300,False,810,True,True,False,"color_brown,ring_item"
+811,Napalm Ring,[LocalizedText Strings\Objects:NapalmRing_Name],[LocalizedText Strings\Objects:NapalmRing_Description],Ring,0,2000,-300,False,811,True,True,False,"color_orange,ring_item"
+812,Roe,[LocalizedText Strings\Objects:Roe_Name],[LocalizedText Strings\Objects:Roe_Description],Basic,-23,30,20,False,812,True,True,False,"color_orange,use_reverse_name_for_sorting"
+814,Squid Ink,[LocalizedText Strings\Objects:SquidInk_Name],[LocalizedText Strings\Objects:SquidInk_Description],Basic,-23,110,-300,False,814,True,True,False,color_black
+815,Tea Leaves,[LocalizedText Strings\Objects:TeaLeaves_Name],[LocalizedText Strings\Objects:TeaLeaves_Description],Basic,-75,50,-300,False,815,True,True,False,color_green
+816,Stone,[LocalizedText Strings\Objects:FossilStone_Name],[LocalizedText Strings\Objects:FossilStone_Description],Litter,-999,0,-300,False,816,True,True,False,
+817,Stone,[LocalizedText Strings\Objects:FossilStone_Name],[LocalizedText Strings\Objects:FossilStone_Description],Litter,-999,0,-300,False,817,True,True,False,
+818,Stone,[LocalizedText Strings\Objects:ClayStone_Name],[LocalizedText Strings\Objects:ClayStone_Description],Litter,-999,0,-300,False,818,True,True,False,
+819,Stone,[LocalizedText Strings\Objects:OmniGeodeStone_Name],[LocalizedText Strings\Objects:OmniGeodeStone_Description],Litter,-999,0,-300,False,819,True,True,False,
+820,Fossilized Skull,[LocalizedText Strings\Objects:FossilizedSkull_Name],[LocalizedText Strings\Objects:FossilizedSkull_Description],Basic,0,100,-300,False,820,True,True,False,"bone_item,color_sand,prehistoric_item"
+821,Fossilized Spine,[LocalizedText Strings\Objects:FossilizedSpine_Name],[LocalizedText Strings\Objects:FossilizedSpine_Description],Basic,0,100,-300,False,821,True,True,False,"bone_item,color_sand,prehistoric_item"
+822,Fossilized Tail,[LocalizedText Strings\Objects:FossilizedTail_Name],[LocalizedText Strings\Objects:FossilizedTail_Description],Basic,0,100,-300,False,822,True,True,False,"bone_item,color_sand,prehistoric_item"
+823,Fossilized Leg,[LocalizedText Strings\Objects:FossilizedLeg_Name],[LocalizedText Strings\Objects:FossilizedLeg_Description],Basic,0,100,-300,False,823,True,True,False,"bone_item,color_sand,prehistoric_item"
+824,Fossilized Ribs,[LocalizedText Strings\Objects:FossilizedRibs_Name],[LocalizedText Strings\Objects:FossilizedRibs_Description],Basic,0,100,-300,False,824,True,True,False,"bone_item,color_sand,prehistoric_item"
+825,Snake Skull,[LocalizedText Strings\Objects:SnakeSkull_Name],[LocalizedText Strings\Objects:SnakeSkull_Description],Basic,0,100,-300,False,825,True,True,False,"bone_item,color_sand,prehistoric_item"
+826,Snake Vertebrae,[LocalizedText Strings\Objects:SnakeVertebrae_Name],[LocalizedText Strings\Objects:SnakeVertebrae_Description],Basic,0,100,-300,False,826,True,True,False,"bone_item,color_sand,prehistoric_item"
+827,Mummified Bat,[LocalizedText Strings\Objects:MummifiedBat_Name],[LocalizedText Strings\Objects:MummifiedBat_Description],Basic,0,100,-300,False,827,True,True,False,"bone_item,color_sand,prehistoric_item"
+828,Mummified Frog,[LocalizedText Strings\Objects:MummifiedFrog_Name],[LocalizedText Strings\Objects:MummifiedFrog_Description],Basic,0,100,-300,False,828,True,True,False,"bone_item,color_sand,prehistoric_item"
+829,Ginger,[LocalizedText Strings\Objects:Ginger_Name],[LocalizedText Strings\Objects:Ginger_Description],Basic,-81,60,10,False,829,True,True,False,"color_yellow,forage_item,ginger_item,preserves_pickle"
+830,Taro Root,[LocalizedText Strings\Objects:TaroRoot_Name],[LocalizedText Strings\Objects:TaroRoot_Description],Basic,-75,100,15,False,830,True,True,False,color_brown
+831,Taro Tuber,[LocalizedText Strings\Objects:TaroTuber_Name],[LocalizedText Strings\Objects:TaroTuber_Description],Seeds,-74,20,-300,False,831,True,True,False,
+832,Pineapple,[LocalizedText Strings\Objects:Pineapple_Name],[LocalizedText Strings\Objects:Pineapple_Description],Basic,-79,300,55,False,832,True,True,False,"color_yellow,fruit_item"
+833,Pineapple Seeds,[LocalizedText Strings\Objects:PineappleSeeds_Name],[LocalizedText Strings\Objects:PineappleSeeds_Description],Seeds,-74,240,-300,False,833,True,True,False,
+834,Mango,[LocalizedText Strings\Objects:Mango_Name],[LocalizedText Strings\Objects:Mango_Description],Basic,-79,130,40,False,834,True,True,False,"color_yellow,fruit_item,fruit_tree_item"
+835,Mango Sapling,[LocalizedText Strings\Objects:MangoSapling_Name],[LocalizedText Strings\Objects:MangoSapling_Description],Basic,-74,850,-300,False,835,True,True,False,
+836,Stingray,[LocalizedText Strings\Objects:Stingray_Name],[LocalizedText Strings\Objects:Stingray_Description],Fish,-4,180,15,False,836,True,True,False,"color_brown,fish_has_roe,fish_ocean,fish_talk_stiff,season_all"
+837,Lionfish,[LocalizedText Strings\Objects:Lionfish_Name],[LocalizedText Strings\Objects:Lionfish_Description],Fish,-4,100,15,False,837,True,True,False,"color_orange,fish_has_roe,fish_ocean,fish_talk_demanding,season_all"
+838,Blue Discus,[LocalizedText Strings\Objects:BlueDiscus_Name],[LocalizedText Strings\Objects:BlueDiscus_Description],Fish,-4,120,15,False,838,True,True,False,"color_cyan,fish_has_roe,fish_ocean,season_all"
+839,Thorns Ring,[LocalizedText Strings\Objects:ThornsRing_Name],[LocalizedText Strings\Objects:ThornsRing_Description],Ring,0,200,-300,False,839,True,True,False,"color_sand,ring_item"
+840,Rustic Plank Floor,[LocalizedText Strings\Objects:RusticPlankFloor_Name],[LocalizedText Strings\Objects:RusticPlankFloor_Description],Crafting,-24,1,-300,False,840,True,True,False,
+841,Stone Walkway Floor,[LocalizedText Strings\Objects:StoneWalkwayFloor_Name],[LocalizedText Strings\Objects:StoneWalkwayFloor_Description],Crafting,-24,1,-300,False,841,True,True,False,
+842,Journal Scrap,[LocalizedText Strings\Objects:JournalScrap_Name],[LocalizedText Strings\Objects:JournalScrap_Description],asdf,0,1,-300,False,842,True,True,False,
+843,Stone,[LocalizedText Strings\Objects:CinderShardStone_Name],[LocalizedText Strings\Objects:CinderShardStone_Description],Litter,-999,0,-300,False,843,True,True,False,
+844,Stone,[LocalizedText Strings\Objects:CinderShardStone_Name],[LocalizedText Strings\Objects:CinderShardStone_Description],Litter,-999,0,-300,False,844,True,True,False,
+845,Stone,[LocalizedText Strings\Objects:Stone_NodeWithCoal_Name],[LocalizedText Strings\Objects:Stone_NodeWithCoal_Description],Litter,-999,0,-300,False,845,True,True,False,
+846,Stone,[LocalizedText Strings\Objects:Stone_NodeWithCoal_Name],[LocalizedText Strings\Objects:Stone_NodeWithCoal_Description],Litter,-999,0,-300,False,846,True,True,False,
+847,Stone,[LocalizedText Strings\Objects:Stone_NodeWithCoal_Name],[LocalizedText Strings\Objects:Stone_NodeWithCoal_Description],Litter,-999,0,-300,False,847,True,True,False,
+848,Cinder Shard,[LocalizedText Strings\Objects:CinderShard_Name],[LocalizedText Strings\Objects:CinderShard_Description],Basic,-15,50,-300,False,848,True,True,False,color_orange
+849,Stone,[LocalizedText Strings\Objects:CopperStone_Name],[LocalizedText Strings\Objects:CopperStone_Description],Litter,-999,0,-300,False,849,True,True,False,
+850,Stone,[LocalizedText Strings\Objects:IronStone_Name],[LocalizedText Strings\Objects:IronStone_Description],Litter,-999,0,-300,False,850,True,True,False,
+851,Magma Cap,[LocalizedText Strings\Objects:MagmaCap_Name],[LocalizedText Strings\Objects:MagmaCap_Description],Basic,-81,400,70,False,851,True,True,False,"color_dark_pink,edible_mushroom"
+852,Dragon Tooth,[LocalizedText Strings\Objects:DragonTooth_Name],[LocalizedText Strings\Objects:DragonTooth_Description],Basic,0,500,-300,False,852,True,True,False,color_orange
+856,Curiosity Lure,[LocalizedText Strings\Objects:CuriosityLure_Name],[LocalizedText Strings\Objects:CuriosityLure_Description],Basic,-22,500,-300,False,856,True,True,False,
+857,Tiger Slime Egg,[LocalizedText Strings\Objects:TigerSlimeEgg_Name],[LocalizedText Strings\Objects:TigerSlimeEgg_Description],Basic,0,8000,-300,False,857,True,True,False,"color_orange,slime_egg_item,slime_item,use_reverse_name_for_sorting"
+858,Qi Gem,[LocalizedText Strings\Objects:QiGem_Name],[LocalizedText Strings\Objects:QiGem_Description],Basic,0,250,-300,False,858,True,True,False,
+859,Lucky Ring,[LocalizedText Strings\Objects:LuckyRing_Name],[LocalizedText Strings\Objects:LuckyRing_Description],Ring,0,200,-300,False,859,True,True,False,"color_gold,ring_item"
+860,Hot Java Ring,[LocalizedText Strings\Objects:HotJavaRing_Name],[LocalizedText Strings\Objects:HotJavaRing_Description],Ring,0,200,-300,False,860,True,True,False,"color_sand,ring_item"
+861,Protection Ring,[LocalizedText Strings\Objects:ProtectionRing_Name],[LocalizedText Strings\Objects:ProtectionRing_Description],Ring,0,200,-300,False,861,True,True,False,"color_gray,ring_item"
+862,Soul Sapper Ring,[LocalizedText Strings\Objects:SoulSapperRing_Name],[LocalizedText Strings\Objects:SoulSapperRing_Description],Ring,0,200,-300,False,862,True,True,False,"color_yellow_green,ring_item"
+863,Phoenix Ring,[LocalizedText Strings\Objects:PhoenixRing_Name],[LocalizedText Strings\Objects:PhoenixRing_Description],Ring,0,200,-300,False,863,True,True,False,"color_gold,ring_item"
+864,War Memento,[LocalizedText Strings\Objects:WarMemento_Name],[LocalizedText Strings\Objects:WarMemento_Description],Quest,0,0,-300,False,864,True,True,False,
+865,Gourmet Tomato Salt,[LocalizedText Strings\Objects:GourmetTomatoSalt_Name],[LocalizedText Strings\Objects:GourmetTomatoSalt_Description],Quest,0,0,-300,False,865,True,True,False,
+866,Stardew Valley Rose,[LocalizedText Strings\Objects:StardewValleyRose_Name],[LocalizedText Strings\Objects:StardewValleyRose_Description],Quest,0,0,-300,False,866,True,True,False,
+867,Advanced TV Remote,[LocalizedText Strings\Objects:AdvancedTVRemote_Name],[LocalizedText Strings\Objects:AdvancedTVRemote_Description],Quest,0,0,-300,False,867,True,True,False,
+868,Arctic Shard,[LocalizedText Strings\Objects:ArcticShard_Name],[LocalizedText Strings\Objects:ArcticShard_Description],Quest,0,0,-300,False,868,True,True,False,
+869,Wriggling Worm,[LocalizedText Strings\Objects:WrigglingWorm_Name],[LocalizedText Strings\Objects:WrigglingWorm_Description],Quest,0,0,-300,False,869,True,True,False,
+870,Pirate's Locket,[LocalizedText Strings\Objects:PiratesLocket_Name],[LocalizedText Strings\Objects:PiratesLocket_Description],Quest,0,0,-300,False,870,True,True,False,
+872,Fairy Dust,[LocalizedText Strings\Objects:FairyDust_Name],[LocalizedText Strings\Objects:FairyDust_Description],Basic,0,300,-300,False,872,True,True,False,
+873,Piña Colada,[LocalizedText Strings\Objects:PinaColada_Name],[LocalizedText Strings\Objects:PinaColada_Description],Cooking,-7,300,30,True,873,True,True,False,"alcohol_item,color_white"
+874,Bug Steak,[LocalizedText Strings\Objects:BugSteak_Name],[LocalizedText Strings\Objects:BugSteak_Description],Crafting,0,50,18,False,874,True,True,False,color_pink
+875,Ectoplasm,[LocalizedText Strings\Objects:Ectoplasm_Name],[LocalizedText Strings\Objects:Ectoplasm_Description],Quest,0,0,-300,False,875,True,True,False,
+876,Prismatic Jelly,[LocalizedText Strings\Objects:PrismaticJelly_Name],[LocalizedText Strings\Objects:PrismaticJelly_Description],Quest,0,0,-300,False,876,True,True,False,
+877,Quality Bobber,[LocalizedText Strings\Objects:QualityBobber_Name],[LocalizedText Strings\Objects:QualityBobber_Description],Basic,-22,300,-300,False,877,True,True,False,
+879,Monster Musk,[LocalizedText Strings\Objects:MonsterMusk_Name],[LocalizedText Strings\Objects:MonsterMusk_Description],Crafting,0,50,-300,False,879,True,True,False,"color_purple,not_placeable,potion_item"
+880,Combined Ring,[LocalizedText Strings\Objects:CombinedRing_Name],[LocalizedText Strings\Objects:CombinedRing_Description],Ring,0,100,-300,False,880,True,True,False,ring_item
+881,Bone Fragment,[LocalizedText Strings\Objects:BoneFragment_Name],[LocalizedText Strings\Objects:BoneFragment_Description],Basic,-15,12,-300,False,881,True,True,False,"bone_item,color_sand,prehistoric_item"
+882,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Description],Litter,-999,0,-300,False,882,True,True,False,
+883,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Description],Litter,-999,0,-300,False,883,True,True,False,
+884,Weeds,[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Name],[LocalizedText Strings\Objects:Weeds_FiberOrMixedSeeds_Description],Litter,-999,0,-300,False,884,True,True,False,
+885,Fiber Seeds,[LocalizedText Strings\Objects:FiberSeeds_Name],[LocalizedText Strings\Objects:FiberSeeds_Description],Seeds,-74,5,-300,False,885,True,True,False,
+886,Warp Totem: Island,[LocalizedText Strings\Objects:WarpTotemIsland_Name],[LocalizedText Strings\Objects:WarpTotemIsland_Description],Crafting,0,20,-300,False,886,True,True,False,"color_brown,not_placeable,totem_item"
+887,Immunity Band,[LocalizedText Strings\Objects:ImmunityBand_Name],[LocalizedText Strings\Objects:ImmunityBand_Description],Ring,0,500,-300,False,887,True,True,False,"color_iridium,ring_item"
+888,Glowstone Ring,[LocalizedText Strings\Objects:GlowstoneRing_Name],[LocalizedText Strings\Objects:GlowstoneRing_Description],Ring,0,200,-300,False,888,True,True,False,"color_gold,ring_item"
+889,Qi Fruit,[LocalizedText Strings\Objects:QiFruit_Name],[LocalizedText Strings\Objects:QiFruit_Description],Basic,-79,1,1,False,889,True,True,True,color_blue
+890,Qi Bean,[LocalizedText Strings\Objects:QiBean_Name],[LocalizedText Strings\Objects:QiBean_Description],Seeds,-74,1,-300,False,890,True,True,False,color_blue
+891,Mushroom Tree Seed,[LocalizedText Strings\Objects:MushroomTreeSeed_Name],[LocalizedText Strings\Objects:MushroomTreeSeed_Description],Crafting,-74,100,-300,False,891,True,True,False,color_red
+892,Warp Totem: Qi's Arena,[LocalizedText Strings\Objects:WarpTotemQisArena_Name],[LocalizedText Strings\Objects:WarpTotemQisArena_Description],Crafting,0,20,-300,False,892,True,True,False,"not_placeable,totem_item"
+893,Fireworks (Red),[LocalizedText Strings\Objects:FireworksRed_Name],[LocalizedText Strings\Objects:FireworksRed_Description],Crafting,-8,50,-300,False,893,True,True,False,color_red
+894,Fireworks (Purple),[LocalizedText Strings\Objects:FireworksPurple_Name],[LocalizedText Strings\Objects:FireworksPurple_Description],Crafting,-8,50,-300,False,894,True,True,False,color_purple
+895,Fireworks (Green),[LocalizedText Strings\Objects:FireworksGreen_Name],[LocalizedText Strings\Objects:FireworksGreen_Description],Crafting,-8,50,-300,False,895,True,True,False,color_green
+896,Galaxy Soul,[LocalizedText Strings\Objects:GalaxySoul_Name],[LocalizedText Strings\Objects:GalaxySoul_Description],Crafting,0,5000,-300,False,896,True,True,False,not_placeable
+897,Pierre's Missing Stocklist,[LocalizedText Strings\Objects:PierresMissingStocklist_Name],[LocalizedText Strings\Objects:PierresMissingStocklist_Description],Quest,0,0,-300,False,897,False,False,False,
+898,Son of Crimsonfish,[LocalizedText Strings\Objects:SonofCrimsonfish_Name],[LocalizedText Strings\Objects:SonofCrimsonfish_Description],Fish,-4,1500,15,False,898,True,True,False,"color_red,fish_has_roe,fish_legendary,fish_legendary_family"
+899,Ms. Angler,[LocalizedText Strings\Objects:MsAngler_Name],[LocalizedText Strings\Objects:MsAngler_Description],Fish,-4,900,10,False,899,True,True,False,"color_pink,fish_has_roe,fish_legendary,fish_legendary_family,fish_upright"
+900,Legend II,[LocalizedText Strings\Objects:LegendII_Name],[LocalizedText Strings\Objects:LegendII_Description],Fish,-4,5000,200,False,900,True,True,False,"color_green,fish_has_roe,fish_legendary,fish_legendary_family"
+901,Radioactive Carp,[LocalizedText Strings\Objects:RadioactiveCarp_Name],[LocalizedText Strings\Objects:RadioactiveCarp_Description],Fish,-4,1000,10,False,901,True,True,False,"color_green,fish_has_roe,fish_legendary,fish_legendary_family"
+902,Glacierfish Jr.,[LocalizedText Strings\Objects:GlacierfishJr_Name],[LocalizedText Strings\Objects:GlacierfishJr_Description],Fish,-4,1000,10,False,902,True,True,False,"color_blue,fish_has_roe,fish_legendary,fish_legendary_family"
+903,Ginger Ale,[LocalizedText Strings\Objects:GingerAle_Name],[LocalizedText Strings\Objects:GingerAle_Description],Cooking,-7,200,25,True,903,True,True,False,"color_green,food_sweet,ginger_item"
+904,Banana Pudding,[LocalizedText Strings\Objects:BananaPudding_Name],[LocalizedText Strings\Objects:BananaPudding_Description],Cooking,-7,260,50,False,904,True,True,False,"color_yellow,food_sweet"
+905,Mango Sticky Rice,[LocalizedText Strings\Objects:MangoStickyRice_Name],[LocalizedText Strings\Objects:MangoStickyRice_Description],Cooking,-7,250,45,False,905,True,True,False,"color_yellow,food_sweet"
+906,Poi,[LocalizedText Strings\Objects:Poi_Name],[LocalizedText Strings\Objects:Poi_Description],Cooking,-7,400,30,False,906,True,True,False,color_pink
+907,Tropical Curry,[LocalizedText Strings\Objects:TropicalCurry_Name],[LocalizedText Strings\Objects:TropicalCurry_Description],Cooking,-7,500,60,False,907,True,True,False,color_orange
+908,Magic Bait,[LocalizedText Strings\Objects:MagicBait_Name],[LocalizedText Strings\Objects:MagicBait_Description],Basic,-21,1,-300,False,908,True,True,False,
+909,Radioactive Ore,[LocalizedText Strings\Objects:RadioactiveOre_Name],[LocalizedText Strings\Objects:RadioactiveOre_Description],Basic,-15,300,-300,False,909,True,True,False,"color_lime,ore_item,use_reverse_name_for_sorting"
+910,Radioactive Bar,[LocalizedText Strings\Objects:RadioactiveBar_Name],[LocalizedText Strings\Objects:RadioactiveBar_Description],Basic,-15,3000,-300,False,910,True,True,False,"color_lime,furnace_item,use_reverse_name_for_sorting"
+911,Horse Flute,[LocalizedText Strings\Objects:HorseFlute_Name],[LocalizedText Strings\Objects:HorseFlute_Description],Crafting,0,3000,-300,False,911,False,False,False,not_placeable
+913,Enricher,[LocalizedText Strings\Objects:Enricher_Name],[LocalizedText Strings\Objects:Enricher_Description],Basic,0,200,-300,False,913,True,True,False,
+915,Pressure Nozzle,[LocalizedText Strings\Objects:PressureNozzle_Name],[LocalizedText Strings\Objects:PressureNozzle_Description],Basic,0,200,-300,False,915,True,True,False,
+917,Qi Seasoning,[LocalizedText Strings\Objects:QiSeasoning_Name],[LocalizedText Strings\Objects:QiSeasoning_Description],Basic,0,200,-300,False,917,True,True,False,
+918,Hyper Speed-Gro,[LocalizedText Strings\Objects:HyperSpeedGro_Name],[LocalizedText Strings\Objects:HyperSpeedGro_Description],Basic,-19,70,-300,False,918,True,True,False,"fertilizer_item,use_reverse_name_for_sorting"
+919,Deluxe Fertilizer,[LocalizedText Strings\Objects:DeluxeFertilizer_Name],[LocalizedText Strings\Objects:DeluxeFertilizer_Description],Basic,-19,70,-300,False,919,True,True,False,"fertilizer_item,use_reverse_name_for_sorting"
+920,Deluxe Retaining Soil,[LocalizedText Strings\Objects:DeluxeRetainingSoil_Name],[LocalizedText Strings\Objects:DeluxeRetainingSoil_Description],Basic,-19,30,-300,False,920,True,True,False,"fertilizer_item,use_reverse_name_for_sorting"
+921,Squid Ink Ravioli,[LocalizedText Strings\Objects:SquidInkRavioli_Name],[LocalizedText Strings\Objects:SquidInkRavioli_Description],Cooking,-7,150,50,False,921,True,True,False,
+922,SupplyCrate,[LocalizedText Strings\Objects:SupplyCrate_Name],[LocalizedText Strings\Objects:SupplyCrate_Description],Crafting,0,1,-300,False,922,True,True,False,
+923,SupplyCrate,[LocalizedText Strings\Objects:SupplyCrate_Name],[LocalizedText Strings\Objects:SupplyCrate_Description],Crafting,0,1,-300,False,923,True,True,False,
+924,SupplyCrate,[LocalizedText Strings\Objects:SupplyCrate_Name],[LocalizedText Strings\Objects:SupplyCrate_Description],Crafting,0,1,-300,False,924,True,True,False,
+925,Slime Crate,[LocalizedText Strings\Objects:SlimeCrate_Name],[LocalizedText Strings\Objects:SlimeCrate_Description],Crafting,0,3000,-300,False,925,True,True,False,
+926,Cookout Kit,[LocalizedText Strings\Objects:CookoutKit_Name],[LocalizedText Strings\Objects:CookoutKit_Description],Crafting,0,80,-300,False,926,True,True,False,
+927,Camping Stove,[LocalizedText Strings\Objects:CampingStove_Name],[LocalizedText Strings\Objects:CampingStove_Description],Crafting,0,1,-300,False,927,True,True,False,
+928,Golden Egg,[LocalizedText Strings\Objects:GoldenEgg_Name],[LocalizedText Strings\Objects:GoldenEgg_Description],Basic,-5,500,10,False,928,True,True,True,egg_item
+929,Hedge,[LocalizedText Strings\Objects:Hedge_Name],[LocalizedText Strings\Objects:Hedge_Description],Crafting,-8,10,-300,False,929,True,True,False,
+930,???,[LocalizedText Strings\Objects:ConcernedApeMask_Name],[LocalizedText Strings\Objects:ConcernedApeMask_Description],Basic,0,0,-300,False,930,True,True,False,
+FarAwayStone,Far Away Stone,[LocalizedText Strings\Objects:FarAwayStone_Name],[LocalizedText Strings\Objects:FarAwayStone_Description],Basic,0,500,-300,False,0,False,True,False,
+CalicoEgg,Calico Egg,[LocalizedText Strings\Objects:CalicoEgg_Name],[LocalizedText Strings\Objects:CalicoEgg_Description],Basic,0,0,-300,False,7,False,True,False,
+MixedFlowerSeeds,Mixed Flower Seeds,[LocalizedText Strings\Objects:MixedFlowerSeeds_Name],[LocalizedText Strings\Objects:MixedFlowerSeeds_Description],Seeds,-74,0,-300,False,8,True,True,False,
+GoldenBobber,Golden Bobber,[LocalizedText Strings\Objects:GoldenBobber_Name],[LocalizedText Strings\Objects:GoldenBobber_Description],Quest,0,0,-300,False,9,True,True,False,
+CalicoEggStone_0,Stone,[LocalizedText Strings\Objects:CalicoEggStone_Name],[LocalizedText Strings\Objects:CalicoEggStone_Description],Litter,-999,0,-300,False,10,True,True,False,
+CalicoEggStone_1,Stone,[LocalizedText Strings\Objects:CalicoEggStone_Name],[LocalizedText Strings\Objects:CalicoEggStone_Description],Litter,-999,0,-300,False,11,True,True,False,
+CalicoEggStone_2,Stone,[LocalizedText Strings\Objects:CalicoEggStone_Name],[LocalizedText Strings\Objects:CalicoEggStone_Description],Litter,-999,0,-300,False,12,True,True,False,
+MysteryBox,Mystery Box,[LocalizedText Strings\Objects:MysteryBox_Name],[LocalizedText Strings\Objects:MysteryBox_Description],Basic,0,0,-300,False,37,True,True,False,"geode,geode_crusher_ignored,color_dark_cyan,use_reverse_name_for_sorting"
+TroutDerbyTag,Golden Tag,[LocalizedText Strings\Objects:TroutDerbyTag_Name],[LocalizedText Strings\Objects:TroutDerbyTag_Description],Basic,0,0,-300,False,13,True,True,False,
+DeluxeBait,Deluxe Bait,[LocalizedText Strings\Objects:DeluxeBait_Name],[LocalizedText Strings\Objects:DeluxeBait_Description],Basic,-21,1,-300,False,14,True,True,False,
+Moss,Moss,[LocalizedText Strings\Objects:Moss_Name],[LocalizedText Strings\Objects:Moss_Description],Basic,-16,5,-300,False,38,True,True,False,color_green
+MossySeed,Mossy Seed,[LocalizedText Strings\Objects:MossySeed_Name],[LocalizedText Strings\Objects:MossySeed_Description],Crafting,-74,100,-300,False,39,True,True,False,
+GreenRainWeeds0,GreenRainWeeds0,[LocalizedText Strings\Objects:GreenRainWeeds_Name],[LocalizedText Strings\Objects:GreenRainWeeds_Description],Litter,-999,0,-300,False,40,True,True,False,
+GreenRainWeeds1,GreenRainWeeds1,[LocalizedText Strings\Objects:GreenRainWeeds_Name],[LocalizedText Strings\Objects:GreenRainWeeds_Description],Litter,-999,0,-300,False,41,True,True,False,
+GreenRainWeeds2,GreenRainWeeds2,[LocalizedText Strings\Objects:GreenRainWeeds_Name],[LocalizedText Strings\Objects:GreenRainWeeds_Description],Litter,-999,0,-300,False,42,True,True,False,
+GreenRainWeeds3,GreenRainWeeds3,[LocalizedText Strings\Objects:GreenRainWeeds_Name],[LocalizedText Strings\Objects:GreenRainWeeds_Description],Litter,-999,0,-300,False,43,True,True,False,
+GreenRainWeeds4,GreenRainWeeds4,[LocalizedText Strings\Objects:GreenRainWeeds_Name],[LocalizedText Strings\Objects:GreenRainWeeds_Description],Litter,-999,0,-300,False,48,True,True,False,
+GreenRainWeeds5,GreenRainWeeds5,[LocalizedText Strings\Objects:GreenRainWeeds_Name],[LocalizedText Strings\Objects:GreenRainWeeds_Description],Litter,-999,0,-300,False,49,True,True,False,
+GreenRainWeeds6,GreenRainWeeds6,[LocalizedText Strings\Objects:GreenRainWeeds_Name],[LocalizedText Strings\Objects:GreenRainWeeds_Description],Litter,-999,0,-300,False,50,True,True,False,
+GreenRainWeeds7,GreenRainWeeds7,[LocalizedText Strings\Objects:GreenRainWeeds_Name],[LocalizedText Strings\Objects:GreenRainWeeds_Description],Litter,-999,0,-300,False,51,True,True,False,
+SonarBobber,Sonar Bobber,[LocalizedText Strings\Objects:SonarBobber_Name],[LocalizedText Strings\Objects:SonarBobber_Description],Basic,-22,250,-300,False,56,True,True,False,color_gray
+SpecificBait,Bait,[LocalizedText Strings\Objects:SpecificBait_Name],[LocalizedText Strings\Objects:SpecificBait_Description],Basic,-21,5,-300,False,57,True,True,False,use_reverse_name_for_sorting
+TentKit,Tent Kit,[LocalizedText Strings\Objects:TentKit_Name],[LocalizedText Strings\Objects:TentKit_Description],Crafting,0,200,-300,False,59,True,True,False,color_brown
+VolcanoGoldNode,Stone,[LocalizedText Strings\Objects:VolcanoGoldNode_Name],[LocalizedText Strings\Objects:VolcanoGoldNode_Description],Litter,-999,0,-300,False,60,True,True,False,
+MysticTreeSeed,Mystic Tree Seed,[LocalizedText Strings\Objects:MysticTreeSeed_Name],[LocalizedText Strings\Objects:MysticTreeSeed_Description],Crafting,-74,100,-300,False,61,True,True,False,
+MysticSyrup,Mystic Syrup,[LocalizedText Strings\Objects:MysticSyrup_Name],[LocalizedText Strings\Objects:MysticSyrup_Description],Basic,-27,1000,200,True,62,True,True,False,color_cyan
+Raisins,Raisins,[LocalizedText Strings\Objects:Raisins_Name],[LocalizedText Strings\Objects:Raisins_Description],Basic,-26,600,50,False,63,True,True,False,color_purple
+DriedFruit,Dried,[LocalizedText Strings\Objects:DriedFruit_Name],[LocalizedText Strings\Objects:DriedFruit_Description],Basic,-26,25,-300,False,64,True,True,False,
+DriedMushrooms,Dried,[LocalizedText Strings\Objects:DriedMushrooms_Name],[LocalizedText Strings\Objects:DriedMushrooms_Description],Basic,-26,25,-300,False,66,True,True,False,
+StardropTea,Stardrop Tea,[LocalizedText Strings\Objects:StardropTea_Name],[LocalizedText Strings\Objects:StardropTea_Description],Basic,0,77,-300,False,68,True,True,False,color_iridium
+PrizeTicket,Prize Ticket,[LocalizedText Strings\Objects:PrizeTicket_Name],[LocalizedText Strings\Objects:PrizeTicket_Description],Basic,0,1,-300,False,69,False,True,False,color_red
+GoldCoin,Gold Coin,[LocalizedText Strings\Objects:GoldCoin_Name],[LocalizedText Strings\Objects:GoldCoin_Description],Basic,0,1,-300,False,70,True,True,False,
+TreasureTotem,Treasure Totem,[LocalizedText Strings\Objects:TreasureTotem_Name],[LocalizedText Strings\Objects:TreasureTotem_Description],Crafting,0,20,-300,False,71,True,True,False,"color_brown,not_placeable,totem_item"
+ChallengeBait,Challenge Bait,[LocalizedText Strings\Objects:ChallengeBait_Name],[LocalizedText Strings\Objects:ChallengeBait_Description],Basic,-21,1,-300,False,72,True,True,False,
+CarrotSeeds,Carrot Seeds,[LocalizedText Strings\Objects:CarrotSeeds_Name],[LocalizedText Strings\Objects:CarrotSeeds_Description],Seeds,-74,15,-300,False,84,True,True,False,color_brown
+Carrot,Carrot,[LocalizedText Strings\Objects:Carrot_Name],[LocalizedText Strings\Objects:Carrot_Description],Basic,-75,35,30,False,80,True,True,False,"color_orange,dye_medium,season_spring"
+SummerSquashSeeds,Summer Squash Seeds,[LocalizedText Strings\Objects:SummerSquashSeeds_Name],[LocalizedText Strings\Objects:SummerSquashSeeds_Description],Seeds,-74,20,-300,False,85,True,True,False,color_brown
+SummerSquash,Summer Squash,[LocalizedText Strings\Objects:SummerSquash_Name],[LocalizedText Strings\Objects:SummerSquash_Description],Basic,-75,45,25,False,81,True,True,False,"color_yellow,dye_medium,season_summer"
+BroccoliSeeds,Broccoli Seeds,[LocalizedText Strings\Objects:BroccoliSeeds_Name],[LocalizedText Strings\Objects:BroccoliSeeds_Description],Seeds,-74,40,-300,False,86,True,True,False,color_brown
+Broccoli,Broccoli,[LocalizedText Strings\Objects:Broccoli_Name],[LocalizedText Strings\Objects:Broccoli_Description],Basic,-75,70,25,False,82,True,True,False,"color_green,dye_medium,season_fall"
+PowdermelonSeeds,Powdermelon Seeds,[LocalizedText Strings\Objects:PowdermelonSeeds_Name],[LocalizedText Strings\Objects:PowdermelonSeeds_Description],Seeds,-74,20,-300,False,87,True,True,False,color_brown
+Powdermelon,Powdermelon,[LocalizedText Strings\Objects:Powdermelon_Name],[LocalizedText Strings\Objects:Powdermelon_Description],Basic,-79,60,25,False,83,True,True,False,"color_white,dye_medium,season_winter"
+SeedSpot,Seed Spot,[LocalizedText Strings\Objects:ArtifactSpot_Name],[LocalizedText Strings\Objects:ArtifactSpot_Description],asdf,0,0,-300,False,88,True,True,False,
+SmokedFish,Smoked,[LocalizedText Strings\Objects:SmokedFish_Name],[LocalizedText Strings\Objects:SmokedFish_Description],Basic,-26,25,-300,False,15,True,True,False,
+PurpleBook,Book Of Stars,[LocalizedText Strings\Objects:PurpleBook_Name],[LocalizedText Strings\Objects:PurpleBook_Description],asdf,-103,2500,-300,False,89,True,True,False,"color_iridium,book_item"
+SkillBook_0,Stardew Valley Almanac,[LocalizedText Strings\Objects:SkillBook0_Name],[LocalizedText Strings\Objects:SkillBook0_Description],asdf,-103,500,-300,False,90,True,True,False,"color_gold,book_item"
+SkillBook_2,Woodcutter's Weekly,[LocalizedText Strings\Objects:SkillBook2_Name],[LocalizedText Strings\Objects:SkillBook2_Description],asdf,-103,500,-300,False,91,True,True,False,"color_green,book_item"
+SkillBook_1,Bait And Bobber,[LocalizedText Strings\Objects:SkillBook1_Name],[LocalizedText Strings\Objects:SkillBook1_Description],asdf,-103,500,-300,False,92,True,True,False,"color_blue,book_item"
+SkillBook_3,Mining Monthly,[LocalizedText Strings\Objects:SkillBook3_Name],[LocalizedText Strings\Objects:SkillBook3_Description],asdf,-103,500,-300,False,93,True,True,False,"color_brown,book_item"
+SkillBook_4,Combat Quarterly,[LocalizedText Strings\Objects:SkillBook4_Name],[LocalizedText Strings\Objects:SkillBook4_Description],asdf,-103,500,-300,False,94,True,True,False,"color_red,book_item"
+Book_Trash,The Alleyway Buffet,[LocalizedText Strings\Objects:Book_Trash_Name],[LocalizedText Strings\Objects:Book_Trash_Description],asdf,-102,3000,-300,False,102,True,True,False,"color_dark_gray,book_item,book_xp_foraging"
+Book_Crabbing,The Art O' Crabbing,[LocalizedText Strings\Objects:Book_Crabbing_Name],[LocalizedText Strings\Objects:Book_Crabbing_Description],asdf,-102,1000,-300,False,103,True,True,False,"color_black,book_item,book_xp_fishing"
+Book_Bombs,Dwarvish Safety Manual,[LocalizedText Strings\Objects:Book_Bombs_Name],[LocalizedText Strings\Objects:Book_Bombs_Description],asdf,-102,1000,-300,False,104,True,True,False,"color_red,book_item,book_xp_mining"
+Book_Roe,Jewels Of The Sea,[LocalizedText Strings\Objects:Book_Roe_Name],[LocalizedText Strings\Objects:Book_Roe_Description],asdf,-102,800,-300,False,105,True,True,False,"color_orange,book_item,book_xp_fishing,fish_has_roe"
+Book_WildSeeds,Ways Of The Wild,[LocalizedText Strings\Objects:Book_WildSeeds_Name],[LocalizedText Strings\Objects:Book_WildSeeds_Description],asdf,-102,1000,-300,False,106,True,True,False,"color_green,book_item,book_xp_foraging"
+Book_Woodcutting,Woody's Secret,[LocalizedText Strings\Objects:Book_Woodcutting_Name],[LocalizedText Strings\Objects:Book_Woodcutting_Description],asdf,-102,500,-300,False,107,True,True,False,"color_brown,book_item,book_xp_foraging"
+Book_Defense,"Jack Be Nimble, Jack Be Thick",[LocalizedText Strings\Objects:Book_Defense_Name],[LocalizedText Strings\Objects:Book_Defense_Description],asdf,-102,500,-300,False,108,True,True,False,"color_brown,book_item,book_xp_combat"
+Book_Friendship,Friendship 101,[LocalizedText Strings\Objects:Book_Friendship_Name],[LocalizedText Strings\Objects:Book_Friendship_Description],asdf,-102,3000,-300,False,109,True,True,False,"color_pink,book_item"
+Book_Void,Monster Compendium,[LocalizedText Strings\Objects:Book_Void_Name],[LocalizedText Strings\Objects:Book_Void_Description],asdf,-102,2000,-300,False,110,True,True,False,"color_black,book_item,book_xp_combat"
+Book_Speed,Way Of The Wind pt. 1,[LocalizedText Strings\Objects:Book_Speed_Name],[LocalizedText Strings\Objects:Book_Speed_Description],asdf,-102,5000,-300,False,111,True,True,False,"color_iron,book_item"
+Book_Marlon,Mapping Cave Systems,[LocalizedText Strings\Objects:Book_Marlon_Name],[LocalizedText Strings\Objects:Book_Marlon_Description],asdf,-102,4000,-300,False,112,True,True,False,"color_dark_gray,book_item,book_xp_combat"
+Book_PriceCatalogue,Price Catalogue,[LocalizedText Strings\Objects:Book_PriceCatalogue_Name],[LocalizedText Strings\Objects:Book_PriceCatalogue_Description],asdf,-102,1000,-300,False,114,True,True,False,"color_gold,book_item"
+Book_QueenOfSauce,Queen Of Sauce Cookbook,[LocalizedText Strings\Objects:Book_QueenOfSauce_Name],[LocalizedText Strings\Objects:Book_QueenOfSauce_Description],asdf,-102,10000,-300,False,115,True,True,False,"color_blue,book_item"
+Book_Diamonds,The Diamond Hunter,[LocalizedText Strings\Objects:Book_Diamonds_Name],[LocalizedText Strings\Objects:Book_Diamonds_Description],asdf,-102,1000,-300,False,116,True,True,False,"color_cyan,book_item,book_xp_mining"
+Book_Mystery,Book of Mysteries,[LocalizedText Strings\Objects:Book_Mystery_Name],[LocalizedText Strings\Objects:Book_Mystery_Description],asdf,-102,3000,-300,False,117,True,True,False,"color_blue,book_item"
+Book_AnimalCatalogue,Animal Catalogue,[LocalizedText Strings\Objects:Book_AnimalCatalogue_Name],[LocalizedText Strings\Objects:Book_AnimalCatalogue_Description],asdf,-102,2000,-300,False,118,True,True,False,"color_dark_pink,book_item"
+Book_Speed2,Way Of The Wind pt. 2,[LocalizedText Strings\Objects:Book_Speed2_Name],[LocalizedText Strings\Objects:Book_Speed2_Description],asdf,-102,10000,-300,False,119,True,True,False,"color_cyan,book_item"
+GoldenAnimalCracker,Golden Animal Cracker,[LocalizedText Strings\Objects:GoldenAnimalCracker_Name],[LocalizedText Strings\Objects:GoldenAnimalCracker_Description],asdf,0,1000,-300,False,121,True,True,False,color_gold
+GoldenMysteryBox,Golden Mystery Box,[LocalizedText Strings\Objects:GoldenMysteryBox_Name],[LocalizedText Strings\Objects:MysteryBox_Description],Basic,0,0,-300,False,122,True,True,False,"geode,geode_crusher_ignored,color_gold,use_reverse_name_for_sorting"
+SeaJelly,Sea Jelly,[LocalizedText Strings\Objects:SeaJelly_Name],[LocalizedText Strings\Objects:SeaJelly_Description],Fish,0,200,35,False,134,True,True,False,"color_cyan,fish_nonfish,counts_as_fish_catch,use_reverse_name_for_sorting"
+CaveJelly,Cave Jelly,[LocalizedText Strings\Objects:CaveJelly_Name],[LocalizedText Strings\Objects:CaveJelly_Description],Fish,0,180,30,False,133,True,True,False,"color_red,fish_nonfish,counts_as_fish_catch,use_reverse_name_for_sorting"
+RiverJelly,River Jelly,[LocalizedText Strings\Objects:RiverJelly_Name],[LocalizedText Strings\Objects:RiverJelly_Description],Fish,0,125,30,False,132,True,True,False,"color_green,fish_nonfish,counts_as_fish_catch,use_reverse_name_for_sorting"
+Goby,Goby,[LocalizedText Strings\Objects:Goby_Name],[LocalizedText Strings\Objects:Goby_Description],Fish,-4,150,-25,False,135,True,True,False,"color_brown,fish_has_roe,fish_river,season_spring,season_summer,season_fall"
+VolcanoCoalNode0,Stone,[LocalizedText Strings\Objects:Stone_NodeWithCoal_Name],[LocalizedText Strings\Objects:Stone_NodeWithCoal_Description],Litter,-999,0,-300,False,136,True,True,False,
+VolcanoCoalNode1,Stone,[LocalizedText Strings\Objects:Stone_NodeWithCoal_Name],[LocalizedText Strings\Objects:Stone_NodeWithCoal_Description],Litter,-999,0,-300,False,137,True,True,False,
+PotOfGold,PotOfGold,[LocalizedText Strings\Objects:Stone_NodeWithCoal_Name],[LocalizedText Strings\Objects:Stone_NodeWithCoal_Description],interactive,-999,0,-300,False,139,True,True,False,
+Book_Artifact,Book_Artifact,[LocalizedText Strings\Objects:Book_Artifact_Name],[LocalizedText Strings\Objects:Book_Artifact_Description],asdf,-102,500,-300,False,140,True,True,False,"color_brown,book_item"
+Book_Horse,Book_Horse,[LocalizedText Strings\Objects:Book_Riding_Name],[LocalizedText Strings\Objects:Book_Riding_Description],asdf,-102,1000,-300,False,141,True,True,False,"color_brown,book_item"
+ButterflyPowder,Butterfly Powder,[LocalizedText Strings\Objects:ButterflyPowder_Name],[LocalizedText Strings\Objects:ButterflyPowder_Description],Basic,0,0,-300,False,142,True,True,False,color_blue
+PetLicense,Pet License,[LocalizedText Strings\Objects:PetLicense_Name],[LocalizedText Strings\Objects:PetLicense_Description],Basic,0,0,-300,False,138,True,True,False,
+BlueGrassStarter,Blue Grass Starter,[LocalizedText Strings\Objects:BlueGrassStarter_Name],[LocalizedText Strings\Objects:BlueGrassStarter_Description],Crafting,0,50,-300,False,143,True,True,False,"color_blue,use_reverse_name_for_sorting"
+MossSoup,Moss Soup,[LocalizedText Strings\Objects:MossSoup_Name],[LocalizedText Strings\Objects:MossSoup_Description],Cooking,-7,80,28,True,144,True,True,False,color_green
+Book_Grass,Book_Grass,[LocalizedText Strings\Objects:GrassBook_Name],[LocalizedText Strings\Objects:GrassBook_Description],asdf,-102,1000,-300,False,145,True,True,False,"color_green,book_item"
+BasicCoalNode0,Stone,[LocalizedText Strings\Objects:Stone_NodeWithCoal_Name],[LocalizedText Strings\Objects:Stone_NodeWithCoal_Description],Litter,-999,0,-300,False,146,True,True,False,
+BasicCoalNode1,Stone,[LocalizedText Strings\Objects:Stone_NodeWithCoal_Name],[LocalizedText Strings\Objects:Stone_NodeWithCoal_Description],Litter,-999,0,-300,False,147,True,True,False,

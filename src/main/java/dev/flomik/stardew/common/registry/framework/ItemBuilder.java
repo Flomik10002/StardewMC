@@ -25,6 +25,16 @@ public class ItemBuilder<T extends Item> {
         return new ItemBuilder<>(name, StardewItemBase::new);
     }
 
+    /**
+     * Создает билдер для еды с указанным edibility (первичный параметр еды из Stardew Valley).
+     * 
+     * @param name имя предмета
+     * @param edibility параметр из ObjectData Stardew Valley (определяет восполнение стамины и здоровья)
+     */
+    public static ItemBuilder<StardewFoodItem> createFood(String name, int edibility) {
+        return new ItemBuilder<>(name, p -> new StardewFoodItem(p, edibility));
+    }
+
     public static <I extends Item> ItemBuilder<I> create(String name, Function<Item.Properties, I> factory) {
         return new ItemBuilder<>(name, factory);
     }

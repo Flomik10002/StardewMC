@@ -1,6 +1,9 @@
 package dev.flomik.stardew.common.module.player;
 
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.client.ClientStardewData;
+import dev.flomik.stardew.common.module.time.Weather;
+import dev.flomik.stardew.common.module.time.network.S2CWorldDataSync;
 import dev.flomik.stardew.core.network.PacketHandler;
 import dev.flomik.stardew.common.module.time.network.S2CSeasonSync;
 import dev.flomik.stardew.common.module.machinery.blockentity.BlockEntityChest;
@@ -22,7 +25,10 @@ public class ForgeEvents {
         if (event.getEntity() instanceof ServerPlayer player) {
             StardewDateData dateData = StardewDateData.get(player.serverLevel());
             Season currentSeason = dateData.getSeason();
+            int day = dateData.getDay();
+            Weather todayWeather = dateData.getTodayWeather();
 
+            PacketHandler.sendToAll(new S2CWorldDataSync(currentSeason, todayWeather, day));
             PacketHandler.sendToPlayer(new S2CSeasonSync(currentSeason), player);
         }
     }

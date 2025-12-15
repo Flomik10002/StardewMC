@@ -4,6 +4,8 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.common.module.time.Season;
 import dev.flomik.stardew.common.module.time.StardewDateData;
+import dev.flomik.stardew.common.module.time.StardewTimeUtils;
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -20,6 +22,9 @@ public class ModCommands {
                 Commands.literal("stardew")
                         .requires(s -> s.hasPermission(2))
                         .then(Commands.literal("time")
+                                .then(Commands.literal("get")
+                                        .executes(ctx -> getTime(ctx.getSource().getLevel(), ctx.getSource()))
+                                )
                                 .then(Commands.literal("set")
                                         .then(Commands.argument("season", SeasonArgument.season())
                                                 .then(Commands.argument("day", IntegerArgumentType.integer(1, 28))
@@ -44,32 +49,29 @@ public class ModCommands {
         StardewDateData data = StardewDateData.get(level);
         data.setDate(season, day);
 
-        // Calculate vanilla time
-        // 0 ticks = 6 AM
-        // Stardew day starts at 6 AM.
-        
+        // Use StardewTimeUtils to convert hour to ticks
+        int timeOfDayTicks = StardewTimeUtils.toTicks(hour, 0);
         long dayStartTicks = data.getTotalDays() * 24000L;
-        
-        // Convert hour (0-23) to ticks offset from 6 AM
-        // 6 -> 0
-        // 12 -> 6000
-        // 18 -> 12000
-        // 0 -> 18000
-        // 6 -> 24000
-        
-        int timeOfDayTicks = (hour * 1000) - 6000;
-        if (timeOfDayTicks < 0) {
-            timeOfDayTicks += 24000;
-        }
-
         long targetTime = dayStartTicks + timeOfDayTicks;
         
         level.setDayTime(targetTime);
 
+        String timeString = StardewTimeUtils.formatTicksToClock(targetTime);
         level.getServer().getPlayerList().broadcastSystemMessage(
-                Component.literal(String.format("Time set to %s %d, %02d:00 (Vanilla: %d)", season.name(), day, hour, targetTime)),
+                Component.literal(String.format("Время установлено: %s %d, %s", season.name(), day, timeString)),
                 false
         );
+
+        return 1;
+    }
+
+    private static int getTime(ServerLevel level, CommandSourceStack source) {
+        long dayTime = level.getDayTime();
+        
+        // Use StardewTimeUtils to format time correctly
+        String timeString = StardewTimeUtils.formatTicksToClock(dayTime);
+        
+        source.sendSuccess(() -> Component.literal("§eТекущее время: §f" + timeString), false);
 
         return 1;
     }

@@ -24,6 +24,11 @@ public abstract class AbstractProcessingBlockEntity extends BlockEntityHasItemVi
 
     private int progress = 0;
     private int maxProgress = 0;
+    // TODO: [MECHANIC] Replace tick-based progress with absolute time
+    // private long finishTime = -1;
+    // On load: if (level.getGameTime() >= finishTime) -> finishProcessing()
+    // This allows processing to continue even when chunk is unloaded.
+    
     private ItemStack inputStack = ItemStack.EMPTY;
     private ItemStack outputStack = ItemStack.EMPTY;
 

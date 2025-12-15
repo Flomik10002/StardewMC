@@ -33,6 +33,8 @@ import org.joml.Vector3f;
 
 import java.util.List;
 
+import dev.flomik.stardew.common.module.player.capability.PlayerStardewState;
+
 public class ToolHoe extends StardewItemBase implements IPatternTool {
 
     private static final String NBT_PATTERN = "Pattern";
@@ -95,6 +97,11 @@ public class ToolHoe extends StardewItemBase implements IPatternTool {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
+        
+        // TODO: [MECHANIC] Energy Consumption
+        // Base cost: 2 energy.
+        // Tiers reduce cost? Or allow charging?
+        // Check for exhaustion.
         
         if (player.isShiftKeyDown()) {
             if (!level.isClientSide) {
@@ -183,6 +190,12 @@ public class ToolHoe extends StardewItemBase implements IPatternTool {
                     }
                 }
             }
+        }
+
+        if (!level.isClientSide && player != null) {
+            player.getCapability(dev.flomik.stardew.common.module.player.capability.PlayerProvider.STARDEW_CAPABILITY).ifPresent(state -> {
+                state.consumeEnergy(2.0f);
+            });
         }
 
         return InteractionResult.SUCCESS;

@@ -1,29 +1,31 @@
 package dev.flomik.stardew.common.module.tools;
 
+import dev.flomik.stardew.common.registry.ModIcons;
+
 public enum ToolEnchantment {
     // Axe
-    SHAVING("shaving", "✰ Shaving"),
+    SHAVING("shaving", ModIcons.STAR_ENCHANTMENT + " Shaving"),
 
     // Rod
-    AUTO_HOOK("auto_hook", "✰ Auto-Hook"),
-    MASTER("master", "✰ Master"),
-    PRESERVING("preserving", "✰ Preserving"),
+    AUTO_HOOK("auto_hook", ModIcons.STAR_ENCHANTMENT + " Auto-Hook"),
+    MASTER("master", ModIcons.STAR_ENCHANTMENT + " Master"),
+    PRESERVING("preserving", ModIcons.STAR_ENCHANTMENT + " Preserving"),
 
     // Hoe
-    ARCHAEOLOGIST("archaeologist", "✰ Archaeologist"),
-    GENEROUS("generous", "✰ Generous"),
-    REACHING("reaching", "✰ Reaching"),
+    ARCHAEOLOGIST("archaeologist", ModIcons.STAR_ENCHANTMENT + " Archaeologist"),
+    GENEROUS("generous", ModIcons.STAR_ENCHANTMENT + " Generous"),
+    REACHING("reaching", ModIcons.STAR_ENCHANTMENT + " Reaching"),
 
     // Watering Can
-    BOTTOMLESS("bottomless", "✰ Bottomless"),
+    BOTTOMLESS("bottomless", ModIcons.STAR_ENCHANTMENT + " Bottomless"),
 
     // Pan
-    FISHER("fisher", "✰ Fisher"),
+    FISHER("fisher", ModIcons.STAR_ENCHANTMENT + " Fisher"),
 
     // Shared / Multi-tool
-    EFFICIENT("efficient", "✰ Efficient"),
-    POWERFUL("powerful", "✰ Powerful"),
-    SWIFT("swift", "✰ Swift");
+    EFFICIENT("efficient", ModIcons.STAR_ENCHANTMENT + " Efficient"),
+    POWERFUL("powerful", ModIcons.STAR_ENCHANTMENT + " Powerful"),
+    SWIFT("swift", ModIcons.STAR_ENCHANTMENT + " Swift");
 
     private final String nbtKey;
     private final String displayName;

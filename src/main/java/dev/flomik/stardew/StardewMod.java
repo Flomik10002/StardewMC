@@ -1,6 +1,7 @@
 package dev.flomik.stardew;
 
 import dev.flomik.stardew.common.module.farming.crop.CropRegistry;
+import dev.flomik.stardew.common.module.player.capability.PlayerStardewState;
 import dev.flomik.stardew.common.module.time.WeatherSystem;
 import dev.flomik.stardew.common.registry.*;
 import dev.flomik.stardew.common.module.farming.crop.logic.GrowthSystem;
@@ -9,6 +10,7 @@ import dev.flomik.stardew.core.network.PacketHandler;
 import dev.flomik.stardew.common.admin.SeasonArgument;
 import dev.flomik.stardew.common.module.time.ScheduleManager;
 import dev.flomik.stardew.common.module.time.StardewDateData;
+import dev.flomik.stardew.core.config.StardewConfig;
 import dev.flomik.stardew.datagen.StardewItemModels;
 import net.minecraft.commands.synchronization.ArgumentTypeInfos;
 import net.minecraft.commands.synchronization.SingletonArgumentInfo;
@@ -16,6 +18,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -43,6 +46,7 @@ public class StardewMod {
         ModItems.load();
         ModSounds.load();
         ModMenuTypes.load();
+        ModIcons.init();
 
         ArgumentTypeInfos.registerByClass(
                 SeasonArgument.class,
@@ -51,6 +55,14 @@ public class StardewMod {
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(StardewMod::onGatherData);
+        modEventBus.addListener(this::registerCapabilities);
+        
+        // Регистрируем конфиг
+        StardewConfig.register();
+    }
+
+    private void registerCapabilities(RegisterCapabilitiesEvent event) {
+        event.register(PlayerStardewState.class);
     }
 
     @SubscribeEvent

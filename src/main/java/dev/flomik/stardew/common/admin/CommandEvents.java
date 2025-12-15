@@ -14,5 +14,7 @@ public class CommandEvents {
         RainTestCommand.register(event.getDispatcher());
         SoilTestCommand.register(event.getDispatcher());
         RandomizeDirtCommand.register(event.getDispatcher());
+        EnergyCommand.register(event.getDispatcher());
+        WalletCommand.register(event.getDispatcher());
     }
 }
