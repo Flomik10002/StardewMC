@@ -409,6 +409,30 @@ public class ModItems {
             .visual(ModelPresets.simple())
             .register();
 
+    public static final RegistryObject<StardewItemBase> STONE = ItemBuilder
+            .create("stone")
+            .tab(ModTabs.MATERIALS)
+            .category(ItemCategory.MATERIALS)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.stone.desc"))
+            .visual(ModelPresets.simple())
+            .register();
+
+    public static final RegistryObject<StardewItemBase> WOOD = ItemBuilder
+            .create("wood")
+            .tab(ModTabs.MATERIALS)
+            .category(ItemCategory.MATERIALS)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.wood.desc"))
+            .visual(ModelPresets.simple())
+            .register();
+
+    public static final RegistryObject<StardewItemBase> FIBER = ItemBuilder
+            .create("fiber")
+            .tab(ModTabs.MATERIALS)
+            .category(ItemCategory.MATERIALS)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.fiber.desc"))
+            .visual(ModelPresets.simple())
+            .register();
+
     public static final RegistryObject<ToolHoe> BASIC_HOE = ItemBuilder
             .create("basic_hoe", p -> new ToolHoe(p, 0))
             .stacksTo(1)

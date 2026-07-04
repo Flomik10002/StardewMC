@@ -1,6 +1,7 @@
 {
   "tab.stardew.blocks": "StardewMC Blocks",
   "tab.stardew.craftables": "StardewMC Craftables",
+  "tab.stardew.materials": "StardewMC Materials",
   "tab.stardew.artisan_goods": "StardewMC Artisan Goods",
   "tab.stardew.cooking": "StardewMC Cooking",
   "tab.stardew.tools": "StardewMC Tools",
@@ -28,6 +29,9 @@
   "item.stardew.cheese": "Cheese",
   "item.stardew.goat_cheese": "Goat Cheese",
   "item.stardew.wine": "Wine",
+  "item.stardew.stone": "Stone",
+  "item.stardew.wood": "Wood",
+  "item.stardew.fiber": "Fiber",
 
   "item.stardew.tomato_item": "Tomato",
   "item.stardew.cauliflower_item": "Cauliflower",
@@ -103,10 +107,14 @@
   "tooltip.stardew.category.artisan_goods": "Artisan Goods",
   "tooltip.stardew.category.cooking": "Cooking",
   "tooltip.stardew.category.animal_product": "Animal Product",
+  "tooltip.stardew.category.materials": "Materials",
 
   "tooltip.stardew.hoe.desc": "Used to dig and till soil.",
   "tooltip.stardew.watering_can.desc": "Used to water crops. It can be refilled at any water source.",
   "tooltip.stardew.pickaxe.desc": "Used to break stones.",
+  "tooltip.stardew.stone.desc": "A reliable mineral material for crafting and building.",
+  "tooltip.stardew.wood.desc": "Strong, workable plant matter suited to many projects.",
+  "tooltip.stardew.fiber.desc": "Unprocessed plant strands for basic crafting.",
 
   "tooltip.stardew.tomato.desc": "A rich and wholesome relative of the tomato.",
   "tooltip.stardew.egg.desc": "A regular brown chicken egg.",

@@ -1,6 +1,7 @@
 {
   "tab.stardew.blocks": "Блоки StardewMC",
   "tab.stardew.craftables": "Крафты StardewMC",
+  "tab.stardew.materials": "Материалы StardewMC",
   "tab.stardew.artisan_goods": "Ремесленные товары StardewMC",
   "tab.stardew.cooking": "Кулинария StardewMC",
   "tab.stardew.tools": "Инструменты StardewMC",
@@ -27,6 +28,9 @@
   "item.stardew.cheese": "Сыр",
   "item.stardew.goat_cheese": "Козий сыр",
   "item.stardew.wine": "Вино",
+  "item.stardew.stone": "Камень",
+  "item.stardew.wood": "Древесина",
+  "item.stardew.fiber": "Волокна",
 
   "item.stardew.tomato_item": "Помидор",
   "item.stardew.cauliflower_item": "Цветная капуста",
@@ -104,10 +108,14 @@
   "tooltip.stardew.category.artisan_goods": "Ремесленные товары",
   "tooltip.stardew.category.cooking": "Кулинария",
   "tooltip.stardew.category.animal_product": "Продукты животноводства",
+  "tooltip.stardew.category.materials": "Материалы",
 
   "tooltip.stardew.hoe.desc": "Используется для вспахивания земли.",
   "tooltip.stardew.watering_can.desc": "Используется для полива. Можно наполнить в любом источнике воды.",
   "tooltip.stardew.pickaxe.desc": "Используется для разбивания камней.",
+  "tooltip.stardew.stone.desc": "Надёжный минеральный материал для крафта и строительства.",
+  "tooltip.stardew.wood.desc": "Прочный растительный материал, удобный для множества работ.",
+  "tooltip.stardew.fiber.desc": "Необработанные растительные волокна для простого крафта.",
 
   "tooltip.stardew.tomato.desc": "Богатый и полезный родственник томата.",
   "tooltip.stardew.egg.desc": "Обычное коричневое куриное яйцо.",

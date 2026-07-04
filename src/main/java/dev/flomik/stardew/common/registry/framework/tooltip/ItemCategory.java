@@ -9,7 +9,9 @@ public enum ItemCategory {
 
     COOKING("tooltip.stardew.category.cooking", 0x8B0000),  // #8B0000 (тёмно-красный)
 
-    ANIMAL_PRODUCT("tooltip.stardew.category.animal_product", 0xff0064);  // #ff0064 (розовый/малиновый)
+    ANIMAL_PRODUCT("tooltip.stardew.category.animal_product", 0xff0064),  // #ff0064 (розовый/малиновый)
+
+    MATERIALS("tooltip.stardew.category.materials", 0x7a5a32);  // #7a5a32 (коричневый)
 
     private final String translationKey;
     private final TextColor color;
