@@ -9,8 +9,10 @@ import dev.flomik.stardew.common.module.farming.blockentity.FarmlandBlockEntity;
 import dev.flomik.stardew.common.module.machinery.block.*;
 import dev.flomik.stardew.common.module.machinery.blockentity.*;
 import dev.flomik.stardew.common.registry.framework.BlockBuilder;
+import dev.flomik.stardew.common.module.shipping.ShippingBinBlock;
 import dev.flomik.stardew.common.module.nature.block.BlockDirt;
 import dev.flomik.stardew.common.module.farming.block.BlockFarmland;
+import dev.flomik.stardew.common.module.farming.block.BlockScarecrow;
 import dev.flomik.stardew.common.module.nature.block.BlockGrassSurface;
 import dev.flomik.stardew.common.registry.framework.BlockEntry;
 import dev.flomik.stardew.common.registry.framework.datagen.ModelPresets;
@@ -129,6 +131,22 @@ public class ModBlocks {
             .transform(crop())
             .blockEntity(CropBlockEntity::new)
             .noItem()
+            .register();
+
+    // Модель предмета лежит в main resources (models/item/scarecrow.json), датаген не нужен
+    public static final RegistryObject<BlockScarecrow> SCARECROW = BlockBuilder.create("scarecrow", BlockScarecrow::new)
+            .transform(woodMachine())
+            .item()
+            .tab(ModTabs.CRAFTABLES)
+            .register();
+
+    // Shipping Bin - регистрируется отдельно, т.к. BlockEntity в ModBlockEntities
+    // Плоской иконки item/shipping_bin нет, используем текстуру блока (пока WIP-заглушка)
+    public static final RegistryObject<ShippingBinBlock> SHIPPING_BIN = BlockBuilder.create("shipping_bin", ShippingBinBlock::new)
+            .transform(woodMachine())
+            .item()
+            .tab(ModTabs.CRAFTABLES)
+            .visual(ModelPresets.simple("block/shipping_bin"))
             .register();
 
     public static void load() {

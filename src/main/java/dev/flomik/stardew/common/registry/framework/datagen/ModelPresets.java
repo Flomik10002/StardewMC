@@ -12,6 +12,15 @@ public class ModelPresets {
                 provider.modLoc("item/" + name));
     }
 
+    /** Плоская иконка с явно указанной текстурой (путь относительно assets/stardew/textures/). */
+    public static ItemModelGen simple(String texturePath) {
+        return (provider, item, name) -> provider.singleTexture(
+                name,
+                new ResourceLocation("item/generated"),
+                "layer0",
+                provider.modLoc(texturePath));
+    }
+
     public static ItemModelGen handheld() {
         return (provider, item, name) -> provider.singleTexture(
                 name,
