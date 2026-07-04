@@ -31,6 +31,9 @@
   "item.stardew.stone": "Камень",
   "item.stardew.wood": "Древесина",
   "item.stardew.fiber": "Волокна",
+  "item.stardew.hardwood": "Твёрдая древесина",
+  "item.stardew.sap": "Сок",
+  "item.stardew.coal": "Уголь",
 
   "item.stardew.tomato_item": "Помидор",
   "item.stardew.cauliflower_item": "Цветная капуста",
@@ -116,6 +119,9 @@
   "tooltip.stardew.stone.desc": "Надёжный минеральный материал для крафта и строительства.",
   "tooltip.stardew.wood.desc": "Прочный растительный материал, удобный для множества работ.",
   "tooltip.stardew.fiber.desc": "Необработанные растительные волокна для простого крафта.",
+  "tooltip.stardew.hardwood.desc": "Плотная, стойкая древесина для требовательных работ.",
+  "tooltip.stardew.sap.desc": "Липкая древесная жидкость, собранная со стволов и ветвей.",
+  "tooltip.stardew.coal.desc": "Горючий минерал для крафта и переплавки.",
 
   "tooltip.stardew.tomato.desc": "Богатый и полезный родственник томата.",
   "tooltip.stardew.egg.desc": "Обычное коричневое куриное яйцо.",

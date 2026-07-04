@@ -433,6 +433,30 @@ public class ModItems {
             .visual(ModelPresets.simple())
             .register();
 
+    public static final RegistryObject<StardewItemBase> HARDWOOD = ItemBuilder
+            .create("hardwood")
+            .tab(ModTabs.MATERIALS)
+            .category(ItemCategory.MATERIALS)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.hardwood.desc"))
+            .visual(ModelPresets.simple())
+            .register();
+
+    public static final RegistryObject<StardewFoodItem> SAP = ItemBuilder
+            .createFood("sap", -1)
+            .tab(ModTabs.MATERIALS)
+            .category(ItemCategory.MATERIALS)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.sap.desc"))
+            .visual(ModelPresets.simple())
+            .register();
+
+    public static final RegistryObject<StardewItemBase> COAL = ItemBuilder
+            .create("coal")
+            .tab(ModTabs.MATERIALS)
+            .category(ItemCategory.MATERIALS)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.coal.desc"))
+            .visual(ModelPresets.simple())
+            .register();
+
     public static final RegistryObject<ToolHoe> BASIC_HOE = ItemBuilder
             .create("basic_hoe", p -> new ToolHoe(p, 0))
             .stacksTo(1)
