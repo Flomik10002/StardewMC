@@ -9,8 +9,10 @@ import dev.flomik.stardew.client.renderer.ChestRenderer;
 import dev.flomik.stardew.client.renderer.StoneChestRenderer;
 import dev.flomik.stardew.client.screen.BigChestScreen;
 import dev.flomik.stardew.client.screen.ChestScreen;
+import dev.flomik.stardew.client.screen.ShippingBinScreen;
 import dev.flomik.stardew.common.module.machinery.menu.ModBigChestMenu;
 import dev.flomik.stardew.common.module.machinery.menu.ModChestMenu;
+import dev.flomik.stardew.common.module.shipping.ShippingBinMenu;
 import dev.flomik.stardew.common.registry.ModBlocks;
 import dev.flomik.stardew.common.registry.ModMenuTypes;
 import dev.flomik.stardew.common.registry.framework.RendererRegistry;
@@ -57,6 +59,7 @@ public class ClientSetup {
         event.enqueueWork(() -> {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.FARMLAND.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.OIL_MAKER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.SCARECROW.get(), RenderType.cutout());
 
             ItemProperties.register(ModItems.EGG.get(), new ResourceLocation(StardewMod.MODID, "variant"), (stack, level, entity, seed) ->
                     stack.hasTag() && stack.getTag().getInt("variant") == 1 ? 1.0F : 0.0F);
@@ -71,6 +74,9 @@ public class ClientSetup {
 
             MenuScreens.register(ModMenuTypes.BIG_CHEST_MENU.get(),
                     (ModBigChestMenu menu, Inventory inv, Component title) -> new BigChestScreen(menu, inv, title));
+
+            MenuScreens.register(ModMenuTypes.SHIPPING_BIN.get(),
+                    (ShippingBinMenu menu, Inventory inv, Component title) -> new ShippingBinScreen(menu, inv, title));
         });
     }
 }
