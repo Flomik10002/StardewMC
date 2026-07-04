@@ -4,6 +4,7 @@ import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.common.module.player.capability.PlayerProvider;
 import dev.flomik.stardew.common.module.time.ScheduleManager;
 import dev.flomik.stardew.common.module.time.StardewTimeUtils;
+import dev.flomik.stardew.common.registry.framework.StardewFoodItem;
 import dev.flomik.stardew.core.config.StardewConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -47,6 +48,10 @@ public class EnergyEventHandler {
         // ИСПРАВЛЕНО: event.getEntity().level()
         if (event.getEntity() instanceof Player player && !event.getEntity().level().isClientSide) {
             ItemStack stack = event.getItem();
+            if (stack.getItem() instanceof StardewFoodItem) {
+                return;
+            }
+
             if (stack.isEdible() && stack.getItem().getFoodProperties() != null) {
                 int nutrition = stack.getItem().getFoodProperties().getNutrition();
                 float energyRestored = nutrition * 10.0f;
