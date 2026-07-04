@@ -1,5 +1,6 @@
-// 1.20.1	2026-07-04T16:54:44.516840838	Item Models: stardew
+// 1.20.1	2026-07-05T02:07:37.755145203	Item Models: stardew
 3ede34ef46cd08d17fad1f9ed34d249f5419ed3a assets/stardew/models/item/aged_roe.json
+9061d33e3001daffc3b89a8558f89801790ed325 assets/stardew/models/item/basic_axe.json
 7a1838f35aa2c6faf9ce39fdb286f21d3f5c6782 assets/stardew/models/item/basic_pickaxe.json
 d7cd2e9047c664a54e99d14c931b549a4cbdf640 assets/stardew/models/item/bee_house.json
 34a00b2e339a3e916b98e2268377ee0a94b4a676 assets/stardew/models/item/beer.json
@@ -11,6 +12,7 @@ d7cd2e9047c664a54e99d14c931b549a4cbdf640 assets/stardew/models/item/bee_house.js
 157501a20342c54d2769e9eb4b57b27fdd8e37d1 assets/stardew/models/item/chest.json
 6805ea2d34a93568e52166fddd6882906f2931e4 assets/stardew/models/item/cloth.json
 217b3e2d244cab38ce2ee14b983c11050fbaaf42 assets/stardew/models/item/coffee.json
+9abb7982d40e37242905e5388990aadd894e0f50 assets/stardew/models/item/copper_axe.json
 3d3e5d912f05896292f8bcd4ffcd0f74a2b55445 assets/stardew/models/item/copper_pickaxe.json
 7444e88fda6105cec57019a70a358f3a23521b01 assets/stardew/models/item/dinosaur_egg.json
 c347d50fa1a8627e2d546b5cefa3d72de8498dd6 assets/stardew/models/item/dinosaur_mayonnaise.json
@@ -20,12 +22,15 @@ d2c7e52a36ef8e78ec24a0446c571b8973ed08da assets/stardew/models/item/dried_fruit.
 7147489387d9471fac4e8d88084e2bfdf1aa58dc assets/stardew/models/item/duck_feather.json
 e916d0e2c73bd6c9fcf9934525492b6fbbe99177 assets/stardew/models/item/duck_mayonnaise.json
 7045d97464baaa30202240960fd5f86ef4c816e5 assets/stardew/models/item/egg.json
+81c9fbe7babfd83a9027ebbf4c17c72f0e83f3d9 assets/stardew/models/item/fiber.json
 bb590c5555d240bf34f91c5049ae73f5c22b8d35 assets/stardew/models/item/goat_cheese.json
 2e071dd5b971b5a38ade1db9a92d36619b6319db assets/stardew/models/item/goat_milk.json
+de932b946b67a643af3941dd539b1f8734bdbcbd assets/stardew/models/item/gold_axe.json
 42f05dd31cb86e27ac83352085eb3992eca9497e assets/stardew/models/item/gold_pickaxe.json
 b23e449ac451d38726b2f7798dc370887c2aa54c assets/stardew/models/item/golden_egg.json
 e4b7828d5336df545ad977aa87bc672710cea39d assets/stardew/models/item/green_tea.json
 78b9358b0178694bc351d7d272f1c00ba3e18b10 assets/stardew/models/item/honey.json
+d03286521ded060a8ef1dcfce8eb35fef3ded897 assets/stardew/models/item/iridium_axe.json
 96e291ed047e1a0c7effbcedb208542f4d4e8f90 assets/stardew/models/item/iridium_pickaxe.json
 b20cd45acb89d503e3574fbc3936730429ac2506 assets/stardew/models/item/jelly.json
 0b73bf1d6ae436adb8408bdcf9dc9af7b3aeb288 assets/stardew/models/item/juice.json
@@ -33,6 +38,7 @@ b20cd45acb89d503e3574fbc3936730429ac2506 assets/stardew/models/item/jelly.json
 a42afa9e4bfb5de1ccffbf108479c4a9b4f35636 assets/stardew/models/item/large_egg.json
 958d0708ed842587a8c62fffd4f80cd742468677 assets/stardew/models/item/large_goat_milk.json
 d0df32323f206a988b9c08a48c01e984a851e299 assets/stardew/models/item/large_milk.json
+19e5db7df517f475637d1419ffe72df4fa8baba7 assets/stardew/models/item/large_stump.json
 780bf445fa8598117d81141d7094b35da25973e9 assets/stardew/models/item/mayonnaise.json
 c06c49833329d92fbf0f71251b12c121605089db assets/stardew/models/item/mead.json
 a2e191b2ec99a64e934915a7954be98952f8cfa6 assets/stardew/models/item/milk.json
@@ -47,7 +53,9 @@ d38b97d1b159faf4e55fdcad54fb7bf2d2af518e assets/stardew/models/item/raisins.json
 f0d6bcccd6fdd5ba48727aeedeeb26a2816060c3 assets/stardew/models/item/shipping_bin.json
 d6476c165ce4671906eb0e7f2d8bf3ff2df1a253 assets/stardew/models/item/slime.json
 5b467f8bf368c18cb55b26121d133bb39291b293 assets/stardew/models/item/smoked_fish.json
+990436c2556207bdd23ae6c2811d194e2fb7aecd assets/stardew/models/item/steel_axe.json
 a3bd3fe1358ca02415fcbf089efa2c32de88963d assets/stardew/models/item/steel_pickaxe.json
+5bfabcfef63885e7a31c21dd2bb6cd1814628260 assets/stardew/models/item/stone.json
 41cc8e99da3034a15bbe4186e328481e177c3a57 assets/stardew/models/item/stone_chest.json
 fbae1e0c70e147b8890711d8913186b97ed7ed09 assets/stardew/models/item/tomato.json
 029cf96593b706915285a925b8663726d69027a0 assets/stardew/models/item/tomato_seeds.json
@@ -57,4 +65,5 @@ b86c63ce8a60fc465d895fba03396c43f2b8b2f2 assets/stardew/models/item/vinegar.json
 fb0f36cdf29a6e849b2ea03a6e100a25a5c2675c assets/stardew/models/item/void_egg.json
 7e1d3a16854f4678cf468bc8a4ef1ff34d183aed assets/stardew/models/item/void_mayonnaise.json
 a6e9692d32a52de6973735418ca9cff96aa56c35 assets/stardew/models/item/wine.json
+7ae50e3ab8c4c0d409b815657777ede6f143b30e assets/stardew/models/item/wood.json
 82c0f9654b6976f39cb9d40aed97e128d0ad1834 assets/stardew/models/item/wool.json

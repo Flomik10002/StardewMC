@@ -3,6 +3,9 @@ package dev.flomik.stardew.common.registry.framework;
 import dev.flomik.stardew.common.registry.StardewRegistry;
 import dev.flomik.stardew.common.registry.framework.datagen.DataGenManager;
 import dev.flomik.stardew.common.registry.framework.datagen.ItemModelGen;
+import dev.flomik.stardew.common.registry.framework.multiblock.MultiblockBlock;
+import dev.flomik.stardew.common.registry.framework.multiblock.MultiblockBlockItem;
+import dev.flomik.stardew.common.registry.framework.multiblock.MultiblockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
@@ -77,10 +80,17 @@ public class BlockBuilder<T extends Block> {
 
     protected BlockEntry<T, ?> registerInternal(boolean hasItem, Item.Properties itemProps, RegistryObject<CreativeModeTab> tab, ItemModelGen visualGen) {
         RegistryObject<T> blockReg = StardewRegistry.BLOCKS.register(name, () -> factory.apply(properties));
+        MultiblockRegistry.register(name, blockReg);
         RegistryObject<Item> itemReg = null;
 
         if (hasItem) {
-            itemReg = StardewRegistry.ITEMS.register(name, () -> new BlockItem(blockReg.get(), itemProps));
+            itemReg = StardewRegistry.ITEMS.register(name, () -> {
+                T block = blockReg.get();
+                if (block instanceof MultiblockBlock multiblock) {
+                    return new MultiblockBlockItem(multiblock, itemProps);
+                }
+                return new BlockItem(block, itemProps);
+            });
 
             if (tab != null) {
                 TabManager.assign(tab, itemReg);
