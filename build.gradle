@@ -94,7 +94,6 @@ repositories {
             includeGroup("com.eliotlash.mclib")
         }
     }
-    // XStream for TransformerLib XML parsing
     mavenCentral()
 }
 
@@ -118,6 +117,8 @@ dependencies {
 }
 
 tasks.named('processResources', ProcessResources).configure {
+    dependsOn 'copyJarJarLibs', 'createJarJarMetadata'
+
     var replaceProperties = [
             mc_version          : mc_version, flib_version: flib_version,
             loader_version_range: loader_version_range,
@@ -129,6 +130,10 @@ tasks.named('processResources', ProcessResources).configure {
 
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties + [project: project]
+    }
+
+    from(layout.buildDirectory.dir('jarjarlibs')) {
+        into 'META-INF/jarjar'
     }
 }
 
