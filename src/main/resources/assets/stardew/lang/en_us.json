@@ -15,6 +15,8 @@
   "block.stardew.stone_chest": "Stone Chest",
   "block.stardew.big_stone_chest": "Big Stone Chest",
   "block.stardew.scarecrow": "Scarecrow",
+  "block.stardew.shipping_bin": "Shipping Bin",
+  "container.stardew.shipping_bin": "Shipping Bin",
 
   "block.stardew.dirt": "Dirt",
   "block.stardew.farmland": "Farmland",
@@ -152,5 +154,14 @@
   "tooltip.stardew.smoked_fish.desc": "Smoked to perfection.",
 
   "stardew.config.allowSprinting": "Allow Sprinting",
-  "stardew.config.allowSprinting.comment": "WARNING: This option SIGNIFICANTLY affects your gameplay experience, making it unplanned easier in some places!"
+  "stardew.config.allowSprinting.comment": "WARNING: This option SIGNIFICANTLY affects your gameplay experience, making it unplanned easier in some places!",
+
+  "shipping.stardew.category.farming": "Farming",
+  "shipping.stardew.category.foraging": "Foraging",
+  "shipping.stardew.category.fishing": "Fishing",
+  "shipping.stardew.category.mining": "Mining",
+  "shipping.stardew.category.other": "Other",
+  "shipping.stardew.category.total": "Total",
+  "gui.stardew.shipping_results": "Shipping Results",
+  "gui.stardew.ok": "OK"
 }

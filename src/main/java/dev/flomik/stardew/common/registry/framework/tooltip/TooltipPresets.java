@@ -90,9 +90,25 @@ public class TooltipPresets {
     }
 
     public static StardewTooltip category(ItemCategory category) {
-        return (stack, level, tooltip) ->
-                tooltip.add(Component.translatable(category.getTranslationKey())
-                        .withStyle(style -> style.withColor(category.getColor())));
+        return new CategoryTooltip(category);
+    }
+
+    public static class CategoryTooltip implements StardewTooltip {
+        private final ItemCategory category;
+
+        public CategoryTooltip(ItemCategory category) {
+            this.category = category;
+        }
+
+        public ItemCategory getCategory() {
+            return category;
+        }
+
+        @Override
+        public void append(ItemStack stack, Level level, List<Component> tooltip) {
+            tooltip.add(Component.translatable(category.getTranslationKey())
+                    .withStyle(style -> style.withColor(category.getColor())));
+        }
     }
     
     /**
@@ -114,7 +130,7 @@ public class TooltipPresets {
                 PatternType current = tool.getCurrentPattern(stack);
                 tooltip.add(Component.empty());
                 tooltip.add(Component.literal("Pattern: " + current.getDisplayName())
-                        .withStyle(ChatFormatting.GRAY));
+                        .withStyle(ChatFormatting.BLACK));
                 tooltip.add(Component.literal("Shift + Right Click to change pattern")
                         .withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
             }
@@ -142,10 +158,14 @@ public class TooltipPresets {
             this.basePrice = basePrice;
         }
 
+        public int getBasePrice() {
+            return basePrice;
+        }
+
         @Override
         public void append(ItemStack stack, Level level, List<Component> tooltip) {
             Quality quality = Quality.get(stack);
-            int totalValue = quality.calculatePrice(basePrice) * stack.getCount();
+            int totalValue = (int) (quality.calculatePrice(basePrice) * stack.getCount());
             tooltip.add(Component.empty());
             tooltip.add(Component.literal(totalValue + " " + ModIcons.MONEY)
                     .withStyle(style -> style.withColor(net.minecraft.network.chat.TextColor.fromRgb(0x221122))));

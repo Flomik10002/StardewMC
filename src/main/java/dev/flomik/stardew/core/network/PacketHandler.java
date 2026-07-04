@@ -4,6 +4,8 @@ import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.common.module.machinery.network.PacketChangeChestVariant;
 import dev.flomik.stardew.common.module.machinery.network.PacketPlayChestSound;
 import dev.flomik.stardew.common.module.player.network.S2CSyncPlayerState;
+import dev.flomik.stardew.common.module.shipping.network.S2COpenShippingResultScreen;
+import dev.flomik.stardew.common.module.time.network.C2STimeFreezePacket;
 import dev.flomik.stardew.common.module.time.network.S2CSeasonSync;
 import dev.flomik.stardew.common.module.time.network.S2CWorldDataSync;
 import net.minecraft.resources.ResourceLocation;
@@ -28,6 +30,8 @@ public class PacketHandler {
         CHANNEL.registerMessage(id++, PacketPlayChestSound.class, PacketPlayChestSound::encode, PacketPlayChestSound::decode, PacketPlayChestSound::handle);
         CHANNEL.registerMessage(id++, S2CSyncPlayerState.class, S2CSyncPlayerState::encode, S2CSyncPlayerState::decode, S2CSyncPlayerState::handle);
         CHANNEL.registerMessage(id++, S2CWorldDataSync.class, S2CWorldDataSync::encode, S2CWorldDataSync::decode, S2CWorldDataSync::handle);
+        CHANNEL.registerMessage(id++, S2COpenShippingResultScreen.class, S2COpenShippingResultScreen::encode, S2COpenShippingResultScreen::new, S2COpenShippingResultScreen::handle);
+        CHANNEL.registerMessage(id++, C2STimeFreezePacket.class, C2STimeFreezePacket::encode, C2STimeFreezePacket::new, C2STimeFreezePacket::handle);
     }
 
     public static void sendToAll(Object message) {
@@ -36,5 +40,9 @@ public class PacketHandler {
 
     public static void sendToPlayer(Object message, ServerPlayer player) {
         CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), message);
+    }
+
+    public static void sendToServer(Object message) {
+        CHANNEL.sendToServer(message);
     }
 }
