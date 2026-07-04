@@ -8,6 +8,7 @@ import dev.flomik.stardew.common.registry.framework.datagen.ModelPresets;
 import dev.flomik.stardew.common.module.farming.item.ItemStardewSeed;
 import dev.flomik.stardew.common.module.tools.PatternType;
 import dev.flomik.stardew.common.module.tools.item.ToolHoe;
+import dev.flomik.stardew.common.module.tools.item.ToolAxe;
 import dev.flomik.stardew.common.module.tools.item.ToolPickaxe;
 import dev.flomik.stardew.common.module.tools.item.ToolWateringCan;
 import dev.flomik.stardew.common.registry.framework.tooltip.ItemCategory;
@@ -577,6 +578,53 @@ public class ModItems {
             .addTooltip(TooltipPresets.enchant(ToolEnchantment.POWERFUL))
             .addTooltip(TooltipPresets.enchant(ToolEnchantment.EFFICIENT))
             .addTooltip(TooltipPresets.enchant(ToolEnchantment.SWIFT))
+            .register();
+
+    public static final RegistryObject<ToolAxe> BASIC_AXE = ItemBuilder
+            .create("basic_axe", p -> new ToolAxe(p, 0))
+            .stacksTo(1)
+            .tab(ModTabs.TOOLS)
+            .visual(ModelPresets.handheld())
+            .category(ItemCategory.TOOL)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.axe.desc"))
+            .register();
+
+    public static final RegistryObject<ToolAxe> COPPER_AXE = ItemBuilder
+            .create("copper_axe", p -> new ToolAxe(p, 1))
+            .stacksTo(1)
+            .tab(ModTabs.TOOLS)
+            .visual(ModelPresets.handheld())
+            .category(ItemCategory.TOOL)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.axe.desc"))
+            .register();
+
+    public static final RegistryObject<ToolAxe> STEEL_AXE = ItemBuilder
+            .create("steel_axe", p -> new ToolAxe(p, 2))
+            .stacksTo(1)
+            .tab(ModTabs.TOOLS)
+            .visual(ModelPresets.handheld())
+            .category(ItemCategory.TOOL)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.axe.desc"))
+            .register();
+
+    public static final RegistryObject<ToolAxe> GOLD_AXE = ItemBuilder
+            .create("gold_axe", p -> new ToolAxe(p, 3))
+            .stacksTo(1)
+            .tab(ModTabs.TOOLS)
+            .visual(ModelPresets.handheld())
+            .category(ItemCategory.TOOL)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.axe.desc"))
+            .register();
+
+    public static final RegistryObject<ToolAxe> IRIDIUM_AXE = ItemBuilder
+            .create("iridium_axe", p -> new ToolAxe(p, 4))
+            .stacksTo(1)
+            .tab(ModTabs.TOOLS)
+            .visual(ModelPresets.handheld())
+            .category(ItemCategory.TOOL)
+            .addTooltip(TooltipPresets.description("tooltip.stardew.axe.desc"))
+            .addTooltip(TooltipPresets.enchant(ToolEnchantment.POWERFUL))
+            .addTooltip(TooltipPresets.enchant(ToolEnchantment.SHAVING))
             .register();
 
     public static void load() {}
