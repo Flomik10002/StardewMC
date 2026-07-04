@@ -4,7 +4,10 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import dev.flomik.stardew.StardewMod;
 import dev.flomik.stardew.common.module.machinery.menu.IChestMenu;
 import dev.flomik.stardew.common.module.machinery.network.PacketChangeChestVariant;
+import dev.flomik.stardew.common.module.time.TimeFreezeManager;
+import dev.flomik.stardew.common.module.time.network.C2STimeFreezePacket;
 import dev.flomik.stardew.core.network.PacketHandler;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
@@ -34,6 +37,28 @@ public class ChestScreen<T extends AbstractContainerMenu & IChestMenu> extends A
         this.imageWidth = 176;
         this.imageHeight = 185;
         this.inventoryLabelY = this.imageHeight - 94;
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+        
+        // Замораживаем время при открытии сундука в singleplayer
+        if (Minecraft.getInstance().hasSingleplayerServer()) {
+            PacketHandler.sendToServer(new C2STimeFreezePacket(true));
+            TimeFreezeManager.freezeClient();
+        }
+    }
+
+    @Override
+    public void onClose() {
+        // Размораживаем время при закрытии сундука
+        if (Minecraft.getInstance().hasSingleplayerServer()) {
+            PacketHandler.sendToServer(new C2STimeFreezePacket(false));
+            TimeFreezeManager.unfreezeClient();
+        }
+        
+        super.onClose();
     }
 
     @Override

@@ -16,7 +16,8 @@
     "stacksize.ServerGamePacketListenerImplMixin",
     "stacksize.ContainersMixin",
     "stacksize.BundleItemMixin",
-    "stacksize.AnvilMenuMixin"
+    "stacksize.AnvilMenuMixin",
+    "common.ServerLevelTimeMixin"
   ],
   "client": [
     "client.GuiGraphicsMixin",

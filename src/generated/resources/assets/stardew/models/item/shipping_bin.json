@@ -1,7 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "stardew:item/large_brown_egg"
+    "layer0": "stardew:block/shipping_bin"
   }
 }
-

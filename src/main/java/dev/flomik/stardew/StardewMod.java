@@ -43,6 +43,7 @@ public class StardewMod {
 
         ModTabs.load();
         ModBlocks.load();
+        ModBlockEntities.load();
         ModItems.load();
         ModSounds.load();
         ModMenuTypes.load();

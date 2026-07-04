@@ -3,7 +3,9 @@ package dev.flomik.stardew.common.registry.framework;
 import dev.flomik.stardew.common.registry.StardewRegistry;
 import dev.flomik.stardew.common.registry.framework.datagen.DataGenManager;
 import dev.flomik.stardew.common.registry.framework.datagen.ItemModelGen;
+import dev.flomik.stardew.common.registry.framework.tooltip.ItemCategory;
 import dev.flomik.stardew.common.registry.framework.tooltip.StardewTooltip;
+import dev.flomik.stardew.common.registry.framework.tooltip.TooltipPresets;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
@@ -18,6 +20,7 @@ public class ItemBuilder<T extends Item> {
     private Item.Properties properties = new Item.Properties().stacksTo(999);
     private RegistryObject<CreativeModeTab> tab = null;
     private final List<StardewTooltip> tooltips = new ArrayList<>();
+    private StardewTooltip categoryTooltip = null;
 
     private ItemModelGen visualGenerator = null;
 
@@ -49,6 +52,11 @@ public class ItemBuilder<T extends Item> {
         return this;
     }
 
+    public ItemBuilder<T> category(ItemCategory category) {
+        this.categoryTooltip = TooltipPresets.category(category);
+        return this;
+    }
+
     public ItemBuilder<T> stacksTo(int count) {
         this.properties.stacksTo(count);
         return this;
@@ -69,13 +77,21 @@ public class ItemBuilder<T extends Item> {
     }
 
     public RegistryObject<T> register() {
-        T itemInstance = factory.apply(properties);
+        RegistryObject<T> itemParams = StardewRegistry.ITEMS.register(name, () -> {
+            T itemInstance = factory.apply(properties);
 
-        if (itemInstance instanceof IStardewItem stardewItem) {
-            stardewItem.setTooltips(new ArrayList<>(this.tooltips));
-        }
+            if (itemInstance instanceof IStardewItem stardewItem) {
+                List<StardewTooltip> finalTooltips = new ArrayList<>();
+                if (this.categoryTooltip != null) {
+                    finalTooltips.add(this.categoryTooltip);
+                }
+                finalTooltips.add(TooltipPresets.separator());
+                finalTooltips.addAll(this.tooltips);
+                stardewItem.setTooltips(finalTooltips);
+            }
 
-        RegistryObject<T> itemParams = StardewRegistry.ITEMS.register(name, () -> itemInstance);
+            return itemInstance;
+        });
 
         if (tab != null) {
             TabManager.assign(tab, itemParams);
