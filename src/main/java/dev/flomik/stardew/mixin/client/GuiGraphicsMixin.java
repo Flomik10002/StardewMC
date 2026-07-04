@@ -28,22 +28,25 @@ public abstract class GuiGraphicsMixin {
         return Math.min(scale, MAX_SCALE);
     }
     
-    @Redirect(method = "m_280302_", // renderItemDecorations
-              at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;m_252880_(FFF)V"), // translate
-              remap = false)
+    @Redirect(
+            method = "renderItemDecorations(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V",
+            at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;translate(FFF)V")
+    )
     private void doNothing1(PoseStack instance, float x, float y, float z) {
     }
 
-    @Redirect(method = "m_280302_", // renderItemDecorations
-              at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;m_280056_(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I"), // drawString
-              remap = false)
+    @Redirect(
+            method = "renderItemDecorations(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;drawString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I")
+    )
     private int doNothing2(GuiGraphics instance, Font font, String text, int x, int y, int color, boolean shadow) {
         return 0;
     }
 
-    @Inject(method = "m_280302_", // renderItemDecorations
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;m_280056_(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I"), // drawString
-            remap = false)
+    @Inject(
+            method = "renderItemDecorations(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;drawString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I")
+    )
     private void renderText(Font font, ItemStack itemStack, int x, int y, String alternateCount, CallbackInfo ci) {
         var poseStack = ((GuiGraphics) (Object) this).pose();
         
