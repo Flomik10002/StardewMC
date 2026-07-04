@@ -30,3 +30,6 @@ forge*changelog.txt
 mc-forge-knowledge/
 reference-sources/
 asset-tools/
+
+# Editor/tool backup files
+*~
