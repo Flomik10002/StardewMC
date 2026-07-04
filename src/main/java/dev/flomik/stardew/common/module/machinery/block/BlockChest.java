@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class BlockChest extends BaseEntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 14, 15);
+    public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 15, 15); // Обычный сундук: высота 15
     public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 0, 20);
     public static final BooleanProperty HAS_ITEMS = BooleanProperty.create("has_items");
 

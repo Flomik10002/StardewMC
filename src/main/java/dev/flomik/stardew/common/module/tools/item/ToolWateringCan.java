@@ -29,6 +29,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import dev.flomik.stardew.common.module.player.capability.PlayerStardewState;
+
 public class ToolWateringCan extends StardewItemBase implements IPatternTool {
 
     private static final String NBT_PATTERN = "Pattern";
@@ -114,6 +116,10 @@ public class ToolWateringCan extends StardewItemBase implements IPatternTool {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         
+        // TODO: [MECHANIC] Energy Consumption
+        // Base cost: 2 energy.
+        // Charging increases cost?
+        
         if (player.isShiftKeyDown()) {
             if (!level.isClientSide) {
                 PatternType current = getCurrentPattern(stack);
@@ -184,6 +190,12 @@ public class ToolWateringCan extends StardewItemBase implements IPatternTool {
         if (hydratedCount > 0) {
             setWater(stack, currentWater);
             level.playSound(null, clicked, ModSounds.WATERING_CAN_USE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+
+            if (!level.isClientSide && player != null) {
+                player.getCapability(dev.flomik.stardew.common.module.player.capability.PlayerProvider.STARDEW_CAPABILITY).ifPresent(playerState -> {
+                    playerState.consumeEnergy(2.0f);
+                });
+            }
         }
 
         return hydratedCount > 0 ? InteractionResult.SUCCESS : InteractionResult.PASS;

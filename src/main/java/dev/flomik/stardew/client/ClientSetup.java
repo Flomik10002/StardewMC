@@ -1,6 +1,8 @@
 package dev.flomik.stardew.client;
 
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.client.overlay.EnergyOverlay;
+import dev.flomik.stardew.client.overlay.StardewClockOverlay;
 import dev.flomik.stardew.client.renderer.BigChestRenderer;
 import dev.flomik.stardew.client.renderer.BigStoneChestRenderer;
 import dev.flomik.stardew.client.renderer.ChestRenderer;
@@ -19,6 +21,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -44,6 +47,12 @@ public class ClientSetup {
     }
 
     @SubscribeEvent
+    public static void registerOverlays(RegisterGuiOverlaysEvent event) {
+        event.registerAboveAll("energy_bar", EnergyOverlay.HUD_ENERGY);
+        event.registerAboveAll("clock_hud", StardewClockOverlay.HUD_CLOCK);
+    }
+
+    @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.FARMLAND.get(), RenderType.translucent());
@@ -63,6 +72,5 @@ public class ClientSetup {
             MenuScreens.register(ModMenuTypes.BIG_CHEST_MENU.get(),
                     (ModBigChestMenu menu, Inventory inv, Component title) -> new BigChestScreen(menu, inv, title));
         });
-
     }
 }

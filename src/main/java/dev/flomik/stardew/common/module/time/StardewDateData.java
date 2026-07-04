@@ -1,5 +1,7 @@
 package dev.flomik.stardew.common.module.time;
 
+import dev.flomik.stardew.client.ClientStardewData;
+import dev.flomik.stardew.common.module.time.network.S2CWorldDataSync;
 import dev.flomik.stardew.core.network.PacketHandler;
 import dev.flomik.stardew.common.module.time.network.S2CSeasonSync;
 import net.minecraft.nbt.CompoundTag;
@@ -19,6 +21,12 @@ public class StardewDateData extends SavedData {
     private float dailyLuck = 0f;
     private String festivalToday = null;
     private String festivalTomorrow = null;
+    
+    // TODO: [MECHANIC] Implement Festival Logic
+    // boolean isFestivalActive();
+    // void startFestival(String festivalId);
+    // void endFestival();
+
     private boolean weatherInitialized = false;
 
     public Season getSeason() {
@@ -34,6 +42,7 @@ public class StardewDateData extends SavedData {
         syncTotalDaysFromDate();
         setDirty();
 
+        PacketHandler.sendToAll(new S2CWorldDataSync(season, todayWeather, day));
         PacketHandler.sendToAll(new S2CSeasonSync(newSeason));
     }
 
@@ -46,6 +55,7 @@ public class StardewDateData extends SavedData {
     public void setDate(Season newSeason, int newDay) {
         this.season = newSeason;
         this.day = newDay;
+        PacketHandler.sendToAll(new S2CWorldDataSync(season, todayWeather, day));
         syncTotalDaysFromDate();
         setDirty();
     }
@@ -69,12 +79,14 @@ public class StardewDateData extends SavedData {
         if (day > 28) {
             day = 1;
             season = season.next();
+            PacketHandler.sendToAll(new S2CWorldDataSync(season, todayWeather, day));
             PacketHandler.sendToAll(new S2CSeasonSync(season));
         }
 
         this.todayWeather = this.tomorrowWeather;
         this.festivalToday = this.festivalTomorrow;
 
+        PacketHandler.sendToAll(new S2CWorldDataSync(season, todayWeather, day));
         setDirty();
     }
 
@@ -125,7 +137,9 @@ public class StardewDateData extends SavedData {
     public Weather getTodayWeather() { return todayWeather; }
     public Weather getTomorrowWeather() { return tomorrowWeather; }
     public void setTomorrowWeather(Weather w) { this.tomorrowWeather = w; setDirty(); }
-    public void setTodayWeather(Weather w) { this.todayWeather = w; setDirty(); }
+    public void setTodayWeather(Weather w) { this.todayWeather = w; setDirty();
+        PacketHandler.sendToAll(new S2CWorldDataSync(season, todayWeather, day));
+    }
     public float getDailyLuck() { return dailyLuck; }
     public void setDailyLuck(float v) { this.dailyLuck = v; setDirty(); }
     public String getFestivalToday() { return festivalToday; }

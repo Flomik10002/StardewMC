@@ -27,7 +27,7 @@ public class StardewItemBase extends Item implements IStardewItem {
 
         if (q != Quality.NORMAL) {
             MutableComponent nameWithStar = baseName.copy();
-            nameWithStar.append(Component.literal(" " + q.getIcon()).withStyle(q.getColor()));
+            nameWithStar.append(Component.literal(" " + q.getIcon()));
             return nameWithStar;
         }
         return baseName;

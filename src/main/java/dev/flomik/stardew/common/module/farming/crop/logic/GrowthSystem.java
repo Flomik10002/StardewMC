@@ -10,9 +10,16 @@ import net.minecraft.server.level.ServerLevel;
 public final class GrowthSystem {
 
     public static void run(ServerLevel level) {
+        // TODO: [MECHANIC] Implement Giant Crops check
+        // Check for 3x3 areas of Cauliflower, Melon, Pumpkin
+        // Chance: 1% per day if fully grown and watered
         for (BlockPos cropPos : CropTracker.all(level)) {
             var be = level.getBlockEntity(cropPos);
             if (!(be instanceof CropBlockEntity cropBe)) continue;
+
+            // TODO: [MECHANIC] Season check
+            // If season changed and crop is not valid for new season -> kill crop (Dead Crop)
+            // Exception: Corn (Summer/Fall), etc.
 
             var farmPos = cropPos.below();
             var fbe = level.getBlockEntity(farmPos);

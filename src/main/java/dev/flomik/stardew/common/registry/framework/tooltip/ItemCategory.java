@@ -1,29 +1,29 @@
 package dev.flomik.stardew.common.registry.framework.tooltip;
 
-import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.TextColor;
 
 public enum ItemCategory {
-    TOOL("tooltip.stardew.category.tool",ChatFormatting.GRAY),
+    TOOL("tooltip.stardew.category.tool", 0x2f4f4f),  // #2f4f4f (тёмно-серый)
 
-    ARTISAN_GOODS("tooltip.stardew.category.artisan_goods", ChatFormatting.DARK_AQUA),
+    ARTISAN_GOODS("tooltip.stardew.category.artisan_goods", 0x009b6f),  // #009b6f (зелёный)
 
-    COOKING("tooltip.stardew.category.cooking", ChatFormatting.DARK_RED),
+    COOKING("tooltip.stardew.category.cooking", 0x8B0000),  // #8B0000 (тёмно-красный)
 
-    ANIMAL_PRODUCT("tooltip.stardew.category.animal_product", ChatFormatting.RED);
+    ANIMAL_PRODUCT("tooltip.stardew.category.animal_product", 0xff0064);  // #ff0064 (розовый/малиновый)
 
     private final String translationKey;
-    private final ChatFormatting color;
+    private final TextColor color;
 
-    ItemCategory(String translationKey, ChatFormatting color) {
+    ItemCategory(String translationKey, int rgb) {
         this.translationKey = translationKey;
-        this.color = color;
+        this.color = TextColor.fromRgb(rgb);
     }
 
     public String getTranslationKey() {
         return translationKey;
     }
 
-    public ChatFormatting getColor() {
+    public TextColor getColor() {
         return color;
     }
 }

@@ -19,7 +19,13 @@
     "stacksize.AnvilMenuMixin"
   ],
   "client": [
-    "client.GuiGraphicsMixin"
+    "client.GuiGraphicsMixin",
+    "client.GuiGraphicsTooltipMixin",
+    "client.MinecraftStardewMixin",
+    "client.MinecraftAccessor",
+    "client.EntityRenderDispatcherAccessor",
+    "client.SignRendererAccessor",
+    "client.FontAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
