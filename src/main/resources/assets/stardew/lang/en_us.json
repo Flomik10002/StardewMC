@@ -32,6 +32,9 @@
   "item.stardew.stone": "Stone",
   "item.stardew.wood": "Wood",
   "item.stardew.fiber": "Fiber",
+  "item.stardew.hardwood": "Hardwood",
+  "item.stardew.sap": "Sap",
+  "item.stardew.coal": "Coal",
 
   "item.stardew.tomato_item": "Tomato",
   "item.stardew.cauliflower_item": "Cauliflower",
@@ -122,6 +125,9 @@
   "tooltip.stardew.stone.desc": "A reliable mineral material for crafting and building.",
   "tooltip.stardew.wood.desc": "Strong, workable plant matter suited to many projects.",
   "tooltip.stardew.fiber.desc": "Unprocessed plant strands for basic crafting.",
+  "tooltip.stardew.hardwood.desc": "Dense, resilient timber useful in demanding projects.",
+  "tooltip.stardew.sap.desc": "Sticky tree fluid gathered from trunks and branches.",
+  "tooltip.stardew.coal.desc": "A burnable mineral used for crafting and smelting.",
 
   "tooltip.stardew.tomato.desc": "A rich and wholesome relative of the tomato.",
   "tooltip.stardew.egg.desc": "A regular brown chicken egg.",
