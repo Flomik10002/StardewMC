@@ -60,7 +60,13 @@ public class StardewTitleScreen extends Screen {
     /** Итоговый макет уменьшен до 0.8 от максимального, что влезает - иначе логотип/кнопки упираются в края экрана без отступов. */
     private static final float LAYOUT_SCALE = 0.8f;
 
-    /** См. {@link TitleScreenReplacer} - тут только запоминаем, что было, чтобы вернуть в момент реального выхода в геймплей (см. {@link #restoreGuiScale()}). */
+    /**
+     * См. {@link TitleScreenReplacer} - тут только запоминаем, что было, и
+     * прокидываем дальше (в {@code StardewLoadWorldScreen}, в pre-world
+     * {@code CharacterCreationScreen} через {@code StardewPlayButtonHandler}) -
+     * реальный откат на пользовательский guiScale происходит там, в момент
+     * настоящего перехода в геймплей, а не на этом экране.
+     */
     private final int previousGuiScale;
 
     public StardewTitleScreen(int previousGuiScale) {
@@ -119,7 +125,7 @@ public class StardewTitleScreen extends Screen {
         int startX = (this.width - totalWidth) / 2;
 
         addRenderableWidget(new TitleMainButton(startX, buttonsY, buttonWidth, buttonHeight, 0,
-                b -> { restoreGuiScale(); StardewPlayButtonHandler.onClick(this); }));
+                b -> StardewPlayButtonHandler.onClick(this, previousGuiScale)));
 
         addRenderableWidget(new TitleMainButton(startX + (buttonWidth + BUTTON_GAP), buttonsY, buttonWidth, buttonHeight, 1,
                 b -> {
@@ -183,20 +189,6 @@ public class StardewTitleScreen extends Screen {
     void setSmallButtonsHidden(boolean hidden) {
         if (optionsButton != null) optionsButton.visible = !hidden;
         if (questionButton != null) questionButton.visible = !hidden;
-    }
-
-    /**
-     * Возвращает игроку его собственный guiScale — вызывается только в
-     * момент РЕАЛЬНОГО перехода в геймплей (тут - "New"; см. также
-     * {@code StardewLoadWorldScreen#joinWorld}), а не в {@code removed()}
-     * этого экрана — тот сработал бы уже при переходе на "Load", слишком
-     * рано (Title<->Load - один menu-flow, весь целиком на FORCED_GUI_SCALE).
-     */
-    private void restoreGuiScale() {
-        if (this.minecraft != null && this.minecraft.options.guiScale().get() != previousGuiScale) {
-            this.minecraft.options.guiScale().set(previousGuiScale);
-            this.minecraft.resizeDisplay();
-        }
     }
 
     @Override

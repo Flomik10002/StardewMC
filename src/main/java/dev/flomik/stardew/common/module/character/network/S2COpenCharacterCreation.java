@@ -23,8 +23,11 @@ public class S2COpenCharacterCreation {
     }
 
     public static void handle(S2COpenCharacterCreation msg, Supplier<NetworkEvent.Context> ctx) {
+        // openOrAutoSubmit, не open() напрямую - см. её javadoc: pre-world
+        // флоу (кнопка "New") уже собрал и подтвердил профиль ДО подключения,
+        // этот пакет от свежесозданного мира не должен открыть экран заново.
         ctx.get().enqueueWork(() -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT,
-                () -> dev.flomik.stardew.client.character.ClientCharacterCreationOpener::open));
+                () -> dev.flomik.stardew.client.character.ClientCharacterCreationOpener::openOrAutoSubmit));
         ctx.get().setPacketHandled(true);
     }
 }

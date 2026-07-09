@@ -198,6 +198,7 @@
   "gui.stardew.character.error.name_invalid": "Это имя недопустимо.",
   "gui.stardew.character.error.farm_name_empty": "Пожалуйста, введите название фермы.",
   "gui.stardew.character.error.favorite_thing_empty": "Пожалуйста, введите любимую вещь.",
+  "gui.stardew.character.error.world_create_failed": "Не удалось создать мир. Попробуйте ещё раз.",
 
   "gui.stardew.character.farm_type.standard.name": "Стандартная ферма",
   "gui.stardew.character.farm_type.standard.desc": "Большой открытый участок земли. Самый универсальный вариант - хорошо подходит тем, кто хочет баланс между посевами, животными и местом под постройки.",

@@ -1,10 +1,15 @@
 package dev.flomik.stardew.client.screen.character;
 
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.logging.LogUtils;
 import dev.flomik.stardew.client.CustomCursor;
+import dev.flomik.stardew.client.character.PendingCharacterCreation;
 import dev.flomik.stardew.client.character.skin.RuntimeSkinManager;
+import dev.flomik.stardew.client.character.worldtemplate.StardewPlayButtonHandler;
+import dev.flomik.stardew.client.character.worldtemplate.WorldTemplateManager;
 import dev.flomik.stardew.client.render.StardewFrameRenderer;
 import dev.flomik.stardew.client.screen.title.StardewTitleScreen;
+import dev.flomik.stardew.client.TitleScreenReplacer;
 import dev.flomik.stardew.common.module.character.AnimalPreference;
 import dev.flomik.stardew.common.module.character.CharacterModelType;
 import dev.flomik.stardew.common.module.character.CharacterProfile;
@@ -26,15 +31,20 @@ import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.GenericDirtMessageScreen;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.inventory.InventoryScreen;
+import net.minecraft.client.model.PlayerModel;
+import net.minecraft.client.model.geom.ModelLayers;
+import com.mojang.blaze3d.platform.Lighting;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.server.IntegratedServer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.storage.LevelResource;
 import net.minecraft.world.level.storage.LevelStorageSource;
+import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.slf4j.Logger;
 
@@ -187,6 +197,27 @@ public class CharacterCreationScreen extends Screen implements dev.flomik.starde
     private final int previousGuiScale;
 
     /**
+     * {@code true}, когда экран открыт ДО существования мира/сервера (кнопка
+     * "New" на титульном экране, см. {@link StardewPlayButtonHandler}) -
+     * никакого {@code this.minecraft.level}/{@code getSingleplayerServer()}
+     * ещё нет, и OK создаёт мир САМ (см. {@link #onOkPressed()}), а не просто
+     * шлёт пакет уже подключённому серверу. {@code false} - старый режим:
+     * экран открыт ПОСЛЕ подключения к уже существующему миру (обычный вызов
+     * через {@code ClientCharacterCreationOpener#open} по {@code S2COpenCharacterCreation},
+     * включая случай возобновления брошенного сейва через Load).
+     */
+    private final boolean preWorld;
+
+    /**
+     * Взводится в {@link #onBackPressed()} для pre-world режима ПЕРЕД
+     * {@code setScreen(...)} - подавляет обычный откат gui scale в
+     * {@link #removed()} (см. его javadoc): раз мир не создавался, Title
+     * должен остаться на форсированном scale, а не откатиться на
+     * пользовательский, как при реальном выходе в геймплей.
+     */
+    private boolean returningToMenu = false;
+
+    /**
      * Заморозка времени - по образцу {@code ChestScreen} (см. его javadoc),
      * но с явным флагом: {@code init()} вызывается заново при КАЖДОМ resize
      * окна (стандартное поведение {@code Screen}), а {@code TimeFreezeManager.freeze()}
@@ -198,8 +229,13 @@ public class CharacterCreationScreen extends Screen implements dev.flomik.starde
     private boolean timeFreezeActive = false;
 
     public CharacterCreationScreen(int previousGuiScale) {
+        this(previousGuiScale, false);
+    }
+
+    public CharacterCreationScreen(int previousGuiScale, boolean preWorld) {
         super(Component.translatable("gui.stardew.character.title"));
         this.previousGuiScale = previousGuiScale;
+        this.preWorld = preWorld;
     }
 
     @Override
@@ -207,8 +243,11 @@ public class CharacterCreationScreen extends Screen implements dev.flomik.starde
         super.removed();
         // Возвращаем игроку его собственный gui scale при закрытии экрана -
         // фиксированный scale=2 нужен только ПОКА этот экран открыт (ТЗ:
-        // "игрок не может менять gui scale в этом меню").
-        if (this.minecraft != null && this.minecraft.options.guiScale().get() != previousGuiScale) {
+        // "игрок не может менять gui scale в этом меню"). Исключение -
+        // возврат в Title из pre-world режима (returningToMenu, см. её
+        // javadoc): там форсированный scale должен остаться как есть, это
+        // не "реальный выход в геймплей".
+        if (!returningToMenu && this.minecraft != null && this.minecraft.options.guiScale().get() != previousGuiScale) {
             this.minecraft.options.guiScale().set(previousGuiScale);
             this.minecraft.resizeDisplay();
         }
@@ -821,6 +860,17 @@ public class CharacterCreationScreen extends Screen implements dev.flomik.starde
      * уже свободны, удалять безопасно сразу после, без дополнительных ожиданий.
      */
     private void onBackPressed() {
+        if (preWorld) {
+            // Ничего ещё не создано (см. javadoc preWorld) - выходить некуда
+            // "отменять", просто возвращаемся на Title, оставаясь на
+            // форсированном gui scale (returningToMenu, см. её javadoc).
+            if (this.minecraft != null) {
+                returningToMenu = true;
+                this.minecraft.setScreen(new StardewTitleScreen(previousGuiScale));
+            }
+            return;
+        }
+
         if (this.minecraft == null || this.minecraft.level == null) return;
 
         String levelId = null;
@@ -1081,7 +1131,7 @@ public class CharacterCreationScreen extends Screen implements dev.flomik.starde
         okButton.active = false;
         playSound(ModSounds.CC_COIN.get());
 
-        PacketHandler.sendToServer(new C2SFinishCharacterCreation(
+        C2SFinishCharacterCreation msg = new C2SFinishCharacterCreation(
                 draft.getName(), draft.getFarmName(), draft.getFavoriteThing(),
                 draft.getAnimalPreference(), draft.getModelType(),
                 draft.getSkinId(), draft.getEyeColor(),
@@ -1089,7 +1139,35 @@ public class CharacterCreationScreen extends Screen implements dev.flomik.starde
                 draft.getShirtId(), draft.getShirtColor(),
                 draft.getPantsId(), draft.getPantsColor(),
                 draft.getAccessoryId(), draft.getFarmType()
-        ));
+        );
+
+        if (preWorld) {
+            // Мира и сервера ещё нет (см. javadoc preWorld) - серверный
+            // CharacterCreationServerHandler позвать некому. Вместо этого:
+            // создаём мир прямо сейчас (имя фермы - настоящее, введённое
+            // игроком, а не заглушка DEFAULT_FARM_NAME, как раньше), кладём
+            // msg на полку (PendingCharacterCreation) и подключаемся - когда
+            // сервер этого СВЕЖЕГО мира неизбежно спросит "создай персонажа"
+            // (у него, как у любого нового профиля, isCharacterCreated()==false -
+            // см. FirstJoinController), ClientCharacterCreationOpener.openOrAutoSubmit
+            // найдёт эту полку и отправит msg САМ, без повторного показа
+            // этого экрана (см. её javadoc).
+            try {
+                PendingCharacterCreation.stash(msg);
+                String levelId = WorldTemplateManager.createFromTemplate(
+                        StardewPlayButtonHandler.DEFAULT_TEMPLATE_ID, draft.getFarmName());
+                this.minecraft.createWorldOpenFlows().loadLevel(this, levelId);
+            } catch (IOException e) {
+                PendingCharacterCreation.clear();
+                LOGGER.error("[Stardew] Failed to create world from template", e);
+                processing = false;
+                updateOkButtonState();
+                errorMessage = Component.translatable("gui.stardew.character.error.world_create_failed").getString();
+            }
+            return;
+        }
+
+        PacketHandler.sendToServer(msg);
     }
 
     private void clearError() {
@@ -1305,18 +1383,51 @@ public class CharacterCreationScreen extends Screen implements dev.flomik.starde
         }
     }
 
+    private PlayerModel<Player> previewModelDefault;
+    private PlayerModel<Player> previewModelSlim;
+
+    /** Ленивая инициализация - {@code EntityModelSet} нужен только с {@code init()}, не раньше. Модели без принадлежности к сущности/миру - просто геометрия, кэшируем на весь экран. */
+    private PlayerModel<Player> getPreviewModel(boolean slim) {
+        if (slim) {
+            if (previewModelSlim == null) {
+                previewModelSlim = new PlayerModel<>(this.minecraft.getEntityModels().bakeLayer(ModelLayers.PLAYER_SLIM), true);
+            }
+            return previewModelSlim;
+        }
+        if (previewModelDefault == null) {
+            previewModelDefault = new PlayerModel<>(this.minecraft.getEntityModels().bakeLayer(ModelLayers.PLAYER), false);
+        }
+        return previewModelDefault;
+    }
+
     /**
-     * Вместо vanilla {@link InventoryScreen#renderEntityInInventoryFollowsMouse} (та
-     * даёт только лёгкий "взгляд за курсором" в пределах ±40° - через
-     * {@code atan(offset/40)}) - вручную выставляем углы модели из
-     * {@link #previewYaw} (крутится драгом мыши по превью, см. {@link #mouseDragged})
-     * и рендерим через низкоуровневый {@code renderEntityInInventory}, как
-     * это по факту делает сам vanilla-метод под капотом (см.
-     * {@code InventoryScreen.renderEntityInInventoryFollowsAngle}) - просто с
-     * полным углом вместо capped-мышиного.
+     * Раньше рендерили через {@code InventoryScreen.renderEntityInInventory}
+     * на {@code this.minecraft.player} - НАСТОЯЩУЮ подключённую сущность.
+     * В pre-world режиме (см. {@code preWorld}) её ещё нет вообще (ни мира,
+     * ни сервера, ни соединения) - превью молча оставалось пустым (см. чат:
+     * "персонаж не генерируется... т.к. модель завязана на персонаже из
+     * мира"). Вместо сущности рендерим ГОЛУЮ {@link PlayerModel} напрямую -
+     * без Entity/Level вообще, текстура берётся прямо из
+     * {@link RuntimeSkinManager#getTextureLocation()} (та обновляется по
+     * ходу редактирования {@link #applyDraftToSkin} независимо от
+     * подключения, см. её javadoc) - и все части модели (жакет/рукава/
+     * штанины-оверлей) видимы по умолчанию ({@code ModelPart.visible=true}),
+     * что и нужно: {@code MinecraftSkinLayout} красит слой2 везде (волосы на
+     * голове, одежда на теле/ногах, см. её javadoc).
+     * <p>
+     * Позу повторяем вручную по декомпилированному
+     * {@code LivingEntityRenderer.render()}/{@code setupRotations()} -
+     * поворот на {@code 180 - yBodyRot} (у нас {@code yBodyRot = 180 + previewYaw}
+     * дало бы {@code -previewYaw}), затем {@code scale(-1,-1,1)} (переворот
+     * гуманоидной модели в её родных координатах), {@code scale(0.9375)}
+     * (см. {@code PlayerRenderer.scale} - тот самый "чуть меньше игрока"
+     * масштаб ваниль применяет и в игре), и {@code translate(0,-1.501,0)}
+     * (сдвиг модели так, чтобы ступни оказались в начале координат) - без
+     * этого модель оказалась бы не там и не того размера, что при старом
+     * рендере через сущность.
      */
     private void renderLivePreview(GuiGraphics graphics, int boxX, int boxY, int boxW, int boxH) {
-        if (this.minecraft == null || this.minecraft.player == null) return;
+        if (this.minecraft == null || !RuntimeSkinManager.hasComposedSkin()) return;
         int centerX = boxX + boxW / 2;
         // -30 (виртуальных единиц) - подняли ТОЛЬКО модель персонажа, не
         // фоновую картинку (та рисуется отдельным блитом раньше, эта правка
@@ -1324,27 +1435,33 @@ public class CharacterCreationScreen extends Screen implements dev.flomik.starde
         int feetY = boxY + boxH - Math.max(4, boxH / 16) - layout.realLen(30);
         int scale = Math.max(8, Math.min(boxW, boxH) / 2);
 
-        var player = this.minecraft.player;
-        float oldBodyRot = player.yBodyRot;
-        float oldYRot = player.getYRot();
-        float oldXRot = player.getXRot();
-        float oldHeadRotO = player.yHeadRotO;
-        float oldHeadRot = player.yHeadRot;
+        PlayerModel<Player> model = getPreviewModel("slim".equals(RuntimeSkinManager.getModelName()));
+        // EntityModel.young по умолчанию true (см. её javadoc/поле) - ваниль
+        // всегда переписывает его в LivingEntityRenderer.render() перед
+        // рендером ("this.model.young = entity.isBaby()"), чего мы, рендеря
+        // без сущности, никогда не делаем - иначе AgeableListModel.renderToBuffer
+        // включает "детский" режим (голова крупнее, тело мельче), а hat
+        // (слой волос) едет вместе с УМЕНЬШЕННЫМ телом (см. HumanoidModel.bodyParts) -
+        // ровно баг с "ребёнком" и "нет второго слоя".
+        model.young = false;
+        ResourceLocation skin = RuntimeSkinManager.getTextureLocation();
 
-        player.yBodyRot = 180f + previewYaw;
-        player.setYRot(180f + previewYaw);
-        player.setXRot(0f);
-        player.yHeadRot = player.getYRot();
-        player.yHeadRotO = player.getYRot();
+        graphics.pose().pushPose();
+        graphics.pose().translate(centerX, feetY, 50.0);
+        graphics.pose().mulPoseMatrix(new Matrix4f().scaling(scale, scale, -scale));
+        graphics.pose().mulPose(new Quaternionf().rotateZ((float) Math.PI));
+        graphics.pose().mulPose(new Quaternionf().rotateY((float) Math.toRadians(-previewYaw)));
+        graphics.pose().scale(-1.0F, -1.0F, 1.0F);
+        graphics.pose().scale(0.9375F, 0.9375F, 0.9375F);
+        graphics.pose().translate(0.0F, -1.501F, 0.0F);
 
-        Quaternionf rotation = new Quaternionf().rotateZ((float) Math.PI);
-        InventoryScreen.renderEntityInInventory(graphics, centerX, feetY, scale, rotation, null, player);
+        Lighting.setupForEntityInInventory();
+        VertexConsumer buffer = graphics.bufferSource().getBuffer(model.renderType(skin));
+        model.renderToBuffer(graphics.pose(), buffer, 15728880, OverlayTexture.NO_OVERLAY, 1f, 1f, 1f, 1f);
+        graphics.flush();
+        Lighting.setupFor3DItems();
 
-        player.yBodyRot = oldBodyRot;
-        player.setYRot(oldYRot);
-        player.setXRot(oldXRot);
-        player.yHeadRotO = oldHeadRotO;
-        player.yHeadRot = oldHeadRot;
+        graphics.pose().popPose();
     }
 
     @Override

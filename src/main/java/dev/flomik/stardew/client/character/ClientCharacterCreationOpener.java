@@ -5,6 +5,7 @@ import dev.flomik.stardew.client.character.skin.RuntimeSkinManager;
 import dev.flomik.stardew.client.character.skin.WorldIconComposer;
 import dev.flomik.stardew.client.screen.character.CharacterCreationScreen;
 import dev.flomik.stardew.common.module.character.CharacterProfile;
+import dev.flomik.stardew.core.network.PacketHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.server.IntegratedServer;
 import net.minecraft.world.level.storage.LevelResource;
@@ -49,6 +50,25 @@ public final class ClientCharacterCreationOpener {
     }
 
     /**
+     * Вызывается вместо {@link #open()} из {@code S2COpenCharacterCreation}
+     * (см. её javadoc) - по этому пакету сервер просит показать экран
+     * создания персонажа КАЖДЫЙ раз, когда у профиля {@code !isCharacterCreated()},
+     * включая только что созданный самим клиентом pre-world мир (см.
+     * {@code CharacterCreationScreen#onOkPressed}, ветка {@code preWorld}).
+     * Если на {@link PendingCharacterCreation} лежат данные, уже подтверждённые
+     * игроком на pre-world экране, - отправляем их сами и НЕ открываем экран
+     * второй раз. Иначе (обычный случай - свежий вход без pre-world шага,
+     * либо возобновление брошенного сейва через Load) - как раньше, {@link #open()}.
+     */
+    public static void openOrAutoSubmit() {
+        if (PendingCharacterCreation.hasPending()) {
+            PacketHandler.sendToServer(PendingCharacterCreation.takeAndClear());
+            return;
+        }
+        open();
+    }
+
+    /**
      * {@code S2CCharacterCreationAccepted} шлётся в двух случаях: сразу после
      * успешного OK на creation screen, и на КАЖДОМ следующем логине уже
      * созданного персонажа ({@link dev.flomik.stardew.common.module.character.event.FirstJoinController}) —
@@ -87,7 +107,24 @@ public final class ClientCharacterCreationOpener {
         }
     }
 
+    /**
+     * Обычный случай - экран ещё открыт (игрок кликнул OK сам), просто
+     * показываем ошибку на нём. Но если это был auto-submit
+     * ({@link #openOrAutoSubmit()}) - экран уже закрыт (пока сервер отвечал,
+     * client успел уйти в геймплей) и показывать ошибку негде. Это крайне
+     * маловероятно (клиент уже провалидировал поля перед тем, как положить
+     * их на полку), но должно быть обработано - иначе игрок навсегда
+     * застрянет в мире без персонажа. Открываем экран заново (обычный,
+     * НЕ pre-world режим - мир-то уже существует) и показываем ошибку на нём.
+     */
     public static void onRejected(String reasonKey) {
+        if (Minecraft.getInstance().screen instanceof CharacterCreationScreen screen) {
+            screen.onServerRejected(reasonKey);
+            return;
+        }
+
+        LOGGER.warn("[Stardew] Auto-submitted character creation rejected with no screen open: {}", reasonKey);
+        open();
         if (Minecraft.getInstance().screen instanceof CharacterCreationScreen screen) {
             screen.onServerRejected(reasonKey);
         }

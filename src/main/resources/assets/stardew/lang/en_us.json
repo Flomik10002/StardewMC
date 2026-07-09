@@ -197,6 +197,7 @@
   "gui.stardew.character.error.name_invalid": "That name isn't allowed.",
   "gui.stardew.character.error.farm_name_empty": "Please enter a farm name.",
   "gui.stardew.character.error.favorite_thing_empty": "Please enter a favorite thing.",
+  "gui.stardew.character.error.world_create_failed": "Failed to create the world. Please try again.",
 
   "gui.stardew.character.farm_type.standard.name": "Standard Farm",
   "gui.stardew.character.farm_type.standard.desc": "A large, open plot of land. The most versatile choice - great for players who want a balanced mix of crops, animals, and space to build.",
