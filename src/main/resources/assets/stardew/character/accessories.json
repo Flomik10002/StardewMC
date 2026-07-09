@@ -1,0 +1,6 @@
+[
+  { "id": "none" },
+  { "id": "accessory_001", "texture": "character/accessories/001.png", "supportsColor": false },
+  { "id": "accessory_002", "texture": "character/accessories/002.png", "supportsColor": false },
+  { "id": "accessory_003", "texture": "character/accessories/003.png", "supportsColor": false }
+]

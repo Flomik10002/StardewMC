@@ -1,14 +1,21 @@
 package dev.flomik.stardew.common.admin;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.common.module.character.CharacterProfile;
+import dev.flomik.stardew.common.module.character.StardewWorldMarker;
+import dev.flomik.stardew.common.module.character.capability.CharacterProfileProvider;
+import dev.flomik.stardew.common.module.character.network.S2COpenCharacterCreation;
 import dev.flomik.stardew.common.module.time.Season;
 import dev.flomik.stardew.common.module.time.StardewDateData;
 import dev.flomik.stardew.common.module.time.StardewTimeUtils;
+import dev.flomik.stardew.core.network.PacketHandler;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -51,7 +58,34 @@ public class ModCommands {
                                         )
                                 )
                         )
+                        .then(Commands.literal("debug")
+                                .then(Commands.literal("markworld")
+                                        .executes(ctx -> markWorld(ctx.getSource())))
+                                .then(Commands.literal("resetcharacter")
+                                        .executes(ctx -> resetCharacter(ctx.getSource())))
+                        )
         );
+    }
+
+    /**
+     * Временный инструмент разработки (см. StardewWorldMarker) - помечает
+     * текущий мир как "подготовленный Stardew-мир", пока автоматическое
+     * копирование шаблона (docs/world-template.md) не реализовано.
+     */
+    private static int markWorld(CommandSourceStack source) {
+        StardewWorldMarker.get(source.getLevel()).setStardewWorld(true);
+        source.sendSuccess(() -> Component.literal("§aЭтот мир помечен как Stardew Valley world."), false);
+        return 1;
+    }
+
+    /** Сбрасывает профиль персонажа и сразу переоткрывает Character Creator - для итерации на GUI без перезахода. */
+    private static int resetCharacter(CommandSourceStack source) throws CommandSyntaxException {
+        ServerPlayer player = source.getPlayerOrException();
+        player.getCapability(CharacterProfileProvider.CHARACTER_PROFILE_CAPABILITY).ifPresent(profile ->
+                profile.setInitializationState(CharacterProfile.InitializationState.NOT_STARTED));
+        PacketHandler.sendToPlayer(new S2COpenCharacterCreation(), player);
+        source.sendSuccess(() -> Component.literal("§aПрофиль персонажа сброшен, Character Creator открыт."), false);
+        return 1;
     }
 
     private static int setTime(ServerLevel level, Season season, int day, int hour) {

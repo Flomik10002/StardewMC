@@ -1,5 +1,6 @@
 package dev.flomik.stardew.common.registry;
 
+import dev.flomik.stardew.common.module.character.item.ClothingItem;
 import dev.flomik.stardew.common.module.tools.ToolEnchantment;
 import dev.flomik.stardew.common.registry.framework.ItemBuilder;
 import dev.flomik.stardew.common.registry.framework.StardewFoodItem;
@@ -14,6 +15,7 @@ import dev.flomik.stardew.common.module.tools.item.ToolWateringCan;
 import dev.flomik.stardew.common.registry.framework.tooltip.ItemCategory;
 import dev.flomik.stardew.common.registry.framework.tooltip.TooltipKeys;
 import dev.flomik.stardew.common.registry.framework.tooltip.TooltipPresets;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -602,6 +604,36 @@ public class ModItems {
             .addTooltip(TooltipPresets.enchant(ToolEnchantment.POWERFUL))
             .addTooltip(TooltipPresets.enchant(ToolEnchantment.EFFICIENT))
             .addTooltip(TooltipPresets.enchant(ToolEnchantment.SWIFT))
+            .register();
+
+    /**
+     * "Носимый", но НИКОГДА не отрисовываемый предмет (см. чат: "рендер
+     * должен быть прозрачным") - CHEST/LEGS-слот заполняется им на сервере
+     * при завершении создания персонажа ({@code CharacterCreationServerHandler}),
+     * а его NBT ({@code ClothingId}/{@code ClothingColor}, см.
+     * {@code ClothingStacks}) читается client-side при live-изменении
+     * экипировки ({@code ClothingEquipmentListener}), чтобы решить, что
+     * рисовать в SkinComposer - реальную одежду или "голый" fallback, если
+     * слот пуст.
+     *
+     * {@link ClothingItem} - обычный {@code Item}, НЕ {@code ArmorItem} (см.
+     * чат: "оставь подход с обычными айтемами... без армор айтема") - именно
+     * поэтому ваниль ничего не рендерит для него в {@code HumanoidArmorLayer}
+     * (та проверяет {@code instanceof ArmorItem}). При этом реально
+     * надевается/снимается по ПКМ (см. {@code Equipable.swapWithEquipmentSlot}
+     * в {@link ClothingItem}) - раньше без этого интерфейса предмет можно
+     * было только вынуть из слота (при создании персонажа), но не надеть
+     * обратно. Без {@code .tab(...)}/{@code .visual(...)} - предмет не
+     * предназначен для обычного взаимодействия через творческий поиск.
+     */
+    public static final RegistryObject<ClothingItem> CLOTHING_SHIRT = ItemBuilder
+            .create("clothing_shirt", p -> new ClothingItem(EquipmentSlot.CHEST, p))
+            .stacksTo(1)
+            .register();
+
+    public static final RegistryObject<ClothingItem> CLOTHING_PANTS = ItemBuilder
+            .create("clothing_pants", p -> new ClothingItem(EquipmentSlot.LEGS, p))
+            .stacksTo(1)
             .register();
 
     public static final RegistryObject<ToolAxe> BASIC_AXE = ItemBuilder

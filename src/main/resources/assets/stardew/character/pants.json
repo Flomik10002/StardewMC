@@ -1,0 +1,6 @@
+[
+  { "id": "pants_001", "texture": "character/skin/blank.png", "mask": "character/clothes/down/pants_mask.png", "supportsColor": true },
+  { "id": "pants_002", "texture": "character/skin/blank.png", "mask": "character/clothes/down/shorts_mask.png", "supportsColor": true },
+  { "id": "pants_003", "texture": "character/skin/blank.png", "mask": "character/clothes/down/miniskirt_mask.png", "supportsColor": true },
+  { "id": "pants_004", "texture": "character/skin/blank.png", "mask": "character/clothes/down/dress_mask.png", "supportsColor": true }
+]

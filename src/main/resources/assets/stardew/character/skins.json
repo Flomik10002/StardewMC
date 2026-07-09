@@ -1,0 +1,21 @@
+[
+  { "id": "skin_001", "color": "#F7C0A1" },
+  { "id": "skin_002", "color": "#E6B08A" },
+  { "id": "skin_003", "color": "#D19573" },
+  { "id": "skin_004", "color": "#BF7C60" },
+  { "id": "skin_005", "color": "#AD704E" },
+  { "id": "skin_006", "color": "#995E45" },
+  { "id": "skin_007", "color": "#854F38" },
+  { "id": "skin_008", "color": "#704132" },
+  { "id": "skin_009", "color": "#5E3A2F" },
+  { "id": "skin_010", "color": "#4C2E28" },
+  { "id": "skin_011", "color": "#3B2520" },
+  { "id": "skin_012", "color": "#291A18" },
+
+  { "id": "skin_013", "color": "#C23B3B" },
+  { "id": "skin_014", "color": "#6FA84A" },
+  { "id": "skin_015", "color": "#A9D8E6" },
+  { "id": "skin_016", "color": "#9B6BC2" },
+  { "id": "skin_017", "color": "#E0C24A" },
+  { "id": "skin_018", "color": "#9E9E9E" }
+]

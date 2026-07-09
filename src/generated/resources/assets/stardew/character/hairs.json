@@ -1,0 +1,128 @@
+[
+  {
+    "id": "hair_001",
+    "male": {
+      "mask": "character/hair/001/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_002",
+    "male": {
+      "mask": "character/hair/002/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_003",
+    "male": {
+      "mask": "character/hair/003/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_004",
+    "male": {
+      "mask": "character/hair/004/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_005",
+    "male": {
+      "mask": "character/hair/005/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_006",
+    "male": {
+      "mask": "character/hair/006/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_007",
+    "male": {
+      "mask": "character/hair/007/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_008",
+    "male": {
+      "mask": "character/hair/008/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_009",
+    "male": {
+      "mask": "character/hair/009/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_010",
+    "male": {
+      "mask": "character/hair/010/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_011",
+    "male": {
+      "mask": "character/hair/011/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "id": "hair_012",
+    "male": {
+      "mask": "character/hair/012/mask_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "female": {
+      "mask": "character/hair/013/mask_female.png"
+    },
+    "id": "hair_013",
+    "supportsColor": true
+  },
+  {
+    "female": {
+      "mask": "character/hair/014/mask_female.png"
+    },
+    "id": "hair_014",
+    "supportsColor": true
+  },
+  {
+    "female": {
+      "mask": "character/hair/015/mask_female.png"
+    },
+    "id": "hair_015",
+    "supportsColor": true
+  },
+  {
+    "female": {
+      "mask": "character/hair/016/mask_female.png"
+    },
+    "id": "hair_016",
+    "supportsColor": true
+  },
+  {
+    "female": {
+      "mask": "character/hair/017/mask_female.png"
+    },
+    "id": "hair_017",
+    "supportsColor": true
+  },
+  {
+    "female": {
+      "mask": "character/hair/018/mask_female.png"
+    },
+    "id": "hair_018",
+    "supportsColor": true
+  }
+]

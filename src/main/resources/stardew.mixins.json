@@ -17,7 +17,8 @@
     "stacksize.ContainersMixin",
     "stacksize.BundleItemMixin",
     "stacksize.AnvilMenuMixin",
-    "common.ServerLevelTimeMixin"
+    "common.ServerLevelTimeMixin",
+    "common.PrimaryLevelDataAccessor"
   ],
   "client": [
     "client.GuiGraphicsMixin",
@@ -26,7 +27,9 @@
     "client.MinecraftAccessor",
     "client.EntityRenderDispatcherAccessor",
     "client.SignRendererAccessor",
-    "client.FontAccessor"
+    "client.FontAccessor",
+    "client.PlayerInfoSkinLockMixin",
+    "client.EditBoxNoShadowMixin"
   ],
   "injectors": {
     "defaultRequire": 1
