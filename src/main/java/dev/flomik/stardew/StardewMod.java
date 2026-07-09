@@ -2,11 +2,14 @@ package dev.flomik.stardew;
 
 import dev.flomik.stardew.common.module.character.cosmetic.CosmeticRegistry;
 import dev.flomik.stardew.common.module.farming.crop.CropRegistry;
+import dev.flomik.stardew.common.module.nature.blockentity.LargeStumpBlockEntity;
+import dev.flomik.stardew.common.module.nature.runtime.LargeStumpTracker;
 import dev.flomik.stardew.common.module.player.capability.PlayerStardewState;
 import dev.flomik.stardew.common.module.time.WeatherSystem;
 import dev.flomik.stardew.common.registry.*;
 import dev.flomik.stardew.common.module.farming.crop.logic.GrowthSystem;
 import dev.flomik.stardew.common.module.farming.crop.logic.MorningPass;
+import net.minecraft.core.BlockPos;
 import dev.flomik.stardew.core.network.PacketHandler;
 import dev.flomik.stardew.common.admin.SeasonArgument;
 import dev.flomik.stardew.common.module.time.ScheduleManager;
@@ -15,6 +18,7 @@ import dev.flomik.stardew.core.config.StardewConfig;
 import dev.flomik.stardew.datagen.HairCosmeticProvider;
 import dev.flomik.stardew.datagen.ShirtCosmeticProvider;
 import dev.flomik.stardew.datagen.StardewItemModels;
+import dev.flomik.stardew.datagen.StardewBlockStates;
 import net.minecraft.commands.synchronization.ArgumentTypeInfos;
 import net.minecraft.commands.synchronization.SingletonArgumentInfo;
 import net.minecraft.data.DataGenerator;
@@ -78,6 +82,7 @@ public class StardewMod {
         generator.addProvider(event.includeClient(), new StardewItemModels(output, existingFileHelper));
         generator.addProvider(event.includeClient(), new ShirtCosmeticProvider(output));
         generator.addProvider(event.includeClient(), new HairCosmeticProvider(output));
+        generator.addProvider(event.includeClient(), new StardewBlockStates(output, existingFileHelper));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -102,6 +107,12 @@ public class StardewMod {
 
                     MorningPass.run(sl);
                     GrowthSystem.run(sl);
+
+                    for (BlockPos pos : LargeStumpTracker.all(sl)) {
+                        if (sl.getBlockEntity(pos) instanceof LargeStumpBlockEntity stump) {
+                            stump.resetHp();
+                        }
+                    }
                 }
             });
         });

@@ -13,6 +13,8 @@ import dev.flomik.stardew.common.module.shipping.ShippingBinBlock;
 import dev.flomik.stardew.common.module.nature.block.BlockDirt;
 import dev.flomik.stardew.common.module.farming.block.BlockFarmland;
 import dev.flomik.stardew.common.module.farming.block.BlockScarecrow;
+import dev.flomik.stardew.common.module.nature.block.BlockLargeStump;
+import dev.flomik.stardew.common.module.nature.blockentity.LargeStumpBlockEntity;
 import dev.flomik.stardew.common.module.nature.block.BlockGrassSurface;
 import dev.flomik.stardew.common.registry.framework.BlockEntry;
 import dev.flomik.stardew.common.registry.framework.datagen.ModelPresets;
@@ -138,6 +140,16 @@ public class ModBlocks {
             .transform(woodMachine())
             .item()
             .tab(ModTabs.CRAFTABLES)
+            .register();
+
+    // Мультиблок 2x2: blockstate генерируется датагеном (StardewBlockStates),
+    // модель предмета — тоже (просто ссылается на модель блока-истока)
+    public static final BlockEntry<BlockLargeStump, LargeStumpBlockEntity> LARGE_STUMP = BlockBuilder.create("large_stump", BlockLargeStump::new)
+            .transform(woodMachine())
+            .blockEntity(LargeStumpBlockEntity::new)
+            .item()
+            .tab(ModTabs.BLOCK)
+            .visual(ModelPresets.useBlockModel())
             .register();
 
     // Shipping Bin - регистрируется отдельно, т.к. BlockEntity в ModBlockEntities

@@ -1,0 +1,79 @@
+{
+  "variants": {
+    "part_x=0,part_y=0": {
+      "model": "stardew:block/large_stump"
+    },
+    "part_x=0,part_y=1": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=0,part_y=2": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=0,part_y=3": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=0,part_y=4": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=1,part_y=0": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=1,part_y=1": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=1,part_y=2": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=1,part_y=3": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=1,part_y=4": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=2,part_y=0": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=2,part_y=1": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=2,part_y=2": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=2,part_y=3": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=2,part_y=4": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=3,part_y=0": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=3,part_y=1": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=3,part_y=2": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=3,part_y=3": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=3,part_y=4": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=4,part_y=0": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=4,part_y=1": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=4,part_y=2": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=4,part_y=3": {
+      "model": "stardew:block/empty"
+    },
+    "part_x=4,part_y=4": {
+      "model": "stardew:block/empty"
+    }
+  }
+}
