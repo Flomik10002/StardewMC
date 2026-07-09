@@ -1,6 +1,10 @@
 package dev.flomik.stardew.core.network;
 
 import dev.flomik.stardew.StardewMod;
+import dev.flomik.stardew.common.module.character.network.C2SFinishCharacterCreation;
+import dev.flomik.stardew.common.module.character.network.S2CCharacterCreationAccepted;
+import dev.flomik.stardew.common.module.character.network.S2CCharacterCreationRejected;
+import dev.flomik.stardew.common.module.character.network.S2COpenCharacterCreation;
 import dev.flomik.stardew.common.module.machinery.network.PacketChangeChestVariant;
 import dev.flomik.stardew.common.module.machinery.network.PacketPlayChestSound;
 import dev.flomik.stardew.common.module.player.network.S2CSyncPlayerState;
@@ -32,6 +36,10 @@ public class PacketHandler {
         CHANNEL.registerMessage(id++, S2CWorldDataSync.class, S2CWorldDataSync::encode, S2CWorldDataSync::decode, S2CWorldDataSync::handle);
         CHANNEL.registerMessage(id++, S2COpenShippingResultScreen.class, S2COpenShippingResultScreen::encode, S2COpenShippingResultScreen::new, S2COpenShippingResultScreen::handle);
         CHANNEL.registerMessage(id++, C2STimeFreezePacket.class, C2STimeFreezePacket::encode, C2STimeFreezePacket::new, C2STimeFreezePacket::handle);
+        CHANNEL.registerMessage(id++, S2COpenCharacterCreation.class, S2COpenCharacterCreation::encode, S2COpenCharacterCreation::decode, S2COpenCharacterCreation::handle);
+        CHANNEL.registerMessage(id++, C2SFinishCharacterCreation.class, C2SFinishCharacterCreation::encode, C2SFinishCharacterCreation::decode, C2SFinishCharacterCreation::handle);
+        CHANNEL.registerMessage(id++, S2CCharacterCreationAccepted.class, S2CCharacterCreationAccepted::encode, S2CCharacterCreationAccepted::decode, S2CCharacterCreationAccepted::handle);
+        CHANNEL.registerMessage(id++, S2CCharacterCreationRejected.class, S2CCharacterCreationRejected::encode, S2CCharacterCreationRejected::decode, S2CCharacterCreationRejected::handle);
     }
 
     public static void sendToAll(Object message) {

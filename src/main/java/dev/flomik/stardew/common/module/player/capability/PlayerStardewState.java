@@ -40,6 +40,22 @@ public class PlayerStardewState {
     public long getMoney() { return money; }
     public long getTotalEarnings() { return totalEarnings; }
 
+    /**
+     * Полный сброс к состоянию "новая игра" — нужен, когда игрок начинает с
+     * готового шаблона мира (docs/world-template.md), а не с чистого NBT:
+     * {@link #setMoney(long)}/{@link #restoreEnergy(float)} по отдельности не
+     * трогают {@code totalEarnings}/{@code isExhausted}, оставляя огрехи
+     * прогресса того, кто собирал шаблон.
+     */
+    public void resetToNewGame() {
+        this.currentEnergy = BASE_MAX;
+        this.maxEnergy = BASE_MAX;
+        this.isExhausted = false;
+        this.money = 0;
+        this.totalEarnings = 0;
+        sync();
+    }
+
     // --- Energy Actions ---
 
     public void consumeEnergy(float amount) {

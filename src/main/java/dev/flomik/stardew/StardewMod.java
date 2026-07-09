@@ -1,5 +1,6 @@
 package dev.flomik.stardew;
 
+import dev.flomik.stardew.common.module.character.cosmetic.CosmeticRegistry;
 import dev.flomik.stardew.common.module.farming.crop.CropRegistry;
 import dev.flomik.stardew.common.module.player.capability.PlayerStardewState;
 import dev.flomik.stardew.common.module.time.WeatherSystem;
@@ -11,6 +12,8 @@ import dev.flomik.stardew.common.admin.SeasonArgument;
 import dev.flomik.stardew.common.module.time.ScheduleManager;
 import dev.flomik.stardew.common.module.time.StardewDateData;
 import dev.flomik.stardew.core.config.StardewConfig;
+import dev.flomik.stardew.datagen.HairCosmeticProvider;
+import dev.flomik.stardew.datagen.ShirtCosmeticProvider;
 import dev.flomik.stardew.datagen.StardewItemModels;
 import net.minecraft.commands.synchronization.ArgumentTypeInfos;
 import net.minecraft.commands.synchronization.SingletonArgumentInfo;
@@ -73,11 +76,14 @@ public class StardewMod {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
         generator.addProvider(event.includeClient(), new StardewItemModels(output, existingFileHelper));
+        generator.addProvider(event.includeClient(), new ShirtCosmeticProvider(output));
+        generator.addProvider(event.includeClient(), new HairCosmeticProvider(output));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             PacketHandler.init();
+            CosmeticRegistry.load();
         });
 
         event.enqueueWork(() -> {

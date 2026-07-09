@@ -31,5 +31,12 @@ mc-forge-knowledge/
 reference-sources/
 asset-tools/
 
+# Raw ripped sound-effect source files (staging area - converted .ogg goes under src/main/resources)
+.sounds/
+
+# World-template source (full Minecraft save used to build stardew_templates/ - large binary, not for git)
+map/
+
 # Editor/tool backup files
 *~
+*-autosave.kra

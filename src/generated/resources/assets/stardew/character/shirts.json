@@ -1,0 +1,168 @@
+[
+  {
+    "female": {
+      "texture": "character/clothes/shirts/001/base_female.png"
+    },
+    "id": "shirt_001",
+    "male": {
+      "texture": "character/clothes/shirts/001/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/002/base_female.png"
+    },
+    "id": "shirt_002",
+    "male": {
+      "texture": "character/clothes/shirts/002/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/003/base_female.png"
+    },
+    "id": "shirt_003",
+    "male": {
+      "texture": "character/clothes/shirts/003/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/004/base_female.png"
+    },
+    "id": "shirt_004",
+    "male": {
+      "texture": "character/clothes/shirts/004/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/005/base_female.png"
+    },
+    "id": "shirt_005",
+    "male": {
+      "texture": "character/clothes/shirts/005/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "mask": "character/clothes/shirts/006/mask_female.png",
+      "texture": "character/clothes/shirts/006/base_female.png"
+    },
+    "id": "shirt_006",
+    "male": {
+      "mask": "character/clothes/shirts/006/mask_male.png",
+      "texture": "character/clothes/shirts/006/base_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "female": {
+      "mask": "character/clothes/shirts/007/mask_female.png",
+      "texture": "character/clothes/shirts/007/base_female.png"
+    },
+    "id": "shirt_007",
+    "male": {
+      "mask": "character/clothes/shirts/007/mask_male.png",
+      "texture": "character/clothes/shirts/007/base_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/008/base_female.png"
+    },
+    "id": "shirt_008",
+    "male": {
+      "texture": "character/clothes/shirts/008/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "mask": "character/clothes/shirts/009/mask_female.png",
+      "texture": "character/clothes/shirts/009/base_female.png"
+    },
+    "id": "shirt_009",
+    "male": {
+      "mask": "character/clothes/shirts/009/mask_male.png",
+      "texture": "character/clothes/shirts/009/base_male.png"
+    },
+    "supportsColor": true
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/010/base_female.png"
+    },
+    "id": "shirt_010",
+    "male": {
+      "texture": "character/clothes/shirts/010/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/011/base_female.png"
+    },
+    "id": "shirt_011",
+    "male": {
+      "texture": "character/clothes/shirts/011/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/012/base_female.png"
+    },
+    "id": "shirt_012",
+    "male": {
+      "texture": "character/clothes/shirts/012/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/013/base_female.png"
+    },
+    "id": "shirt_013",
+    "male": {
+      "texture": "character/clothes/shirts/013/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/014/base_female.png"
+    },
+    "id": "shirt_014",
+    "male": {
+      "texture": "character/clothes/shirts/014/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/015/base_female.png"
+    },
+    "id": "shirt_015",
+    "male": {
+      "texture": "character/clothes/shirts/015/base_male.png"
+    },
+    "supportsColor": false
+  },
+  {
+    "female": {
+      "texture": "character/clothes/shirts/016/base_female.png"
+    },
+    "id": "shirt_016",
+    "male": {
+      "texture": "character/clothes/shirts/016/base_male.png"
+    },
+    "supportsColor": false
+  }
+]

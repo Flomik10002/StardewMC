@@ -70,6 +70,32 @@
         "stream": false
       }
     ]
-  }
+  },
+
+  "cc_skeleton_step": { "category": "master", "sounds": [{ "name": "stardew:character_creation/skeleton_step", "stream": false }] },
+  "cc_grassy_step": { "category": "master", "sounds": [{ "name": "stardew:character_creation/grassy_step", "stream": false }] },
+  "cc_coin": { "category": "master", "sounds": [{ "name": "stardew:character_creation/coin", "stream": false }] },
+  "cc_purchase": { "category": "master", "sounds": [{ "name": "stardew:character_creation/purchase", "stream": false }] },
+  "cc_drumkit1": { "category": "master", "sounds": [{ "name": "stardew:character_creation/drumkit1", "stream": false }] },
+  "cc_drumkit2": { "category": "master", "sounds": [{ "name": "stardew:character_creation/drumkit2", "stream": false }] },
+  "cc_drumkit3": { "category": "master", "sounds": [{ "name": "stardew:character_creation/drumkit3", "stream": false }] },
+  "cc_drumkit4": { "category": "master", "sounds": [{ "name": "stardew:character_creation/drumkit4", "stream": false }] },
+  "cc_drumkit5": { "category": "master", "sounds": [{ "name": "stardew:character_creation/drumkit5", "stream": false }] },
+  "cc_drumkit6": { "category": "master", "sounds": [{ "name": "stardew:character_creation/drumkit6", "stream": false }] },
+  "cc_axchop": { "category": "master", "sounds": [{ "name": "stardew:character_creation/axchop", "stream": false }] },
+  "cc_hoe_hit": { "category": "master", "sounds": [{ "name": "stardew:character_creation/hoe_hit", "stream": false }] },
+  "cc_fish_slap": { "category": "master", "sounds": [{ "name": "stardew:character_creation/fish_slap", "stream": false }] },
+  "cc_junimo_meep": { "category": "master", "sounds": [{ "name": "stardew:character_creation/junimo_meep", "stream": false }] },
+  "cc_axe": { "category": "master", "sounds": [{ "name": "stardew:character_creation/axe", "stream": false }] },
+  "cc_hammer": { "category": "master", "sounds": [{ "name": "stardew:character_creation/hammer", "stream": false }] },
+  "cc_hit_enemy": { "category": "master", "sounds": [{ "name": "stardew:character_creation/hit_enemy", "stream": false }] },
+  "menu_hover": { "category": "master", "sounds": [{ "name": "stardew:menu/cowboy_footstep", "stream": false }] },
+  "menu_hover_world": { "category": "master", "sounds": [{ "name": "stardew:menu/cowboy_gunshot", "stream": false }] },
+  "menu_select": { "category": "master", "sounds": [{ "name": "stardew:menu/select", "stream": false }] },
+  "menu_deselect": { "category": "master", "sounds": [{ "name": "stardew:menu/big_deselect", "stream": false }] },
+  "menu_about": { "category": "master", "sounds": [{ "name": "stardew:menu/new_artifact", "stream": false }] },
+  "menu_cancel": { "category": "master", "sounds": [{ "name": "stardew:menu/small_select", "stream": false }] },
+  "menu_trashcan": { "category": "master", "sounds": [{ "name": "stardew:menu/trashcan", "stream": false }] },
+  "menu_scroll": { "category": "master", "sounds": [{ "name": "stardew:menu/scroll", "stream": false }] }
 }
 
