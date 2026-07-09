@@ -21,6 +21,15 @@ public class ModCommands {
         event.getDispatcher().register(
                 Commands.literal("stardew")
                         .requires(s -> s.hasPermission(2))
+                        .then(Commands.literal("debug")
+                                .executes(ctx -> {
+                                    boolean enabled = StardewDebug.toggle();
+                                    ctx.getSource().sendSuccess(() -> Component.literal(
+                                            "§eDebug-режим: " + (enabled ? "§aвключён" : "§cвыключен")
+                                    ), false);
+                                    return 1;
+                                })
+                        )
                         .then(Commands.literal("time")
                                 .then(Commands.literal("get")
                                         .executes(ctx -> getTime(ctx.getSource().getLevel(), ctx.getSource()))

@@ -24,6 +24,12 @@ public class ModTabs {
                     .icon(() -> new ItemStack(ModBlocks.CHEST.get()))
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> MATERIALS = StardewRegistry.TABS.register("materials",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("tab.stardew.materials"))
+                    .icon(() -> new ItemStack(ModItems.STONE.get()))
+                    .build());
+
     public static final RegistryObject<CreativeModeTab> ARTISAN_GOODS = StardewRegistry.TABS.register("artisan_goods",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("tab.stardew.artisan_goods"))
